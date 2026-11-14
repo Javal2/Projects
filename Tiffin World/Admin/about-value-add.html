@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Value Section — TiffinWorld Admin</title>
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
+  <style>
+    /* ADD VALUE SECTION STYLES */
+    .page-title-green {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: #2D5822;
+      margin: 0 0 24px;
+      line-height: 1.2;
+    }
+
+    .value-form-card {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    }
+
+    .form-field-label {
+      font-family: var(--font-heading);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #2D5822;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .form-field-input {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #374151;
+      outline: none;
+      transition: all 180ms ease;
+    }
+
+    .form-field-input:focus {
+      border-color: #2D5822;
+      box-shadow: 0 0 0 3px rgba(45, 88, 34, 0.12);
+    }
+
+    .form-field-textarea {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: #374151;
+      outline: none;
+      min-height: 160px;
+      resize: vertical;
+      transition: all 180ms ease;
+    }
+
+    .form-field-textarea:focus {
+      border-color: #2D5822;
+      box-shadow: 0 0 0 3px rgba(45, 88, 34, 0.12);
+    }
+
+    /* Dropzone Upload Boxes */
+    .dropzone-blue-box {
+      background-color: #EEF5FE;
+      border: 1.5px dashed #CBDCF8;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .dropzone-blue-box:hover {
+      background-color: #E2EDFC;
+    }
+
+    .dropzone-orange-box {
+      background-color: #FFFFFF;
+      border: 1.5px dashed #FF7F00;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .dropzone-orange-box:hover {
+      background-color: #FFF7ED;
+    }
+
+    .dropzone-icon-green {
+      font-size: 28px;
+      color: #2D5822;
+      margin-bottom: 6px;
+    }
+
+    .dropzone-icon-orange {
+      font-size: 28px;
+      color: #FF7F00;
+      margin-bottom: 6px;
+    }
+
+    .dropzone-title-green {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: #2D5822;
+    }
+
+    .dropzone-title-orange {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: #FF7F00;
+    }
+
+    .dropzone-subtext {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: #6B7280;
+      margin-top: 4px;
+    }
+
+    .dropzone-subtext-red {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: #DC2626;
+      margin-top: 4px;
+    }
+
+    .btn-submit-solid-green {
+      background-color: #2D5822;
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      padding: 10px 32px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(45, 88, 34, 0.22);
+      transition: all 180ms ease;
+    }
+
+    .btn-submit-solid-green:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+    }
+
+    .btn-back-outline-tint {
+      background-color: #EEF5FE;
+      color: #2D5822 !important;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      padding: 10px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 150ms ease;
+    }
+
+    .btn-back-outline-tint:hover {
+      background-color: #DBE7F9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link active" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="true">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse show" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link active">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Profile Feature Dropdown -->
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuProfileFeature" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-lines-fill sidebar-menu-icon"></i>
+              <span>Profile Feature</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuProfileFeature">
+            <ul class="sidebar-submenu">
+              <li><a href="profile-features.html" class="sidebar-submenu-link">Profile Feature List</a></li>
+              <li><a href="profile-create.html" class="sidebar-submenu-link">Create New Profile</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <a href="about-values.html" class="text-decoration-none text-muted">Our Value Section</a> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Add Value Section</span>
+            </div>
+            <h1 class="header-page-title">Our Value Section</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS -->
+      <main class="admin-content">
+        
+        <h2 class="page-title-green">Our Value Section</h2>
+
+        <!-- MAIN FORM CARD -->
+        <div class="value-form-card">
+          <form onsubmit="event.preventDefault(); showToast('Value section added!', 'Success'); setTimeout(() => window.location.href='about-values.html', 1200);">
+            
+            <div class="row g-4">
+              
+              <!-- LEFT COLUMN FIELDS -->
+              <div class="col-lg-7">
+                
+                <div class="mb-4">
+                  <label class="form-field-label">TITLE</label>
+                  <input type="text" class="form-field-input" placeholder="Enter a compelling headline..." required>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-field-label">DESCRIPTION CONTENT</label>
+                  <textarea class="form-field-textarea" placeholder="Describe the core value proposition in detail..." required></textarea>
+                </div>
+
+              </div>
+
+              <!-- RIGHT COLUMN DROPZONES -->
+              <div class="col-lg-5">
+                
+                <div class="mb-4">
+                  <label class="form-field-label">UPLOAD IMAGE</label>
+                  <div class="dropzone-blue-box" onclick="showToast('Upload image file dialog', 'File Upload')">
+                    <i class="bi bi-cloud-arrow-up dropzone-icon-green"></i>
+                    <div class="dropzone-title-green">Click to upload or drag and drop</div>
+                    <div class="dropzone-subtext">PNG, JPG or WEBP(max. 4MB)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="form-field-label">SELECT ICON</label>
+                  <div class="dropzone-orange-box" onclick="showToast('Upload icon file dialog', 'Icon Selection')">
+                    <i class="bi bi-cloud-arrow-up dropzone-icon-orange"></i>
+                    <div class="dropzone-title-orange">Click to upload or drag and drop</div>
+                    <div class="dropzone-subtext-red">Use Iconify to select icons</div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- DIVIDER LINE -->
+            <div class="border-top my-4" style="border-color: #EBF2FD !important;"></div>
+
+            <!-- BOTTOM ACTION BUTTONS -->
+            <div class="d-flex align-items-center gap-3">
+              <button type="submit" class="btn-submit-solid-green">SUBMIT</button>
+              <a href="about-values.html" class="btn-back-outline-tint">BACK</a>
+            </div>
+
+          </form>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

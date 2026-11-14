@@ -1,0 +1,790 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulkpharmachem - Premium Bulk Pharmaceutical & Chemical Ingredients Supplier</title>
+    <meta name="description"
+        content="Global B2B wholesale supplier of pharmaceutical APIs, nutraceutical ingredients, food additives, agrochemicals, and industrial chemicals. ISO 9001, EU GMP, US FDA registered.">
+
+    <!-- Bootstrap 5.3 CSS CDN & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom Clinical B2B Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- BIO-MOLECULAR QUANTUM SYNTHESIS PRELOADER -->
+    <div id="b2b-preloader">
+        <div class="preloader-content text-center">
+
+            <!-- Molecular Orbit Stage -->
+            <div class="molecular-stage">
+                <!-- Static 3D visual orbit rings (background layer) -->
+                <div class="orbit-ring orbit-ring-1"></div>
+                <div class="orbit-ring orbit-ring-2"></div>
+                <div class="orbit-ring orbit-ring-3"></div>
+
+                <!-- Glowing Nucleus Core with Brand Icon -->
+                <div class="nucleus-core">
+                    <svg class="nucleus-icon" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.6 15.12a2 2 0 01-1.022-.547l-1.428-1.428a2 2 0 010-2.828l8.486-8.486a2 2 0 012.828 0l8.486 8.486a2 2 0 010 2.828l-1.522 1.522z"/>
+                    </svg>
+                </div>
+
+                <!-- Round Orbiting Particle Molecules -->
+                <div class="electron e-1"></div>
+                <div class="electron e-2"></div>
+                <div class="electron e-3"></div>
+            </div>
+
+            <!-- Brand Title -->
+            <div class="pharma-brand-title mb-2">
+                Bulk<span>pharmachem</span>
+            </div>
+
+            <!-- Status Text -->
+            <div id="preloader-status" class="pharma-status-text" style="min-height: 22px;">
+                Verifying ISO 17025 Batch CoA Certificates...
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="preloader-bar-container">
+                <div class="preloader-bar" id="preloader-bar-fill"></div>
+            </div>
+
+            <!-- Percentage Counter -->
+            <div class="minimal-percent-text" id="preloader-percent">0%</div>
+        </div>
+    </div>
+
+
+    <!-- 1. TOP ANNOUNCEMENT & CONTACT BAR -->
+    <div class="top-bar">
+        <div class="container-fluid max-width-container">
+            <div class="top-bar-content">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge-iso"><i class="bi bi-truck me-1"></i> FREE SHIPPING OVER 5 MT</span>
+                    <span class="badge-iso"><i class="bi bi-tag-fill me-1 text-warning"></i> CODE:
+                        <strong>BULK2026</strong> (-15%)</span>
+                </div>
+                <div class="top-ticker-container d-none d-lg-block">
+                    <div class="top-ticker-text">
+                        <i class="bi bi-box-seam me-1 text-info"></i> Direct Factory Wholesale Supplier — USP / EP / FCC
+                        Monograph Certified &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="bi bi-shield-check me-1 text-success"></i> 100% ISO 17025 Batch Tested (HPLC, GC-MS,
+                        FTIR) with CoA per Shipment
+                    </div>
+                </div>
+                <div class="top-bar-contact">
+                    <a href="tel:+18005552436" class="text-white text-decoration-none"><i
+                            class="bi bi-telephone-fill me-1 text-info"></i> +1 (800) 555-CHEM</a>
+                    <a href="mailto:export@bulkpharmachem.com" class="text-white text-decoration-none"><i
+                            class="bi bi-envelope-fill me-1 text-info"></i> export@bulkpharmachem.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MAIN BRAND & SEARCH HEADER ROW -->
+    <div class="main-header-row">
+        <div class="container-fluid max-width-container">
+            <div class="d-flex align-items-center justify-content-between gap-3">
+                <!-- Brand Logo -->
+                <a class="brand-logo-container" href="index.html">
+                    <div class="brand-icon-box">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.6 15.12a2 2 0 01-1.022-.547l-1.428-1.428a2 2 0 010-2.828l8.486-8.486a2 2 0 012.828 0l8.486 8.486a2 2 0 010 2.828l-1.522 1.522z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="brand-name">Bulk<span>pharmachem</span></div>
+                        <span class="brand-tagline">Pharmaceutical & Chemical Wholesale</span>
+                    </div>
+                </a>
+
+                <!-- Wide Search Input -->
+                <div class="header-search-bar d-none d-md-block">
+                    <input type="text" class="header-search-input global-search-input"
+                        placeholder="Search by Chemical Name, CAS # (e.g. 58-08-2) or SKU..."
+                        aria-label="Search ingredients">
+                    <button class="header-search-btn" aria-label="Submit search"><i class="bi bi-search"></i></button>
+                </div>
+
+                <!-- Account Action Buttons -->
+                <div class="d-flex align-items-center gap-2">
+                    <a href="login.html" class="btn btn-sm btn-b2b-outline">
+                        <i class="bi bi-person-fill"></i> <span class="d-none d-sm-inline ms-1">Login</span>
+                    </a>
+                    <a href="quote.html" class="btn btn-sm btn-b2b-accent">
+                        <i class="bi bi-file-earmark-text-fill"></i> <span class="d-none d-sm-inline ms-1">Request
+                            Quote</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Search Bar (Visible on Mobile screens) -->
+            <div class="header-search-bar d-block d-md-none mt-2">
+                <input type="text" class="header-search-input global-search-input"
+                    placeholder="Search by Chemical Name, CAS #..." aria-label="Search ingredients">
+                <button class="header-search-btn" aria-label="Submit search"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. PRIMARY NAVIGATION BAR & MEGA MENU -->
+    <nav class="navbar navbar-expand-lg primary-nav-bar">
+        <div class="container-fluid max-width-container">
+            <button class="navbar-toggler border-0 py-2 ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarContent" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="small fw-bold text-primary ms-1">MENU</span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav w-100 align-items-lg-center gap-lg-1">
+                    <!-- Mega Menu Dropdown (Left Side) -->
+                    <li class="nav-item dropdown dropdown-mega">
+                        <a class="nav-link nav-link-b2b" href="products.html" id="categoriesDropdown">
+                            <i class="bi bi-grid-3x3-gap-fill me-1"></i> Shop by Category
+                        </a>
+                        <div class="mega-menu" aria-labelledby="categoriesDropdown">
+                            <div class="row g-3">
+                                <div class="col-lg-3">
+                                    <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                                        <div class="bg-primary text-white rounded-2 p-2 small"><i
+                                                class="bi bi-capsule fs-6"></i></div>
+                                        <h6 class="fw-bold text-primary m-0 text-uppercase small tracking-wide">
+                                            Nutraceuticals</h6>
+                                    </div>
+                                    <a href="category.html?cat=Nutraceuticals" class="mega-menu-item">
+                                        <img src="assets/images/bcaa-amino-acid.jpg"
+                                            alt="BCAA 2:1:1" class="mega-menu-img">
+                                        <div>
+                                            <div class="mega-menu-item-title">BCAA (2:1:1) Amino Acid</div>
+                                            <div class="mega-menu-item-sub">CAS: 69430-36-0</div>
+                                        </div>
+                                    </a>
+                                    <a href="category.html?cat=Nutraceuticals" class="mega-menu-item">
+                                        <img src="assets/images/creatine-monohydrate.jpg"
+                                            alt="Creatine Monohydrate" class="mega-menu-img">
+                                        <div>
+                                            <div class="mega-menu-item-title">Creatine Monohydrate</div>
+                                            <div class="mega-menu-item-sub">200 Mesh Micronized</div>
+                                        </div>
+                                    </a>
+                                    <a href="category.html?cat=Nutraceuticals"
+                                        class="text-primary small fw-bold d-block mt-2 px-2">View All Nutraceuticals
+                                        →</a>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                                        <div class="bg-primary text-white rounded-2 p-2 small"><i
+                                                class="bi bi-basket fs-6"></i></div>
+                                        <h6 class="fw-bold text-primary m-0 text-uppercase small tracking-wide">Food
+                                            Ingredients</h6>
+                                    </div>
+                                    <a href="category.html?cat=Foods" class="mega-menu-item">
+                                        <img src="assets/images/sucralose-sweetener.jpg"
+                                            alt="Sucralose Sweetener" class="mega-menu-img">
+                                        <div>
+                                            <div class="mega-menu-item-title">Sucralose Sweetener</div>
+                                            <div class="mega-menu-item-sub">FCC / USP Grade</div>
+                                        </div>
+                                    </a>
+                                    <a href="category.html?cat=Foods" class="mega-menu-item">
+                                        <img src="assets/images/skimmed-milk-powder.jpg"
+                                            alt="Skimmed Milk Powder" class="mega-menu-img">
+                                        <div>
+                                            <div class="mega-menu-item-title">Skimmed Milk Powder</div>
+                                            <div class="mega-menu-item-sub">Low Heat Spray Dried</div>
+                                        </div>
+                                    </a>
+                                    <a href="category.html?cat=Foods"
+                                        class="text-primary small fw-bold d-block mt-2 px-2">View All Food Ingredients
+                                        →</a>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                                        <div class="bg-primary text-white rounded-2 p-2 small"><i
+                                                class="bi bi-tree fs-6"></i></div>
+                                        <h6 class="fw-bold text-primary m-0 text-uppercase small tracking-wide">
+                                            Agrochemicals</h6>
+                                    </div>
+                                    <a href="category.html?cat=Agrochemicals" class="mega-menu-item">
+                                        <img src="assets/images/potassium-humate.jpg"
+                                            alt="Potassium Humate" class="mega-menu-img">
+                                        <div>
+                                            <div class="mega-menu-item-title">Potassium Humate</div>
+                                            <div class="mega-menu-item-sub">100% Soluble Flakes</div>
+                                        </div>
+                                    </a>
+                                    <a href="category.html?cat=Agrochemicals"
+                                        class="text-primary small fw-bold d-block mt-2 px-2">View All Agrochemicals
+                                        →</a>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+                                        <div class="bg-primary text-white rounded-2 p-2 small"><i
+                                                class="bi bi-gear-wide-connected fs-6"></i></div>
+                                        <h6 class="fw-bold text-primary m-0 text-uppercase small tracking-wide">
+                                            Industrial Formulations</h6>
+                                    </div>
+                                    <a href="category.html?cat=Industrial" class="mega-menu-item">
+                                        <img src="assets/images/titanium-dioxide-rutile.jpg"
+                                            alt="Titanium Dioxide R-996" class="mega-menu-img">
+                                        <div>
+                                            <div class="mega-menu-item-title">Titanium Dioxide (TiO2)</div>
+                                            <div class="mega-menu-item-sub">Rutile Grade R-996</div>
+                                        </div>
+                                    </a>
+                                    <a href="category.html?cat=Industrial"
+                                        class="text-primary small fw-bold d-block mt-2 px-2">View All Industrial →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item ms-lg-auto"><a class="nav-link nav-link-b2b active" href="index.html"><i
+                                class="bi bi-house-door-fill me-1"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-b2b" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-b2b" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-b2b" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-b2b" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-b2b" href="callback.html">Callback Request</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-b2b" href="enquiry.html">Enquiry Form</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+        <canvas id="molecules-canvas"></canvas>
+
+        <div class="container hero-content" style="max-width: 1320px;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 reveal-on-scroll">
+                    <div class="hero-pill-badge">
+                        <i class="bi bi-flask text-warning"></i> LABORATORY PRECISION & FACTORY DIRECT LOGISTICS
+                    </div>
+                    <h1 class="hero-title">
+                        Premium Bulk <span>Pharmaceutical & Chemical</span> Ingredients
+                    </h1>
+                    <p class="hero-subtitle">
+                        Trusted global supplier of USP/EP APIs, Nutraceutical Raw Materials, Food Grade Additives,
+                        Agrochemicals, and High Purity Industrial Chemicals.
+                    </p>
+
+                    <div class="hero-search-box mb-4">
+                        <div class="d-flex align-items-center bg-white rounded-pill p-1">
+                            <i class="bi bi-search text-muted ms-3"></i>
+                            <input type="text" class="form-control border-0 shadow-none global-search-input"
+                                placeholder="Search by Chemical Name, CAS # (e.g. 58-08-2)...">
+                            <a href="products.html" class="btn btn-b2b-primary me-1 text-nowrap">Explore Products</a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a href="quote.html" class="btn btn-b2b-accent btn-lg fs-6">
+                            <i class="bi bi-calculator me-1"></i> Request Bulk Quote
+                        </a>
+                        <a href="#catalogue" class="btn btn-b2b-outline border-white text-white btn-lg fs-6">
+                            <i class="bi bi-download me-1"></i> Product Catalogue
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 d-none d-lg-block reveal-on-scroll">
+                    <div
+                        class="bg-white bg-opacity-10 backdrop-blur border border-white border-opacity-20 rounded-4 p-4 text-white shadow-lg">
+                        <h5 class="fw-bold text-white mb-3 border-bottom border-white border-opacity-20 pb-2"><i
+                                class="bi bi-lightning-charge-fill text-warning me-2"></i>Quick Spec Lookup</h5>
+                        <div class="d-flex flex-column gap-2 font-mono small">
+                            <div class="d-flex justify-content-between p-2 rounded bg-black bg-opacity-25">
+                                <span>Caffeine Anhydrous</span>
+                                <span class="badge bg-success"><span class="pulse-dot me-1"></span>58-08-2</span>
+                            </div>
+                            <div class="d-flex justify-content-between p-2 rounded bg-black bg-opacity-25">
+                                <span>Creatine Monohydrate</span>
+                                <span class="badge bg-success"><span class="pulse-dot me-1"></span>6020-87-7</span>
+                            </div>
+                            <div class="d-flex justify-content-between p-2 rounded bg-black bg-opacity-25">
+                                <span>Vitamin B12 (Methyl)</span>
+                                <span class="badge bg-success"><span class="pulse-dot me-1"></span>13422-55-4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </header>
+
+    <!-- 1. BEST SELLING PRODUCTS SECTION -->
+    <section class="py-5 bg-white" id="best-selling">
+        <div class="container" style="max-width: 1320px;">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 reveal-on-scroll">
+                <div>
+                    <span class="section-tag"><i class="bi bi-fire me-1 text-danger"></i> High Volume Exports</span>
+                    <h2 class="section-title">Best Selling Products</h2>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                    <button class="btn btn-b2b-primary btn-sm bestselling-filter-tab active" data-category="all">All
+                        Best Sellers</button>
+                    <button class="btn btn-b2b-outline btn-sm bestselling-filter-tab"
+                        data-category="Nutraceuticals">Nutraceuticals</button>
+                    <button class="btn btn-b2b-outline btn-sm bestselling-filter-tab" data-category="Foods">Food
+                        Additives</button>
+                </div>
+            </div>
+
+            <div class="row" id="bestselling-products-grid">
+                <!-- JS populates Best Selling product cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. OUR CATALOG SECTION -->
+    <section class="py-5 bg-light-gray" id="our-catalog">
+        <div class="container" style="max-width: 1320px;">
+            <div class="section-title-wrapper text-center reveal-on-scroll mb-5">
+                <span class="section-tag"><i class="bi bi-journal-bookmark-fill me-1"></i> Wholesale Directory</span>
+                <h2 class="section-title">Explore Our Full Product Catalog</h2>
+                <p class="text-muted max-w-700 mx-auto">Access over 5,000+ monograph-certified active pharmaceutical
+                    ingredients, nutraceuticals, food grade additives, and industrial specialty chemicals.</p>
+            </div>
+
+            <!-- Downloadable Monograph & Directory Banner -->
+            <div class="p-4 rounded-4 bg-primary text-white shadow-lg mb-5 reveal-on-scroll">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-3 mb-lg-0">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-white bg-opacity-10 rounded-3 p-3 text-warning display-6"><i
+                                    class="bi bi-file-earmark-pdf-fill"></i></div>
+                            <div>
+                                <h4 class="text-white fw-bold mb-1">Download 2026 Enterprise Wholesale Catalog (PDF)
+                                </h4>
+                                <p class="text-light mb-0 small opacity-85">Includes full CAS indexes, purity specs,
+                                    packaging options, and bulk container loading limits.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="products.html" class="btn btn-b2b-accent btn-lg font-heading fw-bold">
+                            <i class="bi bi-download me-2"></i> Download Full Directory
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog Category Hub Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6 reveal-on-scroll">
+                    <div class="catalog-category-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="catalog-card-icon-wrapper"><i class="bi bi-capsule"></i></div>
+                            <span class="catalog-card-sku-badge">1,400+ SKUs</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-2">Nutraceutical APIs</h4>
+                        <p class="text-muted small mb-4 flex-grow-1">Micronized BCAA, Creatine, Methylcobalamin B12, and
+                            pure botanical powders.</p>
+                        <a href="category.html?cat=Nutraceuticals"
+                            class="btn btn-b2b-outline w-100 justify-content-center fw-bold">Browse Category <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal-on-scroll">
+                    <div class="catalog-category-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="catalog-card-icon-wrapper"><i class="bi bi-basket"></i></div>
+                            <span class="catalog-card-sku-badge">1,200+ SKUs</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-2">Food & Beverage</h4>
+                        <p class="text-muted small mb-4 flex-grow-1">High intensity Sucralose, spray-dried Skimmed Milk
+                            Powder, and Soya Lecithin.</p>
+                        <a href="category.html?cat=Foods"
+                            class="btn btn-b2b-outline w-100 justify-content-center fw-bold">Browse Category <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal-on-scroll">
+                    <div class="catalog-category-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="catalog-card-icon-wrapper"><i class="bi bi-tree"></i></div>
+                            <span class="catalog-card-sku-badge">850+ SKUs</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-2">Agrochemicals</h4>
+                        <p class="text-muted small mb-4 flex-grow-1">100% Soluble Potassium Humate flakes and
+                            agricultural soil humic concentrates.</p>
+                        <a href="category.html?cat=Agrochemicals"
+                            class="btn btn-b2b-outline w-100 justify-content-center fw-bold">Browse Category <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal-on-scroll">
+                    <div class="catalog-category-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="catalog-card-icon-wrapper"><i class="bi bi-gear-wide-connected"></i></div>
+                            <span class="catalog-card-sku-badge">1,550+ SKUs</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-2">Industrial Chemicals</h4>
+                        <p class="text-muted small mb-4 flex-grow-1">Titanium Dioxide Rutile (R-996), surfactants, and
+                            industrial specialty additives.</p>
+                        <a href="category.html?cat=Industrial"
+                            class="btn btn-b2b-outline w-100 justify-content-center fw-bold">Browse Category <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="products.html" class="btn btn-b2b-primary btn-lg font-heading fw-bold px-4">
+                    View Complete 5,000+ Products Directory <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. TRENDING PRODUCTS SECTION -->
+    <section class="py-5 bg-white" id="trending-products">
+        <div class="container" style="max-width: 1320px;">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 reveal-on-scroll">
+                <div>
+                    <span class="section-tag"><i class="bi bi-graph-up-arrow me-1 text-success"></i> Market Demand
+                        Surge</span>
+                    <h2 class="section-title">Trending Products This Quarter</h2>
+                </div>
+                <div>
+                    <a href="products.html" class="btn btn-b2b-outline btn-sm">Explore All Trending <i
+                            class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="row" id="trending-products-grid">
+                <!-- JS populates Trending product cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. NUMBERS OF COMPANY SECTION (ENTERPRISE COMMAND DASHBOARD) -->
+    <section class="py-5 company-numbers-section" id="company-numbers">
+        <div class="container py-4" style="max-width: 1320px;">
+            <div class="section-title-wrapper text-center reveal-on-scroll mb-5">
+                <span
+                    class="badge bg-white bg-opacity-10 text-info font-mono uppercase fw-bold mb-2 px-3 py-2 border border-white border-opacity-20">
+                    <i class="bi bi-bar-chart-line-fill me-1 text-warning"></i> COMPANY BY THE NUMBERS
+                </span>
+                <h2 class="text-white display-6 fw-bold">Global Operational Scale & Regulatory Excellence</h2>
+                <p class="text-light opacity-75 max-w-700 mx-auto">Proven global supply metrics backed by WHO-GMP
+                    certified manufacturing, ISO 17025 testing, and multi-port container dispatch.</p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Left Main Featured Logistics Hero Card -->
+                <div class="col-lg-5 reveal-on-scroll">
+                    <div class="featured-numbers-hero-card">
+                        <div>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <span
+                                    class="badge bg-white text-dark font-mono small px-3 py-2 rounded-pill fw-bold shadow-sm">
+                                    <i class="bi bi-globe-americas me-1 text-primary"></i> GLOBAL LOGISTICS HUB
+                                </span>
+                                <span class="pulse-dot bg-success" style="width: 10px; height: 10px;"></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-light opacity-75 font-mono small uppercase fw-bold mb-1">ANNUAL SHIPPED
+                                    BULK CARGO</div>
+                                <div class="hero-card-stat-main"><span class="counter-val" data-count="85000">0</span>
+                                    <span class="fs-3 fw-normal text-white opacity-85">MT</span></div>
+                            </div>
+
+                            <div
+                                class="p-3 rounded-3 bg-black bg-opacity-30 border border-white border-opacity-10 mb-4">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <div class="small text-muted font-mono">EXPORT SEAPORTS & BONDED HUBS</div>
+                                        <div class="hero-card-substat"><span class="counter-val"
+                                                data-count="120">0</span>+ <span
+                                                class="fs-6 text-light opacity-75">Ports</span></div>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="small text-muted font-mono">VESSEL DISPATCH</div>
+                                        <div class="text-success fw-bold font-mono fs-5"><i
+                                                class="bi bi-check-circle-fill me-1"></i>99.4% On-Time</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="live-logistics-badge mb-3">
+                                <span class="pulse-dot"></span> LIVE VESSEL CARGOES EN-ROUTE TO ROTTERDAM, HAMBURG &
+                                SHANGHAI
+                            </div>
+                            <div
+                                class="pt-3 border-top border-white border-opacity-10 d-flex align-items-center justify-content-between">
+                                <span class="small text-light opacity-75 font-mono">FCL & LCL Bulk Container
+                                    Loading</span>
+                                <a href="quote.html" class="btn btn-sm btn-b2b-accent font-heading fw-bold">Freight
+                                    Quote <i class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right 2x2 Metric Dashboard Cards -->
+                <div class="col-lg-7">
+                    <div class="row g-4 h-100">
+                        <!-- Metric Card 1: Active Monograph SKUs -->
+                        <div class="col-sm-6 reveal-on-scroll">
+                            <div class="dashboard-metric-card">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="metric-icon-box metric-icon-cyan"><i class="bi bi-box-seam-fill"></i>
+                                    </div>
+                                    <span class="badge bg-white bg-opacity-10 text-info font-mono small">Active
+                                        SKUs</span>
+                                </div>
+                                <div class="metric-card-val"><span class="counter-val" data-count="5000">0</span>+</div>
+                                <div class="metric-card-title">Active Monograph SKUs</div>
+                                <div class="metric-card-sub">USP, EP, BP, & FCC Certified Raw Materials</div>
+                                <div class="metric-card-tag"><i class="bi bi-check2-circle text-info me-1"></i>100%
+                                    Traceable Lots</div>
+                            </div>
+                        </div>
+
+                        <!-- Metric Card 2: B2B Enterprise Clients -->
+                        <div class="col-sm-6 reveal-on-scroll">
+                            <div class="dashboard-metric-card">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="metric-icon-box metric-icon-gold"><i class="bi bi-building-check"></i>
+                                    </div>
+                                    <span class="badge bg-white bg-opacity-10 text-warning font-mono small">Global
+                                        Accounts</span>
+                                </div>
+                                <div class="metric-card-val"><span class="counter-val" data-count="2400">0</span>+</div>
+                                <div class="metric-card-title">Enterprise B2B Clients</div>
+                                <div class="metric-card-sub">Pharma MNCs, Food & Nutraceutical Formulators</div>
+                                <div class="metric-card-tag"><i class="bi bi-star-fill text-warning me-1"></i>98.4%
+                                    Contract Renewal</div>
+                            </div>
+                        </div>
+
+                        <!-- Metric Card 3: Quality Pass Rate -->
+                        <div class="col-sm-6 reveal-on-scroll">
+                            <div class="dashboard-metric-card">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="metric-icon-box metric-icon-emerald"><i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <span class="badge bg-white bg-opacity-10 text-success font-mono small">ISO
+                                        17025</span>
+                                </div>
+                                <div class="metric-card-val">99.98%</div>
+                                <div class="metric-card-title">HPLC & GC-MS Pass Rate</div>
+                                <div class="metric-card-sub">Tested at ISO 17025 Accredited Analytical Labs</div>
+                                <div class="metric-card-tag"><i
+                                        class="bi bi-patch-check-fill text-success me-1"></i>Zero Batch Recalls</div>
+                            </div>
+                        </div>
+
+                        <!-- Metric Card 4: FDA & GMP Certifications -->
+                        <div class="col-sm-6 reveal-on-scroll">
+                            <div class="dashboard-metric-card">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <div class="metric-icon-box metric-icon-purple"><i
+                                            class="bi bi-patch-check-fill"></i></div>
+                                    <span
+                                        class="badge bg-white bg-opacity-10 text-white font-mono small">Regulatory</span>
+                                </div>
+                                <div class="metric-card-val">100%</div>
+                                <div class="metric-card-title">FDA & GMP Certifications</div>
+                                <div class="metric-card-sub">US FDA Registered, EU GMP & ISO 9001:2015</div>
+                                <div class="metric-card-tag"><i
+                                        class="bi bi-file-earmark-check-fill text-warning me-1"></i>Full DMF & CEP
+                                    Dossiers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. HIGH DEMAND INGREDIENTS SECTION -->
+    <section class="py-5 bg-light-gray" id="high-demand">
+        <div class="container" style="max-width: 1320px;">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 reveal-on-scroll">
+                <div>
+                    <span class="section-tag"><i class="bi bi-truck me-1 text-warning"></i> Vessel-Ready Bonded
+                        Stock</span>
+                    <h2 class="section-title">High Demand Bulk Stock</h2>
+                </div>
+                <div>
+                    <a href="quote.html" class="btn btn-b2b-accent btn-sm"><i class="bi bi-calculator me-1"></i> Request
+                        FCL Freight Quote</a>
+                </div>
+            </div>
+
+            <div class="row" id="highdemand-products-grid">
+                <!-- JS populates High Demand product cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- BULK DISCOUNT CTA -->
+    <section class="py-5" id="bulk-discount-cta">
+        <div class="container" style="max-width: 1320px;">
+            <div class="cta-banner-bulk reveal-on-scroll">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <span class="badge bg-warning text-dark font-mono uppercase fw-bold mb-3 px-3 py-2">
+                            <i class="bi bi-percent me-1"></i> DIRECT FACTORY VOLUME DISCOUNTS
+                        </span>
+                        <h2 class="text-white fw-bold display-6 mb-3">Ordering Full Container Loads (FCL) or Multi-Ton
+                            Shipments?</h2>
+                        <p class="text-info fs-6 mb-4">Save up to 35% with our tier-1 procurement program. Instant
+                            FOB/CIF shipping quotes to any major port.</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="bg-white rounded-4 p-4 text-dark shadow-lg">
+                            <h4 class="fw-bold text-primary mb-3"><i
+                                    class="bi bi-lightning-fill text-warning me-2"></i>Instant Bulk RFQ Request</h4>
+                            <form id="rfq-quick-form">
+                                <div id="rfq-alert-msg"></div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control form-control-sm"
+                                        placeholder="Chemical Name or CAS #" required>
+                                </div>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6"><input type="text" class="form-control form-control-sm"
+                                            placeholder="Volume (e.g. 5 MT)" required></div>
+                                    <div class="col-6"><input type="email" class="form-control form-control-sm"
+                                            placeholder="Work Email" required></div>
+                                </div>
+                                <button type="submit" class="btn btn-b2b-accent w-100 fw-bold">Submit RFQ for Instant
+                                    Pricing <i class="bi bi-arrow-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOP PRODUCTS SHOWCASE -->
+    <section class="py-5 bg-light-gray" id="top-products">
+        <div class="container" style="max-width: 1320px;">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 reveal-on-scroll">
+                <div>
+                    <span class="section-tag"><i class="bi bi-stars me-1"></i> Factory Direct Catalog</span>
+                    <h2 class="section-title">Featured Ingredients Showcase</h2>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0">
+                    <button class="btn btn-b2b-primary btn-sm product-filter-tab active" data-category="all">All
+                        Items</button>
+                    <button class="btn btn-b2b-outline btn-sm product-filter-tab"
+                        data-category="Nutraceuticals">Nutraceuticals</button>
+                    <button class="btn btn-b2b-outline btn-sm product-filter-tab" data-category="Foods">Food
+                        Ingredients</button>
+                </div>
+            </div>
+
+            <div class="row" id="featured-products-grid">
+                <!-- Javascript populates product cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-b2b">
+        <div class="container" style="max-width: 1320px;">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="brand-logo-container mb-3">
+                        <div class="brand-icon-box">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.6 15.12a2 2 0 01-1.022-.547l-1.428-1.428a2 2 0 010-2.828l8.486-8.486a2 2 0 012.828 0l8.486 8.486a2 2 0 010 2.828l-1.522 1.522z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="brand-name text-white">Bulk<span class="text-info">pharmachem</span></div>
+                            <span class="brand-tagline text-light">Global Bulk Ingredient Logistics</span>
+                        </div>
+                    </div>
+                    <p class="small text-light mb-4" style="line-height: 1.6;">
+                        Direct-from-factory wholesale supply of pharmaceutical APIs, nutraceuticals, food grade
+                        additives, agrochemicals, and specialty industrial chemicals.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products Directory</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog & News</a></li>
+                        <li><a href="contact.html">Global Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">Product Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="category.html?cat=Nutraceuticals">Nutraceutical Ingredients</a></li>
+                        <li><a href="category.html?cat=Foods">Food & Beverage Additives</a></li>
+                        <li><a href="category.html?cat=Agrochemicals">Agrochemical Formulations</a></li>
+                        <li><a href="category.html?cat=Industrial">Industrial Specialties</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">Contact & Support</h5>
+                    <ul class="list-unstyled small text-light lh-lg mb-3 font-mono">
+                        <li><i class="bi bi-geo-alt-fill text-warning me-2"></i> 100 Pharma Way, Suite 400, NJ 08817
+                        </li>
+                        <li><i class="bi bi-telephone-fill text-warning me-2"></i> +1 (800) 555-CHEM</li>
+                        <li><i class="bi bi-envelope-fill text-warning me-2"></i> export@bulkpharmachem.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div>© 2026 <strong>Bulkpharmachem Corporation</strong>. All Rights Reserved.</div>
+                <div class="d-flex gap-3">
+                    <a href="privacy-policy.html" class="text-light">Privacy Policy</a>
+                    <a href="terms.html" class="text-light">Terms of Supply</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back-to-Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up-short fs-3"></i>
+    </button>
+
+    <!-- Bootstrap 5.3 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — TiffinWorld</title>
+  <meta name="description" content="Secure Admin Login portal for TiffinWorld platform administration and management.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom Design System Assets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/admin-auth.css">
+</head>
+
+<body>
+
+  <!-- ==================================================
+       HEADER COMPONENT
+       ================================================== -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="../website/index.html" class="tw-brand-logo">
+            <img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;">
+          </a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="../website/index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="../website/menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="../website/categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="../website/our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="../website/contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="../website/customer-login.html" class="tw-customer-login">Customer Login</a>
+            <a href="../website/vendor-login.html" class="tw-vendor-btn">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav"
+            aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="../website/index.html" class="tw-brand-logo">
+        <img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;">
+      </a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="../website/index.html">Home</a></li>
+        <li><a href="../website/menu.html">Menu</a></li>
+        <li><a href="../website/categories.html">Categories</a></li>
+        <li><a href="../website/our-story.html">Our Story</a></li>
+        <li><a href="../website/contact.html">Contact</a></li>
+        <li><a href="../website/blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="../website/customer-login.html" class="tw-customer-login text-center display-block py-2">Customer
+          Login</a>
+        <a href="../website/vendor-login.html" class="tw-vendor-btn text-center">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================
+       MAIN ADMIN LOGIN SECTION
+       ================================================== -->
+  <main class="admin-auth-section">
+    <div class="tw-container admin-auth-container">
+
+      <div class="admin-login-card">
+        <div class="row g-0">
+
+          <!-- LEFT IMAGE PANEL -->
+          <div class="col-lg-6 admin-login-image-panel d-none d-lg-flex">
+            <div class="admin-login-overlay"></div>
+
+            <div class="admin-login-image-content">
+              <div class="admin-badge-pill">
+                <i class="bi bi-leaf-fill"></i> ADMIN PORTAL
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT FORM PANEL -->
+          <div class="col-lg-6 admin-login-form-panel">
+            <h1 class="admin-form-title">Admin Login</h1>
+            <p class="admin-form-subtitle">Welcome back! Please enter your details.</p>
+
+            <div id="adminAlertContainer"></div>
+
+            <!-- Login Form -->
+            <form id="adminLoginForm" action="index.html" method="POST" novalidate>
+
+              <!-- Email Field -->
+              <div class="mb-4">
+                <label for="adminEmail" class="admin-field-label">Email</label>
+                <div class="admin-input-wrapper">
+                  <i class="bi bi-envelope admin-input-icon"></i>
+                  <input type="email" id="adminEmail" name="email" class="admin-control"
+                    placeholder="vendor@kitchen.com" value="vendor@kitchen.com" required>
+                </div>
+              </div>
+
+              <!-- Password Field -->
+              <div class="mb-3">
+                <div class="admin-password-label-row">
+                  <label for="adminPassword" class="admin-field-label">Password</label>
+                  <a href="#" class="admin-forgot-link">Forgot password?</a>
+                </div>
+                <div class="admin-input-wrapper">
+                  <i class="bi bi-lock admin-input-icon"></i>
+                  <input type="password" id="adminPassword" name="password" class="admin-control admin-control-password"
+                    placeholder="••••••••" value="••••••••" required>
+                  <i class="bi bi-eye admin-eye-toggle" id="toggleAdminPassword"></i>
+                </div>
+              </div>
+
+              <!-- Remember Checkbox Row -->
+              <div class="admin-remember-row">
+                <input type="checkbox" id="rememberAdmin" name="remember" class="admin-custom-checkbox" checked>
+                <label for="rememberAdmin" class="admin-remember-label">Keep me logged in</label>
+              </div>
+
+              <!-- Primary Submit Button -->
+              <button type="submit" class="btn-admin-submit" id="btnAdminSubmit">
+                Sign In to Dashboard
+              </button>
+
+            </form>
+
+            <!-- OR Divider -->
+            <div class="admin-divider-row">
+              <div class="admin-divider-line"></div>
+              <span class="admin-divider-text">OR</span>
+              <div class="admin-divider-line"></div>
+            </div>
+
+            <!-- Google Sign In Button -->
+            <button type="button" class="btn-google-login" id="btnGoogleLogin">
+              <svg class="google-icon-svg" viewBox="0 0 24 24">
+                <path fill="#4285F4"
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                <path fill="#34A853"
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                <path fill="#FBBC05"
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                <path fill="#EA4335"
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+              </svg>
+              Sign In with Google
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================================================
+       FOOTER COMPONENT
+       ================================================== -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <!-- Col 1: Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a href="../website/index.html" class="tw-brand-logo">
+            <img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;">
+          </a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+          <div class="tw-footer-socials">
+            <a href="#" class="tw-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="tw-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="tw-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="../website/index.html">Home</a></li>
+            <li><a href="../website/menu.html">Menu</a></li>
+            <li><a href="../website/categories.html">Categories</a></li>
+            <li><a href="../website/our-story.html">Our Story</a></li>
+            <li><a href="../website/contact.html">Contact</a></li>
+            <li><a href="../website/blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Account -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="../website/customer-login.html">Customer Login</a></li>
+            <li><a href="../website/vendor-login.html">Vendor Login</a></li>
+            <li><a href="../website/terms.html">Terms & Conditions</a></li>
+            <li><a href="../website/policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Subscribe -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required aria-label="Your email">
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark Bottom Bar -->
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn" aria-label="Share"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn" aria-label="Website"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin-auth.js"></script>
+</body>
+
+</html>

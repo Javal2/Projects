@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - United Metal Global Scrap Sourcing</title>
+  
+  <!-- Google Fonts: Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HERO HEADER & NAVBAR -->
+  <header class="hero-section position-relative overflow-visible pb-4">
+    <div class="container pt-3 pt-md-4">
+      <nav class="navbar navbar-expand-xl main-navbar px-3 py-2">
+        <button class="navbar-toggler text-white ms-auto border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <i class="bi bi-list fs-2 text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+          <ul class="navbar-nav align-items-center gap-1 gap-xl-3">
+            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="categories.html">Categories</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="blogs.html">Blogs</a></li>
+            <li class="nav-item ms-xl-2"><a class="btn btn-contact-nav text-white fw-bold active" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container pt-4 pb-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb custom-breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+      </nav>
+      <h1 class="inner-hero-title">Contact Our Global Sourcing Desk</h1>
+      <p class="text-white-50 max-w-720 mb-0">Get in touch with our metal scrap procurement experts, request customized alloy quotes, or visit our corporate office.</p>
+    </div>
+  </header>
+
+  <!-- CONTACT MAIN SECTION -->
+  <section class="contact-section py-5 bg-light">
+    <div class="container py-lg-3">
+      <div class="row g-4 g-xl-5">
+        
+        <!-- Left Column: Contact Form -->
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+            <h2 class="fw-bold mb-2 heading-theme-dark">Send Us a Direct Inquiry</h2>
+            <p class="text-muted small mb-4">Fill out your business requirements below and our commercial sales team will respond within 24 business hours.</p>
+
+            <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you for reaching out to United Metal! Our sales team will get back to you shortly.');">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="contactFullName" class="form-label fw-bold text-secondary small mb-1">Full Name *</label>
+                  <input type="text" class="form-control form-control-lg border-2" id="contactFullName" placeholder="e.g. Rahul Sharma" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactCompany" class="form-label fw-bold text-secondary small mb-1">Company / Organization *</label>
+                  <input type="text" class="form-control form-control-lg border-2" id="contactCompany" placeholder="e.g. Apex Foundries Pvt Ltd" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label fw-bold text-secondary small mb-1">Corporate Email *</label>
+                  <input type="email" class="form-control form-control-lg border-2" id="contactEmail" placeholder="name@company.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactPhone" class="form-label fw-bold text-secondary small mb-1">Phone / WhatsApp *</label>
+                  <input type="tel" class="form-control form-control-lg border-2" id="contactPhone" placeholder="+91 98765 43210" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contactScrapCategory" class="form-label fw-bold text-secondary small mb-1">Scrap Material Category *</label>
+                  <select class="form-select form-select-lg border-2" id="contactScrapCategory" required>
+                    <option value="" selected disabled>Select Category...</option>
+                    <option value="Aluminium Alloy Ingot">Aluminium Alloy (Ingot)</option>
+                    <option value="Aluminium Alloy Liquid">Aluminium Alloy (Liquid)</option>
+                    <option value="Copper & Brass Scrap">Copper &amp; Brass Scrap</option>
+                    <option value="Stainless Steel Scrap">Stainless Steel Scrap</option>
+                    <option value="Zinc & Lead Alloys">Zinc &amp; Lead Alloys</option>
+                    <option value="Industrial Plastic Scrap">Industrial Plastic Scrap</option>
+                    <option value="Other Scrap Materials">Other Scrap Materials</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contactVolume" class="form-label fw-bold text-secondary small mb-1">Expected Monthly Volume (MT)</label>
+                  <input type="text" class="form-control form-control-lg border-2" id="contactVolume" placeholder="e.g. 50 - 200 MT">
+                </div>
+
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label fw-bold text-secondary small mb-1">Requirement Details / Specifications</label>
+                  <textarea class="form-control border-2" id="contactMessage" rows="4" placeholder="Mention required alloy chemical composition, delivery terms (FOB/CIF), destination port, or specific questions..."></textarea>
+                </div>
+
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn btn-theme-green btn-lg w-100 fw-bold py-3">
+                    Send Inquiry <i class="bi bi-send-fill ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Details Cards -->
+        <div class="col-lg-5">
+          <div class="d-flex flex-column gap-4">
+            
+            <!-- Address Card -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle p-3 text-success bg-light fs-4 d-flex align-items-center justify-content-center" style="width: 54px; height: 54px;">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-0 heading-theme-dark">Corporate Headquarters</h5>
+                  <span class="text-muted small">Registered Business Location</span>
+                </div>
+              </div>
+              <p class="text-secondary small mb-2"><strong>CMR Green Technologies Ltd.</strong></p>
+              <p class="text-secondary small mb-2">
+                7th Floor, Tower 2, L &amp; T Business Park,<br>
+                12/4 Delhi Mathura Road,<br>
+                Faridabad-121003, Haryana, India.
+              </p>
+              <p class="text-secondary small mb-0"><strong>CIN:</strong> L00337HR2005PLC085675</p>
+            </div>
+
+            <!-- Direct Contact Card -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle p-3 text-success bg-light fs-4 d-flex align-items-center justify-content-center" style="width: 54px; height: 54px;">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-0 heading-theme-dark">Direct Support &amp; Sales</h5>
+                  <span class="text-muted small">Procurement Desk</span>
+                </div>
+              </div>
+              <div class="d-flex flex-column gap-2">
+                <div class="d-flex align-items-center gap-2 text-secondary small">
+                  <i class="bi bi-envelope-fill text-success fs-5"></i>
+                  <span><strong>Email:</strong> complianceofficer@cmr.co.in</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 text-secondary small">
+                  <i class="bi bi-telephone-fill text-success fs-5"></i>
+                  <span><strong>Phone:</strong> +91 129 4223050</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 text-secondary small">
+                  <i class="bi bi-clock-fill text-success fs-5"></i>
+                  <span><strong>Hours:</strong> Mon - Sat: 9:00 AM - 6:30 PM (IST)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trust Badge Card -->
+            <div class="card border-0 shadow-sm rounded-4 p-4 text-white" style="background: linear-gradient(135deg, #163610 0%, #0d240a 100%);">
+              <h5 class="fw-bold text-white mb-2"><i class="bi bi-shield-check text-success me-2"></i> Quality Certified Partner</h5>
+              <p class="text-white-50 small mb-3">All metal scrap shipments are OES spectro certified with verified chemical specifications and global containerized shipping.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-success bg-opacity-25 text-white border border-success border-opacity-50 px-3 py-2">ISO 9001:2015</span>
+                <span class="badge bg-success bg-opacity-25 text-white border border-success border-opacity-50 px-3 py-2">Spectro Tested</span>
+                <span class="badge bg-success bg-opacity-25 text-white border border-success border-opacity-50 px-3 py-2">FOB / CIF Shipping</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-expenses-bar py-4">
+    <div class="container py-2">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <h3 class="expenses-cta-title text-white fw-bold mb-0">Scrap your expenses, not your goals and we will be happy to assist you further.</h3>
+        <a href="inquire.html" class="btn btn-purple-inquire-now flex-shrink-0 fw-bold">Inquire Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION WITH FAQ AND CRANE OVERLAY -->
+  <div class="faq-footer-joint-container position-relative overflow-hidden">
+    <div class="crane-overlay-container position-absolute">
+      <img src="assets/footer image.png" alt="Sennebogen Green Material Handler Crane" class="crane-overlay-img">
+    </div>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section-wrapper position-relative" id="faq">
+      <div class="container position-relative z-2">
+        <div class="row">
+          <div class="col-lg-7 col-md-8">
+            <h2 class="faq-title-green fw-extrabold text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion custom-faq-collapsible" id="faqAccordionMain">
+              
+              <!-- Accordion 1 (Expanded) -->
+              <div class="accordion-item mb-3 border-0">
+                <h3 class="accordion-header" id="headingItemOne">
+                  <button class="accordion-button custom-faq-header-btn fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItemOne" aria-expanded="true" aria-controls="collapseItemOne">
+                    Which is the largest metal recycling company in India?
+                  </button>
+                </h3>
+                <div id="collapseItemOne" class="accordion-collapse collapse show" aria-labelledby="headingItemOne" data-bs-parent="#faqAccordionMain">
+                  <div class="accordion-body custom-faq-body-dark">
+                    CMR Green Technologies Ltd. is the largest metal recycling company in India.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion 2 -->
+              <div class="accordion-item mb-3 border-0">
+                <h3 class="accordion-header" id="headingItemTwo">
+                  <button class="accordion-button custom-faq-header-btn collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItemTwo" aria-expanded="false" aria-controls="collapseItemTwo">
+                    What is scrap metal recycling?
+                  </button>
+                </h3>
+                <div id="collapseItemTwo" class="accordion-collapse collapse" aria-labelledby="headingItemTwo" data-bs-parent="#faqAccordionMain">
+                  <div class="accordion-body custom-faq-body-dark">
+                    Scrap metal recycling involves the recovery and processing of scrap metal from end-of-life products or structures, so that it can be introduced as a raw material in the production of new goods.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion 3 -->
+              <div class="accordion-item mb-3 border-0">
+                <h3 class="accordion-header" id="headingItemThree">
+                  <button class="accordion-button custom-faq-header-btn collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItemThree" aria-expanded="false" aria-controls="collapseItemThree">
+                    How does metal recycling work?
+                  </button>
+                </h3>
+                <div id="collapseItemThree" class="accordion-collapse collapse" aria-labelledby="headingItemThree" data-bs-parent="#faqAccordionMain">
+                  <div class="accordion-body custom-faq-body-dark">
+                    Metal recycling works by collecting scrap, sorting it into ferrous and non-ferrous categories, shredding it, melting it in large furnaces, purifying it, and solidifying it into bars or sheets for reuse.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion 4 -->
+              <div class="accordion-item mb-3 border-0">
+                <h3 class="accordion-header" id="headingItemFour">
+                  <button class="accordion-button custom-faq-header-btn collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItemFour" aria-expanded="false" aria-controls="collapseItemFour">
+                    What kind of scrap metal is worth money?
+                  </button>
+                </h3>
+                <div id="collapseItemFour" class="accordion-collapse collapse" aria-labelledby="headingItemFour" data-bs-parent="#faqAccordionMain">
+                  <div class="accordion-body custom-faq-body-dark">
+                    Non-ferrous metals like copper, brass, aluminum, and stainless steel yield higher value per pound, while bulk ferrous metals like heavy melting steel and cast iron are also highly valuable in volume.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accordion 5 -->
+              <div class="accordion-item mb-3 border-0">
+                <h3 class="accordion-header" id="headingItemFive">
+                  <button class="accordion-button custom-faq-header-btn collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItemFive" aria-expanded="false" aria-controls="collapseItemFive">
+                    What can be done with scrap metal?
+                  </button>
+                </h3>
+                <div id="collapseItemFive" class="accordion-collapse collapse" aria-labelledby="headingItemFive" data-bs-parent="#faqAccordionMain">
+                  <div class="accordion-body custom-faq-body-dark">
+                    Scrap metal can be remelted into new alloys, automotive parts, structural steel beams, consumer appliances, liquid metal for foundries, and sustainable industrial packaging.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer-container-section pt-4 pb-4 position-relative" id="contact">
+      <div class="container position-relative z-2">
+        <div class="row g-3 g-xl-4 align-items-start footer-content-row">
+          <!-- Quick Links Column -->
+          <div class="col-lg-3 col-md-3 col-6">
+            <h4 class="footer-sec-title text-white fw-bold mb-3">Quick Links</h4>
+            <ul class="list-unstyled footer-links-list mb-0">
+              <li><a href="#">Aluminium Alloy (Ingot)</a></li>
+              <li><a href="#">Zinc Alloy</a></li>
+              <li><a href="#">Aluminium Alloy (Liquid)</a></li>
+              <li><a href="#">Aluminium Billets</a></li>
+              <li><a href="#">Stainless Steel Recycling</a></li>
+              <li><a href="#">Scrap Items We Buy</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Navigation Column -->
+          <div class="col-lg-2 col-md-3 col-6">
+            <h4 class="footer-sec-title text-white fw-bold mb-3">Company</h4>
+            <ul class="list-unstyled footer-links-list mb-0">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Us Details Column -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <h4 class="footer-sec-title text-white fw-bold mb-3">Contact Us</h4>
+            <div class="footer-contact-details">
+              <p class="mb-2">CMR Green Technologies Ltd.</p>
+              <p class="mb-2">
+                7th Floor, Tower 2, L &amp; T Business Park,<br>
+                12/4 Delhi Mathura Road,<br>
+                Faridabad-121003, Haryana.
+              </p>
+              <p class="mb-2"><strong>CIN:</strong> L00337HR2005PLC085675</p>
+              <p class="mb-2"><strong class="text-white">Email:</strong> complianceofficer@cmr.co.in</p>
+              <p class="mb-0"><strong class="text-white">Ph No:</strong> +91 129 4223050</p>
+            </div>
+          </div>
+
+          <!-- White Square Box Container -->
+          <div class="col-lg-3 col-md-3 col-12">
+            <div class="footer-square-box rounded-1 shadow-sm"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

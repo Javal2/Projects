@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiry Details — TiffinWorld</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- FIXED WHITE SIDEBAR (280px, EXACT 5 MENU ITEMS) -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div>
+        <div class="sidebar-header justify-content-between">
+          <a href="index.html" class="d-flex align-items-center gap-3">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px;">
+                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.46 3.9 3.45 4.38l-.95 7.62h2.5l.95-7.62C10.54 12.9 12 11.12 12 9V2h-1v7zm8.5-7h-1.5c-1.66 0-3 1.34-3 3v5c0 1.66 1.34 3 3 3v8h2V2z" />
+              </svg>
+            </div>
+            <span class="brand-title">TiffinWorld</span>
+          </a>
+          <button class="btn-close d-lg-none" id="sidebarClose" aria-label="Close"></button>
+        </div>
+
+        <div class="sidebar-menu">
+          <!-- Item 1: Dashboard -->
+          <a href="index.html" class="sidebar-nav-item">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <!-- Item 2: Inquiries Sent -->
+          <a href="enquiries.html" class="sidebar-nav-item active">
+            <i class="bi bi-chat-quote-fill"></i>
+            <span>Inquiries Sent</span>
+          </a>
+
+          <!-- Item 3: Profile -->
+          <a href="profile.html" class="sidebar-nav-item">
+            <i class="bi bi-person-fill"></i>
+            <span>Profile</span>
+          </a>
+
+          <!-- Item 4: Help -->
+          <a href="help.html" class="sidebar-nav-item">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 5: Logout (Bottom) -->
+      <div class="sidebar-footer">
+        <a href="../website/customer-login.html" class="sidebar-nav-item mb-0 text-tw-danger">
+          <i class="bi bi-box-arrow-right text-tw-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="app-main">
+
+      <!-- HEADER NAVBAR (80px) -->
+      <header class="app-header">
+        <div class="d-flex align-items-center gap-2">
+          <button class="sidebar-toggler" id="sidebarToggler" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <h1 class="header-page-title">Inquiry Details #ENQ-4029</h1>
+        </div>
+
+        <div class="header-search">
+          <i class="bi bi-search"></i>
+          <input type="text" class="form-control" placeholder="Search in thread...">
+        </div>
+
+        <div class="header-actions">
+          <a href="../website/menu.html" class="btn-visit-menu">
+            <i class="bi bi-shop"></i> Visit Menu
+          </a>
+
+          <a href="enquiries.html" class="btn btn-tw-secondary btn-sm">
+            <i class="bi bi-arrow-left me-1"></i> Back to Inquiries
+          </a>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT -->
+      <main class="app-content">
+
+        <!-- SPLIT LAYOUT -->
+        <div class="row g-4">
+          <!-- LEFT COLUMN: INQUIRY INFORMATION & CONVERSATION -->
+          <div class="col-lg-8">
+            
+            <!-- Inquiry Info Summary Card -->
+            <div class="card-tw mb-4">
+              <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-3">
+                <div>
+                  <span class="badge badge-status-blue mb-1">Active Inquiry</span>
+                  <h4 class="font-heading mb-0 fs-4">Custom Corporate Lunch Box (Jain Special)</h4>
+                </div>
+                <div class="text-end">
+                  <span class="text-tw-grey d-block" style="font-size: 0.78rem;">Quotation Amount</span>
+                  <strong class="font-heading text-tw-orange fs-3">$450.00</strong>
+                </div>
+              </div>
+              
+              <div class="row g-3">
+                <div class="col-6 col-sm-3">
+                  <span class="form-label-uppercase d-block">Quantity</span>
+                  <strong class="text-tw-dark fs-6">45 Packs / Day</strong>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <span class="form-label-uppercase d-block">Timeline</span>
+                  <strong class="text-tw-dark fs-6">Aug 01 - Aug 31</strong>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <span class="form-label-uppercase d-block">Delivery</span>
+                  <strong class="text-tw-dark fs-6">12:00 PM Sharp</strong>
+                </div>
+                <div class="col-6 col-sm-3">
+                  <span class="form-label-uppercase d-block">Date Created</span>
+                  <strong class="text-tw-dark fs-6">28 Jul 2026</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conversation Timeline Card -->
+            <div class="card-tw mb-4">
+              <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
+                <h5 class="font-heading mb-0 fs-5"><i class="bi bi-chat-left-text text-tw-orange me-2"></i> Conversation Timeline</h5>
+                <span class="text-tw-grey fs-6">Chef Rajesh Sharma</span>
+              </div>
+
+              <!-- Chat Messages Stream -->
+              <div class="d-flex flex-column gap-3 mb-4 p-3 bg-tw-card rounded-card" style="min-height: 320px; max-height: 480px; overflow-y: auto;">
+                
+                <!-- Outgoing (Customer: Orange) -->
+                <div class="chat-bubble-outgoing">
+                  <p class="mb-1 fs-6">Hello Royal Kitchens! I need a custom quotation for 45 Jain special lunch boxes delivered daily to our Financial District office starting August 1st.</p>
+                  <span class="d-block text-end opacity-75" style="font-size:0.7rem;">28 Jul, 09:30 AM</span>
+                </div>
+
+                <!-- Incoming (Vendor: White) -->
+                <div class="chat-bubble-incoming">
+                  <p class="mb-1 fs-6">Namaste Alex! Thank you for reaching out. We specialize in 100% authentic Jain meals without onion & garlic. Below is our proposed quotation and daily rotating menu.</p>
+                  
+                  <div class="p-2 border rounded-btn bg-tw-card mt-2 d-flex align-items-center gap-2">
+                    <i class="bi bi-file-earmark-pdf-fill text-tw-orange fs-3"></i>
+                    <div class="flex-grow-1 min-width-0">
+                      <strong class="d-block fs-6 text-truncate">Jain_Menu_Quotation.pdf</strong>
+                      <span class="text-tw-grey" style="font-size:0.75rem;">1.4 MB • PDF Document</span>
+                    </div>
+                    <a href="#" class="btn btn-tw-primary btn-sm px-2 py-1"><i class="bi bi-download"></i></a>
+                  </div>
+
+                  <span class="d-block text-muted mt-2" style="font-size:0.7rem;">28 Jul, 10:15 AM</span>
+                </div>
+
+                <!-- Outgoing (Customer: Orange) -->
+                <div class="chat-bubble-outgoing">
+                  <p class="mb-1 fs-6">Looks great! Does the quote include bio-degradable eco-friendly packaging and Friday dessert options?</p>
+                  <span class="d-block text-end opacity-75" style="font-size:0.7rem;">28 Jul, 10:45 AM</span>
+                </div>
+
+                <!-- Incoming (Vendor: White) -->
+                <div class="chat-bubble-incoming">
+                  <p class="mb-1 fs-6">Yes, absolutely! All packaging is 100% cornstarch eco-friendly boxes, and Friday desserts are included free of charge.</p>
+                  <span class="d-block text-muted" style="font-size:0.7rem;">28 Jul, 11:05 AM</span>
+                </div>
+
+              </div>
+
+              <!-- Reply Editor Box -->
+              <div class="p-3 bg-white border rounded-card">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <textarea class="form-control form-control-tw border-0 bg-tw-card" rows="2" placeholder="Write your reply to vendor..."></textarea>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <button class="btn btn-tw-secondary btn-sm px-3">
+                    <i class="bi bi-paperclip me-1"></i> Attach File
+                  </button>
+                  <button class="btn btn-tw-primary px-4">
+                    <i class="bi bi-send-fill me-1"></i> Send Reply
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: VENDOR CARD & CONTACT INFO -->
+          <div class="col-lg-4">
+            <div class="card-tw mb-4 text-center">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=80" alt="Vendor" class="rounded-avatar mx-auto mb-3 shadow-sm" style="width: 100px; height: 100px; object-fit: cover;">
+              <h5 class="font-heading mb-1 fs-5">Royal Kitchens Pvt. Ltd.</h5>
+              <span class="text-tw-grey d-block mb-3 fs-6"><i class="bi bi-star-fill text-warning me-1"></i>4.9 (1,280+ Reviews)</span>
+
+              <div class="p-3 bg-tw-card rounded-btn text-start mb-4">
+                <div class="mb-2">
+                  <span class="form-label-uppercase d-block">Certified Chef</span>
+                  <strong class="text-tw-dark fs-6">Chef Rajesh Sharma</strong>
+                </div>
+                <div class="mb-2">
+                  <span class="form-label-uppercase d-block">Location</span>
+                  <span class="text-tw-dark fs-6">Financial District, 2.4 km</span>
+                </div>
+                <div>
+                  <span class="form-label-uppercase d-block">Specialties</span>
+                  <span class="text-tw-dark fs-6">Pure Veg, Jain & North Indian</span>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column gap-2">
+                <a href="tel:+1555000111" class="btn btn-tw-secondary w-100">
+                  <i class="bi bi-telephone-fill me-1"></i> Call Vendor
+                </a>
+                <button class="btn btn-tw-primary w-100">
+                  <i class="bi bi-file-earmark-pdf me-1"></i> Download Quotation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- MODERN FOOTER (72px) -->
+      <footer class="app-footer">
+        <div>
+          <span>© 2026 <strong>TiffinWorld</strong>. All rights reserved.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="help.html">Support</a>
+        </div>
+        <div>
+          <span class="text-tw-grey">Version 2.4 • Bootstrap 5.3 • Responsive</span>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

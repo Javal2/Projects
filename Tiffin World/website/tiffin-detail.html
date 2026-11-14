@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Artisan Taco — TiffinWorld</title>
+  <meta name="description" content="Authentic Flavors, Modern Craft. Our Artisan Taco features locally sourced corn, hand-pressed tortillas, and 24-hour braised proteins.">
+  
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  
+  <!-- Custom TiffinWorld Design System CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- ==================================================
+       SECTION 01 — HEADER (SHARED COMPONENT)
+       ================================================== -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link active">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="customer-login.html" class="tw-customer-login">Customer Login</a>
+            <a href="vendor-login.html" class="tw-vendor-btn">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================================================
+         SECTION 02 — PRODUCT HERO / MAIN INFORMATION
+         ================================================== -->
+    <section class="tw-detail-hero-section">
+      <div class="tw-container">
+        <div class="row g-4 align-items-start">
+          <!-- Left Column (56%): Large Dominant Product Photo -->
+          <div class="col-lg-7">
+            <div class="tw-product-img-card">
+              <!-- Top-Left Badge -->
+              <span class="tw-farm-badge">
+                <i class="bi bi-tree"></i> FARM-TO-TABLE
+              </span>
+              <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=1000&auto=format&fit=crop" 
+                   alt="The Artisan Taco" class="tw-main-detail-img">
+            </div>
+          </div>
+
+          <!-- Right Column (44%): Purchase & Vendor Controls -->
+          <div class="col-lg-5">
+            <!-- Eyebrow Category -->
+            <div class="tw-product-eyebrow">
+              <i class="bi bi-shop"></i> MEXICAN FUSION
+            </div>
+
+            <!-- Title -->
+            <h1 class="tw-product-h1">The Artisan Taco</h1>
+
+            <!-- Rating -->
+            <div class="tw-detail-rating">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <span class="count">(128 reviews)</span>
+            </div>
+
+            <!-- Purchase Card -->
+            <div class="tw-purchase-card">
+              <!-- Price Row -->
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="tw-detail-price">
+                  ₹120.00 <span>/ meal</span>
+                </div>
+                <span class="tw-best-value-badge">Best Value</span>
+              </div>
+
+              <!-- Choose Your Plan Segmented Control -->
+              <label class="tw-plan-label">CHOOSE YOUR PLAN</label>
+              <div class="tw-plan-segmented">
+                <div class="tw-plan-opt active">Daily</div>
+                <div class="tw-plan-opt">Weekly</div>
+                <div class="tw-plan-opt">Monthly</div>
+              </div>
+
+              <!-- Available Meal Options -->
+              <label class="tw-plan-label">AVAILABLE MEAL OPTIONS</label>
+              <div class="tw-option-pills">
+                <div class="tw-opt-pill active">Main Course</div>
+                <div class="tw-opt-pill">Snacks</div>
+                <div class="tw-opt-pill">Dessert</div>
+              </div>
+
+              <!-- Delivery Coverage Box -->
+              <div class="tw-delivery-box">
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                  <div class="label">DELIVERY COVERAGE</div>
+                  <div class="val">Downtown, Westside, Green Valley</div>
+                </div>
+              </div>
+
+              <!-- Primary Full Width CTA -->
+              <button class="btn-product-inquiry tw-inquiry-btn" data-meal="The Artisan Taco" data-vendor="The Green Kitchen" data-image="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=400&auto=format&fit=crop" data-location="Downtown Conservatory Hub, District 4">
+                Inquiry Now <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Vendor Mini Card -->
+            <a href="vendor-profile.html" class="tw-vendor-mini-card">
+              <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=200&auto=format&fit=crop" 
+                     alt="Jay's Kitchen" class="tw-vendor-avatar-sm">
+                <div>
+                  <div class="tw-vendor-label-sm">Vendor</div>
+                  <div class="tw-vendor-name-sm">Jay's Kitchen</div>
+                </div>
+              </div>
+              <i class="bi bi-chevron-right text-success fs-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ==================================================
+             SECTION 03 — REDESIGNED PRODUCT DETAILS TABBED PANEL
+             ================================================== -->
+        <div class="product-details-panel">
+          <!-- Tab Navigation Strip -->
+          <ul class="nav tw-detail-nav-tabs" id="productDetailsTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc-tab-pane" type="button" role="tab" aria-controls="desc-tab-pane" aria-selected="true">
+                Description
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients-tab-pane" type="button" role="tab" aria-controls="ingredients-tab-pane" aria-selected="false">
+                Ingredients
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="delivery-tab" data-bs-toggle="tab" data-bs-target="#delivery-tab-pane" type="button" role="tab" aria-controls="delivery-tab-pane" aria-selected="false">
+                Delivery Info
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews-tab-pane" type="button" role="tab" aria-controls="reviews-tab-pane" aria-selected="false">
+                Reviews (128)
+              </button>
+            </li>
+          </ul>
+
+          <!-- Tab Content Panels -->
+          <div class="tab-content tw-details-tab-content" id="productDetailsTabContent">
+            
+            <!-- 1. Description Tab -->
+            <div class="tab-pane fade show active" id="desc-tab-pane" role="tabpanel" aria-labelledby="desc-tab" tabindex="0">
+              <h2 class="tw-tab-heading">About This Meal</h2>
+              <p class="tw-description-body">
+                Our Artisan Taco isn't just a meal; it's a curated experience. We source our corn from local heritage farms, hand-pressing every tortilla to order. The filling features slow-braised proteins marinated for 24 hours in a secret blend of twelve spices, finished with garden-fresh microgreens.
+              </p>
+
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <div class="tw-benefit-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Freshly prepared home-style recipe</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tw-benefit-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>No unnecessary preservatives</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tw-benefit-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Made by a verified kitchen host</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tw-benefit-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Strict hygienic preparation standards</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Ingredients Tab (Reference 01) -->
+            <div class="tab-pane fade" id="ingredients-tab-pane" role="tabpanel" aria-labelledby="ingredients-tab" tabindex="0">
+              <h2 class="tw-ingredients-heading">Full Ingredient List</h2>
+              <div class="tw-ingredients-divider"></div>
+
+              <div class="tw-ingredients-wrapper">
+                <div class="tw-ingredient-chip">Pasture-raised chicken breast</div>
+                <div class="tw-ingredient-chip">Organic tri-color quinoa</div>
+                <div class="tw-ingredient-chip">Wild-harvested kale</div>
+                <div class="tw-ingredient-chip">Artisan lemon zest</div>
+                <div class="tw-ingredient-chip">Heirloom cherry tomatoes</div>
+                <div class="tw-ingredient-chip">Maldon sea salt</div>
+                <div class="tw-ingredient-chip">Napa Valley extra virgin olive oil</div>
+                <div class="tw-ingredient-chip">Fresh wild rosemary</div>
+                <div class="tw-ingredient-chip">Organic garlic bulbs</div>
+                <div class="tw-ingredient-chip">Cracked peppercorns</div>
+              </div>
+            </div>
+
+            <!-- 3. Delivery Info Tab (Reference 02) -->
+            <div class="tab-pane fade" id="delivery-tab-pane" role="tabpanel" aria-labelledby="delivery-tab" tabindex="0">
+              <h2 class="tw-delivery-heading">Delivery Info.</h2>
+              
+              <p class="tw-delivery-desc">
+                Delivered hot and fresh within your selected window. We offer flexible delivery options to suit your schedule.
+              </p>
+
+              <div class="row tw-delivery-features-row g-4">
+                <div class="col-lg-4 col-md-6">
+                  <div class="tw-delivery-feature-item">
+                    <span class="tw-delivery-check-icon"><i class="bi bi-check-lg"></i></span>
+                    <div>
+                      <span class="tw-delivery-feature-label">Delivery Time</span>
+                      <span class="tw-delivery-feature-val">30–40 mins</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                  <div class="tw-delivery-feature-item">
+                    <span class="tw-delivery-check-icon"><i class="bi bi-check-lg"></i></span>
+                    <div>
+                      <span class="tw-delivery-feature-label">Quality Guarantee</span>
+                      <span class="tw-delivery-feature-val">100% Fresh</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                  <div class="tw-delivery-feature-item">
+                    <span class="tw-delivery-check-icon"><i class="bi bi-check-lg"></i></span>
+                    <div>
+                      <span class="tw-delivery-feature-label">Service Area</span>
+                      <span class="tw-delivery-feature-val">5 km Radius</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Reviews Tab (References 03 & 04) -->
+            <div class="tab-pane fade" id="reviews-tab-pane" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
+              
+              <!-- State Toggle Switch for Static Preview -->
+              <div class="d-flex align-items-center justify-content-end mb-3 gap-2">
+                <span class="small text-muted font-body">Preview State:</span>
+                <button type="button" class="btn btn-sm btn-outline-success active" id="btnStateLoggedIn">Logged In (Ref 03)</button>
+                <button type="button" class="btn btn-sm btn-outline-warning" id="btnStateLoggedOut">Logged Out (Ref 04)</button>
+              </div>
+
+              <div class="row g-4 g-lg-5 align-items-start">
+                <!-- Left: Customer Review Summary Card -->
+                <div class="col-lg-5">
+                  <div class="tw-review-summary-card">
+                    <span class="tw-summary-label">CUSTOMER REVIEWS</span>
+                    <div class="tw-summary-score">4.8</div>
+                    <div class="tw-summary-stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </div>
+                    <div class="tw-summary-count">128 reviews</div>
+                  </div>
+
+                  <!-- Logged-Out Customer Login CTA (Reference 04) -->
+                  <div class="tw-logged-out-review-cta d-none" id="loggedOutCtaBlock">
+                    <h3 class="tw-login-prompt-title">LOGIN TO LEAVE REVIEW</h3>
+                    <a href="customer-login.html" class="btn-customer-login-cta">Customer Login</a>
+                  </div>
+                </div>
+
+                <!-- Right: Review Intro & Overall Quality -->
+                <div class="col-lg-7">
+                  <h2 class="tw-review-intro-title">Leave a Review</h2>
+                  <p class="tw-review-intro-sub">
+                    Share your culinary experience with our community. Your feedback helps us maintain the editorial standard.
+                  </p>
+
+                  <span class="tw-quality-label">OVERALL QUALITY</span>
+                  
+                  <div class="tw-star-rating-widget" data-rating="5">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <input type="hidden" name="rating" id="reviewRatingInput" value="5">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Logged-in Customer Comment Form (Reference 03) -->
+              <div class="tw-comments-wrapper" id="loggedInCommentsBlock">
+                <form id="reviewFormStatic" action="#" method="POST">
+                  <label for="reviewCommentsStatic" class="tw-comments-label">COMMENTS</label>
+                  <textarea id="reviewCommentsStatic" name="comments" class="tw-review-textarea" placeholder="Describe the flavors, texture, and your overall thoughts..." required></textarea>
+
+                  <div class="tw-submit-review-wrap">
+                    <button type="submit" class="btn-submit-review">
+                      Submit Review
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Script for Static Preview Toggle -->
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  const btnIn = document.getElementById('btnStateLoggedIn');
+                  const btnOut = document.getElementById('btnStateLoggedOut');
+                  const commentsBlock = document.getElementById('loggedInCommentsBlock');
+                  const loggedOutBlock = document.getElementById('loggedOutCtaBlock');
+
+                  if (btnIn && btnOut) {
+                    btnIn.addEventListener('click', function() {
+                      btnIn.classList.add('btn-outline-success', 'active');
+                      btnIn.classList.remove('btn-outline-secondary');
+                      btnOut.classList.remove('active', 'btn-outline-warning');
+                      btnOut.classList.add('btn-outline-secondary');
+
+                      commentsBlock.classList.remove('d-none');
+                      loggedOutBlock.classList.add('d-none');
+                    });
+
+                    btnOut.addEventListener('click', function() {
+                      btnOut.classList.add('btn-outline-warning', 'active');
+                      btnOut.classList.remove('btn-outline-secondary');
+                      btnIn.classList.remove('active', 'btn-outline-success');
+                      btnIn.classList.add('btn-outline-secondary');
+
+                      commentsBlock.classList.add('d-none');
+                      loggedOutBlock.classList.remove('d-none');
+                    });
+                  }
+                });
+              </script>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- ==================================================
+             SECTION 04 — RECOMMENDATIONS (4 COLUMNS DESKTOP)
+             ================================================== -->
+        <div class="tw-recommend-section">
+          <div class="d-flex align-items-end justify-content-between mb-4">
+            <div>
+              <span class="text-orange font-heading fw-semibold small text-uppercase letter-spacing-1 d-block mb-1">RECOMMENDATIONS</span>
+              <h2 class="h2 font-heading fw-bold text-success mb-0">You Might Also Like</h2>
+            </div>
+            <a href="menu.html" class="text-orange font-heading fw-semibold text-decoration-none fs-6">View Full Menu ↗</a>
+          </div>
+
+          <!-- 4 Card Grid -->
+          <div class="row g-4">
+            <!-- Rec 1 -->
+            <div class="col-xl-3 col-md-6">
+              <div class="tw-recommend-card">
+                <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop" 
+                     alt="Cheesy Quesadilla" class="tw-rec-img">
+                <h4 class="tw-rec-title">Cheesy Quesadilla</h4>
+                <p class="tw-rec-desc">Hand-folded with melted artisanal cheeses and salsa.</p>
+                <div class="d-flex align-items-center justify-content-between mt-auto">
+                  <span class="tw-rec-price">₹150.00</span>
+                  <a href="tiffin-detail.html" class="btn-rec-view">View</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rec 2 -->
+            <div class="col-xl-3 col-md-6">
+              <div class="tw-recommend-card">
+                <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=600&auto=format&fit=crop" 
+                     alt="Classic Burrito" class="tw-rec-img">
+                <h4 class="tw-rec-title">Classic Burrito</h4>
+                <p class="tw-rec-desc">Stuffed with seasoned rice, beans, and fresh guacamole.</p>
+                <div class="d-flex align-items-center justify-content-between mt-auto">
+                  <span class="tw-rec-price">₹180.00</span>
+                  <a href="tiffin-detail.html" class="btn-rec-view">View</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rec 3 -->
+            <div class="col-xl-3 col-md-6">
+              <div class="tw-recommend-card">
+                <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=600&auto=format&fit=crop" 
+                     alt="Street Corn Bowl" class="tw-rec-img">
+                <h4 class="tw-rec-title">Street Corn Bowl</h4>
+                <p class="tw-rec-desc">Charred corn, cotija cheese, lime chili glaze.</p>
+                <div class="d-flex align-items-center justify-content-between mt-auto">
+                  <span class="tw-rec-price">₹90.00</span>
+                  <a href="tiffin-detail.html" class="btn-rec-view">View</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rec 4 -->
+            <div class="col-xl-3 col-md-6">
+              <div class="tw-recommend-card">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop" 
+                     alt="Agua Fresca" class="tw-rec-img">
+                <h4 class="tw-rec-title">Agua Fresca</h4>
+                <p class="tw-rec-desc">Refreshing hibiscus and fresh mint fruit water.</p>
+                <div class="d-flex align-items-center justify-content-between mt-auto">
+                  <span class="tw-rec-price">₹60.00</span>
+                  <a href="tiffin-detail.html" class="btn-rec-view">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================
+       SECTION 05 — FOOTER (SHARED COMPONENT)
+       ================================================== -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <!-- Col 1: Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+          <div class="tw-footer-socials">
+            <a href="#" class="tw-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="tw-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="tw-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Account -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="vendor-login.html">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Subscribe -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required aria-label="Your email">
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark Bottom Bar -->
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn" aria-label="Share"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn" aria-label="Website"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================================================
+       TIFFINWORLD — REDESIGNED INQUIRY MODAL (HTML PREVIEW)
+       ================================================== -->
+  <div class="modal fade tw-inquiry-modal" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalTitle" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="row g-0">
+          
+          <!-- LEFT VISUAL PANEL -->
+          <div class="col-lg-4 col-md-5 inquiry-image-panel d-none d-md-flex">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=800&auto=format&fit=crop" 
+                 alt="Premium Culinary Experience" class="inquiry-bg-img" id="inquiryModalBgImg">
+            <div class="inquiry-gradient-overlay"></div>
+            <div class="inquiry-left-content">
+              <div class="inquiry-left-eyebrow">PREMIUM CONSERVATORY</div>
+              <h4 class="inquiry-left-title">Elevating your<br>culinary journey.</h4>
+            </div>
+          </div>
+
+          <!-- RIGHT FORM PANEL -->
+          <div class="col-lg-8 col-md-7 inquiry-form-panel">
+            
+            <!-- FORM HEADER -->
+            <div class="inquiry-form-header">
+              <h2 class="inquiry-form-title" id="inquiryModalTitle">Place Your Inquiry</h2>
+              <p class="inquiry-form-subtitle">Request a personalized booking for your selected plan</p>
+              <button type="button" class="inquiry-close-btn" data-bs-dismiss="modal" aria-label="Close inquiry form">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            <!-- SUCCESS STATE (Hidden by default) -->
+            <div id="inquirySuccessState" class="inquiry-success-box d-none">
+              <i class="bi bi-check-circle-fill inquiry-success-icon"></i>
+              <h3 class="inquiry-success-title">Inquiry Sent Successfully</h3>
+              <p class="inquiry-success-text">Your request has been delivered to the kitchen host. We will contact you shortly with personalized plan details and scheduling.</p>
+              <button type="button" class="inquiry-btn-submit mx-auto" data-bs-dismiss="modal">Done</button>
+            </div>
+
+            <!-- MAIN INQUIRY FORM -->
+            <form id="inquiryForm" action="#" method="POST" novalidate>
+              <input type="hidden" name="product_id" id="inquiryProductId" value="">
+              <input type="hidden" name="vendor_id" id="inquiryVendorId" value="">
+              <input type="hidden" name="plan_id" id="inquiryPlanId" value="">
+              <input type="hidden" name="quantity" id="inquiryQuantityInput" value="2">
+
+              <!-- SELECTED PLAN SUMMARY CARD -->
+              <div class="inquiry-plan-card">
+                <div class="d-flex align-items-center gap-3">
+                  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=200&auto=format&fit=crop" 
+                       alt="Selected Plan" class="inquiry-plan-thumb" id="inquiryModalThumb">
+                  <div>
+                    <span class="inquiry-card-tag">SELECTED PLAN</span>
+                    <h5 class="inquiry-plan-name" id="inquiryModalMealName">Artisan Taco</h5>
+                  </div>
+                </div>
+                <div class="text-md-end text-start">
+                  <span class="inquiry-card-tag">VENDOR</span>
+                  <h5 class="inquiry-vendor-name" id="inquiryModalVendorName">The Green Kitchen</h5>
+                </div>
+              </div>
+
+              <!-- SECTION 1 — PERSONAL DETAILS -->
+              <div class="inquiry-section-title">PERSONAL DETAILS</div>
+              <div class="row g-3 mb-2">
+                <div class="col-md-6">
+                  <label for="inquiryFullName" class="inquiry-label">Full Name</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-person inquiry-input-icon"></i>
+                    <input type="text" id="inquiryFullName" name="full_name" class="inquiry-control" 
+                           placeholder="Johnathan Doe" value="Johnathan Doe" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="inquiryPhone" class="inquiry-label">Phone Number</label>
+                  <div class="inquiry-phone-group">
+                    <select name="country_code" class="inquiry-phone-prefix-select" aria-label="Country Code">
+                      <option value="+91" selected>🇮🇳 +91</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+1">🇨🇦 +1</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+65">🇸🇬 +65</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+974">🇶🇦 +974</option>
+                      <option value="+977">🇳🇵 +977</option>
+                    </select>
+                    <input type="tel" id="inquiryPhone" name="phone" class="inquiry-control inquiry-control-noicon" 
+                           placeholder="000 000 0000" value="98765 43210" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="inquiryEmail" class="inquiry-label">Email Address</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-envelope inquiry-input-icon"></i>
+                    <input type="email" id="inquiryEmail" name="email" class="inquiry-control" 
+                           placeholder="j.doe@conservatory.com" value="j.doe@conservatory.com" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION 2 — ORDER LOGISTICS -->
+              <div class="inquiry-section-title">ORDER LOGISTICS</div>
+              <div class="row g-3 mb-2">
+                <div class="col-md-4">
+                  <label class="inquiry-label">Quantity</label>
+                  <div class="inquiry-qty-stepper">
+                    <button type="button" class="inquiry-qty-btn" id="btnQtyMinus" aria-label="Decrease quantity">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                    <span class="inquiry-qty-val" id="inquiryQtyDisplay">02</span>
+                    <button type="button" class="inquiry-qty-btn" id="btnQtyPlus" aria-label="Increase quantity">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="inquiryDate" class="inquiry-label">Preferred Date</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-calendar3 inquiry-input-icon"></i>
+                    <input type="date" id="inquiryDate" name="preferred_date" class="inquiry-control" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="inquiryTime" class="inquiry-label">Time Window</label>
+                  <div class="inquiry-input-wrapper inquiry-select-wrapper">
+                    <i class="bi bi-clock inquiry-input-icon"></i>
+                    <select id="inquiryTime" name="time_window" class="inquiry-control inquiry-select" required>
+                      <option value="Morning" selected>Morning</option>
+                      <option value="Afternoon">Afternoon</option>
+                      <option value="Evening">Evening</option>
+                    </select>
+                    <i class="bi bi-chevron-down inquiry-select-chevron"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION 3 — LOCATION & DIRECTIONS -->
+              <div class="inquiry-section-title">LOCATION & DIRECTIONS</div>
+              <div class="inquiry-location-card mb-3">
+                <i class="bi bi-geo-alt-fill inquiry-location-icon"></i>
+                <div>
+                  <span class="inquiry-card-tag" style="font-size: 11px;">DELIVERY LOCATION</span>
+                  <h6 class="inquiry-location-val" id="inquiryModalLocation">Downtown Conservatory Hub, District 4</h6>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="inquiryAddress" class="inquiry-label">Address & Landmarks</label>
+                <textarea id="inquiryAddress" name="address" class="inquiry-control inquiry-control-noicon" 
+                          placeholder="Specific apartment number, building floor, or gate instructions..." required></textarea>
+              </div>
+
+              <!-- FOOTER DIVIDER & ACTIONS -->
+              <div class="inquiry-footer-divider"></div>
+              <div class="d-flex align-items-center justify-content-end inquiry-footer-actions gap-3">
+                <button type="button" class="inquiry-btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="inquiry-btn-submit" id="btnSubmitInquiry">
+                  Send Inquiry <i class="bi bi-send-fill ms-1"></i>
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3 JS Bundle & Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

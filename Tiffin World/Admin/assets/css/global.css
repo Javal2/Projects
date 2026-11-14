@@ -1,0 +1,83 @@
+/* ==================================================
+   TIFFINWORLD — GLOBAL & UTILITY STYLES
+   ================================================== */
+
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--tw-text-grey);
+  background-color: var(--tw-off-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: var(--font-heading);
+  color: var(--tw-green);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Container & Fluid Padding */
+.tw-container {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .tw-container {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tw-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .tw-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tw-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Links */
+a {
+  color: var(--tw-green);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--tw-orange);
+}

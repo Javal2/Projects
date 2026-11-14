@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Management — Tiffinworld Vendor Panel</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Vendor SaaS Design System CSS -->
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="vendor-wrapper">
+  <!-- Sidebar -->
+  <aside class="vendor-sidebar">
+    <div>
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon-box p-1">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo">
+        </div>
+        <div>
+          <h1 class="brand-title">TiffinWorld</h1>
+        </div>
+      </a>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html" class="menu-item-link">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="menu-item-link">
+            <i class="bi bi-archive-fill"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="menu-planner.html" class="menu-item-link">
+            <i class="bi bi-calendar3"></i>
+            <span>Menu Planner</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="menu-item-link">
+            <i class="bi bi-person-fill"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="seller-website.html" class="menu-item-link">
+            <i class="bi bi-globe"></i>
+            <span>Seller Website</span>
+          </a>
+        </li>
+        <li>
+          <a href="help.html" class="menu-item-link">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help</span>
+          </a>
+        </li>
+        <li>
+          <a href="inquiries.html" class="menu-item-link">
+            <i class="bi bi-chat-quote-fill"></i>
+            <span>Inquiries</span>
+          </a>
+        </li>
+        <li>
+          <a href="plans.html" class="menu-item-link">
+            <i class="bi bi-journal-bookmark-fill"></i>
+            <span>Plans</span>
+          </a>
+        </li>
+        <li>
+          <a href="delivery-setup.html" class="menu-item-link active">
+            <i class="bi bi-truck"></i>
+            <span>Delivery Location Setup</span>
+            <i class="bi bi-chevron-down caret-icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-logout-card">
+      <a href="../website/vendor-login.html" class="logout-btn-outline">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Log Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="vendor-main-content">
+    <!-- Header Component -->
+    <header class="vendor-header">
+      <div class="header-search-wrap">
+        <i class="bi bi-search header-search-icon"></i>
+        <input type="text" id="headerSearchInput" class="header-search-input" placeholder="Search orders, products...">
+      </div>
+
+      <div class="header-actions">
+        <a href="../website/index.html" target="_blank" class="btn-visit-site-orange">
+          <i class="bi bi-box-arrow-up-right me-1"></i>
+          <span>Visit Website</span>
+        </a>
+
+        <div class="vendor-header-profile">
+          <div class="vendor-header-info">
+            <div class="vendor-header-name">The Green Kitchen</div>
+            <div class="vendor-header-tag">PREMIUM VENDOR</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Chef Avatar" class="vendor-header-avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body Content -->
+    <div class="page-body-container">
+      <!-- Title & Header Action Row -->
+      <div class="d-flex justify-content-between align-items-start gap-3 mb-4 flex-wrap">
+        <div>
+          <h2 class="fw-bold mb-2" style="color: #15803D; font-size: 34px;">Delivery Management</h2>
+          <p class="text-secondary mb-0" style="font-size: 15px; max-width: 620px; line-height: 1.5;">
+            Optimize your logistics and reach your customers efficiently. Configure regional zones, fees, and operational status for your curated delivery fleet.
+          </p>
+        </div>
+
+        <button class="btn text-white rounded-3 px-4 py-2.5 fw-bold shadow-sm" style="background: #2D4030;" onclick="if(typeof showToast==='function') showToast('Add new location modal opened!');">
+          <i class="bi bi-plus-circle me-2"></i> Add New Location
+        </button>
+      </div>
+
+      <!-- Top 3 Metrics Stat Bar Card -->
+      <div class="card p-4 rounded-4 border-1 border-light-subtle shadow-sm mb-4" style="background: #EFF6FF; border-color: #DBEAFE !important;">
+        <div class="row align-items-center text-center text-md-start g-3">
+          <!-- Metric 1 -->
+          <div class="col-md-4 border-end-md">
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+              <div class="rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: #DBEAFE; color: #3B82F6;">
+                <i class="bi bi-map fs-5"></i>
+              </div>
+              <div>
+                <div class="text-uppercase fw-bold text-secondary" style="font-size: 11px; letter-spacing: 0.8px;">TOTAL ZONES</div>
+                <div class="fw-bold" style="color: #15803D; font-size: 20px;">12 Active</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metric 2 -->
+          <div class="col-md-4 border-end-md">
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+              <div class="rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: #FFEAD2; color: #FF7F00;">
+                <i class="bi bi-graph-up-arrow fs-5"></i>
+              </div>
+              <div>
+                <div class="text-uppercase fw-bold text-secondary" style="font-size: 11px; letter-spacing: 0.8px;">AVG. DELIVERY FEE</div>
+                <div class="fw-bold text-dark" style="font-size: 20px;">$8.50</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metric 3 -->
+          <div class="col-md-4">
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+              <div class="rounded-3 p-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: #FFEAD2; color: #FF7F00;">
+                <i class="bi bi-clock-history fs-5"></i>
+              </div>
+              <div>
+                <div class="text-uppercase fw-bold text-secondary" style="font-size: 11px; letter-spacing: 0.8px;">LEAD TIME</div>
+                <div class="fw-bold" style="color: #15803D; font-size: 20px;">45-60 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Delivery Locations Table Card -->
+      <div class="card p-4 rounded-4 border-1 border-light-subtle shadow-sm bg-white" style="border-color: #DBEAFE !important;">
+        <!-- Card Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+          <h5 class="fw-bold mb-0" style="color: var(--primary-orange);">Active Delivery Locations</h5>
+          
+          <div class="d-flex align-items-center" style="width: 240px; background: #EFF6FF; border: 1.5px solid #DBEAFE; border-radius: 99px; padding: 6px 16px;">
+            <i class="bi bi-search text-secondary me-2"></i>
+            <input type="text" class="border-0 bg-transparent small w-100" placeholder="Filter locations...">
+          </div>
+        </div>
+
+        <!-- Table Component -->
+        <div class="table-responsive mb-4">
+          <table class="table table-hover align-middle mb-0" style="border-color: #F1F5F9;">
+            <thead style="background: #EFF6FF;">
+              <tr>
+                <th class="py-3 px-3 fw-bold border-0" style="color: #15803D; font-size: 12px; letter-spacing: 0.5px;">LOCATION</th>
+                <th class="py-3 px-3 fw-bold border-0" style="color: #15803D; font-size: 12px; letter-spacing: 0.5px;">COVERAGE AREAS</th>
+                <th class="py-3 px-3 fw-bold border-0" style="color: #15803D; font-size: 12px; letter-spacing: 0.5px;">DELIVERY FEE</th>
+                <th class="py-3 px-3 fw-bold border-0" style="color: #15803D; font-size: 12px; letter-spacing: 0.5px;">STATUS</th>
+                <th class="py-3 px-3 fw-bold border-0 text-end" style="color: #15803D; font-size: 12px; letter-spacing: 0.5px;">ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td class="py-3.5 px-3">
+                  <div class="fw-bold text-dark fs-6">Angus, Canada</div>
+                  <div class="text-secondary extra-small">Ontario Central Hub</div>
+                </td>
+                <td class="py-3.5 px-3">
+                  <span class="badge rounded-pill px-3 py-2 fw-medium" style="background: #EFF6FF; color: #334155; font-size: 12px;">Entire City</span>
+                </td>
+                <td class="py-3.5 px-3 fw-bold text-dark">
+                  $35.00 / km
+                </td>
+                <td class="py-3.5 px-3">
+                  <span class="badge rounded-pill px-3 py-1.5 fw-bold" style="background: #86EFAC; color: #166534; font-size: 11px;">ACTIVE</span>
+                </td>
+                <td class="py-3.5 px-3 text-end">
+                  <div class="d-flex justify-content-end gap-2">
+                    <button class="btn btn-sm btn-light rounded-circle text-secondary p-2" title="View" onclick="if(typeof showToast==='function') showToast('Viewing Angus location');"><i class="bi bi-eye"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle text-success p-2" title="Edit" onclick="if(typeof showToast==='function') showToast('Editing Angus location');"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle text-danger p-2" title="Delete" onclick="if(typeof showToast==='function') showToast('Location removed', 'error');"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr>
+                <td class="py-3.5 px-3">
+                  <div class="fw-bold text-dark fs-6">Vaughan, Canada</div>
+                  <div class="text-secondary extra-small">GTA North Terminal</div>
+                </td>
+                <td class="py-3.5 px-3">
+                  <span class="badge rounded-pill px-3 py-2 me-1 fw-medium" style="background: #EFF6FF; color: #334155; font-size: 12px;">Core Urban</span>
+                  <span class="badge rounded-pill px-3 py-2 fw-medium" style="background: #EFF6FF; color: #334155; font-size: 12px;">+2 Zones</span>
+                </td>
+                <td class="py-3.5 px-3 fw-bold text-dark">
+                  $42.50 / km
+                </td>
+                <td class="py-3.5 px-3">
+                  <span class="badge rounded-pill px-3 py-1.5 fw-bold" style="background: #86EFAC; color: #166534; font-size: 11px;">ACTIVE</span>
+                </td>
+                <td class="py-3.5 px-3 text-end">
+                  <div class="d-flex justify-content-end gap-2">
+                    <button class="btn btn-sm btn-light rounded-circle text-secondary p-2" title="View" onclick="if(typeof showToast==='function') showToast('Viewing Vaughan location');"><i class="bi bi-eye"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle text-success p-2" title="Edit" onclick="if(typeof showToast==='function') showToast('Editing Vaughan location');"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle text-danger p-2" title="Delete" onclick="if(typeof showToast==='function') showToast('Location removed', 'error');"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr>
+                <td class="py-3.5 px-3">
+                  <div class="fw-bold text-dark fs-6">Barrie, Canada</div>
+                  <div class="text-secondary extra-small">Simcoe South Outpost</div>
+                </td>
+                <td class="py-3.5 px-3">
+                  <span class="badge rounded-pill px-3 py-2 fw-medium" style="background: #EFF6FF; color: #334155; font-size: 12px;">Regional Only</span>
+                </td>
+                <td class="py-3.5 px-3 fw-bold text-dark">
+                  $28.00 / km
+                </td>
+                <td class="py-3.5 px-3">
+                  <span class="badge rounded-pill px-3 py-1.5 fw-bold" style="background: #BFDBFE; color: #1E40AF; font-size: 11px;">INACTIVE</span>
+                </td>
+                <td class="py-3.5 px-3 text-end">
+                  <div class="d-flex justify-content-end gap-2">
+                    <button class="btn btn-sm btn-light rounded-circle text-secondary p-2" title="View" onclick="if(typeof showToast==='function') showToast('Viewing Barrie location');"><i class="bi bi-eye"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle text-success p-2" title="Edit" onclick="if(typeof showToast==='function') showToast('Editing Barrie location');"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-sm btn-light rounded-circle text-danger p-2" title="Delete" onclick="if(typeof showToast==='function') showToast('Location removed', 'error');"><i class="bi bi-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination Row -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 pt-2">
+          <div class="text-secondary small">
+            Showing 3 of 18 delivery locations
+          </div>
+
+          <div class="d-flex align-items-center gap-1">
+            <button class="btn btn-sm rounded-circle p-2" style="background: #EFF6FF; color: #475569; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-chevron-left"></i></button>
+            <button class="btn btn-sm rounded-circle fw-bold text-white p-2" style="background: #2D4030; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;">1</button>
+            <button class="btn btn-sm rounded-circle fw-medium text-dark p-2" style="background: #EFF6FF; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;">2</button>
+            <button class="btn btn-sm rounded-circle fw-medium text-dark p-2" style="background: #EFF6FF; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;">3</button>
+            <button class="btn btn-sm rounded-circle fw-medium text-dark p-2" style="background: #EFF6FF; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;">4</button>
+            <button class="btn btn-sm rounded-circle p-2" style="background: #EFF6FF; color: #475569; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;"><i class="bi bi-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor-main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1750 @@
+/* ==========================================================================
+   FLEMMING PHARMA - PREMIUM DESIGN SYSTEM & CUSTOM STYLES
+   Updated Color Palette:
+   - Primary: #004683
+   - Dark Headings: #1A1A1A
+   - Border / Card Light: #F0F0F0
+   - Section Background: #F9FCFF
+   - Body & Muted Text: #6A6A6A
+   - Main Background: #FCFCFC
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  /* Updated Brand Palette */
+  --pharma-primary: #004683;
+  --pharma-primary-dark: #002E57;
+  --pharma-secondary: #0066BE;
+  --pharma-secondary-light: #F9FCFF;
+  --pharma-accent: #004683;
+  --pharma-accent-light: #F0F0F0;
+
+  /* Neutral Palette */
+  --pharma-bg: #FCFCFC;
+  --pharma-bg-alt: #F9FCFF;
+  --pharma-bg-light: #F0F0F0;
+  --pharma-heading: #1A1A1A;
+  --pharma-body: #6A6A6A;
+  --pharma-muted: #6A6A6A;
+  --pharma-border: #F0F0F0;
+
+  /* Gradients */
+  --pharma-gradient-primary: linear-gradient(135deg, #004683 0%, #0066BE 100%);
+  --pharma-gradient-accent: linear-gradient(135deg, #004683 0%, #1A1A1A 100%);
+  --pharma-gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #004683 100%);
+  --pharma-gradient-mesh: radial-gradient(at 0% 0%, rgba(0, 70, 131, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(26, 26, 26, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(0, 102, 190, 0.04) 0px, transparent 50%);
+
+  /* Shadows */
+  --pharma-shadow-sm: 0 4px 16px rgba(0, 70, 131, 0.06);
+  --pharma-shadow-md: 0 10px 30px rgba(0, 70, 131, 0.09);
+  --pharma-shadow-lg: 0 20px 50px rgba(0, 70, 131, 0.14);
+  --pharma-shadow-glow: 0 0 30px rgba(0, 70, 131, 0.3);
+
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-number: 'DM Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 115px;
+  font-size: 16px;
+}
+
+/* Offset for fixed navbar anchor links */
+:target,
+.service-hero-card,
+section[id] {
+  scroll-margin-top: 115px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--pharma-body);
+  background-color: var(--pharma-bg);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--font-heading);
+  color: var(--pharma-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Bold Display Headings & Page Headers */
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.fw-extrabold,
+.page-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+}
+
+h1,
+.h1 {
+  font-weight: 800 !important;
+}
+
+.font-number {
+  font-family: var(--font-number);
+  font-weight: 700;
+}
+
+.text-gradient {
+  background: var(--pharma-gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: var(--pharma-gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   PURE TIMELINE STREAM WORKFLOW (COMPLETELY CARDLESS & BORDERLESS)
+   ========================================================================== */
+.pipeline-track-wrapper {
+  position: relative;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.pipeline-stream-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: transparent;
+  border: none;
+  padding: 0 0.5rem;
+}
+
+.pipeline-number-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #004683;
+  font-family: var(--font-number);
+  font-weight: 800;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem auto;
+  border: 3px solid #004683;
+  box-shadow: 0 4px 15px rgba(0, 70, 131, 0.15);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pipeline-stream-step:hover .pipeline-number-badge,
+.pipeline-stream-step.active .pipeline-number-badge {
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF;
+  border-color: #16C6E5;
+  transform: scale(1.18);
+  box-shadow: 0 0 25px rgba(0, 102, 190, 0.45);
+}
+/* ==========================================================================
+   LIGHT-MODE CINEMATIC SCROLL STYLES
+   ========================================================================== */
+body.has-cinematic-intro .navbar-pharma,
+body.has-cinematic-intro .hero-section {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Instant 0ms skip when returning to homepage */
+html.skip-cinematic-intro #cinematic-scroll-trigger,
+html.skip-cinematic-intro #cinematic-canvas-container,
+html.skip-cinematic-intro #cinematic-intro-text,
+html.skip-cinematic-intro #cinematic-logo-assembly {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html.skip-cinematic-intro body.has-cinematic-intro .navbar-pharma,
+html.skip-cinematic-intro body.has-cinematic-intro .hero-section,
+html.skip-cinematic-intro #main-website-wrapper {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+#cinematic-scroll-trigger {
+  position: relative;
+  height: 400vh;
+  width: 100%;
+}
+
+#cinematic-canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1050;
+  pointer-events: none;
+  background: radial-gradient(circle at center, #FFFFFF 0%, #F9FCFF 100%);
+  transition: opacity 0.5s ease;
+}
+
+#cinematic-intro-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1060;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.cinematic-intro-top {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.cinematic-intro-bottom {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.cinematic-scroll-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.5rem;
+  background: rgba(252, 252, 252, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--pharma-primary);
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 70, 131, 0.12);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--pharma-primary);
+}
+
+.scroll-pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: #16C6E5;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #16C6E5;
+  animation: pulse-dot 1.8s infinite;
+}
+
+/* Dark Navy Gradient Background for Hero & Featured Banners */
+.bg-gradient-primary-dark {
+  background: linear-gradient(135deg, #001f3f 0%, #003366 40%, #004683 100%) !important;
+  color: #ffffff !important;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 198, 229, 0.7); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(22, 198, 229, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 198, 229, 0); }
+}
+
+.intro-corner-left {
+  position: absolute;
+  bottom: 24px;
+  left: 45px;
+  z-index: 1060;
+  text-align: left;
+}
+
+.intro-corner-right {
+  position: absolute;
+  bottom: 24px;
+  right: 45px;
+  z-index: 1060;
+  text-align: right;
+}
+
+#cinematic-logo-assembly {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1065;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cinematic-scroll-trigger {
+    display: none !important;
+  }
+
+  #cinematic-canvas-container {
+    display: none !important;
+  }
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(252, 252, 252, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--pharma-border);
+  box-shadow: var(--pharma-shadow-md);
+  border-radius: 1.25rem;
+}
+
+.hover-card {
+  background: #FFFFFF;
+  border: 1px solid var(--pharma-border);
+  border-radius: 1.25rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hover-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--pharma-primary);
+  box-shadow: 0 16px 36px rgba(0, 70, 131, 0.08);
+}
+
+.glass-card-dark {
+  background: rgba(26, 26, 26, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border-radius: 1.25rem;
+}
+
+/* Navigation Bar - Locked Fixed Dimension Header */
+.navbar-pharma {
+  padding: 0.75rem 0 !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  background: rgba(252, 252, 252, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--pharma-border);
+  box-shadow: 0 4px 20px rgba(0, 70, 131, 0.05);
+}
+
+.navbar-pharma.scrolled {
+  padding: 0.75rem 0 !important;
+  background: rgba(252, 252, 252, 0.98) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 70, 131, 0.08);
+  border-bottom: 1px solid var(--pharma-border);
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--pharma-primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  background: var(--pharma-gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 15px rgba(0, 70, 131, 0.25);
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.925rem;
+  color: var(--pharma-heading) !important;
+  padding: 0.5rem 0.85rem !important;
+  position: relative;
+  transition: color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--pharma-primary) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2.5px;
+  background: var(--pharma-gradient-primary);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 65%;
+}
+
+/* Suppress default Bootstrap dropdown caret to avoid position conflict */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Inline dropdown chevron arrow styling */
+.dropdown-arrow-icon {
+  font-size: 0.75rem;
+  margin-left: 0.35rem;
+  transition: transform 0.25s ease;
+  opacity: 0.8;
+}
+
+.dropdown:hover .dropdown-arrow-icon,
+.dropdown.show .dropdown-arrow-icon {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Mega Menu & Submenus */
+.dropdown-menu-pharma {
+  border: 1px solid var(--pharma-border);
+  border-radius: 1rem;
+  box-shadow: var(--pharma-shadow-lg);
+  padding: 1.25rem;
+  background: rgba(252, 252, 252, 0.98);
+  backdrop-filter: blur(20px);
+}
+
+@media (min-width: 992px) {
+  .navbar-pharma .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    animation: fadeInDropdown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Buttons */
+.btn-pharma-primary {
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF !important;
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 70, 131, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-pharma-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--pharma-shadow-glow);
+  color: #FFFFFF;
+}
+
+.btn-pharma-outline {
+  background: transparent;
+  color: var(--pharma-primary) !important;
+  border: 2px solid var(--pharma-primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.8rem 1.7rem;
+  border-radius: 50rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-pharma-outline:hover {
+  background: var(--pharma-primary);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: var(--pharma-shadow-sm);
+}
+
+.btn-pharma-accent {
+  background: var(--pharma-gradient-accent);
+  color: #FFFFFF !important;
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(26, 26, 26, 0.25);
+}
+
+.btn-pharma-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 70, 131, 0.35);
+}
+
+/* Section Backgrounds & Containers */
+.section-py {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.bg-light-mesh {
+  background-color: var(--pharma-bg-alt);
+  background-image: var(--pharma-gradient-mesh);
+}
+
+.bg-dark-pharma {
+  background: var(--pharma-gradient-dark);
+  color: #FFFFFF;
+}
+
+.bg-blue-soft {
+  background-color: var(--pharma-bg-alt);
+}
+
+/* ==========================================================================
+   GLOBAL PRESENCE REDESIGNED LAYOUT STYLES
+   ========================================================================== */
+.regional-hub-card {
+  background: #FFFFFF;
+  border: 1px solid #F0F0F0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 70, 131, 0.03);
+}
+
+.regional-hub-card:hover {
+  transform: translateY(-6px);
+  border-color: #004683;
+  box-shadow: 0 12px 30px rgba(0, 70, 131, 0.1);
+}
+
+.map-pulse-ring {
+  animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    r: 6px;
+    opacity: 0.9;
+  }
+
+  50% {
+    r: 18px;
+    opacity: 0.3;
+  }
+
+  100% {
+    r: 28px;
+    opacity: 0;
+  }
+}
+
+.map-hub-node {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.map-hub-node:hover {
+  transform: scale(1.25);
+}
+
+/* Badge styling */
+.pharma-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(0, 70, 131, 0.08);
+  color: var(--pharma-primary);
+  border: 1px solid rgba(0, 70, 131, 0.2);
+}
+
+.pharma-badge-accent {
+  background: rgba(26, 26, 26, 0.08);
+  color: var(--pharma-heading);
+  border: 1px solid rgba(26, 26, 26, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 70, 131, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(26, 26, 26, 0.04) 0%, transparent 40%);
+}
+
+#hero-3d-canvas {
+  width: 100%;
+  height: 600px;
+  display: block;
+  cursor: grab;
+}
+
+#hero-3d-canvas:active {
+  cursor: grabbing;
+}
+
+/* Floating Statistics Card */
+.stat-card-floating {
+  background: rgba(252, 252, 252, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--pharma-border);
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  box-shadow: var(--pharma-shadow-md);
+  transition: all 0.4s ease;
+}
+
+.stat-card-floating:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--pharma-shadow-lg);
+}
+
+/* Keyframes */
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+  animation: floatSlow 7s ease-in-out 1s infinite;
+}
+
+/* Card Hover Micro-Interactions */
+.hover-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--pharma-border);
+  border-radius: 1.25rem;
+  background: #FCFCFC;
+  overflow: hidden;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--pharma-shadow-lg);
+  border-color: var(--pharma-primary);
+}
+
+.hover-card .card-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(0, 70, 131, 0.08);
+  color: var(--pharma-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover .card-icon-box {
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF;
+  transform: scale(1.08);
+}
+
+/* Feature Icon Circle */
+.feature-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 70, 131, 0.25);
+  margin-bottom: 1.5rem;
+}
+
+/* Timeline & Process */
+.process-step-card {
+  position: relative;
+  background: #FCFCFC;
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--pharma-border);
+  box-shadow: var(--pharma-shadow-sm);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.process-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--pharma-shadow-md);
+  border-color: var(--pharma-primary);
+}
+
+.step-number-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 70, 131, 0.3);
+}
+
+/* Product Card Gallery */
+.product-card {
+  border-radius: 1.25rem;
+  border: 1px solid var(--pharma-border);
+  background: #FCFCFC;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--pharma-shadow-lg);
+  border-color: var(--pharma-primary);
+}
+
+.product-card-img {
+  height: 220px;
+  background: var(--pharma-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card-img img {
+  max-height: 80%;
+  max-width: 80%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card-img img {
+  transform: scale(1.08);
+}
+
+/* Global Presence Interactive Map */
+.world-map-container {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(0, 70, 131, 0.04) 0%, transparent 70%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid var(--pharma-border);
+}
+
+.map-hotspot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--pharma-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(0, 70, 131, 0.7);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 70, 131, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 70, 131, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 70, 131, 0);
+  }
+}
+
+/* Modern Section Headers */
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+.section-header .sub-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--pharma-primary);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+/* Certifications Glass Grid */
+.cert-card {
+  background: rgba(252, 252, 252, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--pharma-border);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--pharma-shadow-md);
+  border-color: var(--pharma-primary);
+}
+
+.cert-badge-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 70, 131, 0.08);
+  color: var(--pharma-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 1.25rem auto;
+}
+
+/* Footer Styling */
+.footer-pharma {
+  background: var(--pharma-heading);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-pharma::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--pharma-gradient-primary);
+}
+
+.footer-title {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+  padding-left: 5px;
+}
+
+.social-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+/* Footer Subscribe Pill Wrapper */
+.footer-subscribe-wrapper {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.footer-subscribe-wrapper:focus-within {
+  border-color: #16C6E5;
+  box-shadow: 0 0 18px rgba(22, 198, 229, 0.3);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.footer-subscribe-wrapper input.form-control {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  color: #FFFFFF !important;
+  font-size: 0.875rem !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.footer-subscribe-wrapper input.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.75) !important;
+  opacity: 1 !important;
+  font-size: 0.85rem !important;
+}
+
+.footer-subscribe-wrapper input.form-control:focus {
+  color: #FFFFFF !important;
+  background: transparent !important;
+}
+
+.footer-subscribe-wrapper button {
+  white-space: nowrap !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.5px;
+}
+
+/* Scroll reveal utility classes */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F0F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pharma-primary);
+}
+
+/* Media Queries */
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  #hero-3d-canvas {
+    height: 400px;
+  }
+
+  .section-py {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* ==========================================================================
+   CINEMATIC SCROLL INTRO – FLEMMING PHARMA
+   ========================================================================== */
+
+/* 1. SCROLL TRIGGER CONTAINER
+   Creates the scrollable height that drives the GSAP scrub.
+   The canvas is pinned inside this tall block. */
+#cinematic-scroll-trigger {
+  position: relative;
+  height: 600vh; /* ~6 viewport heights of scroll travel */
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 2. CANVAS CONTAINER
+   Fills the viewport, pinned by GSAP ScrollTrigger. */
+#cinematic-canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9000;
+  background: #f8fbff;   /* crisp light background matching the light-mode scene */
+  display: none;          /* JS sets to block on load */
+  transition: opacity 0.3s ease;
+}
+
+/* The Three.js canvas itself */
+#cinematic-canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* 3. INTRO TEXT OVERLAY – Stage 1
+   Sits above the 3D canvas, split top / bottom around the capsule. */
+#cinematic-intro-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9100;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  transition: opacity 0.15s linear;
+}
+
+/* Top block – headline sits above the 3D capsule */
+.cinematic-intro-top {
+  padding: 2.5rem 2rem 0;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Bottom block – subtitle + scroll cue */
+.cinematic-intro-bottom {
+  padding: 0 2rem 2.5rem;
+  text-align: center;
+}
+
+/* Corner decorative info chips */
+.intro-corner-left,
+.intro-corner-right {
+  position: fixed;
+  bottom: 2.5rem;
+  z-index: 9110;
+  line-height: 1.3;
+}
+
+.intro-corner-left  { left: 2rem;  text-align: left; }
+.intro-corner-right { right: 2rem; text-align: right; }
+
+/* 4. SCROLL PILL CUE */
+.cinematic-scroll-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 70, 131, 0.08);
+  border: 1px solid rgba(0, 70, 131, 0.18);
+  border-radius: 50px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pharma-primary);
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(6px);
+  animation: pillFloat 2.4s ease-in-out infinite;
+}
+
+.scroll-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pharma-primary);
+  animation: pulseDot 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0.5; }
+}
+
+@keyframes pillFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+/* 5. LOGO ASSEMBLY OVERLAY – Stage 5 */
+#cinematic-logo-assembly {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9200;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s linear;
+  width: 90%;
+  max-width: 600px;
+}
+
+/* 6. NAVBAR & HERO: hidden until intro completes
+   (JS controls opacity; CSS sets initial state) */
+body.has-cinematic-intro .navbar-pharma {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+body.has-cinematic-intro .hero-section {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* 7. REDUCED-MOTION FALLBACK
+   Immediately shows the page without intro animation. */
+@media (prefers-reduced-motion: reduce) {
+  body.has-cinematic-intro .navbar-pharma,
+  body.has-cinematic-intro .hero-section {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  #cinematic-scroll-trigger,
+  #cinematic-intro-text,
+  #cinematic-logo-assembly {
+    display: none !important;
+  }
+}
+
+/* 8. RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+  .cinematic-intro-top {
+    padding-top: 1.5rem;
+  }
+
+  .cinematic-intro-top .display-4 {
+    font-size: 1.6rem;
+  }
+
+  #cinematic-logo-assembly .display-3 {
+    font-size: 2rem;
+  }
+
+  .intro-corner-left,
+  .intro-corner-right {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   PRODUCT CATALOG LAYOUT SYSTEM (MODERN PHARMA SPEC)
+   ========================================================================== */
+
+/* Top Dosage Form Cards Grid */
+.dosage-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .dosage-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .dosage-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dosage-card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 0.8rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 70, 131, 0.12);
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.dosage-card-btn .dosage-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.dosage-card-btn .dosage-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.15rem;
+  text-align: center;
+}
+
+.dosage-card-btn .dosage-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+/* Color thematic styles for dosage form buttons matching reference image identity with elevated modern palette */
+.dosage-card-btn[data-dosage="tablet"] .dosage-icon-box { background: rgba(245, 158, 11, 0.15); color: #d97706; }
+.dosage-card-btn[data-dosage="tablet"]:hover, .dosage-card-btn[data-dosage="tablet"].active { background: #d97706; color: #ffffff; border-color: #d97706; }
+.dosage-card-btn[data-dosage="tablet"]:hover .dosage-icon-box, .dosage-card-btn[data-dosage="tablet"].active .dosage-icon-box { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+.dosage-card-btn[data-dosage="capsule"] .dosage-icon-box { background: rgba(2, 132, 199, 0.15); color: #0284c7; }
+.dosage-card-btn[data-dosage="capsule"]:hover, .dosage-card-btn[data-dosage="capsule"].active { background: #0284c7; color: #ffffff; border-color: #0284c7; }
+.dosage-card-btn[data-dosage="capsule"]:hover .dosage-icon-box, .dosage-card-btn[data-dosage="capsule"].active .dosage-icon-box { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+.dosage-card-btn[data-dosage="drops"] .dosage-icon-box { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.dosage-card-btn[data-dosage="drops"]:hover, .dosage-card-btn[data-dosage="drops"].active { background: #10b981; color: #ffffff; border-color: #10b981; }
+.dosage-card-btn[data-dosage="drops"]:hover .dosage-icon-box, .dosage-card-btn[data-dosage="drops"].active .dosage-icon-box { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+.dosage-card-btn[data-dosage="injection"] .dosage-icon-box { background: rgba(225, 29, 72, 0.15); color: #e11d48; }
+.dosage-card-btn[data-dosage="injection"]:hover, .dosage-card-btn[data-dosage="injection"].active { background: #e11d48; color: #ffffff; border-color: #e11d48; }
+.dosage-card-btn[data-dosage="injection"]:hover .dosage-icon-box, .dosage-card-btn[data-dosage="injection"].active .dosage-icon-box { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+.dosage-card-btn[data-dosage="creams"] .dosage-icon-box { background: rgba(124, 58, 237, 0.15); color: #7c3aed; }
+.dosage-card-btn[data-dosage="creams"]:hover, .dosage-card-btn[data-dosage="creams"].active { background: #7c3aed; color: #ffffff; border-color: #7c3aed; }
+.dosage-card-btn[data-dosage="creams"]:hover .dosage-icon-box, .dosage-card-btn[data-dosage="creams"].active .dosage-icon-box { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+.dosage-card-btn[data-dosage="syrup"] .dosage-icon-box { background: rgba(30, 41, 59, 0.15); color: #1e293b; }
+.dosage-card-btn[data-dosage="syrup"]:hover, .dosage-card-btn[data-dosage="syrup"].active { background: #1e293b; color: #ffffff; border-color: #1e293b; }
+.dosage-card-btn[data-dosage="syrup"]:hover .dosage-icon-box, .dosage-card-btn[data-dosage="syrup"].active .dosage-icon-box { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+.dosage-card-btn[data-dosage="other"] .dosage-icon-box { background: rgba(202, 138, 4, 0.15); color: #ca8a04; }
+.dosage-card-btn[data-dosage="other"]:hover, .dosage-card-btn[data-dosage="other"].active { background: #ca8a04; color: #ffffff; border-color: #ca8a04; }
+.dosage-card-btn[data-dosage="other"]:hover .dosage-icon-box, .dosage-card-btn[data-dosage="other"].active .dosage-icon-box { background: rgba(255, 255, 255, 0.2); color: #ffffff; }
+
+/* Left Sidebar Category Navigation */
+.pharma-category-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 70, 131, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 70, 131, 0.04);
+}
+
+.pharma-category-header {
+  background: linear-gradient(135deg, #004683 0%, #0066be 100%);
+  color: #ffffff;
+  padding: 1.1rem 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pharma-category-search-box {
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pharma-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 580px;
+  overflow-y: auto;
+}
+
+.pharma-category-item {
+  border-bottom: 1px solid #f1f5f9;
+}
+.pharma-category-item:last-child {
+  border-bottom: none;
+}
+
+.pharma-category-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.pharma-category-link:hover {
+  background: #f8fafc;
+  color: var(--pharma-primary);
+  padding-left: 1.45rem;
+}
+
+.pharma-category-link.active {
+  background: rgba(0, 70, 131, 0.06);
+  color: var(--pharma-primary);
+  font-weight: 700;
+  border-left: 4px solid var(--pharma-primary);
+  padding-left: 1.15rem;
+}
+
+.pharma-category-link .cat-count-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.18rem 0.5rem;
+  border-radius: 20px;
+  background: #e2e8f0;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.pharma-category-link.active .cat-count-badge {
+  background: var(--pharma-primary);
+  color: #ffffff;
+}
+
+/* Alphabetic Jump Bar */
+.alphabet-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  background: #ffffff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 70, 131, 0.1);
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.alphabet-pill {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.alphabet-pill:hover, .alphabet-pill.active {
+  background: var(--pharma-primary);
+  color: #ffffff;
+}
+
+.alphabet-pill[data-letter="all"] {
+  width: auto;
+  padding: 0 0.6rem;
+}
+
+/* Product Card Grid (4-Column Layout) */
+.product-cell-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 70, 131, 0.12);
+  border-radius: 10px;
+  padding: 1.1rem 1.1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.product-cell-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--pharma-primary);
+  box-shadow: 0 10px 25px rgba(0, 70, 131, 0.1);
+}
+
+.product-cell-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin-bottom: 0;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.product-cell-card:hover .product-cell-name {
+  color: var(--pharma-primary);
+}
+
+.product-cell-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.badge-dosage-tablet { background: #fef3c7; color: #b45309; }
+.badge-dosage-capsule { background: #e0f2fe; color: #0369a1; }
+.badge-dosage-drops { background: #d1fae5; color: #047857; }
+.badge-dosage-injection { background: #ffe4e6; color: #be123c; }
+.badge-dosage-creams { background: #f3e8ff; color: #6b21a8; }
+.badge-dosage-syrup { background: #f1f5f9; color: #334155; }
+.badge-dosage-other { background: #fef9c3; color: #a16207; }
+
+/* ==========================================================================
+   GALLERY PAGE STYLES
+   ========================================================================== */
+
+.gallery-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 70, 131, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--pharma-primary);
+  box-shadow: 0 14px 35px rgba(0, 70, 131, 0.12);
+}
+
+.gallery-card-img-wrapper {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-card-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-img-wrapper img {
+  transform: scale(1.06);
+}
+
+.gallery-card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 0;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.gallery-card:hover .gallery-card-title {
+  color: var(--pharma-primary);
+}
+
+.gallery-badge {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.gallery-card-svg {
+  width: 120px;
+  height: 140px;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-svg {
+  transform: scale(1.08);
+}
+
+/* Lightbox Modal */
+#galleryModal .modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+}
+
+#galleryModal .modal-img-container {
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: 2rem;
+}
+
+/* ==========================================================================
+   SERVICES PAGE CUSTOM STYLES
+   ========================================================================== */
+.service-hero-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 246, 252, 0.9) 100%);
+  border: 1px solid rgba(0, 70, 131, 0.12);
+  border-radius: 1.5rem;
+  box-shadow: var(--pharma-shadow-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.service-hero-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--pharma-shadow-lg);
+  border-color: var(--pharma-primary);
+}
+
+.service-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  box-shadow: 0 8px 20px rgba(0, 70, 131, 0.2);
+  flex-shrink: 0;
+}
+
+.service-icon-wrapper.accent-icon {
+  background: linear-gradient(135deg, #0066BE 0%, #002E57 100%);
+}
+
+.service-feature-tag {
+  background: rgba(0, 70, 131, 0.06);
+  color: var(--pharma-primary);
+  border: 1px solid rgba(0, 70, 131, 0.12);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.service-nav-pills {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--pharma-border);
+  padding: 0.5rem;
+  border-radius: 50rem;
+  box-shadow: var(--pharma-shadow-sm);
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.service-nav-pills .nav-link {
+  color: var(--pharma-heading);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 50rem;
+  transition: all 0.25s ease;
+}
+
+.service-nav-pills .nav-link:hover {
+  color: var(--pharma-primary);
+  background: rgba(0, 70, 131, 0.05);
+}
+
+.service-nav-pills .nav-link.active {
+  background: var(--pharma-gradient-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 70, 131, 0.25);
+}
+
+.dosage-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dosage-chip {
+  background: #FFFFFF;
+  border: 1px solid var(--pharma-border);
+  color: var(--pharma-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.dosage-chip:hover {
+  border-color: var(--pharma-primary);
+  color: var(--pharma-primary);
+  transform: translateY(-2px);
+}
+
+.service-step-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--pharma-primary);
+  color: #FFFFFF;
+  font-family: var(--font-number);
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

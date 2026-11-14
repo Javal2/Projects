@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Product — Tiffinworld Vendor Panel</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+
+  <style>
+    /* ── Add Product Page Styles ── */
+
+    /* Hero Banner */
+    .page-hero-banner {
+      background: linear-gradient(115deg, #FFFBF5 0%, #FFF7EC 45%, #F0F7FF 100%);
+      border: 1.5px solid #FFE4C2;
+      border-radius: 22px;
+      padding: 28px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-banner::before {
+      content: '';
+      position: absolute;
+      right: -40px; top: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(255,127,0,0.07) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: #2E6B1E;
+      margin-bottom: 6px;
+      letter-spacing: -0.4px;
+    }
+    .page-subtitle {
+      color: #64748B;
+      font-size: 13.5px;
+      max-width: 440px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Form Cards */
+    .form-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E8EDF5;
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .form-card-title {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .form-card-title i {
+      font-size: 17px;
+      color: var(--primary-orange);
+    }
+
+    /* Inputs */
+    .ap-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #94A3B8;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .ap-input {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #1E293B;
+      width: 100%;
+      outline: none;
+      transition: border 0.18s ease;
+      font-family: var(--font-body);
+    }
+    .ap-input:focus {
+      border-color: var(--primary-orange);
+      background: #FFFDF9;
+    }
+    .ap-input::placeholder { color: #C0C8D8; }
+
+    /* Two-col sub grid inside card */
+    .mini-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Pricing row */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .price-input-wrap {
+      position: relative;
+    }
+    .price-input-wrap .currency-prefix {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      font-weight: 700;
+      color: #94A3B8;
+    }
+    .price-input-wrap input {
+      padding-left: 26px;
+    }
+
+    /* Meal Attribute Tags */
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .meal-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #F1F5F9;
+      border: 1.5px solid #E2E8F0;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      user-select: none;
+    }
+    .meal-tag:hover {
+      border-color: var(--primary-orange);
+      color: var(--primary-orange);
+      background: #FFF9F3;
+    }
+    .meal-tag.selected {
+      background: #FFF4E5;
+      border-color: var(--primary-orange);
+      color: var(--primary-orange);
+    }
+
+    /* Media Upload Zone */
+    .upload-zone {
+      background: #F8FAFF;
+      border: 2px dashed #B1CFFF;
+      border-radius: 16px;
+      padding: 40px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .upload-zone:hover {
+      border-color: var(--primary-orange);
+      background: #FFFDF9;
+    }
+    .upload-zone-icon {
+      width: 54px;
+      height: 54px;
+      background: linear-gradient(135deg, #FFE5C2, #FFDAA0);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .upload-zone-icon i {
+      font-size: 26px;
+      color: var(--primary-orange);
+    }
+    .upload-zone-text {
+      font-size: 14px;
+      color: #64748B;
+      line-height: 1.5;
+    }
+    .upload-zone-text strong { color: #1E293B; }
+    .upload-zone-hint {
+      font-size: 11.5px;
+      color: #94A3B8;
+      margin-top: 5px;
+    }
+
+    /* Media Category Label */
+    .media-cat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748B;
+      margin: 14px 0 10px;
+    }
+
+    /* Thumbnail row */
+    .thumb-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .thumb-img {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid #E2E8F0;
+      transition: border-color 0.18s;
+      cursor: pointer;
+    }
+    .thumb-img:hover, .thumb-img.selected {
+      border-color: var(--primary-orange);
+    }
+    .thumb-add-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      border: 2px dashed #D1D9E6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #B1CFFF;
+      font-size: 22px;
+      background: #F8FAFF;
+      transition: all 0.18s ease;
+    }
+    .thumb-add-btn:hover {
+      border-color: var(--primary-orange);
+      color: var(--primary-orange);
+      background: #FFFDF9;
+    }
+
+    /* Description textarea */
+    .ap-textarea {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #1E293B;
+      width: 100%;
+      outline: none;
+      resize: vertical;
+      min-height: 110px;
+      font-family: var(--font-body);
+      transition: border 0.18s ease;
+    }
+    .ap-textarea:focus {
+      border-color: var(--primary-orange);
+      background: #FFFDF9;
+    }
+    .ap-textarea::placeholder { color: #C0C8D8; }
+
+    /* Action Buttons */
+    .btn-save-product {
+      background: var(--primary-orange);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 42px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 18px rgba(255,127,0,0.28);
+      letter-spacing: 0.3px;
+    }
+    .btn-save-product:hover {
+      background: #E56E00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,127,0,0.38);
+    }
+    .btn-cancel-product {
+      background: #FFFFFF;
+      color: #475569;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 13px 36px;
+      border-radius: 14px;
+      border: 1.5px solid #CBD5E1;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .btn-cancel-product:hover {
+      border-color: #94A3B8;
+      color: #1E293B;
+    }
+
+    /* ── Live Preview Section ── */
+    .live-preview-wrapper {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1.5px solid #1E293B;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    }
+    .lp-bar {
+      background: #1E293B;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lp-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+    }
+    .lp-bar-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #94A3B8;
+      margin-left: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lp-bar-label i { font-size: 10px; color: #94A3B8; }
+
+    /* Mock Website Inside Preview */
+    .mock-site {
+      background: #FFFFFF;
+      font-family: var(--font-body);
+    }
+    /* Mock Header */
+    .mock-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .mock-logo {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 18px;
+      color: #2E6B1E;
+    }
+    .mock-nav {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .mock-nav li a {
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .mock-nav li a.active {
+      color: var(--primary-orange);
+      border-bottom: 2px solid var(--primary-orange);
+      padding-bottom: 2px;
+      font-weight: 700;
+    }
+    .mock-nav-btns {
+      display: flex;
+      gap: 8px;
+    }
+    .mock-btn-outline {
+      font-size: 12px;
+      font-weight: 600;
+      border: 1.5px solid #E2E8F0;
+      background: #FFFFFF;
+      color: #475569;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .mock-btn-solid {
+      font-size: 12px;
+      font-weight: 700;
+      background: #2E6B1E;
+      color: #FFFFFF;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Mock Product Hero */
+    .mock-product-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      padding: 32px;
+      background: #FAFBFC;
+    }
+    .mock-product-img {
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+    .mock-product-img img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+    .mock-img-badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: rgba(46,107,30,0.85);
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(4px);
+    }
+    .mock-product-info {
+      padding: 0 0 0 28px;
+    }
+    .mock-tag {
+      display: inline-block;
+      background: rgba(255,127,0,0.12);
+      color: var(--primary-orange);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .mock-product-name {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary-orange);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .mock-stars {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+    .mock-stars i { color: #F59E0B; font-size: 14px; }
+    .mock-stars span { font-size: 12px; color: #94A3B8; }
+    .mock-price {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 4px;
+    }
+    .mock-price sub { font-size: 13px; color: #94A3B8; font-weight: 500; }
+    .mock-price-badge {
+      display: inline-block;
+      background: #DCFCE7;
+      color: #16A34A;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-left: 8px;
+    }
+    .mock-plan-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94A3B8;
+      margin: 14px 0 8px;
+    }
+    .mock-plan-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .mock-plan-tab {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 8px;
+      border: 1.5px solid #E2E8F0;
+      background: #FFFFFF;
+      color: #64748B;
+      cursor: pointer;
+    }
+    .mock-plan-tab.active {
+      background: #2E6B1E;
+      border-color: #2E6B1E;
+      color: #FFFFFF;
+    }
+    .mock-option-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94A3B8;
+      margin-bottom: 8px;
+    }
+    .mock-option-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .mock-chip {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 8px;
+      background: #F1F5F9;
+      color: #475569;
+      border: 1.5px solid #E2E8F0;
+    }
+    .mock-chip.active {
+      background: #2E6B1E;
+      border-color: #2E6B1E;
+      color: #FFFFFF;
+    }
+    .mock-chef-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #F8FAFC;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+    .mock-chef-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .mock-chef-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1E293B;
+    }
+    .mock-chef-handle {
+      font-size: 11px;
+      color: #94A3B8;
+    }
+    .mock-chef-row .bi-chevron-right {
+      margin-left: auto;
+      color: #CBD5E1;
+      font-size: 12px;
+    }
+    .mock-inquiry-btn {
+      width: 100%;
+      background: #2E6B1E;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .mock-tabs-bar {
+      display: flex;
+      gap: 28px;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 0 32px;
+      background: #FFFFFF;
+    }
+    .mock-tab {
+      font-size: 13px;
+      font-weight: 600;
+      color: #94A3B8;
+      padding: 14px 0;
+      border-bottom: 2.5px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .mock-tab.active {
+      color: var(--primary-orange);
+      border-bottom-color: var(--primary-orange);
+    }
+    .mock-description-body {
+      padding: 24px 32px 30px;
+      background: #FFFFFF;
+    }
+    .mock-desc-heading {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 10px;
+    }
+    .mock-desc-text {
+      font-size: 13px;
+      color: #64748B;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .mock-feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+    .mock-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #475569;
+      font-weight: 500;
+    }
+    .mock-feature-item i { color: #16A34A; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<div class="vendor-wrapper">
+  <!-- ── White Theme Sidebar ── -->
+  <aside class="vendor-sidebar">
+    <div>
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon-box"><i class="bi bi-box-seam-fill"></i></div>
+        <div><h1 class="brand-title">TiffinWorld</h1></div>
+      </a>
+      <ul class="sidebar-menu">
+        <li><a href="index.html" class="menu-item-link"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a></li>
+        <li><a href="products.html" class="menu-item-link active"><i class="bi bi-archive-fill"></i><span>Products</span><i class="bi bi-chevron-down caret-icon"></i></a></li>
+        <li><a href="menu-planner.html" class="menu-item-link"><i class="bi bi-calendar3"></i><span>Menu Planner</span></a></li>
+        <li><a href="profile.html" class="menu-item-link"><i class="bi bi-person-fill"></i><span>Profile</span></a></li>
+        <li><a href="../website/index.html" target="_blank" class="menu-item-link"><i class="bi bi-globe"></i><span>Seller Website</span></a></li>
+        <li><a href="help.html" class="menu-item-link"><i class="bi bi-question-circle-fill"></i><span>Help</span></a></li>
+        <li><a href="inquiries.html" class="menu-item-link"><i class="bi bi-chat-quote-fill"></i><span>Inquiries</span></a></li>
+        <li><a href="plans.html" class="menu-item-link"><i class="bi bi-journal-bookmark-fill"></i><span>Plans</span></a></li>
+        <li><a href="delivery-setup.html" class="menu-item-link"><i class="bi bi-truck"></i><span>Delivery Location Setup</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-logout-card">
+      <a href="../website/vendor-login.html" class="logout-btn-outline"><i class="bi bi-box-arrow-right"></i><span>Log Out</span></a>
+    </div>
+  </aside>
+
+  <!-- ── Main Content ── -->
+  <main class="vendor-main-content">
+    <!-- Header -->
+    <header class="vendor-header">
+      <div class="header-search-wrap">
+        <i class="bi bi-search header-search-icon"></i>
+        <input type="text" class="header-search-input" placeholder="Search orders, products...">
+      </div>
+      <div class="header-actions">
+        <a href="../website/index.html" target="_blank" class="btn-visit-site-orange">
+          <i class="bi bi-box-arrow-up-right me-1"></i>Visit Website
+        </a>
+        <div class="vendor-header-profile">
+          <div class="vendor-header-info">
+            <div class="vendor-header-name">The Green Kitchen</div>
+            <div class="vendor-header-tag">PREMIUM VENDOR</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Chef" class="vendor-header-avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Page Body ── -->
+    <div class="page-body-container">
+
+      <!-- ── Hero Banner ── -->
+      <div class="page-hero-banner mb-4">
+        <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+          <div>
+            <h1 class="page-title">Add New Product</h1>
+            <p class="page-subtitle">Create a premium listing. All details contribute to how customers perceive the quality and authenticity of your meal service.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Two-Column Form ── -->
+      <form id="addProductForm">
+        <div class="row g-4 align-items-start">
+
+          <!-- Left Column -->
+          <div class="col-lg-5 d-flex flex-column gap-4">
+
+            <!-- Basic Information -->
+            <div class="form-card">
+              <div class="form-card-title">
+                <i class="bi bi-info-circle-fill"></i>
+                Basic Information
+              </div>
+              <div class="mb-3">
+                <label class="ap-label">Meal Name</label>
+                <input type="text" id="mealName" class="ap-input" placeholder="e.g. Grandma's Homestyle Thali" oninput="syncPreview()">
+              </div>
+              <div class="mini-grid-2">
+                <div>
+                  <label class="ap-label">Category</label>
+                  <select id="mealCategory" class="ap-input" onchange="syncPreview()">
+                    <option>North Indian</option>
+                    <option>South Indian</option>
+                    <option>Vegan</option>
+                    <option>Fusion</option>
+                    <option>Healthy Bowls</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="ap-label">Dietary Type</label>
+                  <select class="ap-input">
+                    <option>Veg</option>
+                    <option>Non-Veg</option>
+                    <option>Vegan</option>
+                    <option>Jain</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pricing Structures -->
+            <div class="form-card">
+              <div class="form-card-title">
+                <i class="bi bi-currency-rupee"></i>
+                Pricing Structures
+              </div>
+              <div class="pricing-grid">
+                <div>
+                  <label class="ap-label">One-Time</label>
+                  <div class="price-input-wrap">
+                    <span class="currency-prefix">₹</span>
+                    <input type="number" id="priceOneTime" class="ap-input" placeholder="1" oninput="syncPreview()">
+                  </div>
+                </div>
+                <div>
+                  <label class="ap-label">Weekly</label>
+                  <div class="price-input-wrap">
+                    <span class="currency-prefix">₹</span>
+                    <input type="number" id="priceWeekly" class="ap-input" placeholder="1">
+                  </div>
+                </div>
+                <div>
+                  <label class="ap-label">Monthly</label>
+                  <div class="price-input-wrap">
+                    <span class="currency-prefix">₹</span>
+                    <input type="number" id="priceMonthly" class="ap-input" placeholder="1">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Meal Attributes -->
+            <div class="form-card">
+              <div class="form-card-title">
+                <i class="bi bi-tags-fill"></i>
+                Meal Attributes
+              </div>
+              <div class="tag-container">
+                <span class="meal-tag selected" onclick="toggleTag(this)">Dinner</span>
+                <span class="meal-tag" onclick="toggleTag(this)">Lunch</span>
+                <span class="meal-tag" onclick="toggleTag(this)">Breakfast</span>
+                <span class="meal-tag" onclick="toggleTag(this)">Jain</span>
+                <span class="meal-tag" onclick="toggleTag(this)">Snacks</span>
+              </div>
+            </div>
+
+          </div><!-- /Left Col -->
+
+          <!-- Right Column -->
+          <div class="col-lg-7 d-flex flex-column gap-4">
+
+            <!-- Media & Visuals -->
+            <div class="form-card">
+              <div class="form-card-title">
+                <i class="bi bi-images"></i>
+                Media &amp; Visuals
+              </div>
+
+              <!-- Upload Zone -->
+              <div class="upload-zone" onclick="document.getElementById('fileInput').click()" ondrop="handleDrop(event)" ondragover="event.preventDefault()">
+                <div class="upload-zone-icon">
+                  <i class="bi bi-cloud-arrow-up-fill"></i>
+                </div>
+                <p class="upload-zone-text mb-0">
+                  <strong>Click to upload</strong> or drag and drop
+                </p>
+                <p class="upload-zone-hint">PNG, JPG or WEBP (MAX. 800×600px)</p>
+                <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="previewUpload(event)">
+              </div>
+
+              <!-- Category Thumbnails -->
+              <p class="media-cat-label mt-3">Choose media from Category</p>
+              <div class="thumb-row flex-wrap">
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=120&q=80" class="thumb-img selected" onclick="selectThumb(this)" alt="Butter Chicken">
+                <div class="thumb-add-btn" onclick="document.getElementById('fileInput').click()">
+                  <i class="bi bi-plus-lg"></i>
+                </div>
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=120&q=80" class="thumb-img" onclick="selectThumb(this)" alt="Quinoa Bowl">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=120&q=80" class="thumb-img" onclick="selectThumb(this)" alt="Vegan Box">
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-card">
+              <div class="form-card-title">
+                <i class="bi bi-file-text-fill"></i>
+                Description
+              </div>
+              <textarea id="mealDesc" class="ap-textarea" placeholder="Describe the flavors, ingredients, and the story behind this meal..." oninput="syncPreview()"></textarea>
+            </div>
+
+          </div><!-- /Right Col -->
+        </div>
+
+        <!-- ── Action Buttons ── -->
+        <div class="d-flex align-items-center gap-3 mt-2">
+          <button type="submit" class="btn-save-product" onclick="handleSave(event)">SAVE</button>
+          <button type="button" class="btn-cancel-product" onclick="history.back()">CANCEL</button>
+        </div>
+      </form>
+
+      <!-- ── Live Preview Section ── -->
+      <div class="mt-5">
+        <div class="live-preview-wrapper">
+          <!-- Dark Top Bar -->
+          <div class="lp-bar">
+            <span class="lp-dot" style="background:#FF5F57;"></span>
+            <span class="lp-dot" style="background:#FEBC2E;"></span>
+            <span class="lp-dot" style="background:#28C840;"></span>
+            <span class="lp-bar-label">
+              <i class="bi bi-circle-fill" style="color:#28C840; font-size:7px;"></i>
+              Live Preview
+            </span>
+          </div>
+
+          <!-- Mock Website -->
+          <div class="mock-site">
+            <!-- Mock Nav Header -->
+            <div class="mock-header">
+              <span class="mock-logo">TiffinWorld</span>
+              <ul class="mock-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Menu</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+              <div class="mock-nav-btns">
+                <button class="mock-btn-outline">Customer Login</button>
+                <button class="mock-btn-solid">Vendor Login</button>
+              </div>
+            </div>
+
+            <!-- Mock Product Hero -->
+            <div class="mock-product-hero">
+              <!-- Left: Image -->
+              <div class="mock-product-img">
+                <img id="previewImg" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80" alt="Product Preview">
+                <span class="mock-img-badge">FARM TO TABLE</span>
+              </div>
+
+              <!-- Right: Info -->
+              <div class="mock-product-info">
+                <div class="mock-tag" id="previewTag">NORTH INDIAN · FUSION</div>
+                <div class="mock-product-name" id="previewName">The Artisan Taco</div>
+                <div class="mock-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  <span>(98 reviews)</span>
+                </div>
+                <div class="mock-price">
+                  <span id="previewPrice">₹120.00</span><sub> /meal</sub>
+                  <span class="mock-price-badge">BEST VALUE</span>
+                </div>
+
+                <div class="mock-plan-label">CHOOSE YOUR PLAN</div>
+                <div class="mock-plan-tabs">
+                  <button class="mock-plan-tab active">Daily</button>
+                  <button class="mock-plan-tab">Weekly</button>
+                  <button class="mock-plan-tab">Monthly</button>
+                </div>
+
+                <div class="mock-option-label">AVAILABLE MEAL OPTIONS</div>
+                <div class="mock-option-chips">
+                  <span class="mock-chip active">Main Course</span>
+                  <span class="mock-chip">Snacks</span>
+                  <span class="mock-chip">Dessert</span>
+                </div>
+
+                <div class="mock-chef-row">
+                  <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" class="mock-chef-avatar" alt="Chef">
+                  <div>
+                    <div class="mock-chef-name">Kudu</div>
+                    <div class="mock-chef-handle">By: Ivy's Kitchen</div>
+                  </div>
+                  <i class="bi bi-chevron-right"></i>
+                </div>
+
+                <button class="mock-inquiry-btn">
+                  Inquiry Now &nbsp;<i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div><!-- /hero -->
+
+            <!-- Mock Content Tabs -->
+            <div class="mock-tabs-bar">
+              <a class="mock-tab active" href="#">Description</a>
+              <a class="mock-tab" href="#">Ingredients</a>
+              <a class="mock-tab" href="#">Delivery Info</a>
+              <a class="mock-tab" href="#">Reviews (128)</a>
+            </div>
+
+            <!-- Mock Description Section -->
+            <div class="mock-description-body">
+              <h3 class="mock-desc-heading">Authentic Flavors, Modern Craft.</h3>
+              <p class="mock-desc-text" id="previewDesc">
+                Our Artisan Taco isn't just a meal. It's a curated experience. We source our corn from local heritage farms, hand-pressing every tortilla to order. The filling features slow-braised proteins marinated for 24 hours in a secret blend of twelve spices, finished with garden-fresh microgreens.
+              </p>
+              <div class="mock-feature-list">
+                <div class="mock-feature-item"><i class="bi bi-check-circle-fill"></i> 100% Organic</div>
+                <div class="mock-feature-item"><i class="bi bi-check-circle-fill"></i> No Preservatives</div>
+                <div class="mock-feature-item"><i class="bi bi-check-circle-fill"></i> Gluten Free Option</div>
+                <div class="mock-feature-item"><i class="bi bi-check-circle-fill"></i> Daily Fresh</div>
+              </div>
+            </div>
+          </div><!-- /mock-site -->
+        </div>
+      </div><!-- /Live Preview -->
+
+    </div><!-- /page-body-container -->
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor-main.js"></script>
+<script>
+  function toggleTag(el) {
+    el.classList.toggle('selected');
+  }
+
+  function selectThumb(el) {
+    document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById('previewImg').src = el.src.replace('w=120', 'w=800');
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = ev => { document.getElementById('previewImg').src = ev.target.result; };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function previewUpload(e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = ev => { document.getElementById('previewImg').src = ev.target.result; };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function syncPreview() {
+    const name = document.getElementById('mealName').value;
+    const cat = document.getElementById('mealCategory').value;
+    const price = document.getElementById('priceOneTime').value;
+    const desc = document.getElementById('mealDesc').value;
+
+    if (name) document.getElementById('previewName').textContent = name;
+    if (cat) document.getElementById('previewTag').textContent = cat.toUpperCase() + ' · FUSION';
+    if (price) document.getElementById('previewPrice').textContent = '₹' + parseFloat(price).toFixed(2);
+    if (desc) document.getElementById('previewDesc').textContent = desc;
+  }
+
+  function handleSave(e) {
+    e.preventDefault();
+    // Show toast notification
+    if (typeof showToast === 'function') showToast('Product saved successfully!');
+    else alert('Product saved successfully!');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Catalog | Flemming Pharma - 350+ Formulations</title>
+  <meta name="description" content="Explore Flemming Pharma's extensive portfolio of solid oral formulations, sterile injectables, cephalosporins, and specialized therapeutic formulations.">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-pharma fixed-top scrolled">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-wrapper">
+          <i class="bi bi-capsule"></i>
+        </div>
+        <span>FLEMMING<span class="text-gradient"> PHARMA</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">Products</a>
+          </li>
+          <!-- Services Dropdown Submenu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services <i class="bi bi-chevron-down dropdown-arrow-icon"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-pharma p-3 shadow-lg border-0" style="min-width: 480px;">
+              <div class="row g-2">
+                <div class="col-6">
+                  <h6 class="text-uppercase text-secondary small fw-bold px-2 mb-2">Manufacturing Services</h6>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#contract-manufacturing">
+                    <i class="bi bi-buildings text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Contract Manufacturing</div>
+                      <span class="small text-muted">WHO-GMP Facilities</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#third-party-manufacturing">
+                    <i class="bi bi-box-seam text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">3<sup>rd</sup> Party Manufacturing</div>
+                      <span class="small text-muted">Turnkey Private Label</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#institutional-tenders">
+                    <i class="bi bi-hospital text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Institutional Tenders</div>
+                      <span class="small text-muted">Government Supplies</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6">
+                  <h6 class="text-uppercase text-secondary small fw-bold px-2 mb-2">Products & Regulatory</h6>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#generic-medicines">
+                    <i class="bi bi-capsule-pill text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Generic Medicines</div>
+                      <span class="small text-muted">Bioequivalent Range</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#otc-products">
+                    <i class="bi bi-cart-plus text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">OTC Products</div>
+                      <span class="small text-muted">Consumer Healthcare</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#regulatory-service">
+                    <i class="bi bi-shield-check text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Regulatory Service</div>
+                      <span class="small text-muted">CTD/eCTD Dossiers</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#qc-qa">
+                    <i class="bi bi-award-fill text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">QC / QA</div>
+                      <span class="small text-muted">GLP Testing Labs</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 border-top pt-2 mt-2 text-center">
+                  <a href="services.html" class="small fw-bold text-primary text-decoration-none">View All Services Overview <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="manufacturing.html">Manufacturing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="rnd.html">R & D</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="quality.html">Quality</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="gallery.html">Gallery</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="contact.html" class="btn btn-pharma-primary">
+            <span>Inquire Now</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INNER HERO BANNER -->
+  <section class="section-py bg-light-mesh text-center pt-5 mt-5">
+    <div class="container pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-3">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Products Catalog</li>
+        </ol>
+      </nav>
+      <h1 class="display-4 fw-extrabold text-dark mb-3">Approved <span class="text-gradient">Formulations & Products</span></h1>
+      <p class="lead text-secondary max-w-700 mx-auto">
+        Search and filter through our comprehensive therapeutic catalog of 350+ WHO-GMP certified pharmaceuticals.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CATALOG CONTENT -->
+  <section class="section-py bg-light-subtle pt-4">
+    <div class="container">
+      
+      <!-- TOP DOSAGE FORM CARDS GRID (ZONE A) -->
+      <div class="mb-4">
+        <div class="dosage-cards-grid">
+
+          <!-- Tablet -->
+          <div class="dosage-card-btn active" data-dosage="tablet">
+            <div class="dosage-icon-box"><i class="bi bi-capsule-pill"></i></div>
+            <div class="dosage-title">Tablet</div>
+            <div class="dosage-count">32 Formulations</div>
+          </div>
+
+          <!-- Capsule -->
+          <div class="dosage-card-btn" data-dosage="capsule">
+            <div class="dosage-icon-box"><i class="bi bi-capsule"></i></div>
+            <div class="dosage-title">Capsule</div>
+            <div class="dosage-count">18 Formulations</div>
+          </div>
+
+          <!-- Eye / Ear Drops -->
+          <div class="dosage-card-btn" data-dosage="drops">
+            <div class="dosage-icon-box"><i class="bi bi-droplet-half"></i></div>
+            <div class="dosage-title">Eye / Ear Drops</div>
+            <div class="dosage-count">12 Formulations</div>
+          </div>
+
+          <!-- Injection -->
+          <div class="dosage-card-btn" data-dosage="injection">
+            <div class="dosage-icon-box"><i class="bi bi-prescription2"></i></div>
+            <div class="dosage-title">Injection</div>
+            <div class="dosage-count">15 Formulations</div>
+          </div>
+
+          <!-- Creams -->
+          <div class="dosage-card-btn" data-dosage="creams">
+            <div class="dosage-icon-box"><i class="bi bi-box-seam"></i></div>
+            <div class="dosage-title">Creams</div>
+            <div class="dosage-count">10 Formulations</div>
+          </div>
+
+          <!-- Suspension / Syrup -->
+          <div class="dosage-card-btn" data-dosage="syrup">
+            <div class="dosage-icon-box"><i class="bi bi-cup-straw"></i></div>
+            <div class="dosage-title">Suspension / Syrup</div>
+            <div class="dosage-count">14 Formulations</div>
+          </div>
+
+          <!-- Other -->
+          <div class="dosage-card-btn" data-dosage="other">
+            <div class="dosage-icon-box"><i class="bi bi-asterisk"></i></div>
+            <div class="dosage-title">Other</div>
+            <div class="dosage-count">8 Formulations</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MAIN LAYOUT: SIDEBAR (LEFT) + CATALOG GRID (RIGHT) -->
+      <div class="row g-4">
+
+        <!-- LEFT SIDEBAR: CATEGORY NAVIGATION (ZONE B) -->
+        <div class="col-lg-3">
+          <div class="pharma-category-card sticky-top" style="top: 90px; z-index: 10;">
+            <div class="pharma-category-header">
+              <span>Category</span>
+              <i class="bi bi-grid-3x3-gap-fill fs-6 opacity-75"></i>
+            </div>
+            
+            <div class="pharma-category-search-box">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-funnel"></i></span>
+                <input type="text" id="category-filter-search" class="form-control border-start-0 ps-0 shadow-none" placeholder="Filter categories...">
+              </div>
+            </div>
+
+            <ul class="pharma-category-list" id="category-menu-list">
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link active" data-category="all"><span>All</span> <span class="cat-count-badge">44</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anaesthetic"><span>Anaesthetic</span> <span class="cat-count-badge">2</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="analgesic"><span>Analgesic</span> <span class="cat-count-badge">8</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="angiography"><span>Angiography</span> <span class="cat-count-badge">1</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="antacid"><span>Antacid</span> <span class="cat-count-badge">2</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anthelmintic"><span>Anthelmintic</span> <span class="cat-count-badge">2</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anti-allergic"><span>Anti Allergic</span> <span class="cat-count-badge">3</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anti-anxiety"><span>Anti Anxiety</span> <span class="cat-count-badge">2</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anti-cancer"><span>Anti Cancer</span> <span class="cat-count-badge">3</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anti-diabetic"><span>Anti Diabetic</span> <span class="cat-count-badge">3</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anti-hiv"><span>Anti HIV</span> <span class="cat-count-badge">2</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anti-inflammatory"><span>Anti Inflammatory</span> <span class="cat-count-badge">4</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="anti-vomiting"><span>Anti Vomiting</span> <span class="cat-count-badge">2</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="antibiotic"><span>Antibiotics</span> <span class="cat-count-badge">8</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="cardiology"><span>Cardiology</span> <span class="cat-count-badge">7</span></a></li>
+              <li class="pharma-category-item"><a href="#" class="pharma-category-link" data-category="gastroenterology"><span>Gastroenterology</span> <span class="cat-count-badge">3</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT MAIN PANEL: CATALOG GRID (ZONE C) -->
+        <div class="col-lg-9">
+
+          <!-- HEADER TITLE & LIVE SEARCH BAR -->
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+            <div>
+              <h2 id="catalog-section-title" class="h3 fw-extrabold mb-1" style="color: #d97706;">Tablet</h2>
+              <p id="catalog-section-desc" class="text-secondary small mb-0">Showing WHO-GMP certified tablet formulations database.</p>
+            </div>
+            
+            <div class="d-flex align-items-center gap-2">
+              <div class="input-group input-group-sm" style="min-width: 280px;">
+                <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                <input type="text" id="product-search" class="form-control border-start-0 ps-0 shadow-none" placeholder="Search product name or API...">
+                <button class="btn btn-outline-secondary border-start-0 bg-white" type="button" id="btn-clear-search"><i class="bi bi-x-lg"></i></button>
+              </div>
+              <span id="catalog-count-badge" class="badge px-3 py-2 fw-bold" style="background-color: rgba(245, 158, 11, 0.15); color: #d97706; border: 1px solid rgba(217, 119, 6, 0.3);">32 Formulations</span>
+            </div>
+          </div>
+
+          <!-- ALPHABETIC JUMP BAR (A-Z) -->
+          <div class="alphabet-bar">
+            <span class="small text-secondary fw-semibold me-2 d-none d-sm-inline">Index:</span>
+            <button class="alphabet-pill active" data-letter="all">ALL</button>
+            <button class="alphabet-pill" data-letter="a">A</button>
+            <button class="alphabet-pill" data-letter="b">B</button>
+            <button class="alphabet-pill" data-letter="c">C</button>
+            <button class="alphabet-pill" data-letter="d">D</button>
+            <button class="alphabet-pill" data-letter="e">E</button>
+            <button class="alphabet-pill" data-letter="f">F</button>
+            <button class="alphabet-pill" data-letter="g">G</button>
+            <button class="alphabet-pill" data-letter="h">H</button>
+            <button class="alphabet-pill" data-letter="i">I</button>
+            <button class="alphabet-pill" data-letter="k">K</button>
+            <button class="alphabet-pill" data-letter="l">L</button>
+            <button class="alphabet-pill" data-letter="m">M</button>
+            <button class="alphabet-pill" data-letter="n">N</button>
+            <button class="alphabet-pill" data-letter="o">O</button>
+            <button class="alphabet-pill" data-letter="p">P</button>
+            <button class="alphabet-pill" data-letter="q">Q</button>
+            <button class="alphabet-pill" data-letter="r">R</button>
+            <button class="alphabet-pill" data-letter="s">S</button>
+            <button class="alphabet-pill" data-letter="t">T</button>
+            <button class="alphabet-pill" data-letter="v">V</button>
+            <button class="alphabet-pill" data-letter="z">Z</button>
+          </div>
+
+          <!-- 4-COLUMN PRODUCT GRID -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3" id="product-grid">
+
+            <!-- Item 1 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anti-hiv" data-letter="a" data-title="Abacavir Sulphate Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Abacavir Sulphate Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anti-cancer" data-letter="a" data-title="Abiraterone Acetate Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Abiraterone Acetate Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="analgesic" data-letter="a" data-title="Aceclofenac and Paracetamol Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Aceclofenac and Paracetamol Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="analgesic" data-letter="a" data-title="Aceclofenac Paracetamol & Thiocolchicoside Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Aceclofenac Paracetamol & Thiocolchicoside Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anti-inflammatory" data-letter="a" data-title="Aceclofenac Paracetamol Serratiopeptidase Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Aceclofenac Paracetamol Serratiopeptidase Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="analgesic" data-letter="a" data-title="Aceclofenac Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Aceclofenac Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="analgesic" data-letter="a" data-title="Acetaminophen Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Acetaminophen Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Acetazolamide Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Acetazolamide Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Acetylsalicylic Acid Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Acetylsalicylic Acid Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Acetylsalicylic Acid Tablets 100mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Acetylsalicylic Acid Tablets 100mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 11 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Acetylsalicylic Acid Tablets 300mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Acetylsalicylic Acid Tablets 300mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 12 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Acetylsalicylic Acid Tablets 75mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Acetylsalicylic Acid Tablets 75mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 13 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="antibiotic" data-letter="a" data-title="Acyclovir Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Acyclovir Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 14 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anti-hiv" data-letter="a" data-title="Adefovir Dipivoxil Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Adefovir Dipivoxil Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 15 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anthelmintic" data-letter="a" data-title="Albendazole 400mg Chewable Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Albendazole 400mg Chewable Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 16 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anthelmintic" data-letter="a" data-title="Albendazole Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Albendazole Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 17 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anti-inflammatory" data-letter="a" data-title="Alendronate Sodium Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Alendronate Sodium Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 18 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="analgesic" data-letter="a" data-title="Allopurinol Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Allopurinol Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 19 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anaesthetic" data-letter="a" data-title="Allylestrenol Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Allylestrenol Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 20 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anti-cancer" data-letter="a" data-title="Alphalan">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Alphalan</h3>
+              </a>
+            </div>
+
+            <!-- Item 21 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="antacid" data-letter="a" data-title="Aluminium Hydroxide Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Aluminium Hydroxide Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 22 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Amiodarone Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amiodarone Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 23 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="anti-anxiety" data-letter="a" data-title="Amitriptyline Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amitriptyline Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 24 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Amlodipine & Losartan Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amlodipine & Losartan Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 25 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Amlodipine Atenolol Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amlodipine Atenolol Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 26 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Amlodipine Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amlodipine Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 27 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Amlodipine Tablets 10mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amlodipine Tablets 10mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 28 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="cardiology" data-letter="a" data-title="Amlodipine Tablets 5mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amlodipine Tablets 5mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 29 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="antibiotic" data-letter="a" data-title="Amodiaquine Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amodiaquine Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 30 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="antibiotic" data-letter="a" data-title="Amoxicillin & Potassium Clavulanate Tablets 1000mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amoxicillin & Potassium Clavulanate Tablets 1000mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 31 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="antibiotic" data-letter="a" data-title="Amoxicillin Dispersible Tablets">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amoxicillin Dispersible Tablets</h3>
+              </a>
+            </div>
+
+            <!-- Item 32 -->
+            <div class="col product-item-col" data-dosage="tablet" data-category="antibiotic" data-letter="a" data-title="Amoxicillin Tablets 500mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-tablet">Tablet</span>
+                <h3 class="product-cell-name">Amoxicillin Tablets 500mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 33 (Capsule) -->
+            <div class="col product-item-col" data-dosage="capsule" data-category="antibiotic" data-letter="a" data-title="Amoxicillin & Clavulanate Capsules 625mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-capsule">Capsule</span>
+                <h3 class="product-cell-name">Amoxicillin & Clavulanate Capsules 625mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 34 (Capsule) -->
+            <div class="col product-item-col" data-dosage="capsule" data-category="antibiotic" data-letter="a" data-title="Azithromycin Capsules 250mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-capsule">Capsule</span>
+                <h3 class="product-cell-name">Azithromycin Capsules 250mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 35 (Capsule) -->
+            <div class="col product-item-col" data-dosage="capsule" data-category="gastroenterology" data-letter="o" data-title="Omeprazole Delayed Release Capsules 20mg">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-capsule">Capsule</span>
+                <h3 class="product-cell-name">Omeprazole Delayed Release Capsules 20mg</h3>
+              </a>
+            </div>
+
+            <!-- Item 36 (Drops) -->
+            <div class="col product-item-col" data-dosage="drops" data-category="antibiotic" data-letter="c" data-title="Ciprofloxacin Eye / Ear Drops 0.3%">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-drops">Drops</span>
+                <h3 class="product-cell-name">Ciprofloxacin Eye / Ear Drops 0.3%</h3>
+              </a>
+            </div>
+
+            <!-- Item 37 (Drops) -->
+            <div class="col product-item-col" data-dosage="drops" data-category="anti-inflammatory" data-letter="t" data-title="Tobramycin & Dexamethasone Ophthalmic Suspension">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-drops">Drops</span>
+                <h3 class="product-cell-name">Tobramycin & Dexamethasone Drops</h3>
+              </a>
+            </div>
+
+            <!-- Item 38 (Injection) -->
+            <div class="col product-item-col" data-dosage="injection" data-category="antibiotic" data-letter="c" data-title="Ceftriaxone Sodium 1g Powder for Injection">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-injection">Injection</span>
+                <h3 class="product-cell-name">Ceftriaxone Sodium 1g Injection</h3>
+              </a>
+            </div>
+
+            <!-- Item 39 (Injection) -->
+            <div class="col product-item-col" data-dosage="injection" data-category="gastroenterology" data-letter="p" data-title="Pantoprazole Sodium 40mg IV Injection">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-injection">Injection</span>
+                <h3 class="product-cell-name">Pantoprazole Sodium 40mg IV Injection</h3>
+              </a>
+            </div>
+
+            <!-- Item 40 (Creams) -->
+            <div class="col product-item-col" data-dosage="creams" data-category="anti-allergic" data-letter="c" data-title="Clotrimazole 1% Topical Cream">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-creams">Creams</span>
+                <h3 class="product-cell-name">Clotrimazole 1% Topical Cream</h3>
+              </a>
+            </div>
+
+            <!-- Item 41 (Creams) -->
+            <div class="col product-item-col" data-dosage="creams" data-category="analgesic" data-letter="d" data-title="Diclofenac Diethylamine Topical Gel 1%">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-creams">Creams</span>
+                <h3 class="product-cell-name">Diclofenac Diethylamine Gel 1%</h3>
+              </a>
+            </div>
+
+            <!-- Item 42 (Syrup) -->
+            <div class="col product-item-col" data-dosage="syrup" data-category="analgesic" data-letter="p" data-title="Paracetamol Pediatric Oral Suspension 120mg/5ml">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-syrup">Syrup</span>
+                <h3 class="product-cell-name">Paracetamol Pediatric Suspension</h3>
+              </a>
+            </div>
+
+            <!-- Item 43 (Syrup) -->
+            <div class="col product-item-col" data-dosage="syrup" data-category="antibiotic" data-letter="a" data-title="Amoxicillin Dry Syrup 125mg/5ml">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-syrup">Syrup</span>
+                <h3 class="product-cell-name">Amoxicillin Dry Syrup 125mg/5ml</h3>
+              </a>
+            </div>
+
+            <!-- Item 44 (Other) -->
+            <div class="col product-item-col" data-dosage="other" data-category="antibiotic" data-letter="m" data-title="Metronidazole Intravenous Infusion 500mg/100ml">
+              <a href="product-detail.html" class="product-cell-card">
+                <span class="product-cell-badge badge-dosage-other">Other</span>
+                <h3 class="product-cell-name">Metronidazole IV Infusion 500mg</h3>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- NO RESULTS FOUND PLACEHOLDER -->
+          <div id="no-results-message" class="text-center py-5 glass-card d-none">
+            <i class="bi bi-search text-muted display-4 mb-3 d-block"></i>
+            <h4 class="fw-bold text-dark mb-2">No matching formulations found</h4>
+            <p class="text-secondary small mb-3">Try adjusting your category filter, search keyword, or starting letter.</p>
+            <button id="btn-reset-filters" class="btn btn-pharma-primary btn-sm"><i class="bi bi-arrow-counterclockwise me-1"></i> Reset All Filters</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+    <!-- FOOTER SECTION -->
+    <!-- FOOTER SECTION -->
+  <footer class="footer-pharma text-white">
+    <!-- Top Trust Bar / Accreditation Badges Strip -->
+    <div class="border-bottom border-secondary border-opacity-25 pb-4 mb-5">
+      <div class="container">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-patch-check-fill fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">WHO-GMP Certified</h6>
+                <span class="small opacity-75">Global Standards Approved</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-shield-check fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">ISO 9001:2015 & 14001</h6>
+                <span class="small opacity-75">Quality & Environmental Spec</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-file-earmark-check fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">CTD / eCTD Dossiers</h6>
+                <span class="small opacity-75">Ready for 50+ Countries</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-globe-americas fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">Global Export Network</h6>
+                <span class="small opacity-75">Worldwide Healthcare Supply</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <!-- Col 1: Brand & Profile -->
+        <div class="col-lg-3 col-md-6">
+          <a class="navbar-brand text-white mb-3 d-inline-flex align-items-center gap-2" href="index.html">
+            <div class="brand-icon-wrapper">
+              <i class="bi bi-capsule"></i>
+            </div>
+            <span class="text-white fw-bold fs-4">FLEMMING<span class="text-gradient"> PHARMA</span></span>
+          </a>
+          <p class="small opacity-75 mb-4 pe-lg-2">
+            Flemming Pharma is an international pharmaceutical manufacturing leader committed to scientific innovation, WHO-GMP product quality, and global healthcare accessibility.
+          </p>
+          <div class="d-flex gap-2 mb-3">
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Formulations -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-title">Formulations</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=tablets">Solid Orals (Tablets)</a></li>
+            <li><a href="products.html?category=capsules">Capsules & Softgels</a></li>
+            <li><a href="products.html?category=injectables">Sterile Injectables</a></li>
+            <li><a href="products.html?category=antibiotics">Cephalosporins</a></li>
+            <li><a href="products.html?category=drops">Ophthalmic Drops</a></li>
+            <li><a href="products.html?category=syrups">Liquid Orals & Syrups</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-title">Core Services</h5>
+          <ul class="footer-links">
+            <li><a href="services.html#contract-manufacturing">Contract Manufacturing</a></li>
+            <li><a href="services.html#third-party-manufacturing">3rd Party Private Label</a></li>
+            <li><a href="services.html#institutional-tenders">Institutional Tenders</a></li>
+            <li><a href="services.html#generic-medicines">Generic Medicines</a></li>
+            <li><a href="services.html#regulatory-service">Regulatory Dossier (CTD)</a></li>
+            <li><a href="services.html#qc-qa">QC / QA Testing Labs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Quick Links -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-title">Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="manufacturing.html">Manufacturing Facilities</a></li>
+            <li><a href="rnd.html">R & D Innovation Center</a></li>
+            <li><a href="quality.html">Quality Assurance</a></li>
+            <li><a href="certifications.html">Accreditations</a></li>
+            <li><a href="gallery.html">Infrastructure Gallery</a></li>
+            <li><a href="careers.html">Careers & Culture</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Corporate Info & Subscription -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Global Headquarters</h5>
+          <p class="small opacity-75 mb-2">
+            <i class="bi bi-geo-alt-fill text-info me-2"></i> Flemming Pharma Tower, Science Park Rd, Innovation Hub
+          </p>
+          <p class="small opacity-75 mb-2">
+            <i class="bi bi-envelope-fill text-info me-2"></i> export@flemmingpharma.com
+          </p>
+          <p class="small opacity-75 mb-4">
+            <i class="bi bi-telephone-fill text-info me-2"></i> +1 (800) 555-PHARMA / +91 22 5550-8800
+          </p>
+
+          <h6 class="fw-bold text-white small mb-3">Subscribe to Dossier & Catalog Updates</h6>
+          <form class="pharma-inquiry-form">
+            <div class="footer-subscribe-wrapper d-flex align-items-center rounded-pill p-1">
+              <i class="bi bi-envelope-fill text-info ms-3 me-1 fs-6"></i>
+              <input type="email" class="form-control form-control-sm bg-transparent border-0 text-white shadow-none px-2" placeholder="Enter corporate email" required>
+              <button class="btn btn-pharma-primary rounded-pill px-3 py-2 fw-bold small flex-shrink-0 text-uppercase" type="submit">
+                Subscribe <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="border-top border-secondary border-opacity-25 pt-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 small opacity-75">
+        <p class="mb-0">&copy; 2026 Flemming Pharma Ltd. All Rights Reserved. WHO-GMP & ISO 9001:2015 Certified Manufacturer.</p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white text-decoration-none opacity-75">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" class="text-white text-decoration-none opacity-75">Terms of Supply</a>
+          <span>|</span>
+          <a href="#" class="text-white text-decoration-none opacity-75">Regulatory Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

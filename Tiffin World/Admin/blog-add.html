@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Post — TiffinWorld Admin</title>
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
+  <style>
+    /* Back to Blogs Button */
+    .btn-back-to-blogs {
+      background-color: #EBF3FE;
+      color: #2D5822 !important;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 180ms ease;
+    }
+
+    .btn-back-to-blogs:hover {
+      background-color: #2D5822;
+      color: #FFFFFF !important;
+      border-color: #2D5822;
+      transform: translateX(-2px);
+      box-shadow: 0 4px 12px rgba(45, 88, 34, 0.2);
+    }
+
+    .page-title-green {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: #2D5822;
+      margin: 0;
+    }
+
+    .page-subtitle-grey {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #6B7280;
+      margin-top: 4px;
+      margin-bottom: 28px;
+    }
+
+    /* Main Form Card Container */
+    .blog-add-card {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .form-section-row {
+      margin-bottom: 28px;
+    }
+
+    .form-field-label {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 800;
+      color: #2D5822;
+      margin-bottom: 8px;
+      display: block;
+      letter-spacing: 0.2px;
+    }
+
+    .form-custom-input, .form-custom-select, .form-custom-textarea {
+      width: 100%;
+      background-color: #F0F6FF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #374151;
+      outline: none;
+      transition: all 180ms ease;
+    }
+
+    .form-custom-input:focus, .form-custom-select:focus, .form-custom-textarea:focus {
+      background-color: #FFFFFF;
+      border-color: #FF7F00;
+      box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.15);
+    }
+
+    .slug-input-group {
+      display: flex;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1.5px solid #CBDCF8;
+      background-color: #F0F6FF;
+    }
+
+    .slug-addon {
+      background-color: #D6E5FA;
+      color: #374151;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-right: 1.5px solid #CBDCF8;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .slug-input-group input {
+      border: none !important;
+      border-radius: 0 !important;
+      background-color: #F0F6FF !important;
+    }
+
+    .upload-drag-zone {
+      background-color: #FFFFFF;
+      border: 1.5px dashed #A0C3F7;
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 200ms ease;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .upload-drag-zone:hover {
+      background-color: #F0F6FF;
+      border-color: #FF7F00;
+    }
+
+    .upload-icon-cloud {
+      font-size: 26px;
+      color: #3B82F6;
+      margin-bottom: 6px;
+    }
+
+    .upload-text-main {
+      font-size: 13px;
+      color: #4B5563;
+      margin: 0;
+    }
+
+    .upload-browse-highlight {
+      color: #2D5822;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .upload-text-sub {
+      font-size: 10px;
+      color: #9CA3AF;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    .image-alt-textarea {
+      height: 140px;
+      resize: none;
+    }
+
+    .editor-box-wrap {
+      background-color: #F0F6FF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .editor-toolbar {
+      background-color: #E2EDFC;
+      border-bottom: 1.5px solid #CBDCF8;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .editor-tool-btn {
+      background: transparent;
+      border: none;
+      color: #4B5563;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background-color 150ms ease;
+    }
+
+    .editor-tool-btn:hover {
+      background-color: #CBDCF8;
+      color: #111827;
+    }
+
+    .editor-textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 16px 20px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #374151;
+      resize: vertical;
+      background-color: #F0F6FF;
+    }
+
+    .seo-nested-card {
+      background-color: #F0F6FF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 16px;
+      padding: 26px;
+      margin-top: 16px;
+    }
+
+    .seo-nested-card .form-custom-input {
+      background-color: #FFFFFF !important;
+    }
+
+    .btn-save-draft {
+      background-color: #FFFFFF;
+      color: #2D5822;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 32px;
+      transition: all 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn-save-draft:hover {
+      background-color: #F0F6FF;
+      color: #1F4118;
+      border-color: #2D5822;
+    }
+
+    .btn-create-post {
+      background-color: #2D5822;
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 36px;
+      box-shadow: 0 4px 14px rgba(45, 88, 34, 0.25);
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+
+    .btn-create-post:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(45, 88, 34, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link active">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuProfileFeature" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-lines-fill sidebar-menu-icon"></i>
+              <span>Profile Feature</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuProfileFeature">
+            <ul class="sidebar-submenu">
+              <li><a href="profile-features.html" class="sidebar-submenu-link">Profile Feature List</a></li>
+              <li><a href="profile-create.html" class="sidebar-submenu-link">Create New Profile</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <a href="blogs.html" class="text-decoration-none text-secondary">Blogs</a> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Add New Post</span>
+            </div>
+            <h1 class="header-page-title">Add New Post</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS -->
+      <main class="admin-content">
+        
+        <!-- PAGE TITLE ROW WITH BACK TO BLOGS BUTTON -->
+        <div class="d-flex align-items-center justify-content-between mb-1">
+          <h2 class="page-title-green">Add New Post</h2>
+          <a href="blogs.html" class="btn-back-to-blogs">
+            <i class="bi bi-arrow-left"></i> Back to Blogs
+          </a>
+        </div>
+        <p class="page-subtitle-grey">Compose and configure your latest forest management update.</p>
+
+        <!-- MAIN FORM CARD -->
+        <div class="blog-add-card">
+          <form id="addPostForm" onsubmit="event.preventDefault(); showToast('New post created successfully!', 'Created'); setTimeout(() => window.location.href='blogs.html', 1000);">
+            
+            <!-- SECTION 1: CATEGORY & BLOG TITLE -->
+            <div class="row g-4 form-section-row">
+              <div class="col-md-4">
+                <label class="form-field-label" for="postCat">Category</label>
+                <select class="form-custom-select" id="postCat">
+                  <option selected disabled>Select Category</option>
+                  <option>STRATEGY</option>
+                  <option>OPERATIONS</option>
+                  <option>MANAGEMENT</option>
+                  <option>GROWTH</option>
+                </select>
+              </div>
+
+              <div class="col-md-8">
+                <label class="form-field-label" for="postTitle">Blog Title</label>
+                <input type="text" class="form-custom-input" id="postTitle" placeholder="Enter post heading">
+              </div>
+            </div>
+
+            <!-- SECTION 2: BLOG DATE & PAGE TITLE -->
+            <div class="row g-4 form-section-row">
+              <div class="col-md-6">
+                <label class="form-field-label" for="postDate">Blog Date</label>
+                <input type="text" class="form-custom-input" id="postDate" placeholder="mm/dd/yyyy">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-field-label" for="pageTitle">Page Title</label>
+                <input type="text" class="form-custom-input" id="pageTitle" placeholder="SEO optimized page title">
+              </div>
+            </div>
+
+            <!-- SECTION 3: SLUG -->
+            <div class="form-section-row">
+              <label class="form-field-label" for="postSlug">Slug</label>
+              <div class="slug-input-group">
+                <div class="slug-addon">ecoregistry.io/blog/</div>
+                <input type="text" class="form-custom-input" id="postSlug" placeholder="post-slug-url">
+              </div>
+            </div>
+
+            <!-- SECTION 4: UPLOAD FEATURED IMAGE & IMAGE ALT -->
+            <div class="row g-4 form-section-row">
+              <div class="col-md-6">
+                <label class="form-field-label">Upload Featured Image</label>
+                <div class="upload-drag-zone" onclick="document.getElementById('fileInputBtn').click();">
+                  <i class="bi bi-cloud-arrow-up upload-icon-cloud"></i>
+                  <p class="upload-text-main">Drag and drop or <span class="upload-browse-highlight">browse files</span></p>
+                  <div class="upload-text-sub">JPG, PNG UP TO 10MB</div>
+                  <input type="file" id="fileInputBtn" style="display: none;">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-field-label" for="imageAlt">Image Alt</label>
+                <textarea class="form-custom-textarea image-alt-textarea" id="imageAlt" placeholder="Describe image for accessibility..."></textarea>
+              </div>
+            </div>
+
+            <!-- SECTION 5: TABLE OF CONTENTS -->
+            <div class="form-section-row">
+              <label class="form-field-label">Table of Contents</label>
+              <div class="editor-box-wrap">
+                <div class="editor-toolbar">
+                  <button type="button" class="editor-tool-btn">B</button>
+                  <button type="button" class="editor-tool-btn"><i class="bi bi-list-ul"></i></button>
+                </div>
+                <textarea class="editor-textarea" rows="3" placeholder="Enter table of contents items..."></textarea>
+              </div>
+            </div>
+
+            <!-- SECTION 6: POST DESCRIPTION (RICH TEXT EDITOR) -->
+            <div class="form-section-row">
+              <label class="form-field-label">Post Description</label>
+              <div class="editor-box-wrap">
+                <div class="editor-toolbar">
+                  <button type="button" class="editor-tool-btn">B</button>
+                  <button type="button" class="editor-tool-btn"><i>I</i></button>
+                  <button type="button" class="editor-tool-btn"><u>U</u></button>
+                  <div class="vr"></div>
+                  <button type="button" class="editor-tool-btn"><i class="bi bi-text-left"></i></button>
+                  <button type="button" class="editor-tool-btn"><i class="bi bi-text-center"></i></button>
+                  <div class="vr"></div>
+                  <button type="button" class="editor-tool-btn"><i class="bi bi-link-45deg"></i></button>
+                  <button type="button" class="editor-tool-btn"><i class="bi bi-image"></i></button>
+                </div>
+                <textarea class="editor-textarea" rows="8" placeholder="Write your post content here..."></textarea>
+              </div>
+            </div>
+
+            <!-- SECTION 7: SOURCE -->
+            <div class="form-section-row">
+              <label class="form-field-label" for="postSource">Source</label>
+              <input type="text" class="form-custom-input" id="postSource" placeholder="Attribute citations or original data sources">
+            </div>
+
+            <!-- SECTION 8: ALLOW BLOG SEO CHECKBOX -->
+            <div class="form-section-row">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="allowSeoCheck" checked>
+                <label class="form-check-label fw-semibold text-dark small" for="allowSeoCheck">
+                  Allow Blog SEO
+                </label>
+              </div>
+            </div>
+
+            <!-- SECTION 9: SEO NESTED CARD SECTION -->
+            <div class="seo-nested-card form-section-row">
+              <div class="mb-3">
+                <label class="form-field-label" for="seoTags">Tags</label>
+                <input type="text" class="form-custom-input" id="seoTags" placeholder="Sustainability, Carbon Credits, Forestation...">
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-field-label" for="tagsTitle">Tags Title</label>
+                  <input type="text" class="form-custom-input" id="tagsTitle" placeholder="Meta tag title">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-field-label" for="tagsDesc">Tags Meta Description</label>
+                  <input type="text" class="form-custom-input" id="tagsDesc" placeholder="Brief summary for search results">
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 10: ACTION BUTTONS RIGHT ALIGNED -->
+            <div class="d-flex align-items-center justify-content-end gap-3 pt-2">
+              <a href="blogs.html" class="btn-save-draft text-decoration-none">Cancel</a>
+              <button type="button" class="btn-save-draft" onclick="showToast('Draft saved', 'Saved')">Save Draft</button>
+              <button type="submit" class="btn-create-post">Create Post</button>
+            </div>
+
+          </form>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

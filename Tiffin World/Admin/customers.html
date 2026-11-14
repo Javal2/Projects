@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Management — TiffinWorld Admin</title>
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
+  <style>
+    /* --------------------------------------------------
+       EXACT SCREENSHOT CUSTOMER MANAGEMENT STYLES
+       -------------------------------------------------- */
+
+    .page-title-green {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: #2D5822; /* Dark Green Heading */
+      margin: 0;
+    }
+
+    .page-subtitle-grey {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #6B7280;
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    /* Top Action Buttons */
+    .btn-export-cust {
+      background-color: #EEF5FE;
+      color: #2D5822 !important;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn-export-cust:hover {
+      background-color: #DBE7F9;
+      color: #1F4118 !important;
+    }
+
+    .btn-add-cust-green {
+      background-color: #2D5822; /* Dark Green */
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(45, 88, 34, 0.25);
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+
+    .btn-add-cust-green:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+    }
+
+    /* Filter Bar Inputs */
+    .filter-bar-row {
+      margin-bottom: 24px;
+    }
+
+    .filter-input-label {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .filter-custom-input, .filter-custom-select {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: #374151;
+      outline: none;
+      transition: all 180ms ease;
+    }
+
+    .filter-custom-input:focus, .filter-custom-select:focus {
+      border-color: #FF7F00;
+      box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.15);
+    }
+
+    .search-input-wrap {
+      position: relative;
+    }
+
+    .search-input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9CA3AF;
+      font-size: 14px;
+    }
+
+    .search-input-wrap input {
+      padding-left: 38px;
+    }
+
+    /* Main Table Card */
+    .cust-table-card {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+
+    .cust-card-top-bar {
+      padding: 16px 28px;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #EBF2FD;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .recent-records-label {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: #2D5822;
+      margin-right: 8px;
+    }
+
+    .status-pill-tab {
+      background-color: #FFFFFF;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 999px;
+      padding: 4px 16px;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 600;
+      color: #4B5563;
+      cursor: pointer;
+      transition: all 150ms ease;
+      text-decoration: none;
+    }
+
+    .status-pill-tab:hover {
+      border-color: #2D5822;
+      color: #2D5822;
+    }
+
+    .status-pill-tab.active {
+      border-color: #6B7280;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    /* Table Component */
+    .cust-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    .cust-table th {
+      background-color: #EEF5FE; /* Light Blue Banner */
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: #2D5822;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 16px 24px;
+      border-bottom: 1.5px solid #CBDCF8;
+    }
+
+    .cust-table td {
+      padding: 18px 24px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: #4B5563;
+      border-bottom: 1px solid #EBF2FD;
+      vertical-align: middle;
+    }
+
+    .cust-table tbody tr:hover td {
+      background-color: #F8FAFC;
+    }
+
+    .cust-id-text {
+      color: #6B7280;
+    }
+
+    .cust-name-bold {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 14px;
+      color: #2D5822; /* Dark Green Customer Name */
+      line-height: 1.3;
+    }
+
+    .cust-email-text {
+      color: #4B5563;
+    }
+
+    .cust-phone-text {
+      color: #4B5563;
+      white-space: nowrap;
+    }
+
+    .cust-location-text {
+      color: #4B5563;
+      line-height: 1.3;
+    }
+
+    .cust-inquiries-count {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: #111827;
+    }
+
+    /* Badges */
+    .badge-cust-active {
+      background-color: #2D5822;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+    }
+
+    .badge-cust-inactive {
+      background-color: #A3C5FA;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+    }
+
+    .badge-cust-pending {
+      background-color: #D1E5FB;
+      color: #2563EB;
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+    }
+
+    .btn-action-dots {
+      background: transparent;
+      border: none;
+      color: #4B5563;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background-color 150ms ease;
+    }
+
+    .btn-action-dots:hover {
+      background-color: #EEF5FE;
+      color: #111827;
+    }
+
+    /* Table Footer Pagination */
+    .cust-footer-row {
+      padding: 16px 28px;
+      background-color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #EBF2FD;
+    }
+
+    .cust-page-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid #E5E7EB;
+      background-color: #FFFFFF;
+      color: #374151;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 150ms ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .cust-page-num:hover {
+      background-color: #F3F4F6;
+    }
+
+    .cust-page-num.active {
+      border-color: #2D5822;
+      color: #2D5822;
+      font-weight: 800;
+      background-color: #EEF5FE;
+    }
+
+    /* --------------------------------------------------
+       ADD NEW CUSTOMER MODAL
+       -------------------------------------------------- */
+
+    .modal-overlay-cust {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(30, 41, 59, 0.45);
+      z-index: 1050;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay-cust.open {
+      display: flex;
+    }
+
+    .modal-card-cust {
+      background: #FFFFFF;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 640px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+      overflow: hidden;
+      animation: modalSlideIn 220ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes modalSlideIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0)   scale(1); }
+    }
+
+    .modal-header-cust {
+      background-color: #EEF5FE;
+      padding: 24px 28px 22px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #CBDCF8;
+    }
+
+    .modal-header-cust-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: #2D5822;
+      margin: 0 0 4px;
+      line-height: 1.2;
+    }
+
+    .modal-header-cust-sub {
+      font-family: var(--font-body);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #6B7280;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .modal-close-btn-cust {
+      background: transparent;
+      border: none;
+      color: #6B7280;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 8px;
+      transition: background-color 150ms ease, color 150ms ease;
+      line-height: 1;
+    }
+
+    .modal-close-btn-cust:hover {
+      background-color: #D1E5FB;
+      color: #2D5822;
+    }
+
+    .modal-body-cust {
+      padding: 28px 28px 20px;
+      background: #FFFFFF;
+    }
+
+    .modal-form-label {
+      font-family: var(--font-heading);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #2D5822;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 7px;
+      display: block;
+    }
+
+    .modal-form-input,
+    .modal-form-select,
+    .modal-form-textarea {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: #374151;
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+      appearance: none;
+    }
+
+    .modal-form-input:focus,
+    .modal-form-select:focus,
+    .modal-form-textarea:focus {
+      border-color: #2D5822;
+      box-shadow: 0 0 0 3px rgba(45, 88, 34, 0.12);
+    }
+
+    .modal-form-input::placeholder,
+    .modal-form-textarea::placeholder {
+      color: #9CA3AF;
+    }
+
+    .modal-form-input-wrap {
+      position: relative;
+    }
+
+    .modal-input-icon-right {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9CA3AF;
+      font-size: 15px;
+    }
+
+    .modal-form-select-wrap {
+      position: relative;
+    }
+
+    .modal-form-select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #6B7280;
+      pointer-events: none;
+    }
+
+    .modal-form-textarea {
+      resize: none;
+      min-height: 82px;
+    }
+
+    .modal-footer-cust {
+      padding: 18px 28px 24px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      border-top: 1px solid #EBF2FD;
+    }
+
+    .btn-modal-close {
+      background: transparent;
+      border: none;
+      font-family: var(--font-heading);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #6B7280;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: color 150ms ease, background-color 150ms ease;
+    }
+
+    .btn-modal-close:hover {
+      background-color: #F3F4F6;
+      color: #374151;
+    }
+
+    .btn-modal-create {
+      background-color: #2D5822;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 11px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 4px 14px rgba(45, 88, 34, 0.28);
+      cursor: pointer;
+      transition: background-color 200ms ease, transform 150ms ease;
+    }
+
+    .btn-modal-create:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link active">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuProfileFeature" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-lines-fill sidebar-menu-icon"></i>
+              <span>Profile Feature</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuProfileFeature">
+            <ul class="sidebar-submenu">
+              <li><a href="profile-features.html" class="sidebar-submenu-link">Profile Feature List</a></li>
+              <li><a href="profile-create.html" class="sidebar-submenu-link">Create New Profile</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <span>User Operations</span> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Customer Management</span>
+            </div>
+            <h1 class="header-page-title">Customer Directory</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS MATCHING SCREENSHOT EXACTLY -->
+      <main class="admin-content">
+        
+        <!-- PAGE TITLE & TOP ACTION BUTTONS -->
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div>
+            <h2 class="page-title-green">Customer Management</h2>
+            <p class="page-subtitle-grey m-0 mt-1">Overview and administration of your executive client portfolio.</p>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn-export-cust" onclick="showToast('Exporting customer dataset CSV...', 'Export')">
+              <i class="bi bi-download"></i> Export
+            </button>
+            <button class="btn-add-cust-green" id="btnOpenAddCustomer" onclick="openAddCustomerModal()">
+              <i class="bi bi-person-plus"></i> Add New Customer
+            </button>
+          </div>
+        </div>
+
+        <!-- FILTER BAR (5 INPUTS IN 1 ROW) -->
+        <div class="row g-3 filter-bar-row mt-3">
+          
+          <div class="col-md">
+            <label class="filter-input-label">Search name / SKU / ID</label>
+            <div class="search-input-wrap">
+              <i class="bi bi-search search-input-icon"></i>
+              <input type="text" class="filter-custom-input" placeholder="e.g. SKU-90210">
+            </div>
+          </div>
+
+          <div class="col-md">
+            <label class="filter-input-label">Status</label>
+            <select class="filter-custom-select">
+              <option selected>All Status</option>
+              <option>ACTIVE</option>
+              <option>INACTIVE</option>
+              <option>PENDING</option>
+            </select>
+          </div>
+
+          <div class="col-md">
+            <label class="filter-input-label">Location</label>
+            <select class="filter-custom-select">
+              <option selected>Locations</option>
+              <option>Portland, OR</option>
+              <option>San Francisco, CA</option>
+              <option>Denver, CO</option>
+              <option>Seattle, WA</option>
+              <option>Vancouver, BC</option>
+            </select>
+          </div>
+
+          <div class="col-md">
+            <label class="filter-input-label">Date From</label>
+            <input type="text" class="filter-custom-input" placeholder="mm/dd/yyyy">
+          </div>
+
+          <div class="col-md">
+            <label class="filter-input-label">Date To</label>
+            <input type="text" class="filter-custom-input" placeholder="mm/dd/yyyy">
+          </div>
+
+        </div>
+
+        <!-- MAIN CUSTOMERS TABLE CARD -->
+        <div class="cust-table-card">
+          
+          <!-- TOP SUB-HEADER BAR -->
+          <div class="cust-card-top-bar">
+            <span class="recent-records-label">Recent Records</span>
+            <button class="status-pill-tab">All</button>
+            <button class="status-pill-tab active">Active</button>
+            <button class="status-pill-tab">Pending</button>
+          </div>
+
+          <!-- TABLE COMPONENT -->
+          <div class="table-responsive">
+            <table class="cust-table">
+              <thead>
+                <tr>
+                  <th style="width: 100px;">ID</th>
+                  <th>NAME</th>
+                  <th>EMAIL</th>
+                  <th>PHONE</th>
+                  <th>LOCATION</th>
+                  <th style="width: 130px;">TOTAL INQUIRIES</th>
+                  <th style="width: 120px;">STATUS</th>
+                  <th class="text-end" style="width: 90px;">ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <!-- ROW 1 -->
+                <tr>
+                  <td><span class="cust-id-text">#C-8291</span></td>
+                  <td>
+                    <div class="cust-name-bold">Eleanor<br>Whisper</div>
+                  </td>
+                  <td><span class="cust-email-text">eleanor.w@forest.co</span></td>
+                  <td><span class="cust-phone-text">+1 (555)012-4422</span></td>
+                  <td><span class="cust-location-text">Portland,<br>OR</span></td>
+                  <td><span class="cust-inquiries-count">14</span></td>
+                  <td><span class="badge-cust-active">ACTIVE</span></td>
+                  <td class="text-end">
+                    <button class="btn-action-dots" title="More options" onclick="showToast('Opened options for Eleanor Whisper', 'Customer Action')">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- ROW 2 -->
+                <tr>
+                  <td><span class="cust-id-text">#C-8294</span></td>
+                  <td>
+                    <div class="cust-name-bold">Brooks<br>Thorne</div>
+                  </td>
+                  <td><span class="cust-email-text">bt@thornemedia.net</span></td>
+                  <td><span class="cust-phone-text">+1 (555)121-9988</span></td>
+                  <td><span class="cust-location-text">San Francisco,<br>CA</span></td>
+                  <td><span class="cust-inquiries-count">0</span></td>
+                  <td><span class="badge-cust-inactive">INACTIVE</span></td>
+                  <td class="text-end">
+                    <button class="btn-action-dots" title="More options" onclick="showToast('Opened options for Brooks Thorne', 'Customer Action')">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- ROW 3 -->
+                <tr>
+                  <td><span class="cust-id-text">#C-8292</span></td>
+                  <td>
+                    <div class="cust-name-bold">Julian<br>Moss</div>
+                  </td>
+                  <td><span class="cust-email-text">j.moss@aspen-exec.com</span></td>
+                  <td><span class="cust-phone-text">+1 (555)922-3811</span></td>
+                  <td><span class="cust-location-text">Denver,<br>CO</span></td>
+                  <td><span class="cust-inquiries-count">3</span></td>
+                  <td><span class="badge-cust-pending">PENDING</span></td>
+                  <td class="text-end">
+                    <button class="btn-action-dots" title="More options" onclick="showToast('Opened options for Julian Moss', 'Customer Action')">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- ROW 4 -->
+                <tr>
+                  <td><span class="cust-id-text">#C-8293</span></td>
+                  <td>
+                    <div class="cust-name-bold">Sloane<br>Cedar</div>
+                  </td>
+                  <td><span class="cust-email-text">sloane@cedar-arch.io</span></td>
+                  <td><span class="cust-phone-text">+1 (555)777-2200</span></td>
+                  <td><span class="cust-location-text">Seattle,<br>WA</span></td>
+                  <td><span class="cust-inquiries-count">21</span></td>
+                  <td><span class="badge-cust-active">ACTIVE</span></td>
+                  <td class="text-end">
+                    <button class="btn-action-dots" title="More options" onclick="showToast('Opened options for Sloane Cedar', 'Customer Action')">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- ROW 5 -->
+                <tr>
+                  <td><span class="cust-id-text">#C-8295</span></td>
+                  <td>
+                    <div class="cust-name-bold">Amara<br>Pine</div>
+                  </td>
+                  <td><span class="cust-email-text">amara@pineandpeak.org</span></td>
+                  <td><span class="cust-phone-text">+1 (555)303-1122</span></td>
+                  <td><span class="cust-location-text">Vancouver,<br>BC</span></td>
+                  <td><span class="cust-inquiries-count">8</span></td>
+                  <td><span class="badge-cust-active">ACTIVE</span></td>
+                  <td class="text-end">
+                    <button class="btn-action-dots" title="More options" onclick="showToast('Opened options for Amara Pine', 'Customer Action')">
+                      <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <!-- FOOTER PAGINATION ROW -->
+          <div class="cust-footer-row">
+            <div class="text-muted small">Showing 1-5 of 1,284 customers</div>
+            <div class="d-flex align-items-center gap-1">
+              <button class="cust-page-num active">1</button>
+              <button class="cust-page-num">2</button>
+              <button class="cust-page-num">3</button>
+              <span class="px-2 text-muted">...</span>
+              <button class="cust-page-num">54</button>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ADD NEW CUSTOMER MODAL -->
+  <div class="modal-overlay-cust" id="addCustomerModal" onclick="handleModalOverlayClick(event)">
+    <div class="modal-card-cust" id="addCustomerCard">
+
+      <!-- Modal Header -->
+      <div class="modal-header-cust">
+        <div>
+          <h2 class="modal-header-cust-title">Add New Customer</h2>
+          <p class="modal-header-cust-sub">Create & register a new customer profile</p>
+        </div>
+        <button class="modal-close-btn-cust" id="btnCloseAddCustomer" onclick="closeAddCustomerModal()" title="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body / Form -->
+      <div class="modal-body-cust">
+        <form id="formAddCustomer" onsubmit="return false;">
+
+          <!-- Row 1: NAME | EMAIL -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="modal-form-label" for="custName">Name</label>
+              <div class="modal-form-input-wrap">
+                <input type="text" id="custName" class="modal-form-input" placeholder="e.g. Eleanor Whisper">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="modal-form-label" for="custEmail">Email</label>
+              <div class="modal-form-input-wrap">
+                <input type="email" id="custEmail" class="modal-form-input" placeholder="e.g. customer@email.com" style="padding-right: 40px;">
+                <i class="bi bi-link-45deg modal-input-icon-right"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: STATUS | PHONE -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="modal-form-label" for="custStatus">Status</label>
+              <div class="modal-form-select-wrap">
+                <select id="custStatus" class="modal-form-select">
+                  <option value="" disabled selected>Select Status</option>
+                  <option value="ACTIVE">Active</option>
+                  <option value="INACTIVE">Inactive</option>
+                  <option value="PENDING">Pending</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="modal-form-label" for="custPhone">Phone</label>
+              <input type="tel" id="custPhone" class="modal-form-input" placeholder="e.g. +1 (555) 012-4422">
+            </div>
+          </div>
+
+          <!-- Row 3: ADDRESS / LOCATION (full width) -->
+          <div class="mb-3">
+            <label class="modal-form-label" for="custAddress">Address / Location</label>
+            <textarea id="custAddress" class="modal-form-textarea" rows="3" placeholder="Street address, city, state / province, country..."></textarea>
+          </div>
+
+          <!-- Row 4: SEGMENTATION TAGS (full width) -->
+          <div class="mb-3">
+            <label class="modal-form-label" for="custTags">Segmentation Tags <span style="font-size:10px;font-weight:600;color:#9CA3AF;text-transform:none;letter-spacing:0;">(comma separated)</span></label>
+            <textarea id="custTags" class="modal-form-textarea" rows="3" placeholder="e.g. VIP, Organic, Repeat Buyer, Northwest Region..."></textarea>
+          </div>
+
+          <!-- Row 5: INTERNAL NOTES (full width) -->
+          <div class="mb-0">
+            <label class="modal-form-label" for="custNotes">Internal Notes</label>
+            <textarea id="custNotes" class="modal-form-textarea" rows="3" placeholder="Private notes visible only to admin team..."></textarea>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer-cust">
+        <button class="btn-modal-close" onclick="closeAddCustomerModal()">CLOSE</button>
+        <button class="btn-modal-create" onclick="submitAddCustomer()">
+          <i class="bi bi-floppy"></i> CREATE
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+  <script>
+    function openAddCustomerModal() {
+      document.getElementById('addCustomerModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAddCustomerModal() {
+      document.getElementById('addCustomerModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleModalOverlayClick(e) {
+      if (e.target === document.getElementById('addCustomerModal')) {
+        closeAddCustomerModal();
+      }
+    }
+
+    function submitAddCustomer() {
+      const name    = document.getElementById('custName').value.trim();
+      const email   = document.getElementById('custEmail').value.trim();
+      const status  = document.getElementById('custStatus').value;
+      const phone   = document.getElementById('custPhone').value.trim();
+
+      if (!name || !email || !status) {
+        showToast('Please fill in Name, Email, and Status fields.', 'Validation');
+        return;
+      }
+
+      showToast('Customer "' + name + '" created successfully!', 'Customer Added');
+      document.getElementById('formAddCustomer').reset();
+      closeAddCustomerModal();
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAddCustomerModal();
+    });
+  </script>
+</body>
+</html>

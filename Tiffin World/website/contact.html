@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — TiffinWorld</title>
+  <meta name="description" content="Whether you have a question about our curated meal plans or you're a vendor looking to join the harvest, we're here to help you savor every moment.">
+  
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  
+  <!-- Custom TiffinWorld Design System CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- ==================================================
+       SECTION 01 — HEADER (SHARED COMPONENT)
+       ================================================== -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link active">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="customer-login.html" class="tw-customer-login">Customer Login</a>
+            <a href="vendor-login.html" class="tw-vendor-btn">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================================================
+         SECTION 02 — CONTACT HERO INTRO & AVG RESPONSE BADGE
+         ================================================== -->
+    <section class="tw-contact-hero">
+      <div class="tw-container">
+        <div class="d-flex align-items-start justify-content-between flex-wrap gap-3">
+          <div>
+            <h1 class="tw-contact-h1">Contact Us</h1>
+            <p class="tw-contact-lead">
+              Whether you have a question about our curated meal plans or you're a vendor looking to join the harvest, we're here to help you savor every moment.
+            </p>
+          </div>
+          <!-- AVG Response Time Badge -->
+          <div class="tw-response-badge">
+            <i class="bi bi-clock-history"></i>
+            <span>AVG. REPLY TIME: 2 HOURS</span>
+          </div>
+        </div>
+
+        <!-- Thin Orange Divider -->
+        <div class="tw-orange-divider"></div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 03 — MAIN CONTACT GRID (62% LEFT / 38% RIGHT)
+         ================================================== -->
+    <section class="tw-contact-section">
+      <div class="tw-container">
+        <div class="row g-4">
+          <!-- Left Column (62%): Send Us A Message Form Card -->
+          <div class="col-lg-7">
+            <div class="tw-contact-form-card">
+              <h2 class="tw-contact-form-title">Send us a message</h2>
+
+              <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
+                <!-- Row 1: Full Name & Email Address -->
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="tw-field-label">FULL NAME</label>
+                    <input type="text" class="tw-contact-input" placeholder="Julian Casablancas" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="tw-field-label">EMAIL ADDRESS</label>
+                    <input type="email" class="tw-contact-input" placeholder="julian@tiffin.world" required>
+                  </div>
+                </div>
+
+                <!-- Row 2: Phone Number & Subject -->
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="tw-field-label">PHONE NUMBER</label>
+                    <div class="tw-phone-group">
+                      <select name="country_code" class="tw-contact-phone-select" aria-label="Country Code">
+                        <option value="+91" selected>🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+1">🇨🇦 +1</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+971">🇦🇪 +971</option>
+                        <option value="+65">🇸🇬 +65</option>
+                        <option value="+49">🇩🇪 +49</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+966">🇸🇦 +966</option>
+                        <option value="+974">🇶🇦 +974</option>
+                        <option value="+977">🇳🇵 +977</option>
+                      </select>
+                      <input type="tel" class="tw-contact-input" placeholder="000 000 0000" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="tw-field-label">SUBJECT</label>
+                    <select class="tw-contact-select" required>
+                      <option>General Inquiry</option>
+                      <option>Meal Subscription Question</option>
+                      <option>Kitchen Partner Onboarding</option>
+                      <option>Feedback & Quality Issue</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Row 3: Your Message -->
+                <div class="mb-4">
+                  <label class="tw-field-label">YOUR MESSAGE</label>
+                  <textarea class="tw-contact-textarea" placeholder="Tell us how we can help..." required></textarea>
+                </div>
+
+                <!-- Orange Send Message CTA -->
+                <div>
+                  <button type="submit" class="btn-send-message">
+                    Send Message <i class="bi bi-send"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column (38%): Other Ways Card & Desk Image -->
+          <div class="col-lg-5">
+            <!-- Top Info Card -->
+            <div class="tw-reach-card">
+              <h2 class="tw-reach-title">Other ways to reach us</h2>
+
+              <!-- Email -->
+              <div class="tw-reach-item">
+                <div class="tw-reach-icon-circle"><i class="bi bi-envelope"></i></div>
+                <div>
+                  <div class="tw-reach-label">EMAIL</div>
+                  <div class="tw-reach-value">hello@tiffinworld.com</div>
+                  <div class="tw-reach-sub">General Support & Feedback</div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="tw-reach-item">
+                <div class="tw-reach-icon-circle"><i class="bi bi-telephone"></i></div>
+                <div>
+                  <div class="tw-reach-label">PHONE</div>
+                  <div class="tw-reach-value">+1 (888) TIFFIN-0</div>
+                  <div class="tw-reach-sub">Mon - Fri, 9am - 6pm EST</div>
+                </div>
+              </div>
+
+              <!-- Office -->
+              <div class="tw-reach-item">
+                <div class="tw-reach-icon-circle"><i class="bi bi-geo-alt"></i></div>
+                <div>
+                  <div class="tw-reach-label">OFFICE</div>
+                  <div class="tw-reach-value">124 Harvest Lane, Suite 400</div>
+                  <div class="tw-reach-sub">New York, NY 10013</div>
+                </div>
+              </div>
+
+              <!-- Business Hours -->
+              <div class="tw-reach-item">
+                <div class="tw-reach-icon-circle"><i class="bi bi-clock"></i></div>
+                <div>
+                  <div class="tw-reach-label">BUSINESS HOURS</div>
+                  <div class="tw-reach-value">Mon - Fri 09:00 AM - 06:00 PM</div>
+                  <div class="tw-reach-sub">Sat - Sun 10:00 AM - 04:00 PM</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Image Card -->
+            <div class="tw-contact-img-card">
+              <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=800&auto=format&fit=crop" 
+                   alt="Tiffin box on office desk" class="tw-contact-desk-img">
+              <div class="tw-contact-img-overlay">
+                <p class="tw-contact-img-text">A taste of home, delivered to your doorstep.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================
+             SECTION 04 — NEWSLETTER CTA BANNER
+             ================================================== -->
+        <div class="tw-newsletter-section">
+          <div class="tw-newsletter-banner">
+            <div class="row align-items-center g-4">
+              <!-- Left Copy -->
+              <div class="col-lg-6">
+                <h2 class="tw-newsletter-title">Want the latest from our kitchen?</h2>
+                <p class="tw-newsletter-desc">
+                  Join our newsletter for weekly menu updates, chef spotlights, and seasonal harvest stories.
+                </p>
+              </div>
+
+              <!-- Right Form -->
+              <div class="col-lg-6">
+                <form class="tw-newsletter-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Subscribed to TiffinWorld newsletter!');">
+                  <input type="email" class="tw-newsletter-input" placeholder="Enter your email" required aria-label="Enter your email">
+                  <button type="submit" class="tw-newsletter-btn">Subscribe</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================
+       SECTION 05 — FOOTER (SHARED COMPONENT)
+       ================================================== -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <!-- Col 1: Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html" class="active-link">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Account -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="vendor-login.html">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Subscribe -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required aria-label="Your email">
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark Bottom Bar -->
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn" aria-label="Share"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn" aria-label="Website"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle & Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

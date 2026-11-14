@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Options Management — TiffinWorld Admin</title>
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
+  <style>
+    /* --------------------------------------------------
+       EXACT SCREENSHOT MEAL OPTIONS MANAGEMENT STYLES
+       -------------------------------------------------- */
+
+    .page-title-green {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: #2D5822; /* Dark Green Heading */
+      margin: 0;
+    }
+
+    .page-subtitle-grey {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #6B7280;
+      margin-top: 4px;
+      margin-bottom: 28px;
+    }
+
+    /* Shared Card Styles */
+    .saas-box-card {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8; /* Light Blue Border */
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+
+    .saas-card-banner {
+      background-color: #EEF5FE; /* Light Blue Header Banner */
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: #2D5822; /* Dark Green Header Text */
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 18px 24px;
+      border-bottom: 1.5px solid #CBDCF8;
+    }
+
+    /* Left Form Card */
+    .form-card-body {
+      padding: 24px;
+    }
+
+    .form-field-label {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .form-custom-input, .form-custom-select {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #374151;
+      outline: none;
+      transition: all 180ms ease;
+    }
+
+    .form-custom-input:focus, .form-custom-select:focus {
+      border-color: #FF7F00;
+      box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.15);
+    }
+
+    .btn-save-option {
+      background-color: #2D5822; /* Dark Green */
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      transition: all 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn-save-option:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+    }
+
+    .btn-cancel-option {
+      background-color: #EEF5FE; /* Light Blue Tint */
+      color: #374151 !important;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      transition: all 180ms ease;
+      cursor: pointer;
+    }
+
+    .btn-cancel-option:hover {
+      background-color: #DBE7F9;
+    }
+
+    /* Right Table Card */
+    .options-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    .options-table th {
+      background-color: #EEF5FE;
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: #2D5822;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 18px 24px;
+      border-bottom: 1.5px solid #CBDCF8;
+    }
+
+    .options-table td {
+      padding: 20px 24px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #374151;
+      border-bottom: 1px solid #EBF2FD;
+      vertical-align: middle;
+    }
+
+    .options-table tbody tr:hover td {
+      background-color: #F8FAFC;
+    }
+
+    .option-title-bold {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 15px;
+      color: #111827;
+    }
+
+    /* Status Badges */
+    .badge-status-active {
+      background-color: #2D5822; /* Dark Green Fill */
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.8px;
+    }
+
+    .badge-status-archived {
+      background-color: #E2ECE9;
+      color: #4B6059;
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.8px;
+    }
+
+    .badge-status-suspended {
+      background-color: #FCE8E8;
+      color: #D93838;
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.8px;
+    }
+
+    /* Action Icon Buttons */
+    .btn-icon-edit {
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border: none;
+      color: #2D5822;
+      font-size: 16px;
+      transition: transform 150ms ease;
+      cursor: pointer;
+    }
+
+    .btn-icon-edit:hover {
+      transform: translateY(-2px);
+      color: #1F4118;
+    }
+
+    .btn-icon-delete {
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border: none;
+      color: #DC2626;
+      font-size: 16px;
+      transition: transform 150ms ease;
+      cursor: pointer;
+    }
+
+    .btn-icon-delete:hover {
+      transform: translateY(-2px);
+      color: #991B1B;
+    }
+
+    /* Table Footer Pagination */
+    .table-footer-row {
+      padding: 16px 24px;
+      background-color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #EBF2FD;
+    }
+
+    .pagination-num-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid #D1D5DB;
+      background-color: #FFFFFF;
+      color: #374151;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 150ms ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .pagination-num-btn:hover {
+      background-color: #F3F4F6;
+    }
+
+    .pagination-num-btn.active {
+      background-color: #2D5822 !important;
+      border-color: #2D5822 !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- SINGLE PRODUCT MANAGEMENT ITEM -->
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- NEW STANDALONE MEAL OPTIONS ITEM -->
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link active">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuProfileFeature" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-lines-fill sidebar-menu-icon"></i>
+              <span>Profile Feature</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuProfileFeature">
+            <ul class="sidebar-submenu">
+              <li><a href="profile-features.html" class="sidebar-submenu-link">Profile Feature List</a></li>
+              <li><a href="profile-create.html" class="sidebar-submenu-link">Create New Profile</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <span>Catalog</span> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Meal Options</span>
+            </div>
+            <h1 class="header-page-title">Meal Options Management</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS MATCHING SCREENSHOT EXACTLY -->
+      <main class="admin-content">
+        
+        <!-- PAGE TITLE & SUBTITLE -->
+        <h2 class="page-title-green">Meal Options Management</h2>
+        <p class="page-subtitle-grey">Configure and maintain the global repository of meal varieties and service statuses.</p>
+
+        <div class="row g-4">
+          
+          <!-- LEFT COLUMN: CREATE NEW OPTION FORM CARD -->
+          <div class="col-lg-4">
+            <div class="saas-box-card">
+              <div class="saas-card-banner">CREATE NEW OPTION</div>
+              <div class="form-card-body">
+                <form id="createOptionForm" onsubmit="event.preventDefault(); showToast('Meal option created successfully!', 'Created');">
+                  
+                  <div class="mb-4">
+                    <label class="form-field-label" for="optNameInput">Option Name</label>
+                    <input type="text" class="form-custom-input" id="optNameInput" placeholder="e.g. Continental Breakfast" required>
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="form-field-label" for="optStatusSelect">Status</label>
+                    <select class="form-custom-select" id="optStatusSelect">
+                      <option selected>Active</option>
+                      <option>Archived</option>
+                      <option>Suspended</option>
+                    </select>
+                  </div>
+
+                  <div class="d-flex align-items-center gap-2">
+                    <button type="submit" class="btn-save-option">SAVE OPTION</button>
+                    <button type="reset" class="btn-cancel-option">CANCEL</button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: MEAL OPTIONS TABLE CARD -->
+          <div class="col-lg-8">
+            <div class="saas-box-card">
+              <div class="table-responsive">
+                <table class="options-table">
+                  <thead>
+                    <tr>
+                      <th>NAME</th>
+                      <th>STATUS</th>
+                      <th>CREATED</th>
+                      <th class="text-end">ACTIONS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <!-- ROW 1 -->
+                    <tr>
+                      <td>
+                        <span class="option-title-bold d-block">Gourmet Breakfast Box</span>
+                      </td>
+                      <td>
+                        <span class="badge-status-active">ACTIVE</span>
+                      </td>
+                      <td>Oct 24, 2023</td>
+                      <td class="text-end">
+                        <button class="btn-icon-edit me-1" title="Edit" onclick="showToast('Editing Gourmet Breakfast Box', 'Edit')"><i class="bi bi-pencil"></i></button>
+                        <button class="btn-icon-delete" title="Delete" onclick="showToast('Deleted Gourmet Breakfast Box', 'Delete')"><i class="bi bi-trash"></i></button>
+                      </td>
+                    </tr>
+
+                    <!-- ROW 2 -->
+                    <tr>
+                      <td>
+                        <span class="option-title-bold d-block">Artisan Pizza Selection</span>
+                      </td>
+                      <td>
+                        <span class="badge-status-archived">ARCHIVED</span>
+                      </td>
+                      <td>Sep 12, 2023</td>
+                      <td class="text-end">
+                        <button class="btn-icon-edit me-1" title="Edit" onclick="showToast('Editing Artisan Pizza Selection', 'Edit')"><i class="bi bi-pencil"></i></button>
+                        <button class="btn-icon-delete" title="Delete" onclick="showToast('Deleted Artisan Pizza Selection', 'Delete')"><i class="bi bi-trash"></i></button>
+                      </td>
+                    </tr>
+
+                    <!-- ROW 3 -->
+                    <tr>
+                      <td>
+                        <span class="option-title-bold d-block">Superfood Garden Salad</span>
+                      </td>
+                      <td>
+                        <span class="badge-status-active">ACTIVE</span>
+                      </td>
+                      <td>Aug 05, 2023</td>
+                      <td class="text-end">
+                        <button class="btn-icon-edit me-1" title="Edit" onclick="showToast('Editing Superfood Garden Salad', 'Edit')"><i class="bi bi-pencil"></i></button>
+                        <button class="btn-icon-delete" title="Delete" onclick="showToast('Deleted Superfood Garden Salad', 'Delete')"><i class="bi bi-trash"></i></button>
+                      </td>
+                    </tr>
+
+                    <!-- ROW 4 -->
+                    <tr>
+                      <td>
+                        <span class="option-title-bold d-block">Executive Dinner Plate</span>
+                      </td>
+                      <td>
+                        <span class="badge-status-active">ACTIVE</span>
+                      </td>
+                      <td>Jul 22, 2023</td>
+                      <td class="text-end">
+                        <button class="btn-icon-edit me-1" title="Edit" onclick="showToast('Editing Executive Dinner Plate', 'Edit')"><i class="bi bi-pencil"></i></button>
+                        <button class="btn-icon-delete" title="Delete" onclick="showToast('Deleted Executive Dinner Plate', 'Delete')"><i class="bi bi-trash"></i></button>
+                      </td>
+                    </tr>
+
+                    <!-- ROW 5 -->
+                    <tr>
+                      <td>
+                        <span class="option-title-bold d-block">Afternoon Tea Service</span>
+                      </td>
+                      <td>
+                        <span class="badge-status-suspended">SUSPENDED</span>
+                      </td>
+                      <td>Jun 15, 2023</td>
+                      <td class="text-end">
+                        <button class="btn-icon-edit me-1" title="Edit" onclick="showToast('Editing Afternoon Tea Service', 'Edit')"><i class="bi bi-pencil"></i></button>
+                        <button class="btn-icon-delete" title="Delete" onclick="showToast('Deleted Afternoon Tea Service', 'Delete')"><i class="bi bi-trash"></i></button>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- TABLE FOOTER PAGINATION ROW -->
+              <div class="table-footer-row">
+                <div class="text-muted small">Showing 5 of 32 meal options</div>
+                <div class="d-flex align-items-center gap-1">
+                  <button class="pagination-num-btn"><i class="bi bi-chevron-left"></i></button>
+                  <button class="pagination-num-btn active">1</button>
+                  <button class="pagination-num-btn">2</button>
+                  <button class="pagination-num-btn"><i class="bi bi-chevron-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

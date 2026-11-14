@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Partner Login — TiffinWorld</title>
+  <meta name="description" content="Login to your TiffinWorld Kitchen Partner dashboard to manage orders, daily menus, and customer inquiries.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Assets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/vendor-auth.css">
+</head>
+<body>
+
+  <!-- Header Component -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="customer-login.html" class="tw-customer-login">Customer Login</a>
+            <a href="vendor-login.html" class="tw-vendor-btn active">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center active">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <main class="vendor-auth-section">
+    <div class="tw-container vendor-auth-container">
+      
+      <div class="vendor-login-card">
+        <div class="row g-0">
+          
+          <!-- LEFT IMAGE PANEL -->
+          <div class="col-lg-6 vendor-login-image-panel d-none d-lg-flex">
+            <div class="vendor-login-overlay"></div>
+            
+            <div class="vendor-login-image-content">
+              <div class="vendor-badge-pill">
+                <i class="bi bi-leaf-fill"></i> PARTNER PORTAL
+              </div>
+              
+              <h2 class="vendor-hero-title-light">Fueling the</h2>
+              <h2 class="vendor-hero-title-orange">Modern Kitchen</h2>
+            </div>
+
+            <div class="vendor-login-image-content">
+              <p class="vendor-hero-desc">
+                Join our community of culinary artisans. Manage your menu, track deliveries, and grow your brand with Tiffinworld.
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT FORM PANEL -->
+          <div class="col-lg-6 vendor-login-form-panel">
+            <h1 class="vendor-form-title">Vendor Login</h1>
+            <p class="vendor-form-subtitle">Welcome back! Please enter your details.</p>
+
+            <!-- Segmented Control Switch -->
+            <div class="vendor-segmented-control">
+              <button type="button" class="vendor-seg-tab active" id="tabVendorPassword">Password</button>
+              <button type="button" class="vendor-seg-tab" id="tabVendorOtp">OTP Login</button>
+            </div>
+
+            <!-- Main Form -->
+            <form id="vendorLoginForm" action="#" method="POST" novalidate>
+              
+              <!-- Password Mode Section -->
+              <div id="vendorPasswordSection">
+                <div class="mb-4">
+                  <label for="vendorEmailPhone" class="vendor-field-label">Email or Phone Number</label>
+                  <div class="vendor-input-wrapper">
+                    <i class="bi bi-envelope vendor-input-icon"></i>
+                    <input type="text" id="vendorEmailPhone" name="login_id" class="vendor-control" 
+                           placeholder="vendor@kitchen.com" value="vendor@kitchen.com" required>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="vendor-password-label-row">
+                    <label for="vendorPassword" class="vendor-field-label">Password</label>
+                    <a href="#" class="vendor-forgot-link">Forgot password?</a>
+                  </div>
+                  <div class="vendor-input-wrapper">
+                    <i class="bi bi-lock vendor-input-icon"></i>
+                    <input type="password" id="vendorPassword" name="password" class="vendor-control vendor-control-password" 
+                           placeholder="••••••••" required>
+                    <i class="bi bi-eye vendor-eye-toggle" id="toggleVendorPassword"></i>
+                  </div>
+                </div>
+
+                <div class="vendor-remember-row">
+                  <input type="checkbox" id="rememberVendor" name="remember" class="vendor-custom-checkbox" checked>
+                  <label for="rememberVendor" class="vendor-remember-label">Keep me logged in</label>
+                </div>
+              </div>
+
+              <!-- OTP Mode Section (Hidden by default) -->
+              <div id="vendorOtpSection" class="d-none">
+                <div class="mb-4">
+                  <label for="vendorOtpEmailPhone" class="vendor-field-label">Email or Phone Number</label>
+                  <div class="vendor-input-wrapper">
+                    <i class="bi bi-phone vendor-input-icon"></i>
+                    <input type="text" id="vendorOtpEmailPhone" name="otp_login_id" class="vendor-control" 
+                           placeholder="vendor@kitchen.com or 9876543210">
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="vendor-field-label">Enter 6-Digit OTP</label>
+                  <div class="auth-otp-wrapper" style="background-color: var(--tw-section-bg); height: 72px;">
+                    <input type="text" class="auth-otp-box vendor-otp-box" maxlength="1" inputmode="numeric" autocomplete="one-time-code" aria-label="OTP digit 1">
+                    <input type="text" class="auth-otp-box vendor-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 2">
+                    <input type="text" class="auth-otp-box vendor-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 3">
+                    <input type="text" class="auth-otp-box vendor-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 4">
+                    <input type="text" class="auth-otp-box vendor-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 5">
+                    <input type="text" class="auth-otp-box vendor-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 6">
+                  </div>
+                  <input type="hidden" name="vendor_otp" id="vendorOtpCombined" value="">
+                </div>
+              </div>
+
+              <!-- Primary Submit Button -->
+              <button type="submit" class="btn-vendor-submit" id="btnVendorSubmit">
+                Sign In to Dashboard
+              </button>
+            </form>
+
+            <div class="vendor-bottom-divider"></div>
+
+            <p class="vendor-bottom-link-text">
+              New to Tiffinworld? <a href="vendor-register.html" class="vendor-bottom-link">Register as a Vendor</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="vendor-login.html" class="active-link">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Seller Plan — Tiffinworld</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Vendor SaaS Design System CSS -->
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="vendor-wrapper">
+  <!-- Sidebar -->
+  <aside class="vendor-sidebar">
+    <div>
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon-box">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">TiffinWorld</h1>
+        </div>
+      </a>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html" class="menu-item-link">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="menu-item-link">
+            <i class="bi bi-archive-fill"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="menu-planner.html" class="menu-item-link">
+            <i class="bi bi-calendar3"></i>
+            <span>Menu Planner</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="menu-item-link">
+            <i class="bi bi-person-fill"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="seller-website.html" class="menu-item-link">
+            <i class="bi bi-globe"></i>
+            <span>Seller Website</span>
+          </a>
+        </li>
+        <li>
+          <a href="help.html" class="menu-item-link">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help</span>
+          </a>
+        </li>
+        <li>
+          <a href="inquiries.html" class="menu-item-link">
+            <i class="bi bi-chat-quote-fill"></i>
+            <span>Inquiries</span>
+          </a>
+        </li>
+        <li>
+          <a href="plans.html" class="menu-item-link active">
+            <i class="bi bi-journal-bookmark-fill"></i>
+            <span>Plans</span>
+            <i class="bi bi-chevron-down caret-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="delivery-setup.html" class="menu-item-link">
+            <i class="bi bi-truck"></i>
+            <span>Delivery Location Setup</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-logout-card">
+      <a href="../website/vendor-login.html" class="logout-btn-outline">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Log Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="vendor-main-content">
+    <!-- Header Component -->
+    <header class="vendor-header">
+      <div class="header-search-wrap">
+        <i class="bi bi-search header-search-icon"></i>
+        <input type="text" id="headerSearchInput" class="header-search-input" placeholder="Search orders, products...">
+      </div>
+
+      <div class="header-actions">
+        <a href="../website/index.html" target="_blank" class="btn-visit-site-orange">
+          <i class="bi bi-box-arrow-up-right me-1"></i>
+          <span>Visit Website</span>
+        </a>
+
+        <div class="vendor-header-profile">
+          <div class="vendor-header-info">
+            <div class="vendor-header-name">The Green Kitchen</div>
+            <div class="vendor-header-tag">PREMIUM VENDOR</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Chef Avatar" class="vendor-header-avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body Content -->
+    <div class="page-body-container">
+      <!-- Centered Header Section -->
+      <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+        <h2 class="fw-bold mb-3" style="color: #15803D; font-size: 34px;">Choose Your Seller Plan</h2>
+        <p class="text-secondary mb-4" style="font-size: 15px; line-height: 1.6;">
+          Unlock your shop's full potential with curated tools designed to scale your organic boutique from seed to blossom.
+        </p>
+
+        <!-- Custom Billing Toggle -->
+        <div class="d-inline-flex align-items-center justify-content-center gap-3 fw-bold my-2" style="font-size: 16px;">
+          <span style="color: #15803D;">Monthly</span>
+          <div id="customBillingToggle" class="custom-orange-switch active" onclick="toggleBillingSwitch()" style="width: 54px; height: 28px; background: #FF7F00; border-radius: 99px; padding: 3px; cursor: pointer; display: inline-flex; align-items: center; position: relative; transition: all 0.3s ease; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
+            <div id="switchKnob" style="width: 22px; height: 22px; background: #FFFFFF; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); transform: translateX(26px);"></div>
+          </div>
+          <span style="color: #15803D;">Yearly &nbsp;<span style="color: #FF7F00; font-weight: 700;">(-20%)</span></span>
+        </div>
+      </div>
+
+      <!-- Top Pricing Cards Row (3 Cards) -->
+      <div class="row g-4 mb-5 align-items-stretch">
+        <!-- Card 1: Essential / Starter Plan -->
+        <div class="col-lg-4">
+          <div class="card p-4 p-md-4 rounded-4 border-2 shadow-sm h-100 position-relative" style="border-color: var(--primary-orange) !important;">
+            <div class="position-absolute top-0 start-50 translate-middle-x text-white fw-bold px-3 py-1 text-uppercase" style="font-size: 10.5px; letter-spacing: 0.8px; background: var(--primary-orange); border-radius: 0 0 10px 10px;">
+              MOST ESSENTIAL
+            </div>
+
+            <div class="pt-3">
+              <div class="text-uppercase fw-bold mb-1" style="color: #15803D; font-size: 11px; letter-spacing: 0.8px;">START GROWING</div>
+              <h4 class="fw-bold mb-1" style="color: #2D4030;">Baxter Hopkins</h4>
+              <div class="text-secondary small fst-italic mb-3">For New Member</div>
+
+              <div class="text-muted text-decoration-line-through fw-semibold small">₹200.00/month</div>
+              <div class="fw-bold mb-3" style="font-size: 38px; color: var(--primary-orange); line-height: 1;">
+                ₹0.00<span class="fs-6 text-secondary fw-normal">/month</span>
+              </div>
+
+              <ul class="list-unstyled text-secondary small py-2 mb-4">
+                <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 fs-6" style="color: #15803D;"></i> Product Limit 20</li>
+                <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 fs-6" style="color: #15803D;"></i> Free 2 Month</li>
+                <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 fs-6" style="color: #15803D;"></i> Basic Analytics</li>
+              </ul>
+
+              <a href="add-plans.html" class="btn text-white rounded-pill w-100 py-3 fw-bold mt-auto shadow-sm text-decoration-none d-block text-center" style="background: #FF7F00;">
+                Start Free Trial
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Pro Growth Plan -->
+        <div class="col-lg-4">
+          <div class="card p-4 p-md-4 rounded-4 border-1 border-light-subtle shadow-sm h-100" style="border-color: #DBEAFE !important;">
+            <div class="pt-3">
+              <div class="text-uppercase fw-bold mb-1" style="color: #15803D; font-size: 11px; letter-spacing: 0.8px;">START GROWING</div>
+              <h4 class="fw-bold mb-1" style="color: #2D4030;">Baxter Hopkins</h4>
+              <div class="text-secondary small fst-italic mb-3">For New Member</div>
+
+              <div class="text-muted text-decoration-line-through fw-semibold small">₹600.00/month</div>
+              <div class="fw-bold mb-3" style="font-size: 38px; color: var(--primary-orange); line-height: 1;">
+                ₹300.00<span class="fs-6 text-secondary fw-normal">/month</span>
+              </div>
+
+              <ul class="list-unstyled text-secondary small py-2 mb-4">
+                <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 fs-6" style="color: #15803D;"></i> Product Limit 20</li>
+                <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 fs-6" style="color: #15803D;"></i> Free 2 Month</li>
+                <li class="mb-2 d-flex align-items-center"><i class="bi bi-check-circle-fill me-2 fs-6" style="color: #15803D;"></i> Basic Analytics</li>
+              </ul>
+
+              <a href="add-plans.html" class="btn rounded-pill w-100 py-3 fw-bold mt-auto text-decoration-none d-block text-center" style="background: #EFF6FF; border: 1.5px solid #DBEAFE; color: #1D4ED8;">
+                Choose Plan
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Upcoming Plan Placeholder -->
+        <div class="col-lg-4">
+          <div class="h-100 rounded-4 d-flex flex-column align-items-center justify-content-center p-4 text-center" style="background: #EFF6FF; border: 2px dashed #93C5FD; min-height: 380px;">
+            <div class="fst-italic" style="font-size: 32px; color: #93C5FD; font-weight: 400;">
+              New Plan soon...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom 3 Value Cards Row -->
+      <div class="row g-4 align-items-stretch">
+        <!-- Banner Card (Dark Green) -->
+        <div class="col-lg-6">
+          <div class="p-4 p-md-5 text-white h-100 d-flex flex-column justify-content-center shadow-sm" style="background: #3B692B; border-radius: 28px !important;">
+            <h3 class="fw-bold mb-3 text-white" style="font-size: 32px; letter-spacing: -0.5px;">Grow at your own pace.</h3>
+            <p class="mb-0" style="color: rgba(255, 255, 255, 0.88); font-size: 15.5px; line-height: 1.6; max-width: 440px;">
+              Start for free, upgrade when you flourish. We never lock you into contracts that stifle your creativity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Secure Payments Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="text-center h-100 d-flex flex-column align-items-center justify-content-center p-4 py-5 shadow-sm" style="background: #EFF6FF; border: 1.5px solid #DBEAFE; border-radius: 28px !important;">
+            <div class="mb-3" style="color: #3B692B; font-size: 34px;">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="fw-bold mb-2" style="color: #2D4030; font-size: 18px;">Secure Payments</h5>
+            <p class="small mb-0" style="font-size: 13.5px; line-height: 1.5; color: #475569 !important;">
+              Enterprise-grade encryption for all your vendor payouts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Global Reach Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card text-center h-100 d-flex flex-column align-items-center justify-content-center p-4 py-5 shadow-sm" style="background: #FFFFFF; border: 1.5px solid #DBEAFE !important; border-radius: 28px !important;">
+            <div class="mb-3" style="color: #3B692B; font-size: 34px;">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <h5 class="fw-bold mb-2" style="color: #2D4030; font-size: 18px;">Global Reach</h5>
+            <p class="small mb-0" style="font-size: 13.5px; line-height: 1.5; color: #475569 !important;">
+              Connect with over 2M+ organic lifestyle enthusiasts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor-main.js"></script>
+<script>
+function toggleBillingSwitch() {
+  const toggle = document.getElementById('customBillingToggle');
+  const knob = document.getElementById('switchKnob');
+  const isYearly = toggle.classList.contains('active');
+  
+  if (isYearly) {
+    toggle.classList.remove('active');
+    toggle.style.background = '#CBD5E1';
+    knob.style.transform = 'translateX(2px)';
+    if(typeof showToast === 'function') showToast('Switched to Monthly billing mode', 'info');
+  } else {
+    toggle.classList.add('active');
+    toggle.style.background = '#FF7F00';
+    knob.style.transform = 'translateX(26px)';
+    if(typeof showToast === 'function') showToast('Switched to Yearly billing mode (20% Off!)');
+  }
+}
+</script>
+</body>
+</html>

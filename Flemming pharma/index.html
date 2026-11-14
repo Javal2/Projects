@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flemming Pharma | Innovating Healthcare, Delivering Global Excellence</title>
+  <meta name="description"
+    content="Flemming Pharma is a global pharmaceutical leader specializing in high-quality formulation manufacturing, advanced R&D, WHO-GMP certified facilities, and global export operations.">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Design System -->
+  <link href="css/custom.css" rel="stylesheet">
+  <!-- Instant Session Intro Check -->
+  <script>
+    (function () {
+      try {
+        var isInternalNav = sessionStorage.getItem('flemming_from_internal_nav') === 'true';
+        // Clear flag immediately so subsequent reloads (F5) trigger intro
+        sessionStorage.removeItem('flemming_from_internal_nav');
+
+        if (isInternalNav) {
+          document.documentElement.classList.add('skip-cinematic-intro');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="has-cinematic-intro">
+
+  <!-- ==========================================================================
+       LIGHT-MODE CINEMATIC SCROLL EXPERIENCE
+       ========================================================================== -->
+  <div id="cinematic-scroll-trigger">
+    <div id="cinematic-canvas-container">
+      <!-- 3D Canvas rendered by js/cinematic-intro.js -->
+    </div>
+
+    <!-- STAGE 1 INTRO OVERLAY (CLEAR CENTER 3D CAPSULE SPACE) -->
+    <div id="cinematic-intro-text">
+      <!-- TOP HEADLINE AREA (ABOVE 3D CAPSULE) -->
+      <div class="cinematic-intro-top">
+        <div class="pharma-badge shadow-sm mb-3">
+          <i class="bi bi-patch-check-fill text-primary"></i> FLEMMING PHARMA GLOBAL REVEAL
+        </div>
+        <h1 class="display-4 fw-extrabold text-dark tracking-tight mb-0">
+          Every Breakthrough <span class="text-gradient">Begins With a Single Molecule</span>
+        </h1>
+      </div>
+
+      <!-- BOTTOM CONTROLS & SUBTITLE (BELOW 3D CAPSULE) -->
+      <div class="cinematic-intro-bottom">
+        <p class="lead text-secondary fs-6 max-w-600 mx-auto mb-3">
+          Precision formulation, advanced R&D, and EU-GMP compliant pharmaceutical manufacturing.
+        </p>
+
+        <div class="cinematic-scroll-pill">
+          <div class="scroll-pulse-dot"></div>
+          <span>Scroll to Discover Experience</span>
+          <i class="bi bi-chevron-double-down ms-2 fs-6"></i>
+        </div>
+      </div>
+
+      <!-- CORNER FOOTER OVERLAYS -->
+      <div class="intro-corner-left d-none d-md-block">
+        <span class="text-muted small">Scientific Precision</span>
+        <div class="fw-bold text-dark fs-6">Cleanroom Class 100,000</div>
+      </div>
+      <div class="intro-corner-right d-none d-md-block">
+        <span class="text-muted small">Global Compliance</span>
+        <div class="fw-bold text-primary fs-6">50+ Nations Registered</div>
+      </div>
+    </div>
+
+    <!-- STAGE 5 LOGO ASSEMBLY OVERLAY (ELEVATED MODERN BRAND SHIELD) -->
+    <div id="cinematic-logo-assembly">
+      <div class="brand-icon-wrapper mx-auto mb-3 shadow-lg" style="width: 84px; height: 84px; font-size: 2.5rem; background: var(--pharma-gradient-primary); color: #FFFFFF;">
+        <i class="bi bi-capsule"></i>
+      </div>
+      <h1 class="display-3 fw-extrabold text-dark mb-2">FLEMMING <span class="text-gradient">PHARMA</span></h1>
+      <p class="h4 text-primary fw-bold mb-3">Innovating Healthcare Through Science</p>
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-light border shadow-sm">
+        <span class="badge bg-primary">350+ Formulations</span>
+        <span class="small text-secondary fw-semibold">WHO-GMP & ISO 9001:2015</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION BAR
+       ========================================================================== -->
+      <nav class="navbar navbar-expand-lg navbar-pharma fixed-top ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-wrapper">
+          <i class="bi bi-capsule"></i>
+        </div>
+        <span>FLEMMING<span class="text-gradient"> PHARMA</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="products.html">Products</a>
+          </li>
+          <!-- Services Dropdown Submenu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services <i class="bi bi-chevron-down dropdown-arrow-icon"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-pharma p-3 shadow-lg border-0" style="min-width: 480px;">
+              <div class="row g-2">
+                <div class="col-6">
+                  <h6 class="text-uppercase text-secondary small fw-bold px-2 mb-2">Manufacturing Services</h6>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#contract-manufacturing">
+                    <i class="bi bi-buildings text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Contract Manufacturing</div>
+                      <span class="small text-muted">WHO-GMP Facilities</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#third-party-manufacturing">
+                    <i class="bi bi-box-seam text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">3<sup>rd</sup> Party Manufacturing</div>
+                      <span class="small text-muted">Turnkey Private Label</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#institutional-tenders">
+                    <i class="bi bi-hospital text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Institutional Tenders</div>
+                      <span class="small text-muted">Government Supplies</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6">
+                  <h6 class="text-uppercase text-secondary small fw-bold px-2 mb-2">Products & Regulatory</h6>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#generic-medicines">
+                    <i class="bi bi-capsule-pill text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Generic Medicines</div>
+                      <span class="small text-muted">Bioequivalent Range</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#otc-products">
+                    <i class="bi bi-cart-plus text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">OTC Products</div>
+                      <span class="small text-muted">Consumer Healthcare</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#regulatory-service">
+                    <i class="bi bi-shield-check text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">Regulatory Service</div>
+                      <span class="small text-muted">CTD/eCTD Dossiers</span>
+                    </div>
+                  </a>
+                  <a class="dropdown-item rounded-3 py-2 px-2 d-flex align-items-center gap-2" href="services.html#qc-qa">
+                    <i class="bi bi-award-fill text-primary fs-5"></i>
+                    <div>
+                      <div class="fw-semibold text-dark">QC / QA</div>
+                      <span class="small text-muted">GLP Testing Labs</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 border-top pt-2 mt-2 text-center">
+                  <a href="services.html" class="small fw-bold text-primary text-decoration-none">View All Services Overview <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="manufacturing.html">Manufacturing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="rnd.html">R & D</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="quality.html">Quality</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="gallery.html">Gallery</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <a href="contact.html" class="btn btn-pharma-primary">
+            <span>Inquire Now</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN HOMEPAGE WRAPPER -->
+  <div id="main-website-wrapper">
+    <!-- HERO SECTION WITH THREE.JS 3D SCENE (UNCHANGED) -->
+    <section class="hero-section">
+      <div class="container position-relative z-2">
+        <div class="row align-items-center g-5">
+          <!-- LEFT: BRAND MESSAGE & CTA -->
+          <div class="col-lg-6">
+            <div class="pharma-badge mb-3">
+              <i class="bi bi-shield-check text-primary"></i>
+              <span>WHO-GMP & ISO Certified Excellence</span>
+            </div>
+
+            <h1 class="display-4 fw-extrabold text-dark mb-3">
+              Innovating Healthcare, <br>
+              <span class="text-gradient">Delivering Global Excellence.</span>
+            </h1>
+
+            <p class="lead text-secondary mb-4 pe-lg-4">
+              Manufacturing high-quality pharmaceutical formulations with advanced research, global compliance, and an
+              unwavering commitment to improving lives worldwide.
+            </p>
+
+            <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
+              <a href="products.html" class="btn btn-pharma-primary">
+                <i class="bi bi-box-seam me-1"></i> Explore Products
+              </a>
+              <a href="manufacturing.html" class="btn btn-pharma-outline">
+                <i class="bi bi-gear-wide-connected me-1"></i> Our Manufacturing
+              </a>
+            </div>
+
+            <!-- ANIMATED TRUST ROW -->
+            <div class="pt-3 border-top border-light-subtle">
+              <div class="row g-3 text-secondary small fw-semibold">
+                <div class="col-6 col-sm-3 d-flex align-items-center gap-2">
+                  <i class="bi bi-patch-check-fill text-success fs-5"></i> WHO-GMP
+                </div>
+                <div class="col-6 col-sm-3 d-flex align-items-center gap-2">
+                  <i class="bi bi-patch-check-fill text-primary fs-5"></i> ISO Certified
+                </div>
+                <div class="col-6 col-sm-3 d-flex align-items-center gap-2">
+                  <i class="bi bi-globe-americas text-info fs-5"></i> 50+ Countries
+                </div>
+                <div class="col-6 col-sm-3 d-flex align-items-center gap-2">
+                  <i class="bi bi-award-fill text-warning fs-5"></i> 25+ Years
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: INTERACTIVE 3D HERO CANVAS -->
+          <div class="col-lg-6 position-relative">
+            <div id="hero-3d-container" class="position-relative">
+              <!-- 3D Canvas will be injected here by js/hero-3d.js -->
+            </div>
+
+            <!-- FLOATING STATISTIC CARDS -->
+            <div class="stat-card-floating position-absolute top-0 start-0 animate-float">
+              <div class="d-flex align-items-center gap-3">
+                <div class="brand-icon-wrapper bg-primary text-white">
+                  <i class="bi bi-globe"></i>
+                </div>
+                <div>
+                  <div class="h4 mb-0 font-number counter-val" data-target="50" data-suffix="+">50+</div>
+                  <div class="small text-muted">Countries Served</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card-floating position-absolute bottom-0 end-0 animate-float-delay-1">
+              <div class="d-flex align-items-center gap-3">
+                <div class="brand-icon-wrapper bg-success text-white">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+                <div>
+                  <div class="h4 mb-0 font-number counter-val" data-target="350" data-suffix="+">350+</div>
+                  <div class="small text-muted">Approved Formulations</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT DOSAGE CATEGORIES SECTION (AFTER HERO SECTION) -->
+    <section class="section-py bg-white border-bottom">
+      <div class="container">
+        <div class="section-header text-center max-w-700 mx-auto mb-4">
+          <span class="sub-title">Formulation Categories</span>
+          <h2 class="h1 fw-bold text-dark">Explore Formulations by Dosage Form</h2>
+          <p class="text-secondary">Comprehensive WHO-GMP certified formulation catalog categorized by specialized dosage delivery systems.</p>
+        </div>
+
+        <!-- 7 Interactive Dosage Cards Grid (Matching Reference Screenshot) -->
+        <div class="dosage-cards-grid">
+          <a href="products.html?dosage=tablet" class="dosage-card-btn" data-dosage="tablet">
+            <div class="dosage-icon-box">
+              <i class="bi bi-capsule-pill"></i>
+            </div>
+            <div class="dosage-title">Tablet</div>
+            <div class="dosage-count">32 Formulations</div>
+          </a>
+
+          <a href="products.html?dosage=capsule" class="dosage-card-btn" data-dosage="capsule">
+            <div class="dosage-icon-box">
+              <i class="bi bi-capsule"></i>
+            </div>
+            <div class="dosage-title">Capsule</div>
+            <div class="dosage-count">18 Formulations</div>
+          </a>
+
+          <a href="products.html?dosage=drops" class="dosage-card-btn" data-dosage="drops">
+            <div class="dosage-icon-box">
+              <i class="bi bi-droplet"></i>
+            </div>
+            <div class="dosage-title">Eye / Ear Drops</div>
+            <div class="dosage-count">12 Formulations</div>
+          </a>
+
+          <a href="products.html?dosage=injection" class="dosage-card-btn" data-dosage="injection">
+            <div class="dosage-icon-box">
+              <i class="bi bi-prescription2"></i>
+            </div>
+            <div class="dosage-title">Injection</div>
+            <div class="dosage-count">15 Formulations</div>
+          </a>
+
+          <a href="products.html?dosage=creams" class="dosage-card-btn" data-dosage="creams">
+            <div class="dosage-icon-box">
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <div class="dosage-title">Creams</div>
+            <div class="dosage-count">10 Formulations</div>
+          </a>
+
+          <a href="products.html?dosage=syrup" class="dosage-card-btn" data-dosage="syrup">
+            <div class="dosage-icon-box">
+              <i class="bi bi-cup-straw"></i>
+            </div>
+            <div class="dosage-title">Suspension / Syrup</div>
+            <div class="dosage-count">14 Formulations</div>
+          </a>
+
+          <a href="products.html?dosage=other" class="dosage-card-btn" data-dosage="other">
+            <div class="dosage-icon-box">
+              <i class="bi bi-asterisk"></i>
+            </div>
+            <div class="dosage-title">Other</div>
+            <div class="dosage-count">8 Formulations</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST METRICS & KEY HIGHLIGHTS -->
+    <section class="section-py bg-light-mesh">
+      <div class="container">
+        <div class="row g-4 stagger-grid">
+          <div class="col-md-3 col-6">
+            <div class="hover-card p-4 text-center h-100">
+              <div class="card-icon-box mx-auto mb-3">
+                <i class="bi bi-building"></i>
+              </div>
+              <h3 class="h2 font-number text-dark counter-val mb-1" data-target="4" data-suffix="">4</h3>
+              <p class="text-secondary small mb-0 fw-medium">WHO-GMP Plants</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="hover-card p-4 text-center h-100">
+              <div class="card-icon-box mx-auto mb-3">
+                <i class="bi bi-people"></i>
+              </div>
+              <h3 class="h2 font-number text-dark counter-val mb-1" data-target="200" data-suffix="+">200+</h3>
+              <p class="text-secondary small mb-0 fw-medium">Global Partners</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="hover-card p-4 text-center h-100">
+              <div class="card-icon-box mx-auto mb-3">
+                <i class="bi bi-file-earmark-medical"></i>
+              </div>
+              <h3 class="h2 font-number text-dark counter-val mb-1" data-target="150" data-suffix="+">150+</h3>
+              <p class="text-secondary small mb-0 fw-medium">CTD Dossiers Ready</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="hover-card p-4 text-center h-100">
+              <div class="card-icon-box mx-auto mb-3">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h3 class="h2 font-number text-dark counter-val mb-1" data-target="25" data-suffix="+">25+</h3>
+              <p class="text-secondary small mb-0 fw-medium">Years of Scientific Leadership</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOBAL PRESENCE & EXPORT FOOTPRINT (REDESIGNED LAYOUT) -->
+    <section class="section-py bg-white overflow-hidden">
+      <div class="container">
+        <!-- SECTION HEADER -->
+        <div class="section-header text-center max-w-800 mx-auto mb-5">
+          <span class="pharma-badge mb-3">
+            <i class="bi bi-globe-americas text-primary me-1"></i> International Export Network
+          </span>
+          <h2 class="h1 fw-bold text-dark mb-3">
+            Exporting Healthcare Solutions Across <span class="text-gradient">50+ Nations</span>
+          </h2>
+          <p class="text-secondary lead fs-6">
+            Fully registered with global health ministries, delivering EU-GMP & WHO-GMP compliant formulations with
+            ready CTD/eCTD dossiers and temperature-controlled logistics.
+          </p>
+        </div>
+
+        <!-- KEY GLOBAL STATS ROW -->
+        <div class="row g-3 mb-5 text-center">
+          <div class="col-md-3 col-6">
+            <div class="p-3 rounded-4 bg-light border border-light-subtle h-100">
+              <div class="h3 font-number text-primary fw-extrabold mb-1">50+</div>
+              <div class="small text-secondary fw-semibold">Global Export Countries</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="p-3 rounded-4 bg-light border border-light-subtle h-100">
+              <div class="h3 font-number text-primary fw-extrabold mb-1">150+</div>
+              <div class="small text-secondary fw-semibold">CTD / eCTD Dossiers Ready</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="p-3 rounded-4 bg-light border border-light-subtle h-100">
+              <div class="h3 font-number text-primary fw-extrabold mb-1">4</div>
+              <div class="small text-secondary fw-semibold">WHO-GMP Compliant Plants</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="p-3 rounded-4 bg-light border border-light-subtle h-100">
+              <div class="h3 font-number text-primary fw-extrabold mb-1">100%</div>
+              <div class="small text-secondary fw-semibold">Cold-Chain Temperature Control</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN INTERACTIVE DISPLAY: WORLD MAP VECTOR & REGIONAL CARDS GRID -->
+        <div class="row align-items-center g-5 mb-5">
+          <!-- LEFT: REALISTIC WORLD MAP VECTOR WITH RADAR PULSE NODES -->
+          <div class="col-lg-7">
+            <div class="glass-card p-4 rounded-4 shadow-sm border position-relative overflow-hidden bg-light-mesh">
+              <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                <span class="small fw-bold text-uppercase text-secondary tracking-wider">
+                  <i class="bi bi-broadcast text-danger me-1"></i> Live Supply Chain Hubs
+                </span>
+                <span class="badge bg-success-subtle text-success border border-success-subtle">
+                  Active Logistics Integration
+                </span>
+              </div>
+
+              <div class="position-relative text-center py-2">
+                <!-- Detailed World Map SVG -->
+                <svg viewBox="0 0 1000 500" class="img-fluid w-100"
+                  style="max-height: 420px; filter: drop-shadow(0px 4px 12px rgba(0,70,131,0.06));">
+                  <defs>
+                    <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#EBF4FF" />
+                      <stop offset="100%" stop-color="#D9E8FC" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- NORTH AMERICA -->
+                  <path d="M 120 90 Q 180 60 260 80 T 320 160 T 260 220 T 180 200 T 100 140 Z" fill="url(#mapGrad)"
+                    stroke="#B4D3F8" stroke-width="1.5" />
+                  <!-- SOUTH AMERICA -->
+                  <path d="M 280 240 Q 340 250 360 320 T 320 420 T 260 380 T 250 280 Z" fill="url(#mapGrad)"
+                    stroke="#B4D3F8" stroke-width="1.5" />
+                  <!-- EUROPE -->
+                  <path d="M 480 80 Q 560 60 600 110 T 560 160 T 480 140 Z" fill="url(#mapGrad)" stroke="#B4D3F8"
+                    stroke-width="1.5" />
+                  <!-- AFRICA -->
+                  <path d="M 460 180 Q 560 170 600 240 T 560 360 T 480 340 T 440 240 Z" fill="url(#mapGrad)"
+                    stroke="#B4D3F8" stroke-width="1.5" />
+                  <!-- ASIA -->
+                  <path d="M 600 70 Q 750 50 880 110 T 920 220 T 780 260 T 640 160 Z" fill="url(#mapGrad)"
+                    stroke="#B4D3F8" stroke-width="1.5" />
+                  <!-- AUSTRALIA -->
+                  <path d="M 780 320 Q 860 310 880 360 T 820 420 T 760 380 Z" fill="url(#mapGrad)" stroke="#B4D3F8"
+                    stroke-width="1.5" />
+
+                  <!-- SUPPLY PATH CURVES -->
+                  <path d="M 520 120 Q 400 200 310 320" fill="none" stroke="#0066BE" stroke-width="2"
+                    stroke-dasharray="4 4" opacity="0.6" />
+                  <path d="M 520 120 Q 500 240 520 280" fill="none" stroke="#004683" stroke-width="2"
+                    stroke-dasharray="4 4" opacity="0.6" />
+                  <path d="M 520 120 Q 640 160 720 200" fill="none" stroke="#0066BE" stroke-width="2"
+                    stroke-dasharray="4 4" opacity="0.6" />
+                  <path d="M 520 120 Q 700 220 800 180" fill="none" stroke="#004683" stroke-width="2"
+                    stroke-dasharray="4 4" opacity="0.6" />
+
+                  <!-- GLOWING RADAR PULSE NODES -->
+                  <!-- LATAM Node (Bogota/Brazil) -->
+                  <circle cx="310" cy="320" class="map-pulse-ring" fill="#004683" />
+                  <circle cx="310" cy="320" r="7" fill="#004683" class="map-hub-node" />
+
+                  <!-- AFRICA Node (Nigeria/Kenya) -->
+                  <circle cx="520" cy="280" class="map-pulse-ring" fill="#0066BE" />
+                  <circle cx="520" cy="280" r="7" fill="#0066BE" class="map-hub-node" />
+
+                  <!-- MIDDLE EAST Node (Dubai/GCC) -->
+                  <circle cx="640" cy="190" class="map-pulse-ring" fill="#004683" />
+                  <circle cx="640" cy="190" r="7" fill="#004683" class="map-hub-node" />
+
+                  <!-- SE ASIA & CIS Node (Vietnam/Tashkent) -->
+                  <circle cx="800" cy="180" class="map-pulse-ring" fill="#0066BE" />
+                  <circle cx="800" cy="180" r="7" fill="#0066BE" class="map-hub-node" />
+                </svg>
+
+                <!-- MAP INTERACTIVE HOTSPOTS -->
+                <div class="map-hotspot" style="top: 62%; left: 30%;" data-country="Latin America"
+                  data-exports="85+ Approved Formulations" data-certs="ANVISA & INVIMA Compliant"></div>
+                <div class="map-hotspot" style="top: 54%; left: 51%;" data-country="Sub-Saharan Africa"
+                  data-exports="120+ Approved Formulations" data-certs="NAFDAC & PPB Certified"></div>
+                <div class="map-hotspot" style="top: 36%; left: 63%;" data-country="Middle East & GCC"
+                  data-exports="95+ Approved Formulations" data-certs="MOH & SFDA Registered"></div>
+                <div class="map-hotspot" style="top: 34%; left: 79%;" data-country="SE Asia & CIS"
+                  data-exports="140+ Approved Formulations" data-certs="TFDA & MOH CIS Compliant"></div>
+
+                <div id="map-tooltip" class="glass-card position-absolute p-3 rounded-3 shadow-lg"
+                  style="display: none; width: 240px; z-index: 100;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: 4 REGIONAL TRADE HUB CARDS -->
+          <div class="col-lg-5">
+            <div class="d-flex flex-column gap-3">
+              <!-- Regional Card 1 -->
+              <div class="regional-hub-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-primary text-white p-2 rounded-circle">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </span>
+                    <h5 class="fw-bold text-dark mb-0">Latin America (LATAM)</h5>
+                  </div>
+                  <span class="badge bg-primary-subtle text-primary border">85+ Formulations</span>
+                </div>
+                <p class="small text-secondary mb-2">
+                  Key Destinations: <strong>Brazil, Colombia, Peru, Chile, Guatemala</strong>
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-light text-dark border">ANVISA</span>
+                  <span class="badge bg-light text-dark border">INVIMA</span>
+                  <span class="badge bg-light text-dark border">Cardiology & Solid Orals</span>
+                </div>
+              </div>
+
+              <!-- Regional Card 2 -->
+              <div class="regional-hub-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-success text-white p-2 rounded-circle">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </span>
+                    <h5 class="fw-bold text-dark mb-0">Sub-Saharan Africa</h5>
+                  </div>
+                  <span class="badge bg-success-subtle text-success border">120+ Formulations</span>
+                </div>
+                <p class="small text-secondary mb-2">
+                  Key Destinations: <strong>Nigeria, Kenya, Ghana, Tanzania, Uganda</strong>
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-light text-dark border">NAFDAC</span>
+                  <span class="badge bg-light text-dark border">PPB Kenya</span>
+                  <span class="badge bg-light text-dark border">Anti-Infectives & Injectables</span>
+                </div>
+              </div>
+
+              <!-- Regional Card 3 -->
+              <div class="regional-hub-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-info text-white p-2 rounded-circle">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </span>
+                    <h5 class="fw-bold text-dark mb-0">Middle East & GCC</h5>
+                  </div>
+                  <span class="badge bg-info-subtle text-info border">95+ Formulations</span>
+                </div>
+                <p class="small text-secondary mb-2">
+                  Key Destinations: <strong>UAE, Saudi Arabia, Oman, Jordan, Iraq</strong>
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-light text-dark border">MOH Approved</span>
+                  <span class="badge bg-light text-dark border">SFDA</span>
+                  <span class="badge bg-light text-dark border">Lyophilized Vials</span>
+                </div>
+              </div>
+
+              <!-- Regional Card 4 -->
+              <div class="regional-hub-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-warning text-dark p-2 rounded-circle">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </span>
+                    <h5 class="fw-bold text-dark mb-0">Southeast Asia & CIS</h5>
+                  </div>
+                  <span class="badge bg-warning-subtle text-dark border">140+ Formulations</span>
+                </div>
+                <p class="small text-secondary mb-2">
+                  Key Destinations: <strong>Vietnam, Philippines, Kazakhstan, Uzbekistan</strong>
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-light text-dark border">TFDA</span>
+                  <span class="badge bg-light text-dark border">MOH CIS</span>
+                  <span class="badge bg-light text-dark border">Sterile BFS Ampoules</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM ACTION BUTTONS -->
+        <div class="text-center">
+          <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
+            <a href="gallery.html" class="btn btn-pharma-primary px-4 py-2">
+              <span>View Product & Packaging Gallery</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="contact.html" class="btn btn-pharma-outline px-4 py-2">
+              <i class="bi bi-file-earmark-arrow-down me-1"></i> Request Country Regulatory Filing Index
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT BROCHURE & CATALOG DOWNLOAD BANNER -->
+    <section class="section-py bg-gradient-primary-dark text-white position-relative overflow-hidden">
+      <div class="container position-relative z-2">
+        <div class="row align-items-center g-5">
+          <!-- Left Column: Brochure Book Cover Graphic & Preview Card -->
+          <div class="col-lg-5">
+            <div class="brochure-preview-card p-4 p-md-5 rounded-4 shadow-lg text-dark bg-white border border-light position-relative">
+              <div class="brochure-badge badge bg-primary px-3 py-2 rounded-pill position-absolute top-0 end-0 m-4">
+                <i class="bi bi-award-fill me-1"></i> 2026 Edition
+              </div>
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="brand-icon-wrapper bg-primary text-white p-3 rounded-3">
+                  <i class="bi bi-journal-medical fs-2"></i>
+                </div>
+                <div>
+                  <h4 class="fw-bold mb-0 text-primary">FLEMMING PHARMA</h4>
+                  <span class="small text-muted fw-semibold">Global Product Directory</span>
+                </div>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-3">Official Product Catalog & Therapeutic Dossier Index</h3>
+              <p class="text-secondary small mb-4">
+                Access detailed specifications, therapeutic categories, WHO-GMP formulation matrix, packaging configurations, and export dossier availability for over 350+ products.
+              </p>
+
+              <div class="row g-2 mb-4">
+                <div class="col-6">
+                  <div class="p-2 bg-light rounded text-center">
+                    <span class="d-block fw-bold text-primary fs-5">350+</span>
+                    <span class="small text-muted">Formulations</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="p-2 bg-light rounded text-center">
+                    <span class="d-block fw-bold text-success fs-5">CTD/eCTD</span>
+                    <span class="small text-muted">Dossiers Ready</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="button" class="btn btn-pharma-primary w-100 py-3 d-flex align-items-center justify-content-center gap-2" data-bs-toggle="modal" data-bs-target="#brochureDownloadModal">
+                  <i class="bi bi-file-earmark-pdf-fill fs-5"></i>
+                  <span>Download Product Brochure (PDF)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Brochure Value Highlights & Instant Download Form -->
+          <div class="col-lg-7">
+            <span class="badge bg-light text-primary fw-bold px-3 py-2 rounded-pill mb-3">Official Publication</span>
+            <h2 class="h1 fw-bold text-white mb-4">Download Flemming Pharma 2026 Product Directory</h2>
+            <p class="lead text-light mb-4 opacity-90">
+              Get instant access to our complete portfolio specifications, regulatory dossier list, dosage strengths, and turnkey manufacturing capabilities.
+            </p>
+
+            <div class="row g-4 mb-4">
+              <div class="col-md-6 d-flex gap-3">
+                <div class="bg-white bg-opacity-10 rounded-circle p-3 d-flex align-items-center justify-content-center text-white" style="width:50px; height:50px;">
+                  <i class="bi bi-check-circle-fill fs-4 text-info"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold text-white mb-1">350+ Active Formulations</h5>
+                  <p class="small text-light mb-0 opacity-85">Solid Orals, Injectables, Cephalosporins, Eye/Ear Drops & Syrups.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex gap-3">
+                <div class="bg-white bg-opacity-10 rounded-circle p-3 d-flex align-items-center justify-content-center text-white" style="width:50px; height:50px;">
+                  <i class="bi bi-globe2 fs-4 text-info"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold text-white mb-1">Global Regulatory Matrix</h5>
+                  <p class="small text-light mb-0 opacity-85">Complete list of ready CTD/eCTD dossiers for 50+ export countries.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex gap-3">
+                <div class="bg-white bg-opacity-10 rounded-circle p-3 d-flex align-items-center justify-content-center text-white" style="width:50px; height:50px;">
+                  <i class="bi bi-box-seam-fill fs-4 text-info"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold text-white mb-1">Turnkey Packaging Options</h5>
+                  <p class="small text-light mb-0 opacity-85">Alu-Alu, Blister, Strip, Vials, Ampoules & Bottled Suspensions.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex gap-3">
+                <div class="bg-white bg-opacity-10 rounded-circle p-3 d-flex align-items-center justify-content-center text-white" style="width:50px; height:50px;">
+                  <i class="bi bi-buildings-fill fs-4 text-info"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold text-white mb-1">WHO-GMP Facility Specs</h5>
+                  <p class="small text-light mb-0 opacity-85">Technical capabilities for Contract & 3rd Party Manufacturing.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <button class="btn btn-light text-primary fw-bold px-4 py-3 rounded-pill d-inline-flex align-items-center gap-2 shadow" data-bs-toggle="modal" data-bs-target="#brochureDownloadModal">
+                <i class="bi bi-download"></i> Download Brochure (PDF 4.8 MB)
+              </button>
+              <a href="products.html" class="btn btn-outline-light px-4 py-3 rounded-pill d-inline-flex align-items-center gap-2">
+                <i class="bi bi-search"></i> Browse Online Directory
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT CATEGORIES HIGHLIGHT (6 THERAPEUTIC CARDS) -->
+    <section class="section-py bg-light-mesh">
+      <div class="container">
+        <div class="section-header text-center max-w-700 mx-auto">
+          <span class="sub-title">Product Portfolio</span>
+          <h2 class="h1 fw-bold text-dark">High-Precision Therapeutic Formulations</h2>
+          <p class="text-secondary">Engineered with scientific rigor across critical healthcare categories.</p>
+        </div>
+
+        <div class="row g-4 stagger-grid">
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="card-icon-box mb-4">
+                <i class="bi bi-capsule-pill"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Solid Oral Formulations</h3>
+              <p class="text-secondary small mb-3">Film-coated tablets, sustained release capsules, and effervescent
+                dosage forms manufactured in Cleanroom Class 100,000.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+                <span class="badge bg-light text-dark border">150+ Formulations</span>
+                <a href="products.html?category=tablets"
+                  class="fw-semibold text-primary text-decoration-none small">Explore <i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="card-icon-box mb-4">
+                <i class="bi bi-prescription2"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Sterile Injectables</h3>
+              <p class="text-secondary small mb-3">Aseptic liquid injections, lyophilized vials, and BFS ampoules
+                manufactured under strict ISO Class 5 sterile environments.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+                <span class="badge bg-light text-dark border">80+ Injectables</span>
+                <a href="products.html?category=injectables"
+                  class="fw-semibold text-primary text-decoration-none small">Explore <i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="card-icon-box mb-4">
+                <i class="bi bi-shield-plus"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Cephalosporins & Anti-Infectives</h3>
+              <p class="text-secondary small mb-3">Dedicated block facility ensuring zero cross-contamination for oral
+                and injectable cephalosporins.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+                <span class="badge bg-light text-dark border">60+ Anti-Infectives</span>
+                <a href="products.html?category=antibiotics"
+                  class="fw-semibold text-primary text-decoration-none small">Explore <i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="card-icon-box mb-4">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Cardiovascular Care</h3>
+              <p class="text-secondary small mb-3">Advanced antihypertensives, statins, and antiplatelet formulations
+                designed for long-term therapeutic adherence.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+                <span class="badge bg-light text-dark border">45+ Formulations</span>
+                <a href="products.html?category=cardiology"
+                  class="fw-semibold text-primary text-decoration-none small">Explore <i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="card-icon-box mb-4">
+                <i class="bi bi-tablet"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Diabetology & Metabolic</h3>
+              <p class="text-secondary small mb-3">Extended release Metformin, Gliptins, and dual-action combination
+                tablets for glycemic control.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+                <span class="badge bg-light text-dark border">35+ Formulations</span>
+                <a href="products.html" class="fw-semibold text-primary text-decoration-none small">Explore <i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="card-icon-box mb-4">
+                <i class="bi bi-droplet-half"></i>
+              </div>
+              <h3 class="h4 fw-bold text-dark mb-2">Gastroenterology & Liquid Orals</h3>
+              <p class="text-secondary small mb-3">Proton pump inhibitors, oral syrups, dry suspensions, and antacid
+                oral emulsions.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
+                <span class="badge bg-light text-dark border">40+ Formulations</span>
+                <a href="products.html" class="fw-semibold text-primary text-decoration-none small">Explore <i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE FLEMMING - CORE PILLARS -->
+    <section class="section-py bg-white">
+      <div class="container">
+        <div class="section-header text-center max-w-700 mx-auto">
+          <span class="sub-title">Why Flemming Pharma</span>
+          <h2 class="h1 fw-bold text-dark">Built on Scientific Rigor & Global Quality</h2>
+        </div>
+
+        <div class="row g-4 stagger-grid">
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-award"></i>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">WHO-GMP Facilities</h4>
+              <p class="text-secondary small mb-0">State-of-the-art automated manufacturing plants adhering to
+                international WHO-GMP and PIC/S compliance guidelines.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Advanced R & D Labs</h4>
+              <p class="text-secondary small mb-0">Equipped with HPLC, Gas Chromatography, Mass Spectrometry, and
+                reverse engineering capabilities for complex NDDS.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-file-earmark-check"></i>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Dossier Support</h4>
+              <p class="text-secondary small mb-0">Ready CTD and eCTD dossiers with stability data according to ICH
+                guidelines for rapid regulatory approvals.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-globe2"></i>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Global Export Reach</h4>
+              <p class="text-secondary small mb-0">Active distribution and tender partnerships across Latin America,
+                Africa, the Middle East, and Asia.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-gear-wide-connected"></i>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Turnkey Manufacturing</h4>
+              <p class="text-secondary small mb-0">End-to-end contract manufacturing services, private labeling, and
+                tech transfer support.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hover-card p-4 h-100">
+              <div class="feature-icon-wrapper">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Total Quality Assurance</h4>
+              <p class="text-secondary small mb-0">Zero-defect batch release protocol with 100% automated vision
+                inspection systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANUFACTURING EXCELLENCE INFRASTRUCTURE -->
+    <section class="section-py bg-dark-pharma text-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="pharma-badge pharma-badge-accent mb-3">Robotic Automation</span>
+            <h2 class="h1 fw-bold mb-4 text-white">Precision Manufacturing at Scale</h2>
+            <p class="opacity-75 mb-4">
+              Our automated manufacturing plants utilize continuous inline process monitoring, sterile isolation barrier
+              systems, and automated vision inspection lines.
+            </p>
+            <a href="manufacturing.html" class="btn btn-pharma-primary">
+              Tour Facilities <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="glass-card-dark p-4 h-100">
+                  <h3 class="h1 font-number text-white mb-1">5 Billion+</h3>
+                  <p class="small opacity-75 mb-0">Annual Tablet Capacity</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="glass-card-dark p-4 h-100">
+                  <h3 class="h1 font-number text-white mb-1">200 Million</h3>
+                  <p class="small opacity-75 mb-0">Liquid Ampoules & Vials</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="glass-card-dark p-4 h-100">
+                  <h3 class="h1 font-number text-white mb-1">ISO Class 5</h3>
+                  <p class="small opacity-75 mb-0">Sterile Cleanroom Standard</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="glass-card-dark p-4 h-100">
+                  <h3 class="h1 font-number text-white mb-1">100% SCADA</h3>
+                  <p class="small opacity-75 mb-0">Automated Process Control</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & COMPLIANCE GRID -->
+    <section class="section-py bg-light-mesh">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-title">Regulatory Approvals</span>
+          <h2 class="h1 fw-bold text-dark">Certified to the Highest Global Standards</h2>
+        </div>
+
+        <div class="row g-4 stagger-grid">
+          <div class="col-md-3 col-6">
+            <div class="cert-card">
+              <div class="cert-badge-icon">
+                <i class="bi bi-patch-check"></i>
+              </div>
+              <h4 class="h5 fw-bold text-dark mb-1">WHO-GMP</h4>
+              <p class="small text-secondary mb-0">World Health Organization</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="cert-card">
+              <div class="cert-badge-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4 class="h5 fw-bold text-dark mb-1">ISO 9001:2015</h4>
+              <p class="small text-secondary mb-0">Quality Management</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="cert-card">
+              <div class="cert-badge-icon">
+                <i class="bi bi-tree"></i>
+              </div>
+              <h4 class="h5 fw-bold text-dark mb-1">ISO 14001</h4>
+              <p class="small text-secondary mb-0">Environmental Safety</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="cert-card">
+              <div class="cert-badge-icon">
+                <i class="bi bi-globe2"></i>
+              </div>
+              <h4 class="h5 fw-bold text-dark mb-1">EU-GMP Ready</h4>
+              <p class="small text-secondary mb-0">European Compliance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5-STEP QUALITY PROCESS WORKFLOW (COMPLETELY CARDLESS & BORDERLESS TIMELINE STREAM) -->
+    <section class="section-py bg-white overflow-hidden">
+      <div class="container">
+        <!-- SECTION HEADER -->
+        <div class="section-header text-center max-w-700 mx-auto mb-5">
+          <span class="pharma-badge mb-3">
+            <i class="bi bi-shield-check text-primary me-1"></i> Quality Process Stream
+          </span>
+          <h2 class="h1 fw-bold text-dark mb-3">5-Step Quality Assurance Workflow</h2>
+          <p class="text-secondary lead fs-6">
+            Inline automated testing, cleanroom isolation, and serialization at every manufacturing milestone.
+          </p>
+        </div>
+
+        <!-- BORDERLESS ANIMATED TIMELINE STREAM TRACK -->
+        <div class="pipeline-track-wrapper position-relative">
+          <!-- 5 BORDERLESS STEP NODES -->
+          <div class="row g-3 position-relative z-2">
+            <!-- Step 1 -->
+            <div class="col-lg col-md-4 col-6">
+              <div class="pipeline-stream-step active" data-step="1">
+                <div class="pipeline-number-badge">01</div>
+                <h5 class="fw-bold text-dark fs-6 mb-1">Raw Material QC</h5>
+                <span class="small text-primary fw-semibold">NIR Spectroscopy</span>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="col-lg col-md-4 col-6">
+              <div class="pipeline-stream-step" data-step="2">
+                <div class="pipeline-number-badge">02</div>
+                <h5 class="fw-bold text-dark fs-6 mb-1">Fluid Bed Processing</h5>
+                <span class="small text-primary fw-semibold">High-Shear Mixer</span>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="col-lg col-md-4 col-6">
+              <div class="pipeline-stream-step" data-step="3">
+                <div class="pipeline-number-badge">03</div>
+                <h5 class="fw-bold text-dark fs-6 mb-1">Rotary Tableting</h5>
+                <span class="small text-primary fw-semibold">Automated Weight</span>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="col-lg col-md-6 col-6">
+              <div class="pipeline-stream-step" data-step="4">
+                <div class="pipeline-number-badge">04</div>
+                <h5 class="fw-bold text-dark fs-6 mb-1">Aseptic Sterile Filling</h5>
+                <span class="small text-primary fw-semibold">ISO Class 5 Isolator</span>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="col-lg col-md-6 col-12">
+              <div class="pipeline-stream-step" data-step="5">
+                <div class="pipeline-number-badge">05</div>
+                <h5 class="fw-bold text-dark fs-6 mb-1">Serialization & QA</h5>
+                <span class="small text-primary fw-semibold">2D DataMatrix Release</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- REDESIGNED QUALITY STAGE DETAIL SHOWCASE (LUXURY DUAL-COLUMN LAYOUT) -->
+          <div class="mt-5 pt-3">
+            <div class="qa-stage-showcase-box p-4 p-md-5 rounded-4 bg-light-mesh border shadow-sm">
+              <div class="row align-items-center g-4">
+                <div class="col-lg-3 text-center text-lg-start border-end-lg pe-lg-4">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-3" style="width: 68px; height: 68px; font-size: 2rem; box-shadow: 0 10px 25px rgba(0,70,131,0.25);">
+                    <i id="qa-step-icon" class="bi bi-patch-check-fill"></i>
+                  </div>
+                  <div id="qa-stage-num" class="badge bg-primary px-3 py-2 rounded-pill fs-6 d-block mb-1">STAGE 01 OF 05</div>
+                  <span id="qa-step-category" class="small text-muted fw-semibold">Raw Material Protocol</span>
+                </div>
+                <div class="col-lg-9">
+                  <h3 id="qa-step-title" class="h4 fw-bold text-dark mb-2">Raw Material QC & Identity Verification</h3>
+                  <p id="qa-step-desc" class="text-secondary lead fs-6 mb-3">
+                    Every incoming API and excipient undergoes 100% identity testing using non-destructive Near-Infrared (NIR) spectroscopy inside ISO Class 7 cleanroom sampling booths.
+                  </p>
+                  <div id="qa-step-badges" class="d-flex flex-wrap align-items-center gap-2">
+                    <span class="badge bg-white text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i> ISO Class 7 Booths</span>
+                    <span class="badge bg-white text-dark border p-2"><i class="bi bi-lightning-charge-fill text-warning me-1"></i> NIR Spectroscopy</span>
+                    <span class="badge bg-white text-dark border p-2"><i class="bi bi-check-circle-fill text-success me-1"></i> 100% Identity Verified</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA BANNER -->
+    <section class="section-py bg-light-mesh">
+      <div class="container">
+        <div class="glass-card bg-dark-pharma text-white p-5 rounded-4 position-relative overflow-hidden">
+          <div class="row align-items-center g-4 position-relative z-2">
+            <div class="col-lg-8">
+              <span class="pharma-badge pharma-badge-accent mb-3">Partner With Us</span>
+              <h2 class="h1 fw-bold text-white mb-3">Ready to Expand Your Pharmaceutical Supply Chain?</h2>
+              <p class="lead opacity-80 mb-0">
+                Connect with our international export team for contract manufacturing, dossier licensing, and
+                distribution opportunities.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="contact.html" class="btn btn-pharma-primary btn-lg px-4">
+                Get Strategic Quote <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- FOOTER SECTION -->
+    <!-- FOOTER SECTION -->
+  <footer class="footer-pharma text-white">
+    <!-- Top Trust Bar / Accreditation Badges Strip -->
+    <div class="border-bottom border-secondary border-opacity-25 pb-4 mb-5">
+      <div class="container">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-patch-check-fill fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">WHO-GMP Certified</h6>
+                <span class="small opacity-75">Global Standards Approved</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-shield-check fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">ISO 9001:2015 & 14001</h6>
+                <span class="small opacity-75">Quality & Environmental Spec</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-file-earmark-check fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">CTD / eCTD Dossiers</h6>
+                <span class="small opacity-75">Ready for 50+ Countries</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center gap-3">
+              <div class="bg-white bg-opacity-10 rounded-circle p-2 d-flex align-items-center justify-content-center text-info" style="width:45px; height:45px;">
+                <i class="bi bi-globe-americas fs-4"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-0 text-white">Global Export Network</h6>
+                <span class="small opacity-75">Worldwide Healthcare Supply</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <!-- Col 1: Brand & Profile -->
+        <div class="col-lg-3 col-md-6">
+          <a class="navbar-brand text-white mb-3 d-inline-flex align-items-center gap-2" href="index.html">
+            <div class="brand-icon-wrapper">
+              <i class="bi bi-capsule"></i>
+            </div>
+            <span class="text-white fw-bold fs-4">FLEMMING<span class="text-gradient"> PHARMA</span></span>
+          </a>
+          <p class="small opacity-75 mb-4 pe-lg-2">
+            Flemming Pharma is an international pharmaceutical manufacturing leader committed to scientific innovation, WHO-GMP product quality, and global healthcare accessibility.
+          </p>
+          <div class="d-flex gap-2 mb-3">
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Formulations -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-title">Formulations</h5>
+          <ul class="footer-links">
+            <li><a href="products.html?category=tablets">Solid Orals (Tablets)</a></li>
+            <li><a href="products.html?category=capsules">Capsules & Softgels</a></li>
+            <li><a href="products.html?category=injectables">Sterile Injectables</a></li>
+            <li><a href="products.html?category=antibiotics">Cephalosporins</a></li>
+            <li><a href="products.html?category=drops">Ophthalmic Drops</a></li>
+            <li><a href="products.html?category=syrups">Liquid Orals & Syrups</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-title">Core Services</h5>
+          <ul class="footer-links">
+            <li><a href="services.html#contract-manufacturing">Contract Manufacturing</a></li>
+            <li><a href="services.html#third-party-manufacturing">3rd Party Private Label</a></li>
+            <li><a href="services.html#institutional-tenders">Institutional Tenders</a></li>
+            <li><a href="services.html#generic-medicines">Generic Medicines</a></li>
+            <li><a href="services.html#regulatory-service">Regulatory Dossier (CTD)</a></li>
+            <li><a href="services.html#qc-qa">QC / QA Testing Labs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Quick Links -->
+        <div class="col-lg-2 col-6">
+          <h5 class="footer-title">Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="manufacturing.html">Manufacturing Facilities</a></li>
+            <li><a href="rnd.html">R & D Innovation Center</a></li>
+            <li><a href="quality.html">Quality Assurance</a></li>
+            <li><a href="certifications.html">Accreditations</a></li>
+            <li><a href="gallery.html">Infrastructure Gallery</a></li>
+            <li><a href="careers.html">Careers & Culture</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Corporate Info & Subscription -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Global Headquarters</h5>
+          <p class="small opacity-75 mb-2">
+            <i class="bi bi-geo-alt-fill text-info me-2"></i> Flemming Pharma Tower, Science Park Rd, Innovation Hub
+          </p>
+          <p class="small opacity-75 mb-2">
+            <i class="bi bi-envelope-fill text-info me-2"></i> export@flemmingpharma.com
+          </p>
+          <p class="small opacity-75 mb-4">
+            <i class="bi bi-telephone-fill text-info me-2"></i> +1 (800) 555-PHARMA / +91 22 5550-8800
+          </p>
+
+          <h6 class="fw-bold text-white small mb-3">Subscribe to Dossier & Catalog Updates</h6>
+          <form class="pharma-inquiry-form">
+            <div class="footer-subscribe-wrapper d-flex align-items-center rounded-pill p-1">
+              <i class="bi bi-envelope-fill text-info ms-3 me-1 fs-6"></i>
+              <input type="email" class="form-control form-control-sm bg-transparent border-0 text-white shadow-none px-2" placeholder="Enter corporate email" required>
+              <button class="btn btn-pharma-primary rounded-pill px-3 py-2 fw-bold small flex-shrink-0 text-uppercase" type="submit">
+                Subscribe <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="border-top border-secondary border-opacity-25 pt-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 small opacity-75">
+        <p class="mb-0">&copy; 2026 Flemming Pharma Ltd. All Rights Reserved. WHO-GMP & ISO 9001:2015 Certified Manufacturer.</p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white text-decoration-none opacity-75">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" class="text-white text-decoration-none opacity-75">Terms of Supply</a>
+          <span>|</span>
+          <a href="#" class="text-white text-decoration-none opacity-75">Regulatory Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- BROCHURE DOWNLOAD MODAL -->
+  <div class="modal fade" id="brochureDownloadModal" tabindex="-1" aria-labelledby="brochureModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header bg-primary text-white p-4">
+          <div class="d-flex align-items-center gap-3">
+            <i class="bi bi-file-earmark-pdf-fill fs-2"></i>
+            <div>
+              <h5 class="modal-title fw-bold text-white mb-0" id="brochureModalLabel">Download Product Directory 2026</h5>
+              <span class="small opacity-85">Flemming Pharma Official Product Catalogue (PDF Format)</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-md-5 text-center border-end-md pe-md-4">
+              <div class="p-3 bg-light rounded-3 border mb-3">
+                <i class="bi bi-journal-medical text-primary" style="font-size: 4rem;"></i>
+                <h6 class="fw-bold text-dark mt-2 mb-1">Flemming Pharma Catalog</h6>
+                <span class="badge bg-primary">350+ Products</span>
+                <p class="small text-muted mt-2 mb-0">File Size: 4.8 MB | Format: PDF | Updated: 2026</p>
+              </div>
+              <div class="small text-secondary">
+                <i class="bi bi-shield-check text-success"></i> Instant Direct Download & Verified Secure Document
+              </div>
+            </div>
+            <div class="col-md-7">
+              <h6 class="fw-bold text-dark mb-3">Please fill out quick details to receive the brochure:</h6>
+              <form id="brochureForm">
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold">Full Name *</label>
+                  <input type="text" class="form-control" placeholder="e.g. Dr. Alexander Vance" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold">Business Email *</label>
+                  <input type="email" class="form-control" placeholder="name@company.com" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold">Company / Hospital / Organization</label>
+                  <input type="text" class="form-control" placeholder="Pharma Distributor / Hospital / Importer">
+                </div>
+                <button type="submit" class="btn btn-pharma-primary w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+                  <i class="bi bi-download"></i>
+                  <span>Download Brochure Now</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Application Scripts -->
+  <script src="js/cinematic-intro.js"></script>
+  <script src="js/hero-3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

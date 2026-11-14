@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — TiffinWorld</title>
+  <meta name="description" content="TiffinWorld Executive Admin Dashboard">
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <!-- Overlay for mobile sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ==================================================
+         1. SIDEBAR (PIXEL PERFECT 290px)
+         ================================================== -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <!-- Brand Header -->
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <!-- Navigation Menu -->
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <!-- Dashboard -->
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link active">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- About Page Dropdown -->
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Orders Dropdown -->
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- SEO -->
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Categorial Management -->
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Blogs -->
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Meal Category Media -->
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Product Management Dropdown -->
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <!-- Payments -->
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Reports -->
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <!-- Customer Management -->
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Seller Management -->
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Inquiries Management -->
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Social Media Links -->
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Contact Submission -->
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Profile Feature Dropdown -->
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuProfileFeature" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-lines-fill sidebar-menu-icon"></i>
+              <span>Profile Feature</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuProfileFeature">
+            <ul class="sidebar-submenu">
+              <li><a href="profile-features.html" class="sidebar-submenu-link">Profile Feature List</a></li>
+              <li><a href="profile-create.html" class="sidebar-submenu-link">Create New Profile</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <!-- Plans -->
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Terms -->
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Help & Support -->
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Promotional Codes -->
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Admin User -->
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ==================================================
+         2. MAIN CONTENT WRAPPER
+         ================================================== -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <span>Admin</span> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Dashboard</span>
+            </div>
+            <h1 class="header-page-title">Executive Dashboard</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS MATCHING SCREENSHOT EXACTLY -->
+      <main class="admin-content">
+        
+        <!-- ROW 1: 6 KPI CARDS EXACTLY AS IN SCREENSHOT -->
+        <div class="row g-3 mb-4">
+          
+          <!-- Card 1: CUSTOMERS -->
+          <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="kpi-layout-card">
+              <div class="kpi-label">CUSTOMERS</div>
+              <div class="kpi-num-wrap">
+                <span class="kpi-num animate-counter" data-target="12842">12,842</span>
+                <span class="kpi-badge-green">+4.2%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: SELLERS -->
+          <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="kpi-layout-card">
+              <div class="kpi-label">SELLERS</div>
+              <div class="kpi-num-wrap">
+                <span class="kpi-num animate-counter" data-target="1402">1,402</span>
+                <span class="kpi-badge-green">+1.8%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: ACTIVE PRODUCTS -->
+          <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="kpi-layout-card">
+              <div class="kpi-label">ACTIVE PRODUCTS</div>
+              <div class="kpi-num-wrap">
+                <span class="kpi-num">45.2k</span>
+                <span class="kpi-badge-green">+12%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: PENDING -->
+          <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="kpi-layout-card">
+              <div class="kpi-label">PENDING</div>
+              <div class="kpi-num-wrap">
+                <span class="kpi-num animate-counter" data-target="128">128</span>
+                <i class="bi bi-clock fs-6 text-warning ms-1"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: INQUIRIES -->
+          <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="kpi-layout-card">
+              <div class="kpi-label">INQUIRIES</div>
+              <div class="kpi-num-wrap">
+                <span class="kpi-num animate-counter" data-target="842">842</span>
+                <span class="kpi-badge-red">-2.1%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: REVENUE (Dark Green Card) -->
+          <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="kpi-layout-card kpi-layout-card-green">
+              <div class="kpi-label">REVENUE</div>
+              <div class="kpi-num-wrap">
+                <span class="kpi-num">$42.8k</span>
+                <i class="bi bi-graph-up-arrow fs-6 text-white-50 ms-1"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ROW 2: 2 SIDE-BY-SIDE CHARTS -->
+        <div class="row g-4 mb-4">
+          
+          <!-- Chart 1: Inquiry Trend -->
+          <div class="col-lg-6">
+            <div class="chart-saas-card">
+              <div class="d-flex align-items-start justify-content-between">
+                <div>
+                  <div class="chart-header-title">Inquiry Trend</div>
+                  <div class="chart-header-sub">Customer engagement over the last 30 days</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn-chart-export" onclick="showToast('Exported Inquiry CSV', 'Export')"><i class="bi bi-download"></i> CSV</button>
+                  <button class="btn-chart-export" onclick="showToast('Exported Inquiry PDF', 'Export')"><i class="bi bi-file-earmark-pdf"></i> PDF</button>
+                </div>
+              </div>
+
+              <div class="chart-canvas-box">
+                <div style="height: 220px;">
+                  <canvas id="inquiryTrendChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart 2: Product Approval Stats -->
+          <div class="col-lg-6">
+            <div class="chart-saas-card">
+              <div class="d-flex align-items-start justify-content-between">
+                <div>
+                  <div class="chart-header-title">Product Approval Stats</div>
+                  <div class="chart-header-sub">Status distribution of submitted products</div>
+                </div>
+                <div class="d-flex gap-2">
+                  <button class="btn-chart-export" onclick="showToast('Exported Approval CSV', 'Export')"><i class="bi bi-download"></i> CSV</button>
+                  <button class="btn-chart-export" onclick="showToast('Exported Approval PDF', 'Export')"><i class="bi bi-file-earmark-pdf"></i> PDF</button>
+                </div>
+              </div>
+
+              <div class="chart-canvas-box">
+                <div style="height: 220px;">
+                  <canvas id="productApprovalChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ROW 3: LATEST INQUIRIES TABLE -->
+        <div class="exact-table-card mb-4">
+          <div class="exact-table-header">
+            <h5 class="fw-bold m-0 text-dark" style="font-family: var(--font-heading); font-size: 18px;">Latest Inquiries</h5>
+            <a href="inquiries.html" class="fw-bold text-success text-decoration-none small">View All</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="exact-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>EMAIL</th>
+                  <th>PRODUCT</th>
+                  <th>STATUS</th>
+                  <th>DATE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-muted fw-medium">#0421</td>
+                  <td><strong class="text-dark">s.jordan@email.com</strong></td>
+                  <td class="fw-semibold">Premium Eco Pack</td>
+                  <td><span class="badge-pill-new">NEW</span></td>
+                  <td class="text-muted small">Oct 24, 2023</td>
+                </tr>
+                <tr>
+                  <td class="text-muted fw-medium">#0420</td>
+                  <td><strong class="text-dark">mark.v@web.net</strong></td>
+                  <td class="fw-semibold">Organic Cotton Tee</td>
+                  <td><span class="badge-pill-replied">REPLIED</span></td>
+                  <td class="text-muted small">Oct 23, 2023</td>
+                </tr>
+                <tr>
+                  <td class="text-muted fw-medium">#0419</td>
+                  <td><strong class="text-dark">lisa_k@domain.com</strong></td>
+                  <td class="fw-semibold">Bamboo Sunglasses</td>
+                  <td><span class="badge-pill-closed">CLOSED</span></td>
+                  <td class="text-muted small">Oct 23, 2023</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ROW 4: PENDING PRODUCT APPROVALS -->
+        <div class="exact-table-card">
+          <div class="exact-table-header">
+            <h5 class="fw-bold m-0 text-dark" style="font-family: var(--font-heading); font-size: 18px;">Pending Product Approvals</h5>
+            <span class="fw-bold small" style="color: #854D0E;"><i class="bi bi-circle-fill me-1" style="font-size: 8px; color: #B45309;"></i> 12 Pending Tasks</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="exact-table">
+              <thead>
+                <tr>
+                  <th>PRODUCT</th>
+                  <th>SELLER</th>
+                  <th class="text-end">ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=120&auto=format&fit=crop" class="rounded-3" style="width: 44px; height: 44px; object-fit: cover;">
+                      <div>
+                        <div class="fw-bold text-dark">Ultra-Light Runner v2</div>
+                        <div class="text-muted" style="font-size: 12px;">Category: Footwear</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="fw-bold text-dark">Urban Threads Co.</div>
+                    <div class="fw-semibold text-success" style="font-size: 11px;">Verified Seller</div>
+                  </td>
+                  <td class="text-end">
+                    <button class="btn-action-icon" title="View" onclick="showToast('Viewing Ultra-Light Runner v2', 'Product Preview')"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action-icon" title="Edit" onclick="showToast('Edit mode opened', 'Product Edit')"><i class="bi bi-pencil"></i></button>
+                    <button class="btn-action-icon" title="Delete" onclick="showToast('Item deleted', 'Action')"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=120&auto=format&fit=crop" class="rounded-3" style="width: 44px; height: 44px; object-fit: cover;">
+                      <div>
+                        <div class="fw-bold text-dark">Silent-Flow Headphones</div>
+                        <div class="text-muted" style="font-size: 12px;">Category: Electronics</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="fw-bold text-dark">SoundSphere Ltd.</div>
+                    <div class="text-muted" style="font-size: 11px;">New Seller</div>
+                  </td>
+                  <td class="text-end">
+                    <button class="btn-action-icon" title="View" onclick="showToast('Viewing Silent-Flow Headphones', 'Product Preview')"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action-icon" title="Edit" onclick="showToast('Edit mode opened', 'Product Edit')"><i class="bi bi-pencil"></i></button>
+                    <button class="btn-action-icon" title="Delete" onclick="showToast('Item deleted', 'Action')"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1580481072645-022f9a6d8310?q=80&w=120&auto=format&fit=crop" class="rounded-3" style="width: 44px; height: 44px; object-fit: cover;">
+                      <div>
+                        <div class="fw-bold text-dark">Apex Ergo Chair</div>
+                        <div class="text-muted" style="font-size: 12px;">Category: Furniture</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="fw-bold text-dark">Workspace Pro</div>
+                    <div class="fw-semibold text-success" style="font-size: 11px;">Verified Seller</div>
+                  </td>
+                  <td class="text-end">
+                    <button class="btn-action-icon" title="View" onclick="showToast('Viewing Apex Ergo Chair', 'Product Preview')"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action-icon" title="Edit" onclick="showToast('Edit mode opened', 'Product Edit')"><i class="bi bi-pencil"></i></button>
+                    <button class="btn-action-icon" title="Delete" onclick="showToast('Item deleted', 'Action')"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

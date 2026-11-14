@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Vise Organic Biotechnology</title>
+  <meta name="description" content="Get in touch with Vise Organic agronomy and biotechnology specialists. Inquiry form, phone support, office address, Google Map location, and distributorship applications.">
+  <meta name="keywords" content="Contact Vise Organic, biofertilizer inquiry, organic farming support, distributor application, Gujarat agritech contact">
+
+  <!-- OpenGraph SEO Tags -->
+  <meta property="og:title" content="Contact Us | Vise Organic Biotechnology">
+  <meta property="og:description" content="Get in touch with our agronomy specialists for crop advisory, R&D collaboration, and distributorship opportunities.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Vise Organic Custom Stylesheet -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light">
+
+  <!-- ==========================================
+       NAVIGATION BAR
+       ========================================== -->
+  <nav class="navbar navbar-expand-lg navbar-vo sticky-top py-3" id="main-nav">
+    <div class="container">
+      <!-- Brand Logo Image -->
+      <a class="navbar-brand py-0" href="index.html">
+        <img src="images/logo.png" alt="Vise Organic Logo" class="header-logo">
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links & CTA -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-menu navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rd.html">R&D</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Primary CTA Button -->
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-vo-accent text-dark rounded-pill px-4 py-2.5 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">
+            <i class="bi bi-chat-text-fill me-2"></i> Get Expert Advice
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       1. HERO HEADER SECTION
+       ========================================== -->
+  <section class="py-5 text-white position-relative" style="background: linear-gradient(135deg, rgba(27, 94, 32, 0.95) 0%, rgba(13, 51, 16, 0.98) 100%), url('images/rd_lab_research.png') center/cover no-repeat;">
+    <div class="container py-4 my-2 text-center position-relative z-1">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-xl-8">
+          
+          <span class="badge bg-white text-vo-primary font-poppins fw-bold px-3.5 py-2 rounded-pill shadow-sm mb-3 d-inline-flex align-items-center gap-2">
+            <i class="bi bi-envelope-check-fill text-warning fs-6"></i> CONTACT VISE ORGANIC
+          </span>
+
+          <h1 class="display-h1 text-white font-poppins fw-bold mb-3 tracking-tight">
+            Get in Touch with Our Agronomy & Biotech Specialists
+          </h1>
+          
+          <p class="lead text-white-80 font-inter mb-0 mx-auto" style="max-width: 760px; line-height: 1.65;">
+            Whether you are a farmer seeking custom crop advice, a distributor wanting to partner, or an institution exploring R&D collaboration, our dedicated team is here to assist you.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       2. MAIN 2-COLUMN CONTACT LAYOUT
+       ========================================== -->
+  <section class="section-padding py-5">
+    <div class="container">
+      
+      <div class="row g-4 g-lg-5">
+        
+        <!-- LEFT COLUMN (60% -> col-lg-7): CONTACT FORM CARD -->
+        <div class="col-lg-7">
+          <div class="bg-white rounded-4 shadow-sm border border-success border-opacity-10 p-4 p-md-5 h-100">
+            
+            <div class="mb-4 pb-2 border-bottom border-light">
+              <span class="badge-vo mb-2 d-inline-block">INQUIRY FORM</span>
+              <h2 class="h2 font-poppins fw-bold text-vo-primary mb-1">Send us a Message</h2>
+              <p class="text-vo-muted font-inter small mb-0">
+                Our specialists typically respond within one business day.
+              </p>
+            </div>
+
+            <!-- Form Validation Alert Container -->
+            <div id="contactFormAlert" class="alert alert-success d-none mb-4 rounded-3 font-inter small" role="alert">
+              <i class="bi bi-check-circle-fill me-2 fs-5 align-middle"></i>
+              <strong>Thank you!</strong> Your inquiry has been submitted successfully. Our agronomy advisor will contact you shortly.
+            </div>
+
+            <form id="mainContactForm" class="needs-validation" novalidate>
+              <div class="row g-3">
+                
+                <!-- First Row: Full Name & Mobile Number (2-Column Desktop) -->
+                <div class="col-md-6">
+                  <label for="contactFullName" class="form-label font-poppins fw-semibold text-vo-primary small">Full Name <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0 text-vo-muted"><i class="bi bi-person"></i></span>
+                    <input type="text" class="form-control form-control-vo-lg border-start-0" id="contactFullName" placeholder="e.g. Ramesh Patel" required>
+                  </div>
+                  <div class="invalid-feedback small">Please provide your full name.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contactMobile" class="form-label font-poppins fw-semibold text-vo-primary small">Mobile Number <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0 text-vo-muted"><i class="bi bi-telephone"></i></span>
+                    <input type="tel" class="form-control form-control-vo-lg border-start-0" id="contactMobile" placeholder="+91 98765 43210" required>
+                  </div>
+                  <div class="invalid-feedback small">Please provide a valid mobile number.</div>
+                </div>
+
+                <!-- Second Row: Email Address (Full Width) -->
+                <div class="col-12">
+                  <label for="contactEmail" class="form-label font-poppins fw-semibold text-vo-primary small">Email Address <span class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0 text-vo-muted"><i class="bi bi-envelope"></i></span>
+                    <input type="email" class="form-control form-control-vo-lg border-start-0" id="contactEmail" placeholder="name@example.com" required>
+                  </div>
+                  <div class="invalid-feedback small">Please provide a valid email address.</div>
+                </div>
+
+                <!-- Third Row: Subject / Inquiry Interest (Full Width) -->
+                <div class="col-12">
+                  <label for="contactSubject" class="form-label font-poppins fw-semibold text-vo-primary small">Subject / Purpose of Inquiry <span class="text-muted fw-normal">(Optional)</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0 text-vo-muted"><i class="bi bi-tag"></i></span>
+                    <select class="form-select form-control-vo-lg border-start-0" id="contactSubject">
+                      <option value="Agronomy Advisory" selected>Farmer Crop Advisory & Bio-Dosage</option>
+                      <option value="Distributorship">Distributorship & Dealership Application</option>
+                      <option value="Product Purchasing">Bulk Order & Product Pricing</option>
+                      <option value="Research & Lab">R&D & Academic Collaboration</option>
+                      <option value="General Inquiry">General Feedback / Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Fourth Row: Message Textarea (Min-height 180px) -->
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label font-poppins fw-semibold text-vo-primary small">Message <span class="text-danger">*</span></label>
+                  <textarea class="form-control form-control-vo-lg" id="contactMessage" rows="6" style="min-height: 180px;" placeholder="Tell us how we can help you..." required></textarea>
+                  <div class="invalid-feedback small">Please enter your message details.</div>
+                </div>
+
+                <!-- Submit Button with Loading & Hover States -->
+                <div class="col-12 pt-2">
+                  <button type="submit" id="btnSubmitContact" class="btn btn-vo-primary btn-lg w-100 py-3 rounded-pill fw-bold font-poppins shadow-sm">
+                    <span id="btnSubmitText">Submit Inquiry <i class="bi bi-arrow-right-short fs-5 ms-1"></i></span>
+                    <span id="btnSubmitSpinner" class="d-none">
+                      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                      Submitting Inquiry...
+                    </span>
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN (40% -> col-lg-5): STACKED INFORMATION CARDS -->
+        <div class="col-lg-5">
+          <div class="d-flex flex-column gap-4">
+            
+            <!-- 1. Primary Featured Card (Sales Inquiries) -->
+            <a href="tel:+9118001236742" class="contact-primary-card">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-white text-vo-primary font-poppins fw-bold px-3 py-1.5 rounded-pill small">
+                  SALES INQUIRIES
+                </span>
+                <div class="circle-icon-box bg-white text-vo-primary m-0" style="width: 44px; height: 44px;">
+                  <i class="bi bi-telephone-fill text-vo-primary fs-5"></i>
+                </div>
+              </div>
+              <div class="small text-white-80 font-poppins text-uppercase tracking-wider mb-1">Toll-Free Desk</div>
+              <div class="h3 font-poppins fw-bold text-white mb-2">+91 1800-123-ORGANIC</div>
+              <div class="small text-white-80 font-inter">
+                Speak directly with our regional sales manager. Click to call now.
+              </div>
+            </a>
+
+            <!-- 2. Secondary Cards Row (2 Equal Cards) -->
+            <div class="row g-3">
+              
+              <!-- Card 1: Customer Support Email -->
+              <div class="col-sm-6">
+                <div class="contact-info-card h-100 d-flex flex-column justify-content-between">
+                  <div>
+                    <div class="circle-icon-box mb-3" style="width: 44px; height: 44px;">
+                      <i class="bi bi-envelope-fill fs-5"></i>
+                    </div>
+                    <span class="small font-poppins fw-bold text-vo-muted text-uppercase tracking-wider d-block mb-1">CUSTOMER SUPPORT</span>
+                    <h3 class="h6 font-poppins fw-bold text-vo-primary text-break mb-0">support@viseorganic.com</h3>
+                  </div>
+                  <div class="mt-3 pt-2 border-top border-light">
+                    <span class="small text-vo-accent fw-semibold">24/7 Ticketing Support</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Company Brochure Download -->
+              <div class="col-sm-6">
+                <div class="contact-info-card h-100 d-flex flex-column justify-content-between">
+                  <div>
+                    <div class="circle-icon-box mb-3" style="width: 44px; height: 44px;">
+                      <i class="bi bi-file-earmark-pdf-fill fs-5"></i>
+                    </div>
+                    <span class="small font-poppins fw-bold text-vo-muted text-uppercase tracking-wider d-block mb-1">COMPANY BROCHURE</span>
+                    <h3 class="h6 font-poppins fw-bold text-vo-primary mb-2">Product Catalog 2026</h3>
+                  </div>
+                  <div>
+                    <a href="images/logo.png" download class="btn btn-sm btn-outline-success w-100 rounded-pill font-poppins fw-semibold">
+                      Download PDF <i class="bi bi-download ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 3. Headquarters Card -->
+            <div class="contact-info-card bg-white p-4">
+              <i class="bi bi-building position-absolute top-0 end-0 m-3 display-3 text-success opacity-10 pointer-events-none"></i>
+              
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="circle-icon-box m-0" style="width: 48px; height: 48px;">
+                  <i class="bi bi-geo-alt-fill fs-5"></i>
+                </div>
+                <div>
+                  <h3 class="h5 font-poppins fw-bold text-vo-primary mb-0">Corporate Headquarters</h3>
+                  <span class="small text-vo-muted">Manjusar, Gujarat</span>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <div class="small font-poppins fw-semibold text-vo-primary mb-1">Full Office Address:</div>
+                <p class="small text-vo-muted font-inter mb-0" style="line-height: 1.6;">
+                  Vise Organic Biotech Pvt Ltd,<br>
+                  A10, Prime Industry Estate,<br>
+                  Manjusar, Gujarat - 391775, India.
+                </p>
+              </div>
+
+              <div class="mb-4">
+                <div class="small font-poppins fw-semibold text-vo-primary mb-1">Business Operating Hours:</div>
+                <div class="small text-vo-muted font-inter">
+                  <i class="bi bi-clock me-1.5 text-success"></i> Mon - Sat: 9:00 AM - 6:30 PM (IST)
+                </div>
+              </div>
+
+              <a href="https://maps.google.com/?q=Manjusar,Gujarat,391775" target="_blank" class="btn btn-vo-primary w-100 rounded-pill font-poppins fw-semibold">
+                Open in Google Maps <i class="bi bi-box-arrow-up-right ms-1.5 fs-6"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. ADDITIONAL SECTION: WHY CONTACT US
+       ========================================== -->
+  <section class="section-padding bg-white border-top border-bottom border-light">
+    <div class="container">
+      
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="badge-vo mb-2 d-inline-block">WHY PARTNER WITH US</span>
+          <h2 class="display-h2 text-vo-primary font-poppins fw-bold mb-3">
+            Why Contact Vise Organic?
+          </h2>
+          <p class="text-vo-muted font-inter">
+            Tailored assistance designed for progressive farmers, regional distributors, and research institutions.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- Feature 1: Technical & Agronomy Support -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-vo p-4 h-100 text-center">
+            <div class="circle-icon-box mb-3">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h3 class="h5 font-poppins fw-bold text-vo-primary mb-2">Technical Agronomy Advisory</h3>
+            <p class="small text-vo-muted font-inter mb-0" style="line-height: 1.65;">
+              Receive expert guidance on microbial soil application, customized NPK bio-dosage, and zero-residue pest management for your specific crop types.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Research & R&D Collaboration -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card-vo p-4 h-100 text-center">
+            <div class="circle-icon-box mb-3">
+              <i class="bi bi-microscope"></i>
+            </div>
+            <h3 class="h5 font-poppins fw-bold text-vo-primary mb-2">R&D & Strain Testing</h3>
+            <p class="small text-vo-muted font-inter mb-0" style="line-height: 1.65;">
+              Partner with our DSIR-recognized bio-laboratories on field trials, microbial efficacy validation, and joint biotechnology research projects.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Sales & Distributorship -->
+        <div class="col-lg-4 col-md-12">
+          <div class="card-vo p-4 h-100 text-center">
+            <div class="circle-icon-box mb-3">
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <h3 class="h5 font-poppins fw-bold text-vo-primary mb-2">Sales & Dealership Network</h3>
+            <p class="small text-vo-muted font-inter mb-0" style="line-height: 1.65;">
+              Join our nationwide family of 500+ authorized dealers with guaranteed 12-month shelf stability, competitive margins, and marketing support.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. FREQUENTLY ASKED QUESTIONS (ACCORDION)
+       ========================================== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <span class="badge-vo mb-2 d-inline-block">GOT QUESTIONS?</span>
+          <h2 class="display-h2 text-vo-primary font-poppins fw-bold mb-3">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-vo-muted font-inter">
+            Find quick answers to common inquiries about our response times, support desk, and distributor onboarding.
+          </p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          
+          <div class="accordion accordion-vo shadow-xs rounded-4 overflow-hidden" id="contactFaqAccordion">
+            
+            <!-- FAQ 1 -->
+            <div class="accordion-item border-0 border-bottom">
+              <h3 class="accordion-header" id="faqHeadingOne">
+                <button class="accordion-button font-poppins fw-bold text-vo-primary py-3.5" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                  How quickly do you respond to inquiries?
+                </button>
+              </h3>
+              <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body font-inter text-vo-muted small" style="line-height: 1.7;">
+                  Our agronomy advisory and customer support team typically responds to all online messages within 1 business day (24 hours). For urgent field crop advisory, you can call our toll-free line at +91 1800-123-ORGANIC.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="accordion-item border-0 border-bottom">
+              <h3 class="accordion-header" id="faqHeadingTwo">
+                <button class="accordion-button collapsed font-poppins fw-bold text-vo-primary py-3.5" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                  Where is your corporate office & facility located?
+                </button>
+              </h3>
+              <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body font-inter text-vo-muted small" style="line-height: 1.7;">
+                  Our primary corporate headquarters and manufacturing facilities are located at A10, Prime Industry Estate, Manjusar, Gujarat - 391775, India.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item border-0 border-bottom">
+              <h3 class="accordion-header" id="faqHeadingThree">
+                <button class="accordion-button collapsed font-poppins fw-bold text-vo-primary py-3.5" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                  Can I request technical support for commercial farm trials?
+                </button>
+              </h3>
+              <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body font-inter text-vo-muted small" style="line-height: 1.7;">
+                  Yes! We provide on-field agronomy support and custom microbial bio-dosage plans for commercial farm trials. Simply select "Farmer Crop Advisory" in our inquiry form or contact our agronomy desk.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="accordion-item border-0">
+              <h3 class="accordion-header" id="faqHeadingFour">
+                <button class="accordion-button collapsed font-poppins fw-bold text-vo-primary py-3.5" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                  How do I apply to become an authorized distributor?
+                </button>
+              </h3>
+              <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body font-inter text-vo-muted small" style="line-height: 1.7;">
+                  To apply for distributorship or regional stockist rights, submit the inquiry form choosing "Distributorship Application". Our channel expansion team will send you the dealer registration kit and margin structure.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. RESPONSIVE EMBEDDED GOOGLE MAP
+       ========================================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-8">
+          <span class="badge-vo mb-2 d-inline-block">VISIT OUR HEADQUARTERS</span>
+          <h2 class="display-h2 text-vo-primary font-poppins fw-bold mb-2">Find Us on the Map</h2>
+          <p class="text-vo-muted font-inter">Located at A10, Prime Industry Estate, Manjusar, Gujarat - 391775.</p>
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <iframe 
+          src="https://maps.google.com/maps?q=Manjusar%20Gujarat%20391775&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Vise Organic Headquarters Google Map Location">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. CONTACT INFORMATION QUICK STRIP
+       ========================================== -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="bg-vo-primary text-white rounded-4 p-4 p-md-5 shadow-sm">
+        <div class="row g-4 align-items-center text-center text-lg-start">
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3">
+              <div class="bg-white text-vo-primary rounded-circle p-2.5 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-telephone-fill fs-5"></i>
+              </div>
+              <div>
+                <div class="small text-white-50 font-poppins text-uppercase tracking-wider">Toll-Free Desk</div>
+                <a href="tel:+9118001236742" class="h6 font-poppins fw-bold text-white text-decoration-none mb-0">+91 1800-123-ORGANIC</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3">
+              <div class="bg-white text-vo-primary rounded-circle p-2.5 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-envelope-fill fs-5"></i>
+              </div>
+              <div>
+                <div class="small text-white-50 font-poppins text-uppercase tracking-wider">Support Email</div>
+                <a href="mailto:support@viseorganic.com" class="h6 font-poppins fw-bold text-white text-decoration-none mb-0">support@viseorganic.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3">
+              <div class="bg-white text-vo-primary rounded-circle p-2.5 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-clock-fill fs-5"></i>
+              </div>
+              <div>
+                <div class="small text-white-50 font-poppins text-uppercase tracking-wider">Working Hours</div>
+                <span class="h6 font-poppins fw-bold text-white mb-0">Mon - Sat: 9 AM - 6:30 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 text-lg-end">
+            <a href="https://wa.me/919876543210?text=Hello%20Vise%20Organic,%20I%20want%20to%20know%20more%20about%20your%20organic%20solutions." target="_blank" class="btn btn-vo-accent text-dark fw-bold rounded-pill px-4 py-2.5 shadow-sm">
+              <i class="bi bi-whatsapp me-1.5"></i> Chat on WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer id="contact" class="bg-dark text-white pt-5 pb-4 border-top border-4 border-success">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-logo-box mb-4" href="index.html">
+            <img src="images/logo.png" alt="Vise Organic Logo" class="footer-logo">
+          </a>
+          <p class="small text-white-50 mb-4">
+            Vise Organic is an Indian organic agriculture and biotechnology company dedicated to science-backed biofertilizers, biopesticides, and sustainable plant nutrition.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Quick Links</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none hover-white">Home</a></li>
+            <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none hover-white">About Us</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Product Range</a></li>
+            <li class="mb-2"><a href="rd.html" class="text-white-50 text-decoration-none hover-white">R&D Laboratory</a></li>
+            <li class="mb-2"><a href="index.html#blogs" class="text-white-50 text-decoration-none hover-white">Agronomy Blogs</a></li>
+            <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none hover-white">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Solutions -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Solutions</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Biofertilizers & Mycorrhiza</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Botanical Biopesticides</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Plant Growth Regulators</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Organo-Silicone Adjuvants</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Soil Carbon Rejuvenators</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get In Touch -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Get In Touch</h3>
+          <ul class="list-unstyled small text-white-50 mb-0">
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-geo-alt-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>Vise Organic Biotech Pvt Ltd, A10 Prime Industry Estate, Manjusar, Gujarat - 391775, India</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-telephone-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>+91 1800-123-ORGANIC (Toll Free)</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-envelope-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>support@viseorganic.com</span>
+            </li>
+            <li class="d-flex gap-2">
+              <i class="bi bi-clock-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>Mon - Sat: 9:00 AM - 6:30 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary border-opacity-25">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50 py-2">
+        <div>© 2026 Vise Organic Agriculture & Biotechnology. All rights reserved.</div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none">Terms of Service</a>
+          <a href="#" class="text-white-50 text-decoration-none">NPOP Organic Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       FLOATING WHATSAPP BUTTON
+       ========================================== -->
+  <a href="https://wa.me/919876543210?text=Hello%20Vise%20Organic,%20I%20want%20to%20know%20more%20about%20your%20organic%20solutions." class="whatsapp-float" target="_blank" aria-label="Contact Vise Organic on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       MODAL 1: Get Expert Advice Consultation
+       ========================================== -->
+  <div class="modal fade" id="expertAdviceModal" tabindex="-1" aria-labelledby="expertAdviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-vo p-4">
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <span class="badge-vo-accent mb-1 d-inline-block">Free Agronomy Advisory</span>
+            <h3 class="h4 modal-title text-vo-primary font-poppins" id="expertAdviceModalLabel">Talk to a Vise Agronomist</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-vo-muted mb-4">Fill in your details and our agronomy team will call you within 24 hours with custom bio-dosage plans.</p>
+          
+          <form id="expertConsultationForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="fullNameModal" class="form-label small text-uppercase fw-semibold">Full Name *</label>
+              <input type="text" class="form-control form-control-vo" id="fullNameModal" placeholder="e.g. Ramesh Patel" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="phoneNumModal" class="form-label small text-uppercase fw-semibold">Mobile Number *</label>
+              <input type="tel" class="form-control form-control-vo" id="phoneNumModal" placeholder="+91 98765 43210" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="cropTypeModal" class="form-label small text-uppercase fw-semibold">Primary Crop / Solution Interest</label>
+              <select class="form-select form-control-vo" id="cropTypeModal">
+                <option selected value="Biofertilizers">Biofertilizers & Mycorrhiza</option>
+                <option value="Biopesticides">Botanical Biopesticides</option>
+                <option value="PGR">Plant Growth Regulators</option>
+                <option value="Adjuvants">Organo-Silicone Adjuvants</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-vo-primary w-100 py-2.5 fw-bold mt-2">
+              Request Advisory Callback <i class="bi bi-send-fill ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Interactive Form Handling Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const contactForm = document.getElementById('mainContactForm');
+      const btnSubmit = document.getElementById('btnSubmitContact');
+      const btnText = document.getElementById('btnSubmitText');
+      const btnSpinner = document.getElementById('btnSubmitSpinner');
+      const alertBox = document.getElementById('contactFormAlert');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (!contactForm.checkValidity()) {
+            contactForm.classList.add('was-validated');
+            return;
+          }
+
+          // Show loading state
+          btnSubmit.disabled = true;
+          btnText.classList.add('d-none');
+          btnSpinner.classList.remove('d-none');
+
+          // Simulate API network submission
+          setTimeout(function () {
+            btnSubmit.disabled = false;
+            btnText.classList.remove('d-none');
+            btnSpinner.classList.add('d-none');
+            alertBox.classList.remove('d-none');
+            contactForm.reset();
+            contactForm.classList.remove('was-validated');
+
+            // Scroll alert into view smoothly
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 1500);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

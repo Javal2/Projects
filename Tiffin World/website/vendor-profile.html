@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicrop It — Vendor Profile — TiffinWorld</title>
+  <meta name="description" content="Explore meal plans, 2-week menus, customer reviews, and kitchen gallery for Unicrop It on TiffinWorld.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Assets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/vendor-profile.css">
+</head>
+<body>
+
+  <!-- ==================================================
+       HEADER COMPONENT
+       ================================================== -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+          <a href="customer-login.html" class="tw-customer-login">Customer Login</a>
+          <a href="vendor-login.html" class="tw-vendor-btn">Vendor Login</a>
+        </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    
+    <!-- SECTION 1 — VENDOR HERO COVER -->
+    <section class="vp-hero-section">
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1600&auto=format&fit=crop" 
+           alt="Unicrop It Cover" class="vp-hero-bg">
+      <div class="vp-hero-overlay"></div>
+
+      <div class="vp-hero-content">
+        <div class="tw-container vp-grid-container">
+          <div class="vp-identity-block">
+            <div class="vp-logo-frame">
+              <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=300&auto=format&fit=crop" 
+                   alt="Unicrop It Logo" class="vp-logo-img">
+            </div>
+
+            <div class="vp-identity-info">
+              <div>
+                <span class="vp-badge-tier"><i class="bi bi-shield-check"></i> PREMIUM VENDOR</span>
+              </div>
+              <h1 class="vp-vendor-title">Unicrop It</h1>
+              <div class="vp-rating-row">
+                <span class="vp-stars">★★★★★</span>
+                <strong>4.8</strong>
+                <span class="vp-reviews-count">(120+ reviews)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — MAIN TWO-COLUMN LAYOUT -->
+    <section class="vp-main-section">
+      <div class="tw-container vp-grid-container">
+        <div class="row g-4">
+          
+          <!-- LEFT SIDEBAR -->
+          <div class="col-lg-4">
+            
+            <h2 class="vp-sidebar-title">
+              <i class="bi bi-info-circle-fill vp-sidebar-icon"></i>
+              About Our Business
+            </h2>
+
+            <div class="vp-about-card">
+              <p class="vp-about-desc">
+                At Unicrop It, we believe in the harmony of authentic home flavors, pure organic ingredients, and eco-friendly preparation to nourish your daily life.
+              </p>
+
+              <div class="vp-highlights-list">
+                <div class="vp-highlight-item">
+                  <div class="vp-highlight-badge"><i class="bi bi-patch-check-fill"></i></div>
+                  <span class="vp-highlight-text">100% Organic Ingredients</span>
+                </div>
+
+                <div class="vp-highlight-item">
+                  <div class="vp-highlight-badge"><i class="bi bi-truck"></i></div>
+                  <span class="vp-highlight-text">Zero-Emission Delivery</span>
+                </div>
+
+                <div class="vp-highlight-item">
+                  <div class="vp-highlight-badge"><i class="bi bi-shield-check"></i></div>
+                  <span class="vp-highlight-text">FSSAI Certified Kitchen</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Details -->
+            <h3 class="vp-section-subtitle">Contact Details</h3>
+
+            <div class="vp-contact-list">
+              <div class="vp-contact-item">
+                <i class="bi bi-telephone-fill vp-contact-icon"></i>
+                <div>
+                  <div class="vp-contact-label">Phone</div>
+                  <div class="vp-contact-value"><a href="tel:+15550123456">+1 (555) 012-3456</a></div>
+                </div>
+              </div>
+
+              <div class="vp-contact-item">
+                <i class="bi bi-envelope-fill vp-contact-icon"></i>
+                <div>
+                  <div class="vp-contact-label">Email</div>
+                  <div class="vp-contact-value"><a href="mailto:hello@unicropit.com">hello@unicropit.com</a></div>
+                </div>
+              </div>
+
+              <div class="vp-contact-item">
+                <i class="bi bi-geo-alt-fill vp-contact-icon"></i>
+                <div>
+                  <div class="vp-contact-label">Address</div>
+                  <div class="vp-contact-value">42 Greenway Ave, Eco District</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Delivery Locations -->
+            <h3 class="vp-section-subtitle">Delivery Locations</h3>
+
+            <div class="vp-locations-wrap">
+              <span class="vp-location-chip">Downtown</span>
+              <span class="vp-location-chip">Green Valley</span>
+              <span class="vp-location-chip">Harbor Bay</span>
+              <span class="vp-location-chip">The Heights</span>
+              <span class="vp-location-chip">Old Town</span>
+            </div>
+
+          </div>
+
+          <!-- RIGHT CONTENT AREA -->
+          <div class="col-lg-8 ps-lg-4">
+            
+            <!-- Menu Section Header -->
+            <div class="vp-menu-header">
+              <h2 class="vp-menu-title">Next 2 Weeks Menu</h2>
+              <a href="#" class="vp-pdf-link"><i class="bi bi-file-earmark-pdf"></i> Download PDF</a>
+            </div>
+
+            <!-- Menu Table -->
+            <div class="vp-table-wrapper">
+              <table class="vp-menu-table">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 18%;">DATE</th>
+                    <th scope="col" style="width: 18%;">DAY</th>
+                    <th scope="col" style="width: 34%;">DISH</th>
+                    <th scope="col" style="width: 30%;">NOTE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="vp-date-badge">01 Apr 2026</span></td>
+                    <td class="vp-day-text">Monday</td>
+                    <td class="vp-dish-text">Quinoa Buddha Bowl</td>
+                    <td class="vp-note-text">Roasted Squash Risotto</td>
+                  </tr>
+                  <tr>
+                    <td><span class="vp-date-badge">02 Apr 2026</span></td>
+                    <td class="vp-day-text">Tuesday</td>
+                    <td class="vp-dish-text">Heritage Gujarati Thali</td>
+                    <td class="vp-note-text">Kathiyawadi Dal & Soft Phulka</td>
+                  </tr>
+                  <tr>
+                    <td><span class="vp-date-badge">03 Apr 2026</span></td>
+                    <td class="vp-day-text">Wednesday</td>
+                    <td class="vp-dish-text">Punjabi Dal Makhani Feast</td>
+                    <td class="vp-note-text">Laccha Paratha & Paneer Butter</td>
+                  </tr>
+                  <tr>
+                    <td><span class="vp-date-badge">04 Apr 2026</span></td>
+                    <td class="vp-day-text">Thursday</td>
+                    <td class="vp-dish-text">South Indian Ghee Idli Combo</td>
+                    <td class="vp-note-text">Crisp Masala Dosa & Sambar</td>
+                  </tr>
+                  <tr>
+                    <td><span class="vp-date-badge">05 Apr 2026</span></td>
+                    <td class="vp-day-text">Friday</td>
+                    <td class="vp-dish-text">Maharashtrian Zunka Bhakri</td>
+                    <td class="vp-note-text">Spicy Pithla & Solkadhi</td>
+                  </tr>
+                  <tr>
+                    <td><span class="vp-date-badge">06 Apr 2026</span></td>
+                    <td class="vp-day-text">Saturday</td>
+                    <td class="vp-dish-text">High Protein Sprout Salad</td>
+                    <td class="vp-note-text">Olive Oil Grilled Tofu</td>
+                  </tr>
+                  <tr>
+                    <td><span class="vp-date-badge">07 Apr 2026</span></td>
+                    <td class="vp-day-text">Sunday</td>
+                    <td class="vp-dish-text">Jain Sattvik Thali</td>
+                    <td class="vp-note-text">No Onion No Garlic Special</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table Controls -->
+            <div class="vp-pagination-row">
+              <button type="button" class="btn-vp-page"><i class="bi bi-chevron-left"></i> Previous</button>
+              <button type="button" class="btn-vp-page">Next <i class="bi bi-chevron-right"></i></button>
+            </div>
+
+            <!-- Kitchen Gallery Section -->
+            <div class="vp-gallery-header">
+              <h2 class="vp-gallery-title">Kitchen Gallery</h2>
+              <div class="vp-gallery-line"></div>
+            </div>
+
+            <!-- Asymmetric Gallery Mosaic -->
+            <div class="vp-gallery-grid">
+              
+              <!-- Left Large Image -->
+              <div class="vp-gallery-col-left">
+                <div class="vp-gallery-item-wrapper">
+                  <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop" 
+                       alt="Kitchen Preparation" class="vp-gallery-img" loading="lazy">
+                </div>
+              </div>
+
+              <!-- Right Column (Wide Top + 2 Small Bottom) -->
+              <div class="vp-gallery-col-right">
+                
+                <!-- Wide Top Image -->
+                <div class="vp-gallery-item-wrapper" style="height: 180px;">
+                  <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=800&auto=format&fit=crop" 
+                       alt="Plated Dish" class="vp-gallery-img" loading="lazy">
+                </div>
+
+                <!-- Bottom Row (2 Small Images) -->
+                <div class="vp-gallery-row-bottom">
+                  <div class="vp-gallery-item-wrapper">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=500&auto=format&fit=crop" 
+                         alt="Fresh Ingredients" class="vp-gallery-img" loading="lazy">
+                  </div>
+                  <div class="vp-gallery-item-wrapper">
+                    <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=500&auto=format&fit=crop" 
+                         alt="Artisanal Cooking" class="vp-gallery-img" loading="lazy">
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       FOOTER COMPONENT
+       ================================================== -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="vendor-login.html">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

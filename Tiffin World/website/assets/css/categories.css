@@ -1,0 +1,521 @@
+/* ==================================================
+   TIFFINWORLD — FLIPKART-INSPIRED CATEGORIES BROWSING UX
+   ================================================== */
+
+/* Section 1: Compact Category Intro */
+.cat-intro-section {
+  background-color: var(--tw-white);
+  padding: 38px 0 28px 0;
+  text-align: center;
+}
+
+.cat-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tw-orange);
+  margin-bottom: 6px;
+}
+
+.cat-intro-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 38px;
+  color: var(--tw-green);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.cat-intro-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--tw-text-grey);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* Section 2: Top Category Navigation Strip (Flipkart-Inspired) */
+.cat-top-strip {
+  background-color: var(--tw-white);
+  border-top: 1px solid #E7ECF5;
+  border-bottom: 1px solid #E7ECF5;
+  padding: 18px 0;
+}
+
+.cat-top-strip-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+
+.cat-top-strip-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-top-tile {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 96px;
+  transition: all var(--transition-base);
+}
+
+.cat-top-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid #E4EAF5;
+  background-color: var(--tw-off-white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cat-top-tile:hover .cat-top-thumb {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(59, 105, 42, 0.14);
+  border-color: var(--tw-light-blue);
+}
+
+.cat-top-label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--tw-green);
+  margin-top: 8px;
+  text-align: center;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.cat-top-tile:hover .cat-top-label {
+  color: var(--tw-orange);
+}
+
+/* Section 3: Category Search & Quick Filter Bar */
+.cat-search-section {
+  background-color: var(--tw-section-bg);
+  padding: 24px 0;
+  border-bottom: 1px solid #E7ECF5;
+}
+
+.cat-search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cat-search-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--tw-green);
+  margin: 0;
+}
+
+.cat-search-input-group {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.cat-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--tw-orange);
+  font-size: 17px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cat-search-control {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px 0 46px;
+  border: 1px solid var(--tw-light-blue);
+  border-radius: 10px;
+  background-color: var(--tw-white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #333333;
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.cat-search-control::placeholder {
+  color: var(--tw-grey);
+  opacity: 0.8;
+}
+
+.cat-search-control:focus {
+  border-color: var(--tw-green);
+  box-shadow: 0 0 0 3px rgba(59, 105, 42, 0.12);
+}
+
+/* Filter Chips */
+.cat-chip-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.cat-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  border: 1px solid var(--tw-light-blue);
+  background-color: var(--tw-white);
+  color: var(--tw-green);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  user-select: none;
+}
+
+.cat-chip:hover,
+.cat-chip.active {
+  background-color: var(--tw-green);
+  color: var(--tw-white);
+  border-color: var(--tw-green);
+}
+
+/* Section 4: Main 4-Column Category Marketplace Grid */
+.cat-grid-section {
+  padding: 48px 0;
+}
+
+.cat-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.cat-group-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--tw-green);
+  margin: 0;
+}
+
+.cat-group-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--tw-orange);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition-base);
+}
+
+.cat-group-link:hover {
+  color: #e06f00;
+  text-decoration: underline;
+}
+
+/* Category Card */
+.cat-market-card {
+  background-color: var(--tw-white);
+  border: 1px solid #E4EAF5;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.cat-market-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(40, 50, 40, 0.09);
+  border-color: var(--tw-light-blue);
+}
+
+.cat-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--tw-off-white);
+}
+
+.cat-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cat-market-card:hover .cat-card-img {
+  transform: scale(1.05);
+}
+
+.cat-card-body {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.cat-card-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--tw-green);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cat-kitchen-badge {
+  background-color: #E8F3E5;
+  color: var(--tw-green);
+  border: 1px solid rgba(59, 105, 42, 0.25);
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.cat-sub-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cat-sub-item {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--tw-text-grey);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-base);
+}
+
+.cat-sub-item i {
+  font-size: 8px;
+  color: var(--tw-orange);
+}
+
+.cat-market-card:hover .cat-sub-item {
+  color: #333333;
+}
+
+.cat-card-footer {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--tw-section-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cat-view-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--tw-orange);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cat-market-card:hover .cat-view-link {
+  text-decoration: underline;
+}
+
+/* Section 5: Popular Right Now Strip */
+.cat-popular-section {
+  background-color: var(--tw-off-white);
+  padding: 44px 0;
+  border-top: 1px solid #E7ECF5;
+  border-bottom: 1px solid #E7ECF5;
+}
+
+.cat-mini-tile {
+  background-color: var(--tw-white);
+  border: 1px solid #E4EAF5;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  height: 100%;
+}
+
+.cat-mini-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border-color: var(--tw-light-blue);
+}
+
+.cat-mini-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cat-mini-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--tw-green);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cat-mini-count {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--tw-text-grey);
+  margin: 0;
+}
+
+/* Section 6: Discovery Section (Browse by Need) */
+.cat-discovery-section {
+  padding: 48px 0 60px 0;
+}
+
+.cat-discovery-card {
+  background-color: var(--tw-section-bg);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+
+.cat-discovery-card:hover {
+  background-color: var(--tw-white);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 105, 42, 0.1);
+  border-color: var(--tw-green);
+}
+
+.cat-discovery-icon {
+  font-size: 28px;
+  color: var(--tw-green);
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.cat-discovery-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--tw-green);
+  margin-bottom: 2px;
+}
+
+.cat-discovery-subtitle {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--tw-text-grey);
+  margin: 0;
+}
+
+/* ==================================================
+   RESPONSIVE RULES
+   ================================================== */
+@media (max-width: 991.98px) {
+  .cat-intro-title {
+    font-size: 32px;
+  }
+  
+  .cat-search-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cat-search-input-group {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cat-intro-section {
+    padding: 28px 0 20px 0;
+  }
+  
+  .cat-intro-title {
+    font-size: 26px;
+  }
+  
+  .cat-intro-desc {
+    font-size: 14px;
+  }
+  
+  .cat-top-tile {
+    width: 82px;
+  }
+  
+  .cat-top-thumb {
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+  }
+  
+  .cat-top-label {
+    font-size: 12px;
+  }
+  
+  .cat-group-title {
+    font-size: 22px;
+  }
+  
+  .cat-market-card {
+    border-radius: 12px;
+  }
+  
+  .cat-card-body {
+    padding: 14px;
+  }
+  
+  .cat-card-name {
+    font-size: 16px;
+  }
+}

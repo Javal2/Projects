@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Partner Registration — TiffinWorld</title>
+  <meta name="description" content="Register your kitchen with TiffinWorld to deliver authentic homemade meals to local subscribers.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Assets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/vendor-auth.css">
+</head>
+<body>
+
+  <!-- Header Component -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="customer-login.html" class="tw-customer-login">Customer Login</a>
+            <a href="vendor-login.html" class="tw-vendor-btn active">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center active">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <main class="vendor-auth-section">
+    <div class="tw-container vendor-auth-container">
+      <div class="row align-items-center">
+        
+        <!-- LEFT EDITORIAL SECTION -->
+        <div class="col-lg-7 vendor-register-left">
+          <div class="vendor-badge-excellence">
+            PARTNER WITH EXCELLENCE
+          </div>
+
+          <h1 class="vendor-reg-title-green">Your kitchen,</h1>
+          <h1 class="vendor-reg-title-orange">our conservatory.</h1>
+
+          <p class="vendor-reg-desc">
+            Join an exclusive network of artisanal chefs and premium kitchens delivering curated meal experiences to discerning palettes.
+          </p>
+
+          <!-- Benefit Cards Grid -->
+          <div class="vendor-benefit-grid">
+            <div class="vendor-benefit-card">
+              <i class="bi bi-award vendor-benefit-icon"></i>
+              <h5 class="vendor-benefit-title">Artisanal Focus</h5>
+              <p class="vendor-benefit-text">Prioritize quality and taste above all else.</p>
+            </div>
+
+            <div class="vendor-benefit-card">
+              <i class="bi bi-graph-up-arrow vendor-benefit-icon"></i>
+              <h5 class="vendor-benefit-title">Sustainable Growth</h5>
+              <p class="vendor-benefit-text">Built-in audience of premium subscribers.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT FORM CARD -->
+        <div class="col-lg-5">
+          <div class="vendor-register-card">
+            <h2 class="vendor-reg-form-title">Vendor Registration</h2>
+            <p class="vendor-reg-form-subtitle">Begin your journey with Tiffinworld</p>
+
+            <form id="vendorRegisterForm" action="#" method="POST" novalidate>
+              
+              <div class="mb-3">
+                <label for="regBusinessName" class="vendor-field-label">Business Name</label>
+                <input type="text" id="regBusinessName" name="business_name" class="vendor-control vendor-control-noicon" 
+                       placeholder="The Artisanal Kitchen" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="regPhone" class="vendor-field-label">Phone Number</label>
+                <div class="tw-phone-group">
+                  <select name="country_code" class="tw-country-code-select" aria-label="Country Code">
+                    <option value="+91" selected>🇮🇳 +91</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+1">🇨🇦 +1</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+966">🇸🇦 +966</option>
+                    <option value="+974">🇶🇦 +974</option>
+                    <option value="+977">🇳🇵 +977</option>
+                  </select>
+                  <input type="tel" id="regPhone" name="phone" class="vendor-control vendor-control-noicon" 
+                         placeholder="000 000 0000" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="regEmail" class="vendor-field-label">Email Address</label>
+                <input type="email" id="regEmail" name="email" class="vendor-control vendor-control-noicon" 
+                       placeholder="chef@kitchen.com" required>
+              </div>
+
+              <!-- Password & Confirm Row -->
+              <div class="row g-2 mb-4">
+                <div class="col-sm-6">
+                  <label for="regPassword" class="vendor-field-label">Password</label>
+                  <input type="password" id="regPassword" name="password" class="vendor-control vendor-control-noicon" 
+                         placeholder="••••••••" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="regPasswordConfirm" class="vendor-field-label">Confirm</label>
+                  <input type="password" id="regPasswordConfirm" name="password_confirmation" class="vendor-control vendor-control-noicon" 
+                         placeholder="••••••••" required>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-vendor-submit" id="btnVendorRegister">
+                Register
+              </button>
+            </form>
+
+            <div class="vendor-bottom-divider"></div>
+
+            <p class="vendor-bottom-link-text">
+              Already a partner? <a href="vendor-login.html" class="vendor-bottom-link">Vendor Login</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="vendor-login.html" class="active-link">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

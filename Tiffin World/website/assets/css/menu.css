@@ -1,0 +1,498 @@
+/* ==================================================
+   TIFFINWORLD — REDESIGNED MENU PAGE STYLES
+   ================================================== */
+
+/* Hero Introduction Area */
+.tw-menu-hero-section {
+  background-color: var(--tw-white);
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+.tw-menu-h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 3.8rem;
+  color: var(--tw-green);
+  line-height: 1.04;
+  margin-bottom: 20px;
+}
+
+.tw-menu-lead {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--tw-text-grey);
+  line-height: 1.7;
+  max-width: 620px;
+  margin-bottom: 0;
+}
+
+/* Location & Search Panel Card */
+.tw-location-card {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+  max-width: 100%;
+  margin-left: auto;
+}
+
+/* Top "Use my current location" Pill Control */
+.tw-current-loc-btn {
+  width: 100%;
+  height: 48px;
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: var(--radius-pill);
+  color: var(--tw-green);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.tw-current-loc-btn:hover {
+  border-color: var(--tw-green);
+  background-color: var(--tw-pale-green);
+}
+
+.tw-current-loc-btn i {
+  font-size: 1.1rem;
+  color: var(--tw-green);
+}
+
+/* Filter Row Inputs & Selects */
+.tw-panel-control {
+  position: relative;
+  width: 100%;
+}
+
+.tw-panel-control i.icon-prefix {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--tw-orange);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.tw-pill-input,
+.tw-pill-select {
+  width: 100%;
+  height: 42px;
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: var(--radius-pill);
+  padding: 0 14px 0 34px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--tw-grey);
+  outline: none;
+  transition: border-color var(--transition-base);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.tw-pill-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236B7280' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 32px;
+}
+
+.tw-pill-input:focus,
+.tw-pill-select:focus {
+  border-color: var(--tw-orange);
+}
+
+.tw-panel-search-btn {
+  width: 100%;
+  height: 42px;
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: var(--radius-pill);
+  color: var(--tw-orange);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.tw-panel-search-btn:hover {
+  background-color: var(--tw-orange);
+  color: var(--tw-white);
+  border-color: var(--tw-orange);
+}
+
+/* Panel Text Search Input */
+.tw-text-search-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.tw-text-search-wrapper > i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--tw-orange);
+  font-size: 1.1rem;
+  z-index: 2;
+}
+
+.tw-text-search-input {
+  width: 100%;
+  height: 48px;
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: var(--radius-pill);
+  padding: 0 120px 0 48px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: #333;
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+
+.tw-text-search-input::placeholder {
+  color: var(--tw-grey);
+}
+
+.tw-text-search-input:focus {
+  border-color: var(--tw-orange);
+}
+
+.tw-search-cta-btn {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  padding: 0 20px;
+  background-color: var(--tw-orange);
+  border: none;
+  border-radius: var(--radius-pill);
+  color: var(--tw-white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  z-index: 2;
+}
+
+.tw-search-cta-btn:hover {
+  background-color: #e05d00;
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.25);
+}
+
+.tw-search-cta-btn i {
+  color: var(--tw-white) !important;
+  position: static !important;
+  transform: none !important;
+  font-size: 0.9rem !important;
+}
+
+/* Category Navigation Strip */
+.tw-category-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 18px;
+}
+
+.tw-category-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--tw-orange);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.tw-category-title-wrap i {
+  font-size: 1.25rem;
+}
+
+.tw-category-pills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tw-cat-pill {
+  height: 38px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.tw-cat-pill.active {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+  border: 1px solid var(--tw-green);
+}
+
+.tw-cat-pill:not(.active) {
+  background-color: var(--tw-off-white);
+  border: 1px solid var(--tw-green);
+  color: var(--tw-green) !important;
+}
+
+.tw-cat-pill:not(.active):hover {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+}
+
+.tw-category-divider {
+  border-top: 1px solid var(--tw-light-blue);
+  margin-bottom: 40px;
+}
+
+/* Meal Menu Cards (3-Column Desktop Grid) */
+.meal-menu-card {
+  background-color: var(--tw-white);
+  border: 1px solid rgba(177, 207, 255, 0.5);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.meal-menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59, 105, 42, 0.08);
+}
+
+.meal-card-img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.meal-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.meal-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meal-card-title-group i {
+  color: var(--tw-green);
+  font-size: 1.15rem;
+}
+
+.meal-card-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--tw-green);
+  margin-bottom: 0;
+}
+
+/* Meta Data Stacked Rows */
+.meal-card-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #EEF4FD;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+}
+
+.meal-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--tw-grey);
+}
+
+.meal-meta-left i {
+  color: var(--tw-green);
+}
+
+.meal-meta-value {
+  color: #333;
+  font-weight: 500;
+}
+
+.meal-location-chip {
+  background-color: #F0F4FA;
+  color: var(--tw-grey);
+  border-radius: var(--radius-pill);
+  padding: 3px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Card Price */
+.meal-card-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--tw-orange);
+  margin-top: 16px;
+  margin-bottom: 18px;
+}
+
+/* Compact Rectangular Action Buttons */
+.meal-card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.btn-menu-details {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  border: 1.5px solid var(--tw-green);
+  background-color: var(--tw-white);
+  color: var(--tw-green) !important;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.btn-menu-details:hover {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+}
+
+.btn-menu-inquiry {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+  cursor: pointer;
+}
+
+.btn-menu-inquiry:hover {
+  background-color: var(--tw-green-hover);
+}
+
+/* Custom Centered Pagination */
+.tw-menu-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.tw-page-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  color: var(--tw-green);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.tw-page-btn:hover {
+  border-color: var(--tw-green);
+  color: var(--tw-green);
+}
+
+.tw-page-btn.active {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+  border-color: var(--tw-green);
+}
+
+/* Responsive Overrides */
+@media (max-width: 991.98px) {
+  .tw-menu-h1 {
+    font-size: 2.8rem;
+  }
+
+  .tw-location-card {
+    margin-top: 30px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .tw-category-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .tw-category-pills {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tw-menu-h1 {
+    font-size: 2.2rem;
+  }
+
+  .tw-cat-pill {
+    padding: 0 16px;
+    font-size: 0.82rem;
+  }
+}

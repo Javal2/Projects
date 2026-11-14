@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Products — Tiffinworld Vendor Panel</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Vendor SaaS Design System CSS -->
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+
+  <style>
+    /* ── Products Page Specific Styles ── */
+
+    /* ── Page Hero Banner ── */
+    .page-hero-banner {
+      background: linear-gradient(115deg, #FFFBF5 0%, #FFF7EC 45%, #F0F7FF 100%);
+      border: 1.5px solid #FFE4C2;
+      border-radius: 22px;
+      padding: 32px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-banner::before {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255,127,0,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .page-hero-banner::after {
+      content: '';
+      position: absolute;
+      right: 60px;
+      bottom: -60px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(59,105,42,0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Breadcrumb */
+    .hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #94A3B8;
+    }
+    .hero-breadcrumb a {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .hero-breadcrumb a:hover { color: var(--primary-orange); }
+    .hero-breadcrumb i { font-size: 10px; }
+    .hero-breadcrumb span { color: #475569; }
+
+    /* Page Title */
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 800;
+      color: #1A3C0F;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .page-subtitle {
+      color: #64748B;
+      font-size: 14px;
+      max-width: 420px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Product Count Badge */
+    .product-count-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,127,0,0.10);
+      border: 1px solid rgba(255,127,0,0.22);
+      color: var(--primary-orange);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+      letter-spacing: 0.2px;
+    }
+    .product-count-badge i { font-size: 13px; }
+
+    /* Add New Product CTA Button */
+    .btn-add-product {
+      background: var(--primary-orange);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 13px 26px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      border: none;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+      position: relative;
+      box-shadow: 0 4px 18px rgba(255,127,0,0.28);
+    }
+    .btn-add-product:hover {
+      background: #E56E00;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,127,0,0.38);
+    }
+    .btn-add-product:active { transform: translateY(0); }
+    .btn-add-product i {
+      font-size: 17px;
+      font-weight: 700;
+    }
+    /* Subtle icon decoration on right */
+    .hero-icon-deco {
+      position: absolute;
+      right: 36px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 90px;
+      color: rgba(255,127,0,0.06);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    /* Stats Row Card */
+    .stats-row-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 40px;
+      width: 1.5px;
+      background: #E2E8F0;
+    }
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--primary-orange);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* Products Table Card */
+    .products-table-card {
+      background: #F1F5FB;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .products-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .products-table th {
+      background: #F1F5FB;
+      padding: 16px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #64748B;
+      border-bottom: 1.5px solid #E2E8F0;
+    }
+    .products-table tbody tr {
+      background: #FFFFFF;
+      border-bottom: 1px solid #F1F5F9;
+      transition: background 0.15s ease;
+    }
+    .products-table tbody tr:hover {
+      background: #FAFBFF;
+    }
+    .products-table td {
+      padding: 18px 20px;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+
+    /* Product Thumbnail */
+    .product-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #E2E8F0;
+      flex-shrink: 0;
+    }
+
+    /* Product Name Green */
+    .product-name-green {
+      font-family: var(--font-heading);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #2E6B1E;
+      text-decoration: none;
+      line-height: 1.3;
+      display: block;
+    }
+    .product-name-green:hover {
+      color: var(--primary-orange);
+    }
+    .product-sku {
+      font-size: 11.5px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+
+    /* Price */
+    .product-price {
+      font-weight: 700;
+      color: #1E293B;
+      font-size: 15px;
+    }
+
+    /* Approval Badge */
+    .badge-approved {
+      border: 1.5px solid #16A34A;
+      color: #16A34A;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 99px;
+      letter-spacing: 0.3px;
+    }
+    .badge-pending {
+      border: 1.5px solid var(--primary-orange);
+      color: var(--primary-orange);
+      background: transparent;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 99px;
+      letter-spacing: 0.3px;
+    }
+    .badge-rejected {
+      border: 1.5px solid #DC2626;
+      color: #DC2626;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 99px;
+    }
+
+    /* Status Dot */
+    .status-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .status-dot::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .status-dot.active { color: #15803D; }
+    .status-dot.active::before { background: #22C55E; }
+    .status-dot.draft { color: var(--primary-orange); }
+    .status-dot.draft::before { background: var(--primary-orange); }
+    .status-dot.paused { color: #DC2626; }
+    .status-dot.paused::before { background: #EF4444; }
+
+    /* Last Updated */
+    .last-updated {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.4;
+    }
+    .last-updated small {
+      display: block;
+      color: #94A3B8;
+      font-size: 11.5px;
+    }
+
+    /* Actions */
+    .action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+    .action-btn:hover { background: #F1F5F9; }
+    .action-btn i { font-size: 17px; }
+    .action-btn.edit i { color: #2E6B1E; }
+    .action-btn.del i { color: #EF4444; }
+
+    /* Pagination Row */
+    .pagination-row {
+      background: #F1F5FB;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #E2E8F0;
+    }
+    .pagination-info {
+      font-size: 13.5px;
+      color: #475569;
+    }
+    .pagination-info strong { color: #1E293B; }
+    .page-btns {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .page-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1.5px solid #E2E8F0;
+      background: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .page-btn:hover {
+      border-color: var(--primary-orange);
+      color: var(--primary-orange);
+    }
+    .page-btn.active {
+      background: #2E6B1E;
+      border-color: #2E6B1E;
+      color: #FFFFFF;
+    }
+    .page-btn.nav {
+      background: #FFFFFF;
+      color: #475569;
+    }
+    .page-dots {
+      width: 36px;
+      text-align: center;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+
+    /* Bottom Cards Row */
+    .insight-card {
+      background: #FFFFFF;
+      border-radius: 18px;
+      border: 1.5px solid #E2E8F0;
+      padding: 28px;
+      height: 100%;
+      border-left: 4px solid var(--primary-orange);
+    }
+    .insight-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-orange);
+      margin-bottom: 12px;
+    }
+    .insight-body {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.65;
+    }
+    .insight-body strong {
+      color: #1E293B;
+      font-weight: 700;
+    }
+
+    /* Quality Score Card */
+    .quality-card {
+      background: #FFFFFF;
+      border-radius: 18px;
+      border: 1.5px solid #E2E8F0;
+      padding: 28px;
+      height: 100%;
+    }
+    .quality-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .quality-label i {
+      font-size: 20px;
+      color: #CBD5E1;
+    }
+    .quality-score-number {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--primary-orange);
+      line-height: 1;
+    }
+    .quality-score-denom {
+      font-size: 18px;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+    .quality-change {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #64748B;
+    }
+    .quality-bar {
+      height: 8px;
+      background: #E2E8F0;
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
+    .quality-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-orange), #FFA94D);
+      border-radius: 99px;
+      width: 92%;
+      transition: width 0.8s ease;
+    }
+  </style>
+</head>
+<body>
+
+<div class="vendor-wrapper">
+  <!-- White Theme Sidebar -->
+  <aside class="vendor-sidebar">
+    <div>
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon-box">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">TiffinWorld</h1>
+        </div>
+      </a>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html" class="menu-item-link">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="menu-item-link active">
+            <i class="bi bi-archive-fill"></i>
+            <span>Products</span>
+            <i class="bi bi-chevron-down caret-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="menu-planner.html" class="menu-item-link">
+            <i class="bi bi-calendar3"></i>
+            <span>Menu Planner</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="menu-item-link">
+            <i class="bi bi-person-fill"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="../website/index.html" target="_blank" class="menu-item-link">
+            <i class="bi bi-globe"></i>
+            <span>Seller Website</span>
+          </a>
+        </li>
+        <li>
+          <a href="help.html" class="menu-item-link">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help</span>
+          </a>
+        </li>
+        <li>
+          <a href="inquiries.html" class="menu-item-link">
+            <i class="bi bi-chat-quote-fill"></i>
+            <span>Inquiries</span>
+          </a>
+        </li>
+        <li>
+          <a href="plans.html" class="menu-item-link">
+            <i class="bi bi-journal-bookmark-fill"></i>
+            <span>Plans</span>
+          </a>
+        </li>
+        <li>
+          <a href="delivery-setup.html" class="menu-item-link">
+            <i class="bi bi-truck"></i>
+            <span>Delivery Location Setup</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-logout-card">
+      <a href="../website/vendor-login.html" class="logout-btn-outline">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Log Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="vendor-main-content">
+    <!-- Header -->
+    <header class="vendor-header">
+      <div class="header-search-wrap">
+        <i class="bi bi-search header-search-icon"></i>
+        <input type="text" id="headerSearchInput" class="header-search-input" placeholder="Search orders, products...">
+      </div>
+
+      <div class="header-actions">
+        <a href="../website/index.html" target="_blank" class="btn-visit-site-orange">
+          <i class="bi bi-box-arrow-up-right me-1"></i>
+          <span>Visit Website</span>
+        </a>
+
+        <div class="vendor-header-profile">
+          <div class="vendor-header-info">
+            <div class="vendor-header-name">The Green Kitchen</div>
+            <div class="vendor-header-tag">PREMIUM VENDOR</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Chef Avatar" class="vendor-header-avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Page Body ── -->
+    <div class="page-body-container">
+
+      <!-- ── Page Hero Banner ── -->
+      <div class="page-hero-banner">
+        <i class="bi bi-archive hero-icon-deco"></i>
+        <div class="d-flex align-items-center justify-content-between gap-4 flex-wrap">
+          <div>
+            <!-- Breadcrumb -->
+            <div class="hero-breadcrumb">
+              <a href="index.html"><i class="bi bi-house-fill"></i> Home</a>
+              <i class="bi bi-chevron-right"></i>
+              <span>My Products</span>
+            </div>
+            <!-- Count Chip -->
+            <div class="product-count-badge">
+              <i class="bi bi-archive-fill"></i>
+              124 Products in Catalogue
+            </div>
+            <!-- Title -->
+            <h1 class="page-title">My Products</h1>
+            <p class="page-subtitle">Manage your culinary offerings, adjust pricing, and track approval status from a single editorial dashboard.</p>
+          </div>
+          <!-- CTA -->
+          <a href="add-product.html" class="btn-add-product flex-shrink-0">
+            <i class="bi bi-plus-lg"></i>
+            Add New Product
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Stats Row Card ── -->
+      <div class="stats-row-card">
+        <div class="stat-item">
+          <span class="stat-number" data-counter="124">0</span>
+          <span class="stat-label">Total Items</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-counter="98">0</span>
+          <span class="stat-label">Live Active</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-counter="12">0</span>
+          <span class="stat-label">Pending Review</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-counter="14">0</span>
+          <span class="stat-label">Out of Stock</span>
+        </div>
+      </div>
+
+      <!-- ── Products Table Card ── -->
+      <div class="products-table-card">
+        <div class="table-responsive">
+          <table class="products-table">
+            <thead>
+              <tr>
+                <th style="width: 30%;">NAME &amp; PRODUCT</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th>APPROVAL</th>
+                <th>STATUS</th>
+                <th>LAST UPDATED</th>
+                <th class="text-end">ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=120&q=80" alt="Quinoa Bowl" class="product-thumb">
+                    <div>
+                      <a href="add-product.html" class="product-name-green">Quinoa Power Bowl</a>
+                      <div class="product-sku">SKU: TW-QPB-001</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-secondary" style="font-size: 14px;">Healthy Bowls</td>
+                <td><span class="product-price">$18.50</span></td>
+                <td><span class="badge-approved">APPROVED</span></td>
+                <td><span class="status-dot active">Active</span></td>
+                <td>
+                  <div class="last-updated">Oct 24, 2023<small>11:45 AM</small></div>
+                </td>
+                <td class="text-end">
+                  <button class="action-btn edit" title="Edit" onclick="window.location='add-product.html'"><i class="bi bi-pencil-fill"></i></button>
+                  <button class="action-btn del" title="Delete" onclick="confirm('Delete product?') && showToast('Product deleted')"><i class="bi bi-trash-fill"></i></button>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=120&q=80" alt="Vegan Box" class="product-thumb">
+                    <div>
+                      <a href="add-product.html" class="product-name-green">Vegan Harvest Box</a>
+                      <div class="product-sku">SKU: TW-VHB-042</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-secondary" style="font-size: 14px;">Vegan Options</td>
+                <td><span class="product-price">$14.00</span></td>
+                <td><span class="badge-pending">PENDING</span></td>
+                <td><span class="status-dot draft">Draft</span></td>
+                <td>
+                  <div class="last-updated">Oct 22, 2023<small>09:12 AM</small></div>
+                </td>
+                <td class="text-end">
+                  <button class="action-btn edit" title="Edit" onclick="window.location='add-product.html'"><i class="bi bi-pencil-fill"></i></button>
+                  <button class="action-btn del" title="Delete" onclick="confirm('Delete product?') && showToast('Product deleted')"><i class="bi bi-trash-fill"></i></button>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=120&q=80" alt="Butter Chicken" class="product-thumb">
+                    <div>
+                      <a href="add-product.html" class="product-name-green">Homestyle Butter Chicken</a>
+                      <div class="product-sku">SKU: TW-HBC-091</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-secondary" style="font-size: 14px;">Dinner Specials</td>
+                <td><span class="product-price">$22.00</span></td>
+                <td><span class="badge-approved">APPROVED</span></td>
+                <td><span class="status-dot paused">Paused</span></td>
+                <td>
+                  <div class="last-updated">Oct 20, 2023<small>04:30 PM</small></div>
+                </td>
+                <td class="text-end">
+                  <button class="action-btn edit" title="Edit" onclick="window.location='add-product.html'"><i class="bi bi-pencil-fill"></i></button>
+                  <button class="action-btn del" title="Delete" onclick="confirm('Delete product?') && showToast('Product deleted')"><i class="bi bi-trash-fill"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ── Pagination Row ── -->
+        <div class="pagination-row">
+          <div class="pagination-info">
+            Showing <strong>1 - 10</strong> of <strong>124 products</strong>
+          </div>
+          <div class="page-btns">
+            <a href="#" class="page-btn nav"><i class="bi bi-chevron-left" style="font-size:11px;"></i></a>
+            <a href="#" class="page-btn active">1</a>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <span class="page-dots">...</span>
+            <a href="#" class="page-btn">13</a>
+            <a href="#" class="page-btn nav"><i class="bi bi-chevron-right" style="font-size:11px;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Bottom Row: Insight + Quality Score ── -->
+      <div class="row g-4">
+        <!-- Inventory Insight -->
+        <div class="col-lg-7">
+          <div class="insight-card">
+            <h5 class="insight-title"><i class="bi bi-lightbulb-fill me-2"></i>Inventory Insight</h5>
+            <p class="insight-body">Your "Healthy Bowls" category has seen a <strong>24% increase</strong> in customer inquiries this week. Consider adding seasonal toppings to capitalise on this trend.</p>
+          </div>
+        </div>
+
+        <!-- Quality Score -->
+        <div class="col-lg-5">
+          <div class="quality-card">
+            <div class="quality-label">
+              <i class="bi bi-stars"></i>
+              QUALITY SCORE
+            </div>
+            <div class="d-flex align-items-baseline justify-content-between gap-2">
+              <div>
+                <span class="quality-score-number" data-counter="92">0</span><span class="quality-score-denom">/100</span>
+              </div>
+              <span class="quality-change">+2.4% this month</span>
+            </div>
+            <div class="quality-bar">
+              <div class="quality-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- JS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor-main.js"></script>
+</body>
+</html>

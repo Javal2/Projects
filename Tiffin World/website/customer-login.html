@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login — TiffinWorld</title>
+  <meta name="description" content="Login to your TiffinWorld account to manage meal subscriptions and track daily home tiffin deliveries.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Assets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+
+  <!-- Header Component -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="customer-login.html" class="tw-customer-login active">Customer Login</a>
+            <a href="vendor-login.html" class="tw-vendor-btn">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2 active">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="tw-auth-page">
+    
+    <!-- Atmospheric Organic Background Shapes -->
+    <div class="auth-orb auth-orb-top"></div>
+    <div class="auth-orb auth-orb-bottom"></div>
+    <div class="auth-orb auth-orb-center"></div>
+
+    <div class="customer-auth-wrapper">
+      
+      <!-- Main Login Card -->
+      <div class="customer-login-card">
+        
+        <!-- Brand Culinary Icon -->
+        <div class="auth-brand-icon-wrapper">
+          <i class="bi bi-fork-knife auth-brand-icon"></i>
+        </div>
+
+        <!-- Heading & Subheading -->
+        <div class="auth-heading-group">
+          <h1 class="auth-heading-title">Welcome Back</h1>
+          <p class="auth-heading-subtitle">Experience the art of mindful dining.</p>
+        </div>
+
+        <!-- Login Form -->
+        <form id="customerLoginForm" action="#" method="POST" novalidate>
+          
+          <!-- Email Input Section -->
+          <div class="mb-4" id="emailInputSection">
+            <label for="customerEmail" class="auth-field-label">EMAIL ADDRESS</label>
+            <div class="auth-input-wrapper">
+              <i class="bi bi-envelope auth-input-icon"></i>
+              <input type="email" id="customerEmail" name="email" class="auth-control" 
+                     placeholder="name@domain.com" value="j.doe@conservatory.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <!-- Phone Input Section (Active in Phone Login mode) -->
+          <div class="mb-4 d-none" id="phoneInputSection">
+            <label for="customerPhone" class="auth-field-label">PHONE NUMBER</label>
+            <div class="auth-phone-group">
+              <select name="country_code" class="auth-phone-prefix-select" aria-label="Country Code">
+                <option value="+91" selected>🇮🇳 +91</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+1">🇨🇦 +1</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+966">🇸🇦 +966</option>
+                <option value="+974">🇶🇦 +974</option>
+                <option value="+977">🇳🇵 +977</option>
+              </select>
+              <input type="tel" id="customerPhone" name="phone" class="auth-control auth-control-noicon" 
+                     placeholder="000 000 0000" autocomplete="tel">
+            </div>
+          </div>
+
+          <!-- OTP Section -->
+          <div class="mb-4" id="otpSection">
+            <label class="auth-field-label">OTP</label>
+            <div class="auth-otp-wrapper">
+              <input type="text" class="auth-otp-box" maxlength="1" inputmode="numeric" autocomplete="one-time-code" aria-label="OTP digit 1">
+              <input type="text" class="auth-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 2">
+              <input type="text" class="auth-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 3">
+              <input type="text" class="auth-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 4">
+              <input type="text" class="auth-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 5">
+              <input type="text" class="auth-otp-box" maxlength="1" inputmode="numeric" aria-label="OTP digit 6">
+            </div>
+            <input type="hidden" name="otp" id="otpCombined" value="">
+          </div>
+
+          <!-- Keep Me Logged In Checkbox -->
+          <div class="auth-remember-row">
+            <input type="checkbox" id="rememberCustomer" name="remember" class="auth-custom-checkbox" checked>
+            <label for="rememberCustomer" class="auth-remember-label">Keep me logged in</label>
+          </div>
+
+          <!-- Primary Sign In Button -->
+          <button type="submit" class="btn-auth-submit" id="btnCustomerSignIn">
+            Sign In
+          </button>
+        </form>
+
+        <!-- Secure Join Divider -->
+        <div class="auth-divider-row">
+          <div class="auth-divider-line"></div>
+          <div class="auth-divider-text">OR SECURELY JOIN WITH</div>
+          <div class="auth-divider-line"></div>
+        </div>
+
+        <!-- Secondary Phone / Email Toggle Button -->
+        <div class="auth-phone-btn-wrapper">
+          <button type="button" class="btn-phone-login" id="btnToggleAuthMode">
+            <i class="bi bi-phone me-2"></i><span id="toggleModeText">Login with phone number</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Bottom Trust Strip -->
+      <div class="auth-trust-strip">
+        <div class="auth-trust-item">
+          <i class="bi bi-shield-check"></i>
+          <span>SECURE ENTRY</span>
+        </div>
+        <div class="auth-trust-item">
+          <i class="bi bi-leaf"></i>
+          <span>ORGANIC CHOICE</span>
+        </div>
+        <div class="auth-trust-item">
+          <i class="bi bi-truck"></i>
+          <span>FARM-TO-DOOR</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer Component -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html" class="active-link">Customer Login</a></li>
+            <li><a href="vendor-login.html">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

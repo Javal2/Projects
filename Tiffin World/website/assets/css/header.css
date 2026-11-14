@@ -1,0 +1,214 @@
+/* ==================================================
+   TIFFINWORLD — HEADER STYLES (PIXEL-ACCURATE)
+   ================================================== */
+.tw-header {
+  height: 114px;
+  background-color: var(--tw-section-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  transition: box-shadow var(--transition-base), background-color var(--transition-base);
+  border-bottom: 1px solid rgba(177, 207, 255, 0.4);
+}
+
+.tw-header.scrolled {
+  background-color: #F1F4F9;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.tw-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo */
+.tw-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.tw-brand-logo .logo-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--tw-orange);
+}
+
+.tw-brand-logo .logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--tw-orange);
+  letter-spacing: -0.5px;
+}
+
+/* Center Desktop Navigation */
+.tw-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tw-nav-link {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--tw-green);
+  text-decoration: none;
+  padding: 8px 0;
+  position: relative;
+  transition: color var(--transition-base);
+}
+
+.tw-nav-link:hover {
+  color: var(--tw-orange);
+}
+
+/* Active Home underline: approx 60-65px wide, 2-3px high */
+.tw-nav-link.active {
+  color: var(--tw-orange) !important;
+}
+
+.tw-nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 3px;
+  background-color: var(--tw-orange);
+  border-radius: 2px;
+}
+
+/* Right Account Controls */
+.tw-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.tw-customer-login {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--tw-green);
+  background-color: transparent;
+  border: 2px solid var(--tw-green);
+  border-radius: var(--radius-pill);
+  height: 56px;
+  padding: 0 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.tw-customer-login:hover {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+  transform: translateY(-1px);
+}
+
+.tw-vendor-btn {
+  height: 56px;
+  padding: 0 38px;
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.tw-vendor-btn:hover {
+  background-color: var(--tw-green-hover);
+  transform: translateY(-1px);
+}
+
+/* Hamburger toggle for mobile/tablet */
+.tw-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--tw-green);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Offcanvas mobile menu styling */
+.offcanvas.tw-offcanvas {
+  background-color: var(--tw-off-white);
+  width: 320px;
+}
+
+.tw-offcanvas .offcanvas-header {
+  border-bottom: 1px solid var(--tw-light-blue);
+  padding: 20px 24px;
+}
+
+.tw-offcanvas .offcanvas-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tw-mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.tw-mobile-nav-list li {
+  margin-bottom: 16px;
+}
+
+.tw-mobile-nav-list a {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--tw-green);
+  display: block;
+}
+
+.tw-mobile-nav-list a.active {
+  color: var(--tw-orange);
+}
+
+.tw-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Responsive collapse rule */
+@media (max-width: 991.98px) {
+  .tw-header {
+    height: 85px;
+  }
+  
+  .tw-desktop-nav,
+  .tw-header-actions {
+    display: none;
+  }
+
+  .tw-mobile-toggle {
+    display: block;
+  }
+}

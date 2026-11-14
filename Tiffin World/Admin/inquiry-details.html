@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiry Details — TiffinWorld Admin</title>
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
+  <style>
+    /* INQUIRY DETAILS PAGE STYLES */
+    .page-title-green {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: #2D5822;
+      margin: 0 0 24px;
+      line-height: 1.2;
+    }
+
+    /* Left Inquiry Main Card */
+    .inquiry-main-card {
+      background-color: #FFFFFF;
+      border: 2px solid #FF7F00; /* Orange border as in screenshot */
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      height: 100%;
+    }
+
+    .inquiry-card-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .inquiry-number-title {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 800;
+      color: #2D5822;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 0;
+    }
+
+    .badge-urgent-green {
+      background-color: #2D5822;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 6px;
+      letter-spacing: 0.8px;
+    }
+
+    .stat-blue-box {
+      background-color: #EEF5FE;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 14px;
+      padding: 16px;
+      height: 100%;
+    }
+
+    .stat-blue-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      color: #6B7280;
+      margin-bottom: 6px;
+    }
+
+    .stat-blue-val {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 800;
+      color: #2D5822;
+      line-height: 1.2;
+    }
+
+    .section-field-label {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .message-yellow-box {
+      background-color: #FEFCE8;
+      border-left: 4px solid #2D5822;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: #374151;
+      margin-bottom: 24px;
+    }
+
+    .product-blue-box {
+      background-color: #EEF5FE;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .product-thumb-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .product-title-bold {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 800;
+      color: #2D5822;
+      margin: 0 0 2px;
+    }
+
+    .product-sub-text {
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      color: #6B7280;
+      margin-bottom: 8px;
+    }
+
+    .prod-badge-outline {
+      background-color: #FFFFFF;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: #4B5563;
+    }
+
+    .total-est-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: #6B7280;
+      text-align: right;
+    }
+
+    .total-est-price {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: #2D5822;
+      line-height: 1.2;
+    }
+
+    /* Right Customer Info Card */
+    .cust-info-card {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .cust-info-header {
+      background-color: #EEF5FE;
+      padding: 16px 24px;
+      border-bottom: 1.5px solid #CBDCF8;
+    }
+
+    .cust-info-title {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 800;
+      color: #2D5822;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 0;
+    }
+
+    .cust-info-body {
+      padding: 24px;
+    }
+
+    .cust-avatar-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background-color: #DCFCE7;
+      color: #2D5822;
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cust-profile-name {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 16px;
+      color: #111827;
+      margin: 0;
+    }
+
+    .cust-profile-sub {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .cust-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid #F3F4F6;
+      margin-top: 14px;
+    }
+
+    .cust-detail-icon {
+      color: #2D5822;
+      font-size: 18px;
+    }
+
+    .cust-detail-lbl {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: #9CA3AF;
+      margin-bottom: 2px;
+    }
+
+    .cust-detail-val {
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    /* Conversation History Section */
+    .chat-section-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 800;
+      color: #2D5822;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 32px 0 20px;
+    }
+
+    .chat-bubble-left {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 16px;
+      padding: 18px 24px;
+      max-width: 580px;
+    }
+
+    .chat-bubble-right {
+      background-color: #2D5822;
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 18px 24px;
+      max-width: 580px;
+    }
+
+    .chat-user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* Reply Card */
+    .reply-card {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      margin-top: 28px;
+    }
+
+    .reply-textarea {
+      width: 100%;
+      background-color: #EEF5FE;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 14px;
+      padding: 16px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #374151;
+      outline: none;
+      resize: none;
+      min-height: 110px;
+      transition: all 180ms ease;
+    }
+
+    .reply-textarea:focus {
+      background-color: #FFFFFF;
+      border-color: #2D5822;
+      box-shadow: 0 0 0 3px rgba(45, 88, 34, 0.12);
+    }
+
+    .btn-send-msg {
+      background-color: #2D5822;
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 10px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(45, 88, 34, 0.25);
+      transition: all 180ms ease;
+    }
+
+    .btn-send-msg:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+    }
+
+    .btn-paperclip {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #4B5563;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .btn-paperclip:hover {
+      background-color: #EEF5FE;
+      color: #2D5822;
+    }
+
+    .btn-back-outline {
+      background-color: #EEF5FE;
+      color: #2D5822 !important;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 10px 28px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 150ms ease;
+    }
+
+    .btn-back-outline:hover {
+      background-color: #DBE7F9;
+      color: #1F4118 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link active">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <a href="inquiries.html" class="text-decoration-none text-muted">Inquiry Pipeline</a> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Inquiry Details</span>
+            </div>
+            <h1 class="header-page-title">Inquiry Details</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS -->
+      <main class="admin-content">
+        
+        <h2 class="page-title-green">Inquiry Details</h2>
+
+        <!-- TOP ROW: INQUIRY SUMMARY & CUSTOMER INFO -->
+        <div class="row g-4 mb-4">
+          
+          <!-- Left Column: Inquiry Main Parameters Card -->
+          <div class="col-lg-8">
+            <div class="inquiry-main-card">
+              
+              <div class="inquiry-card-header-row">
+                <h3 class="inquiry-number-title">INQUIRY #420</h3>
+                <span class="badge-urgent-green">URGENT</span>
+              </div>
+
+              <!-- 3 Stat Blue Boxes -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <div class="stat-blue-box">
+                    <div class="stat-blue-label">Quantity</div>
+                    <div class="stat-blue-val">2 Units</div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="stat-blue-box">
+                    <div class="stat-blue-label">Preferred Date</div>
+                    <div class="stat-blue-val">30 Apr 2026</div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="stat-blue-box">
+                    <div class="stat-blue-label">Time Window</div>
+                    <div class="stat-blue-val">Afternoon</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Customer Message -->
+              <div class="mb-4">
+                <span class="section-field-label">CUSTOMER MESSAGE</span>
+                <div class="message-yellow-box">
+                  "AAA"
+                </div>
+              </div>
+
+              <!-- Requested Product -->
+              <div>
+                <span class="section-field-label">REQUESTED PRODUCT</span>
+                <div class="product-blue-box">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=200&auto=format&fit=crop" alt="Regular Thali" class="product-thumb-img">
+                    <div>
+                      <h4 class="product-title-bold">Regular Thali</h4>
+                      <div class="product-sub-text">Service: Swaad Anusaar Tiffin Service</div>
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="prod-badge-outline">Veg</span>
+                        <span class="prod-badge-outline">Executive Portion</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="total-est-label">Total Est.</div>
+                    <div class="total-est-price">₹450.00</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Customer Information Card -->
+          <div class="col-lg-4">
+            <div class="cust-info-card">
+              <div class="cust-info-header">
+                <h3 class="cust-info-title">CUSTOMER INFORMATION</h3>
+              </div>
+              <div class="cust-info-body">
+                
+                <div class="d-flex align-items-center gap-3 mb-4">
+                  <div class="cust-avatar-circle">AW</div>
+                  <div>
+                    <h4 class="cust-profile-name">AWS</h4>
+                    <span class="cust-profile-sub">Corporate Client</span>
+                  </div>
+                </div>
+
+                <div class="cust-detail-row">
+                  <i class="bi bi-envelope cust-detail-icon"></i>
+                  <div>
+                    <div class="cust-detail-lbl">Email Address</div>
+                    <div class="cust-detail-val">email</div>
+                  </div>
+                </div>
+
+                <div class="cust-detail-row">
+                  <i class="bi bi-telephone cust-detail-icon"></i>
+                  <div>
+                    <div class="cust-detail-lbl">Phone Number</div>
+                    <div class="cust-detail-val">phone</div>
+                  </div>
+                </div>
+
+                <div class="cust-detail-row border-0">
+                  <i class="bi bi-geo-alt cust-detail-icon"></i>
+                  <div>
+                    <div class="cust-detail-lbl">Delivery Point</div>
+                    <div class="cust-detail-val">POIOOP</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CONVERSATION HISTORY SECTION -->
+        <h3 class="chat-section-title">
+          <i class="bi bi-chat-left-text-fill text-success"></i> Conversation history
+        </h3>
+
+        <div class="d-flex flex-column gap-3 mb-4">
+          
+          <!-- Message 1 (Customer / Left) -->
+          <div class="d-flex align-items-start gap-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Robert Wilson" class="chat-user-avatar">
+            <div class="chat-bubble-left">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <strong class="text-success fw-bold">Robert Wilson</strong>
+                <span class="text-muted small">YESTERDAY 4:20 PM</span>
+              </div>
+              <p class="m-0 text-secondary" style="font-size: 13.5px; line-height: 1.5;">
+                Thank you for reaching out. I've reviewed your requirements and we can certainly accommodate the 1,250 units. Would you like a quote including the shipping costs to your northern facility?
+              </p>
+            </div>
+          </div>
+
+          <!-- Message 2 (Admin / Right) -->
+          <div class="d-flex align-items-start justify-content-end gap-3">
+            <div class="chat-bubble-right">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <strong class="text-white fw-bold">Admin Portal</strong>
+                <span class="text-light small opacity-75">TODAY 10:15 AM</span>
+              </div>
+              <p class="m-0 text-white opacity-90" style="font-size: 13.5px; line-height: 1.5;">
+                Yes, please include the delivery logistics in the next proposal. We're prioritizing speed of delivery for this first batch.
+              </p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Admin Avatar" class="chat-user-avatar">
+          </div>
+
+        </div>
+
+        <!-- REPLY CARD -->
+        <div class="reply-card">
+          <span class="section-field-label">SEND A REPLY</span>
+          <textarea class="reply-textarea" placeholder="Type your message here..."></textarea>
+          
+          <div class="d-flex align-items-center justify-content-between mt-3">
+            <div class="d-flex align-items-center gap-2">
+              <button class="btn-send-msg" onclick="showToast('Reply message sent!', 'Message Sent')">
+                Send Message <i class="bi bi-send-fill ms-1"></i>
+              </button>
+              <button class="btn-paperclip" title="Attach File" onclick="showToast('File attachment dialog opened', 'Attachment')">
+                <i class="bi bi-paperclip"></i>
+              </button>
+            </div>
+
+            <div>
+              <a href="inquiries.html" class="btn-back-outline">BACK</a>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

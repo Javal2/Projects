@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Planner — Tiffinworld Vendor Panel</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Vendor SaaS Design System CSS -->
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="vendor-wrapper">
+  <!-- Sidebar -->
+  <aside class="vendor-sidebar">
+    <div>
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon-box">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">TiffinWorld</h1>
+        </div>
+      </a>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html" class="menu-item-link">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="menu-item-link">
+            <i class="bi bi-archive-fill"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="menu-planner.html" class="menu-item-link active">
+            <i class="bi bi-calendar3"></i>
+            <span>Menu Planner</span>
+            <i class="bi bi-chevron-down caret-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="menu-item-link">
+            <i class="bi bi-person-fill"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="../website/index.html" target="_blank" class="menu-item-link">
+            <i class="bi bi-globe"></i>
+            <span>Seller Website</span>
+          </a>
+        </li>
+        <li>
+          <a href="help.html" class="menu-item-link">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help</span>
+          </a>
+        </li>
+        <li>
+          <a href="inquiries.html" class="menu-item-link">
+            <i class="bi bi-chat-quote-fill"></i>
+            <span>Inquiries</span>
+          </a>
+        </li>
+        <li>
+          <a href="plans.html" class="menu-item-link">
+            <i class="bi bi-journal-bookmark-fill"></i>
+            <span>Plans</span>
+          </a>
+        </li>
+        <li>
+          <a href="delivery-setup.html" class="menu-item-link">
+            <i class="bi bi-truck"></i>
+            <span>Delivery Location Setup</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-logout-card">
+      <a href="../website/vendor-login.html" class="logout-btn-outline">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Log Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="vendor-main-content">
+    <!-- Header Component -->
+    <header class="vendor-header">
+      <div class="header-search-wrap">
+        <i class="bi bi-search header-search-icon"></i>
+        <input type="text" id="headerSearchInput" class="header-search-input" placeholder="Search orders, products...">
+      </div>
+
+      <div class="header-actions">
+        <a href="../website/index.html" target="_blank" class="btn-visit-site-orange">
+          <i class="bi bi-box-arrow-up-right me-1"></i>
+          <span>Visit Website</span>
+        </a>
+
+        <div class="vendor-header-profile">
+          <div class="vendor-header-info">
+            <div class="vendor-header-name">The Green Kitchen</div>
+            <div class="vendor-header-tag">PREMIUM VENDOR</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Chef Avatar" class="vendor-header-avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body Content -->
+    <div class="page-body-container">
+      <!-- Title & Header Summary Row -->
+      <div class="d-flex justify-content-between align-items-start gap-4 flex-wrap">
+        <div>
+          <div class="fw-bold mb-1" style="color: var(--primary-orange); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;">CULINARY SCHEDULE</div>
+          <h2 class="greeting-title mb-2">Menu Planner</h2>
+          <p class="greeting-subtext mb-0" style="max-width: 580px;">Curate your weekly specials and organize your kitchen's creative output with editorial precision.</p>
+        </div>
+
+        <div class="stats-summary-card">
+          <div class="text-center">
+            <div class="small fw-bold text-secondary text-uppercase mb-1" style="font-size: 11px; letter-spacing: 0.8px;">ACTIVE SPECIALS</div>
+            <div id="activeSpecialsCount" class="fs-2 fw-bold" style="color: var(--primary-orange); font-family: var(--font-heading); line-height: 1;">3</div>
+          </div>
+          <div class="stats-divider"></div>
+          <div class="text-center">
+            <div class="small fw-bold text-secondary text-uppercase mb-1" style="font-size: 11px; letter-spacing: 0.8px;">AVG RATING</div>
+            <div class="fs-2 fw-bold" style="color: var(--primary-orange); font-family: var(--font-heading); line-height: 1;">4.9</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Two Column Layout -->
+      <div class="row g-4">
+        <!-- Left: Add Date-wise Dish Card -->
+        <div class="col-lg-5 col-xl-4">
+          <div class="add-dish-card">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div style="width: 40px; height: 40px; background: #DCFCE7; color: #15803D; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold;">
+                <i class="bi bi-plus-lg"></i>
+              </div>
+              <h5 class="fw-bold mb-0 text-dark">Add Date-wise Dish</h5>
+            </div>
+
+            <form id="addDishForm">
+              <div class="mb-4">
+                <label class="form-label text-uppercase fw-bold text-secondary" style="font-size: 11.5px; letter-spacing: 0.8px;">SELECT DATE</label>
+                <div class="icon-input-wrap">
+                  <i class="bi bi-calendar-event"></i>
+                  <input type="text" id="dishDateInput" class="form-control" placeholder="mm/dd/yyyy" required>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label text-uppercase fw-bold text-secondary" style="font-size: 11.5px; letter-spacing: 0.8px;">DISH NAME</label>
+                <div class="icon-input-wrap">
+                  <i class="bi bi-shop"></i>
+                  <input type="text" id="dishNameInput" class="form-control" placeholder="e.g. Saffron Infused Risotto" required>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label text-uppercase fw-bold text-secondary" style="font-size: 11.5px; letter-spacing: 0.8px;">KITCHEN NOTES</label>
+                <div class="icon-input-wrap">
+                  <textarea id="dishNotesInput" class="form-control" rows="4" placeholder="Special instructions for preparation or serving..."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" id="submitDishBtn" class="btn-visit-site-orange w-100 justify-content-center py-3 fs-6" style="border-radius: 16px;">
+                <i class="bi bi-calendar-check me-2 fs-5"></i>
+                <span>Schedule Special</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Upcoming Specials & Pro-Tip -->
+        <div class="col-lg-7 col-xl-8">
+          <div class="d-flex justify-content-between align-items-center mb-3" style="min-height: 38px;">
+            <h4 class="fw-bold mb-0 text-dark">Upcoming Specials</h4>
+            <div class="d-flex gap-2">
+              <button id="btnThisWeek" class="btn btn-outline-secondary rounded-pill px-3 py-1 fw-semibold small">This Week</button>
+              <button id="btnAllView" class="btn text-white rounded-pill px-3 py-1 fw-semibold small" style="background: #2D4030;">All View</button>
+            </div>
+          </div>
+
+          <!-- Upcoming Specials Table -->
+          <div class="recent-inquiry-table-card mb-4">
+            <div class="table-responsive">
+              <table class="table exact-table align-middle">
+                <thead>
+                  <tr>
+                    <th>SCHEDULE DATE</th>
+                    <th>SIGNATURE DISH</th>
+                    <th class="text-end">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody id="specialsTableBody">
+                  <tr>
+                    <td>
+                      <div class="fw-bold text-dark fs-6 dish-date-val">Oct 24, 2023</div>
+                      <div class="text-secondary small">Tuesday</div>
+                      <div class="fw-bold small" style="color: var(--primary-orange);">• Dinner</div>
+                    </td>
+                    <td>
+                      <div class="fw-bold text-dark fs-6 dish-name-val">Herbed Atlantic Salmon</div>
+                      <div class="text-secondary small dish-notes-val">Wild caught, lemon-butter glaze</div>
+                    </td>
+                    <td class="text-end">
+                      <div class="d-flex justify-content-end gap-2">
+                        <button class="icon-sq-btn edit" title="Edit" onclick="editDishRow(this)"><i class="bi bi-pencil-fill"></i></button>
+                        <button class="icon-sq-btn delete" title="Delete" onclick="deleteDishRow(this)"><i class="bi bi-trash-fill"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="fw-bold text-dark fs-6 dish-date-val">Oct 26, 2023</div>
+                      <div class="text-secondary small">Thursday</div>
+                      <div class="fw-bold small" style="color: var(--primary-orange);">• Lunch</div>
+                    </td>
+                    <td>
+                      <div class="fw-bold text-dark fs-6 dish-name-val">Truffle Infused Pasta</div>
+                      <div class="text-secondary small dish-notes-val">Hand-pulled tagliatelle, fresh truffle cream</div>
+                    </td>
+                    <td class="text-end">
+                      <div class="d-flex justify-content-end gap-2">
+                        <button class="icon-sq-btn edit" title="Edit" onclick="editDishRow(this)"><i class="bi bi-pencil-fill"></i></button>
+                        <button class="icon-sq-btn delete" title="Delete" onclick="deleteDishRow(this)"><i class="bi bi-trash-fill"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="fw-bold text-dark fs-6 dish-date-val">Oct 28, 2023</div>
+                      <div class="text-secondary small">Saturday</div>
+                      <div class="fw-bold small" style="color: var(--primary-orange);">• Brunch</div>
+                    </td>
+                    <td>
+                      <div class="fw-bold text-dark fs-6 dish-name-val">Berry Compote Waffles</div>
+                      <div class="text-secondary small dish-notes-val">Belgian style, seasonal berry syrup</div>
+                    </td>
+                    <td class="text-end">
+                      <div class="d-flex justify-content-end gap-2">
+                        <button class="icon-sq-btn edit" title="Edit" onclick="editDishRow(this)"><i class="bi bi-pencil-fill"></i></button>
+                        <button class="icon-sq-btn delete" title="Delete" onclick="deleteDishRow(this)"><i class="bi bi-trash-fill"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Chef's Pro-Tip Card -->
+          <div class="pro-tip-card">
+            <h6 class="fw-bold mb-2" style="color: var(--primary-orange);">Chef's Pro-Tip</h6>
+            <hr class="my-2" style="border-color: #DBEAFE; opacity: 0.8;">
+            <p class="fst-italic text-secondary mb-0" style="font-size: 14.5px;">
+              "Balance heavy protein dishes with seasonal root vegetables to maintain high vendor ratings."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor-main.js"></script>
+
+<script>
+let currentEditingRow = null;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('addDishForm');
+  const dateInput = document.getElementById('dishDateInput');
+  const nameInput = document.getElementById('dishNameInput');
+  const notesInput = document.getElementById('dishNotesInput');
+  const tbody = document.getElementById('specialsTableBody');
+  const countEl = document.getElementById('activeSpecialsCount');
+  const submitBtn = document.getElementById('submitDishBtn');
+
+  const btnThisWeek = document.getElementById('btnThisWeek');
+  const btnAllView = document.getElementById('btnAllView');
+
+  function updateCounter() {
+    if (countEl && tbody) {
+      countEl.textContent = tbody.children.length;
+    }
+  }
+
+  if (btnThisWeek && btnAllView) {
+    btnThisWeek.addEventListener('click', () => {
+      btnThisWeek.className = 'btn text-white rounded-pill px-3 py-1 fw-semibold small';
+      btnThisWeek.style.background = '#2D4030';
+      btnAllView.className = 'btn btn-outline-secondary rounded-pill px-3 py-1 fw-semibold small';
+      btnAllView.style.background = '';
+
+      const rows = tbody.querySelectorAll('tr');
+      rows.forEach((r, idx) => {
+        r.style.display = idx < 2 ? '' : 'none';
+      });
+      if (typeof showToast === 'function') showToast('Filter applied: This Week');
+    });
+
+    btnAllView.addEventListener('click', () => {
+      btnAllView.className = 'btn text-white rounded-pill px-3 py-1 fw-semibold small';
+      btnAllView.style.background = '#2D4030';
+      btnThisWeek.className = 'btn btn-outline-secondary rounded-pill px-3 py-1 fw-semibold small';
+      btnThisWeek.style.background = '';
+
+      const rows = tbody.querySelectorAll('tr');
+      rows.forEach(r => r.style.display = '');
+      if (typeof showToast === 'function') showToast('Filter applied: All View');
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const dateVal = dateInput.value.trim() || 'Oct 30, 2023';
+      const nameVal = nameInput.value.trim() || 'Saffron Infused Risotto';
+      const notesVal = notesInput.value.trim() || 'Special preparation instructions...';
+
+      if (currentEditingRow) {
+        currentEditingRow.querySelector('.dish-date-val').textContent = dateVal;
+        currentEditingRow.querySelector('.dish-name-val').textContent = nameVal;
+        currentEditingRow.querySelector('.dish-notes-val').textContent = notesVal;
+
+        currentEditingRow = null;
+        if (submitBtn) {
+          submitBtn.innerHTML = '<i class="bi bi-calendar-check me-2 fs-5"></i><span>Schedule Special</span>';
+        }
+        if (typeof showToast === 'function') showToast('Special dish updated successfully!');
+      } else {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <div class="fw-bold text-dark fs-6 dish-date-val">${dateVal}</div>
+            <div class="text-secondary small">Special Date</div>
+            <div class="fw-bold small" style="color: var(--primary-orange);">• Special</div>
+          </td>
+          <td>
+            <div class="fw-bold text-dark fs-6 dish-name-val">${nameVal}</div>
+            <div class="text-secondary small dish-notes-val">${notesVal}</div>
+          </td>
+          <td class="text-end">
+            <div class="d-flex justify-content-end gap-2">
+              <button class="icon-sq-btn edit" title="Edit" onclick="editDishRow(this)"><i class="bi bi-pencil-fill"></i></button>
+              <button class="icon-sq-btn delete" title="Delete" onclick="deleteDishRow(this)"><i class="bi bi-trash-fill"></i></button>
+            </div>
+          </td>
+        `;
+        tbody.prepend(tr);
+        updateCounter();
+        if (typeof showToast === 'function') showToast('Special dish scheduled successfully!');
+      }
+
+      form.reset();
+    });
+  }
+});
+
+function editDishRow(btn) {
+  const tr = btn.closest('tr');
+  const dateVal = tr.querySelector('.dish-date-val')?.textContent || '';
+  const nameVal = tr.querySelector('.dish-name-val')?.textContent || '';
+  const notesVal = tr.querySelector('.dish-notes-val')?.textContent || '';
+
+  document.getElementById('dishDateInput').value = dateVal;
+  document.getElementById('dishNameInput').value = nameVal;
+  document.getElementById('dishNotesInput').value = notesVal;
+
+  const submitBtn = document.getElementById('submitDishBtn');
+  if (submitBtn) {
+    submitBtn.innerHTML = '<i class="bi bi-check2-circle me-2 fs-5"></i><span>Update Special</span>';
+  }
+
+  currentEditingRow = tr;
+  if (typeof showToast === 'function') showToast('Dish details loaded into editor!');
+}
+
+function deleteDishRow(btn) {
+  const tr = btn.closest('tr');
+  tr.style.transition = 'all 0.3s ease';
+  tr.style.opacity = '0';
+  tr.style.transform = 'translateX(20px)';
+  setTimeout(() => {
+    tr.remove();
+    const countEl = document.getElementById('activeSpecialsCount');
+    const tbody = document.getElementById('specialsTableBody');
+    if (countEl && tbody) {
+      countEl.textContent = tbody.children.length;
+    }
+    if (typeof showToast === 'function') showToast('Scheduled dish removed!');
+  }, 300);
+}
+</script>
+</body>
+</html>

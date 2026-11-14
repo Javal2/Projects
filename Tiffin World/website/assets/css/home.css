@@ -1,0 +1,1373 @@
+/* ==================================================
+   TIFFINWORLD — HOME PAGE STYLES
+   ================================================== */
+
+/* Section 01 — Hero (New Reference Layout Composition) */
+.tw-hero-section-new {
+  position: relative;
+  min-height: 720px;
+  background: linear-gradient(180deg, #F9FAFF 0%, #FFFFFF 60%, #F1F4F9 100%);
+  padding: 40px 0 70px 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.tw-hero-ambient-glow {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(59, 105, 42, 0.07) 0%, rgba(249, 250, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tw-hero-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.tw-hero-main-row {
+  min-height: 620px;
+}
+
+/* LEFT COLUMN CONTENT */
+.tw-hero-left-content {
+  max-width: 620px;
+  text-align: left;
+}
+
+/* Eyebrow Green Trust Pill */
+.tw-hero-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(59, 105, 42, 0.09);
+  color: #3B692A;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 105, 42, 0.18);
+  animation: twFadeDown 0.6s ease forwards;
+}
+
+/* Editorial Heading */
+.tw-hero-heading-editorial {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(42px, 4.4vw, 70px);
+  line-height: 1.02;
+  letter-spacing: -1px;
+  color: #3B692A;
+  animation: twFadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s forwards;
+}
+
+.tw-word-green {
+  color: #3B692A;
+}
+
+.tw-word-orange {
+  color: #FF7F00;
+}
+
+/* Subdescription */
+.tw-hero-subdescription {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4F554B;
+  max-width: 580px;
+  animation: twFadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+/* Search Wrapper & Pill */
+.tw-hero-search-wrapper {
+  max-width: 560px;
+  animation: twFadeUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s forwards;
+}
+
+.tw-hero-search-bar {
+  background: #FFFFFF;
+  border: 2px solid #FF7F00;
+  border-radius: 999px;
+  height: 62px;
+  padding: 6px 6px 6px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 32px rgba(255, 127, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tw-hero-search-bar:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(255, 127, 0, 0.22);
+}
+
+.tw-search-icon-left {
+  font-size: 20px;
+  color: #FF7F00;
+}
+
+.tw-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #2D3748;
+}
+
+.tw-search-input::placeholder {
+  color: #A0AEC0;
+}
+
+.tw-search-submit-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #3B692A;
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.tw-search-submit-btn:hover {
+  background: #2E5321;
+  transform: scale(1.05);
+}
+
+.tw-search-submit-btn:hover i {
+  transform: translateX(3px);
+}
+
+.tw-search-submit-btn i {
+  transition: transform 0.2s ease;
+}
+
+/* Trust Line */
+.tw-hero-trust-line {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  color: #3B692A;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: twFadeUp 0.7s ease 0.55s forwards;
+}
+
+.tw-dot-separator {
+  color: #CBD5E0;
+  font-size: 12px;
+}
+
+/* 3-Benefit Feature Strip */
+.tw-hero-benefit-strip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(177, 207, 255, 0.65);
+  border-radius: 20px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.035);
+  backdrop-filter: blur(8px);
+  animation: twFadeUp 0.7s ease 0.65s forwards;
+}
+
+.tw-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.tw-benefit-icon-bg {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.bg-green-light {
+  background: rgba(59, 105, 42, 0.10);
+}
+
+.bg-orange-light {
+  background: rgba(255, 127, 0, 0.10);
+}
+
+.tw-benefit-text {
+  text-align: left;
+}
+
+.tw-benefit-title {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2D3748;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tw-benefit-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #718096;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tw-benefit-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(203, 213, 225, 0.6);
+  margin: 0 8px;
+}
+
+/* RIGHT COLUMN: Food Photography Container */
+.tw-hero-right-col {
+  position: relative;
+}
+
+.tw-hero-food-visual {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: twFoodEntrance 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+}
+
+.tw-hero-food-img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(59, 105, 42, 0.15), 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 4px solid #FFFFFF;
+}
+
+/* Floating On-Time Delivery Badge with Animated Circular Border & Ripple Effects */
+.tw-delivery-badge-floating {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #3B692A;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 14px 35px rgba(59, 105, 42, 0.35);
+  z-index: 10;
+  animation: twBadgeFloat 5s ease-in-out infinite alternate;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 1. Continuous Rotating Dashed Circular Outer Border */
+.tw-delivery-badge-floating::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2.5px dashed rgba(255, 255, 255, 0.9);
+  animation: badgeSpinRing 14s linear infinite;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* 2. Pulsing Radial Aura Ripple Effect */
+.tw-delivery-badge-floating::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(59, 105, 42, 0.55);
+  animation: badgePulseRing 2.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.tw-delivery-badge-floating:hover::before {
+  animation: badgeSpinRing 5s linear infinite;
+  border-color: #FF7F00;
+}
+
+.tw-delivery-badge-floating:hover {
+  transform: scale(1.06) translateY(-4px);
+  box-shadow: 0 20px 45px rgba(255, 127, 0, 0.35);
+}
+
+.tw-badge-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  position: relative;
+  z-index: 2;
+}
+
+.tw-badge-inner .badge-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+  display: inline-block;
+  animation: badgeClockTick 4s ease-in-out infinite alternate;
+}
+
+.tw-badge-inner .badge-line-1 {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.tw-badge-inner .badge-line-2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Circular Border Keyframes */
+@keyframes badgeSpinRing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes badgePulseRing {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.16);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes badgeClockTick {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(18deg) scale(1.12);
+  }
+
+  100% {
+    transform: rotate(-10deg) scale(1);
+  }
+}
+
+/* Bottom Hero Wave */
+.tw-hero-bottom-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2;
+}
+
+.tw-hero-bottom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 48px;
+}
+
+/* Animations */
+@keyframes twFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes twFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes twFoodEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes twBadgeFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive Rules */
+@media (max-width: 991px) {
+  .tw-hero-left-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .tw-hero-subdescription {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tw-hero-search-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tw-hero-trust-line {
+    justify-content: center;
+  }
+
+  .tw-hero-benefit-strip {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tw-hero-food-visual {
+    min-height: 400px;
+    margin-top: 20px;
+  }
+
+  .tw-delivery-badge-floating {
+    width: 110px;
+    height: 110px;
+    top: 4%;
+    right: 2%;
+  }
+
+  .tw-badge-inner .badge-icon {
+    font-size: 18px;
+  }
+
+  .tw-badge-inner .badge-line-1 {
+    font-size: 10px;
+  }
+
+  .tw-badge-inner .badge-line-2 {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tw-hero-heading-editorial {
+    font-size: 38px;
+  }
+
+  .tw-hero-subdescription {
+    font-size: 16px;
+  }
+
+  .tw-hero-benefit-strip {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .tw-benefit-divider {
+    display: none;
+  }
+
+  .tw-delivery-badge-floating {
+    width: 90px;
+    height: 90px;
+    top: 2%;
+    right: 2%;
+  }
+}
+
+/* Search Bar Wrapper & Glass Component */
+.tw-hero-search-form {
+  max-width: 600px;
+  margin: 0 auto 26px auto;
+  transform: translateY(calc(var(--hero-scroll, 0) * -15px));
+  animation: searchEntrance 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.65s forwards;
+  opacity: 0;
+}
+
+.tw-hero-search-box-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 121, 0, 0.35);
+  border-radius: 50px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 64px;
+  box-shadow: 0 14px 38px rgba(255, 121, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.tw-hero-search-box-glass:hover,
+.tw-hero-search-box-glass:focus-within {
+  transform: translateY(-2px);
+  border-color: var(--tw-orange);
+  box-shadow: 0 18px 45px rgba(255, 121, 0, 0.26), 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.tw-search-input-pill {
+  flex: 1;
+  background-color: var(--tw-white);
+  border-radius: 40px;
+  height: 52px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tw-search-inner-icon {
+  color: var(--tw-orange);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+.tw-hero-search-input:focus~.tw-search-inner-icon,
+.tw-search-input-pill:focus-within .tw-search-inner-icon {
+  transform: rotate(5deg) scale(1.08);
+}
+
+.tw-hero-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  height: 100%;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #3F3F3F;
+  outline: none;
+}
+
+.tw-hero-search-input::placeholder {
+  color: #888888;
+}
+
+.btn-hero-search-submit {
+  width: 52px;
+  height: 52px;
+  border-radius: 40px;
+  background-color: var(--tw-green);
+  color: var(--tw-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-hero-search-submit.pulse-button {
+  animation: buttonPulse 3.5s ease-in-out infinite;
+}
+
+.btn-hero-search-submit:hover {
+  background-color: #2b571f;
+  transform: scale(1.04);
+}
+
+.btn-hero-search-submit:hover i {
+  transform: translateX(3px);
+  transition: transform 0.2s ease;
+}
+
+.btn-hero-search-submit:active {
+  transform: scale(0.96);
+}
+
+/* Trust Badges Wrapper */
+.tw-trust-badges-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: trustEntrance 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.80s forwards;
+  opacity: 0;
+}
+
+.tw-trust-badge {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 105, 42, 0.14);
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: #2D3748;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  cursor: default;
+}
+
+.tw-trust-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(59, 105, 42, 0.15);
+  border-color: var(--tw-green);
+}
+
+.tw-trust-badge .badge-icon {
+  font-size: 14px;
+}
+
+/* ==================================================
+   TIFFIN-THEMED ANIMATED BACKGROUND ICON LAYER
+   10 SVG icons drifting with float + scroll parallax
+   ================================================== */
+.tw-tiffin-bg-icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Shared base for all bg icons */
+.tw-bg-icon {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: transform 0.12s linear;
+}
+
+.tw-bg-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Icon 1: Tomato (Top-Left) --- */
+.tw-bg-icon-1 {
+  width: 68px;
+  top: 12%;
+  left: 4%;
+  opacity: 0.22;
+  animation: vegIconFloat1 6s ease-in-out infinite alternate;
+}
+
+/* --- Icon 2: Carrot (Top-Right) --- */
+.tw-bg-icon-2 {
+  width: 64px;
+  top: 10%;
+  right: 8%;
+  opacity: 0.22;
+  animation: vegIconFloat2 7.5s ease-in-out infinite alternate 0.8s;
+}
+
+/* --- Icon 3: Lemon (Mid-Right) --- */
+.tw-bg-icon-3 {
+  width: 60px;
+  top: 42%;
+  right: 4%;
+  opacity: 0.20;
+  animation: vegIconFloat3 5.5s ease-in-out infinite alternate 1.2s;
+}
+
+/* --- Icon 4: Herb Leaf (Mid-Left) --- */
+.tw-bg-icon-4 {
+  width: 66px;
+  top: 48%;
+  left: 3%;
+  opacity: 0.24;
+  animation: vegIconFloat4 6.5s ease-in-out infinite alternate 0.4s;
+}
+
+/* --- Icon 5: Chilli Pepper (Bottom-Left) --- */
+.tw-bg-icon-5 {
+  width: 58px;
+  bottom: 12%;
+  left: 8%;
+  opacity: 0.22;
+  animation: vegIconFloat5 8s ease-in-out infinite alternate 1.8s;
+}
+
+/* --- Icon 6: Broccoli (Bottom-Right) --- */
+.tw-bg-icon-6 {
+  width: 68px;
+  bottom: 10%;
+  right: 6%;
+  opacity: 0.22;
+  animation: vegIconFloat6 7s ease-in-out infinite alternate 1s;
+}
+
+/* --- Icon 7: Capsicum (Top-Center-Right) --- */
+.tw-bg-icon-7 {
+  width: 62px;
+  top: 14%;
+  right: 28%;
+  opacity: 0.20;
+  animation: vegIconFloat7 6.2s ease-in-out infinite alternate 0.6s;
+}
+
+/* --- Icon 8: Garlic (Bottom-Center-Left) --- */
+.tw-bg-icon-8 {
+  width: 54px;
+  bottom: 16%;
+  left: 24%;
+  opacity: 0.20;
+  animation: vegIconFloat8 7.8s ease-in-out infinite alternate 1.5s;
+}
+
+/* Continuous 3D Floating & Swaying Keyframe Animations */
+@keyframes vegIconFloat1 {
+  0% {
+    transform: translateY(0px) rotate(-12deg) scale(1);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-4deg) scale(1.04);
+  }
+  100% {
+    transform: translateY(8px) rotate(-18deg) scale(0.98);
+  }
+}
+
+@keyframes vegIconFloat2 {
+  0% {
+    transform: translateY(0px) rotate(10deg) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) rotate(18deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(10px) rotate(2deg) scale(0.96);
+  }
+}
+
+@keyframes vegIconFloat3 {
+  0% {
+    transform: translateY(0px) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(8deg);
+  }
+  100% {
+    transform: translateY(12px) rotate(-14deg);
+  }
+}
+
+@keyframes vegIconFloat4 {
+  0% {
+    transform: translateY(0px) rotate(15deg) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-5deg) scale(1.06);
+  }
+  100% {
+    transform: translateY(14px) rotate(22deg) scale(0.95);
+  }
+}
+
+@keyframes vegIconFloat5 {
+  0% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(12deg);
+  }
+  100% {
+    transform: translateY(10px) rotate(-18deg);
+  }
+}
+
+@keyframes vegIconFloat6 {
+  0% {
+    transform: translateY(0px) rotate(6deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-8deg);
+  }
+  100% {
+    transform: translateY(12px) rotate(14deg);
+  }
+}
+
+@keyframes vegIconFloat7 {
+  0% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(10px) rotate(-12deg);
+  }
+}
+
+@keyframes vegIconFloat8 {
+  0% {
+    transform: translateY(0px) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-6deg);
+  }
+  100% {
+    transform: translateY(14px) rotate(18deg);
+  }
+}
+
+/* ==================================================
+   KEYFRAME ANIMATIONS
+   ================================================== */
+@keyframes glowBreathing {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes orbitRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-16px) scale(1.15);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes wordFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes eyebrowEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes searchEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes trustEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(53, 108, 39, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(53, 108, 39, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(53, 108, 39, 0);
+  }
+}
+
+
+
+/* ==================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================== */
+
+@media (max-width: 991.98px) {
+  .tw-hero-section {
+    min-height: 700px;
+    height: auto;
+    padding: 50px 0 70px 0;
+  }
+
+  .tw-hero-glass-card {
+    padding: 36px 24px;
+  }
+
+  .hero-orbit {
+    width: 580px;
+    height: 580px;
+  }
+
+  .tw-hero-h1-staggered {
+    font-size: 50px;
+  }
+
+  .tw-hero-desc-new {
+    font-size: 17px;
+  }
+
+  /* Scale down bg icons on tablet */
+  .tw-bg-icon-1 {
+    width: 64px;
+  }
+
+  .tw-bg-icon-3 {
+    width: 52px;
+  }
+
+  .tw-bg-icon-4 {
+    width: 80px;
+  }
+
+  .tw-bg-icon-9 {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tw-hero-section {
+    padding: 36px 12px 60px 12px;
+    min-height: auto;
+  }
+
+  .tw-hero-glass-card {
+    padding: 32px 18px;
+    border-radius: 24px;
+  }
+
+  .hero-orbit {
+    width: 360px;
+    height: 360px;
+  }
+
+  .tw-hero-h1-staggered {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .tw-hero-desc-new {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .tw-trust-badges-wrapper {
+    gap: 6px;
+  }
+
+  .tw-trust-badge {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  /* Hide some bg icons on mobile for cleaner look */
+  .tw-bg-icon-3,
+  .tw-bg-icon-5,
+  .tw-bg-icon-6,
+  .tw-bg-icon-9,
+  .tw-bg-icon-10 {
+    display: none;
+  }
+
+  .tw-bg-icon-1 {
+    width: 50px;
+    left: 2%;
+  }
+
+  .tw-bg-icon-2 {
+    width: 38px;
+    right: 4%;
+  }
+
+  .tw-bg-icon-4 {
+    width: 65px;
+    right: 2%;
+  }
+
+  .tw-bg-icon-7 {
+    width: 38px;
+    right: 5%;
+  }
+
+  .tw-bg-icon-8 {
+    width: 34px;
+  }
+}
+
+@media (max-width: 390px) {
+  .tw-veggie-spinach-wrap {
+    width: 190px;
+    left: -135px;
+  }
+
+  .tw-veggie-broccoli-wrap {
+    width: 180px;
+    right: -120px;
+  }
+}
+
+/* Accessibility Support */
+@media (prefers-reduced-motion: reduce) {
+
+  .tw-hero-eyebrow,
+  .hero-word,
+  .tw-hero-desc-new,
+  .tw-hero-search-form,
+  .tw-trust-badges-wrapper,
+  .tw-veggie-spinach-img,
+  .tw-veggie-broccoli-img,
+  .hero-orbit,
+  .tw-particle {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Section 02 — Popular Tiffin Options */
+.tw-card-food-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: calc(var(--radius-md) - 1px);
+  border-top-right-radius: calc(var(--radius-md) - 1px);
+}
+
+.tw-tiffin-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 220px);
+}
+
+.tw-card-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--tw-green);
+  margin-bottom: 8px;
+}
+
+.tw-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--tw-text-grey);
+  margin-bottom: 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.tw-card-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--tw-light-blue);
+  margin-top: auto;
+}
+
+.tw-price-tag {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--tw-green);
+}
+
+.tw-price-tag span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-family: var(--font-body);
+  color: var(--tw-grey);
+}
+
+/* Section 03 — Journey Steps */
+.tw-step-card {
+  text-align: center;
+  padding: 20px 10px;
+  position: relative;
+}
+
+.tw-step-icon-holder {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: var(--tw-section-bg);
+  border: 1px solid var(--tw-light-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tw-orange);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  transition: transform var(--transition-base);
+}
+
+.tw-step-card:hover .tw-step-icon-holder {
+  transform: scale(1.05);
+  background-color: var(--tw-white);
+  box-shadow: var(--shadow-subtle);
+}
+
+.tw-step-arrow {
+  position: absolute;
+  top: 44px;
+  right: -25px;
+  color: var(--tw-green);
+  font-size: 1.5rem;
+  z-index: 5;
+}
+
+.tw-step-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--tw-green);
+  margin-bottom: 8px;
+}
+
+.tw-step-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--tw-text-grey);
+  line-height: 1.5;
+}
+
+/* Section 04 — Vendor Cards */
+.tw-vendor-card {
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.tw-avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.tw-chef-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--tw-white);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.tw-online-dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  background-color: #2e7d32;
+  border: 2px solid var(--tw-white);
+  border-radius: 50%;
+}
+
+.tw-vendor-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--tw-green);
+  margin-bottom: 4px;
+}
+
+.tw-vendor-category {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--tw-grey);
+  margin-bottom: 10px;
+}
+
+.tw-rating-badge {
+  color: var(--tw-orange);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* Section 05 — Testimonials */
+.tw-eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--tw-orange);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.tw-testimonial-card {
+  padding: 30px;
+}
+
+.tw-stars-row {
+  color: var(--tw-orange);
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.tw-testimonial-quote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--tw-text-grey);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.tw-testimonial-author {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--tw-green);
+}
+
+.tw-testimonial-role {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--tw-grey);
+}
+
+/* Responsive Overrides */
+@media (max-width: 991.98px) {
+  .tw-hero-h1 {
+    font-size: 3.2rem;
+  }
+
+  .tw-hero-img-container {
+    margin-top: 40px;
+  }
+
+  .tw-step-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .tw-hero-h1 {
+    font-size: 2.5rem;
+  }
+
+  .tw-search-wrapper {
+    height: auto;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,39 @@
+/* ==================================================
+   TIFFINWORLD — DESIGN SYSTEM CSS VARIABLES
+   ================================================== */
+:root {
+  /* Brand Color Palette */
+  --tw-orange: #FF7F00;
+  --tw-orange-hover: #E06F00;
+  --tw-off-white: #F9FAFF;
+  --tw-light-blue: #B1CFFF;
+  --tw-pale-green: #E8F3E5;
+  --tw-grey: #6B7280;
+  --tw-section-bg: #F1F4F9;
+  --tw-green: #3B692A;
+  --tw-green-hover: #2F5421;
+  --tw-text-grey: #6A6A6A;
+  --tw-white: #FFFFFF;
+  --tw-dark-footer: #121811;
+  --tw-dark-footer-text: #A3B19B;
+
+  /* Typography */
+  --font-heading: "Epilogue", sans-serif;
+  --font-body: "Poppins", sans-serif;
+
+  /* Border Radii */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-hero-img: 42px;
+  --radius-pill: 999px;
+
+  /* Transitions & Shadows */
+  --transition-base: 200ms ease;
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-subtle: 0 4px 20px rgba(59, 105, 42, 0.06);
+  --shadow-card-hover: 0 10px 25px rgba(59, 105, 42, 0.12);
+
+  /* Container Max Width */
+  --max-content-width: 1440px;
+}

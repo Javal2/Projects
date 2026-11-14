@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sellers Overview — TiffinWorld Admin</title>
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
+  <style>
+    /* SELLERS OVERVIEW STYLES */
+    .page-title-green {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: #2D5822;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .page-subtitle-grey {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #6B7280;
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    /* Top Action Buttons */
+    .btn-export-sellers {
+      background-color: #2D5822;
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 10px 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 180ms ease;
+      box-shadow: 0 4px 12px rgba(45, 88, 34, 0.15);
+    }
+
+    .btn-export-sellers:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+    }
+
+    .btn-add-seller-green {
+      background-color: #2D5822;
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 10px 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(45, 88, 34, 0.25);
+      cursor: pointer;
+      transition: all 180ms ease;
+      text-decoration: none;
+    }
+
+    .btn-add-seller-green:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+      color: #FFFFFF !important;
+    }
+
+    /* Stat Cards */
+    .seller-stat-card {
+      background: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .stat-badge-pill {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      position: absolute;
+      top: 18px;
+      right: 18px;
+    }
+
+    .stat-badge-green { background: #DCFCE7; color: #166534; }
+    .stat-badge-blue { background: #E0F2FE; color: #0284C7; }
+    .stat-badge-grey { background: #F3F4F6; color: #6B7280; }
+    .stat-badge-red { background: #FEE2E2; color: #DC2626; }
+
+    .stat-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .stat-icon-green { background: #DCFCE7; color: #166534; }
+    .stat-icon-blue { background: #E0F2FE; color: #0284C7; }
+    .stat-icon-grey { background: #F3F4F6; color: #4B5563; }
+    .stat-icon-orange { background: #FFEDD5; color: #EA580C; }
+
+    .stat-label-text {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: #9CA3AF;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+
+    .stat-value-text {
+      font-family: var(--font-heading);
+      font-size: 30px;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1;
+    }
+
+    /* Filter & Search Bar */
+    .seller-filter-card {
+      background: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 16px;
+      padding: 12px 18px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .search-input-wrap {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9CA3AF;
+      font-size: 15px;
+    }
+
+    .seller-search-input {
+      width: 100%;
+      background: #F9FAFB;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 10px;
+      padding: 9px 14px 9px 38px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: #374151;
+      outline: none;
+      transition: all 180ms ease;
+    }
+
+    .seller-search-input:focus {
+      background: #FFFFFF;
+      border-color: #2D5822;
+      box-shadow: 0 0 0 3px rgba(45, 88, 34, 0.1);
+    }
+
+    .btn-filter-action {
+      background: #FFFFFF;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .btn-filter-action:hover {
+      background: #F9FAFB;
+      border-color: #9CA3AF;
+    }
+
+    .btn-icon-square {
+      background: #FFFFFF;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 10px;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: #4B5563;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .btn-icon-square:hover {
+      background: #F9FAFB;
+      border-color: #9CA3AF;
+    }
+
+    .btn-bulk-btn {
+      background: #F9FAFB;
+      border: 1.5px solid #D1D5DB;
+      border-radius: 10px;
+      padding: 8px 18px;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+
+    .btn-bulk-btn:hover {
+      background: #E5E7EB;
+    }
+
+    /* Table Component */
+    .sellers-table-card {
+      background-color: #FFFFFF;
+      border: 1.5px solid #CBDCF8;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+
+    .sellers-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    .sellers-table th {
+      background-color: #EEF5FE;
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: #2D5822;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 16px 20px;
+      border-bottom: 1.5px solid #CBDCF8;
+    }
+
+    .sellers-table td {
+      padding: 18px 20px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: #4B5563;
+      border-bottom: 1px solid #EBF2FD;
+      vertical-align: middle;
+    }
+
+    .sellers-table tbody tr:hover td {
+      background-color: #F8FAFC;
+    }
+
+    .seller-id-text {
+      color: #6B7280;
+      font-size: 12.5px;
+    }
+
+    .seller-name-bold {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 14px;
+      color: #111827;
+      line-height: 1.3;
+    }
+
+    .seller-biz-sub {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .contact-email {
+      color: #374151;
+      font-size: 13px;
+    }
+
+    .contact-phone {
+      color: #9CA3AF;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .location-city {
+      color: #374151;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .location-region {
+      color: #9CA3AF;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    /* Badges */
+    .badge-verified-green {
+      background-color: #2D5822;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+    }
+
+    .badge-pending-grey {
+      background-color: #F3F4F6;
+      color: #4B5563;
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .badge-suspended-orange {
+      background-color: #EA580C;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+    }
+
+    .circle-num-pill {
+      background-color: #EEF5FE;
+      color: #2D5822;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 800;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .inquiry-count-green {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: #2D5822;
+      font-size: 14px;
+    }
+
+    .balance-pos {
+      color: #111827;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .balance-neg {
+      color: #EA580C;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .balance-zero {
+      color: #374151;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .btn-edit-pencil {
+      background: transparent;
+      border: none;
+      color: #6B7280;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 150ms ease;
+      text-decoration: none;
+    }
+
+    .btn-edit-pencil:hover {
+      background-color: #EEF5FE;
+      color: #2D5822;
+    }
+
+    .btn-action-dots {
+      background: transparent;
+      border: none;
+      color: #4B5563;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background-color 150ms ease;
+    }
+
+    .btn-action-dots:hover {
+      background-color: #EEF5FE;
+      color: #111827;
+    }
+
+    /* Table Footer */
+    .sellers-footer-row {
+      padding: 16px 28px;
+      background-color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #EBF2FD;
+    }
+
+    .s-page-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid #E5E7EB;
+      background-color: #FFFFFF;
+      color: #374151;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 150ms ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .s-page-num:hover {
+      background-color: #F3F4F6;
+    }
+
+    .s-page-num.active {
+      border-color: #2D5822;
+      color: #2D5822;
+      font-weight: 800;
+      background-color: #EEF5FE;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link active">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <span>User Operations</span> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Seller Management</span>
+            </div>
+            <h1 class="header-page-title">Sellers Overview</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS -->
+      <main class="admin-content">
+        
+        <!-- PAGE TITLE & TOP ACTION BUTTONS -->
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div>
+            <h2 class="page-title-green">Sellers Overview</h2>
+            <p class="page-subtitle-grey m-0 mt-1">Manage and monitor your global partner network.</p>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn-export-sellers" onclick="showToast('Exporting seller data...', 'Export')">
+              <i class="bi bi-download"></i> Export Data
+            </button>
+            <a href="seller-add.html" class="btn-add-seller-green">
+              <i class="bi bi-plus-lg"></i> Add New Seller
+            </a>
+          </div>
+        </div>
+
+        <!-- STAT CARDS ROW (4 CARDS) -->
+        <div class="row g-3 mb-4">
+          
+          <!-- Card 1: TOTAL SELLERS -->
+          <div class="col-md-3">
+            <div class="seller-stat-card">
+              <span class="stat-badge-pill stat-badge-green">+12%</span>
+              <div class="stat-icon-box stat-icon-green">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="stat-label-text">Total Sellers</div>
+              <div class="stat-value-text">1,284</div>
+            </div>
+          </div>
+
+          <!-- Card 2: VERIFIED -->
+          <div class="col-md-3">
+            <div class="seller-stat-card">
+              <span class="stat-badge-pill stat-badge-green">98.2%</span>
+              <div class="stat-icon-box stat-icon-green">
+                <i class="bi bi-patch-check-fill"></i>
+              </div>
+              <div class="stat-label-text">Verified</div>
+              <div class="stat-value-text">1,120</div>
+            </div>
+          </div>
+
+          <!-- Card 3: PENDING -->
+          <div class="col-md-3">
+            <div class="seller-stat-card">
+              <span class="stat-badge-pill stat-badge-grey">NEW</span>
+              <div class="stat-icon-box stat-icon-grey">
+                <i class="bi bi-three-dots"></i>
+              </div>
+              <div class="stat-label-text">Pending</div>
+              <div class="stat-value-text">42</div>
+            </div>
+          </div>
+
+          <!-- Card 4: SUSPENDED -->
+          <div class="col-md-3">
+            <div class="seller-stat-card">
+              <span class="stat-badge-pill stat-badge-red">-2%</span>
+              <div class="stat-icon-box stat-icon-orange">
+                <i class="bi bi-slash-circle"></i>
+              </div>
+              <div class="stat-label-text">Suspended</div>
+              <div class="stat-value-text">14</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SEARCH AND FILTER BAR -->
+        <div class="seller-filter-card">
+          <div class="search-input-wrap">
+            <i class="bi bi-search search-input-icon"></i>
+            <input type="text" class="seller-search-input" placeholder="Search by name, ID, or business...">
+          </div>
+          
+          <button class="btn-filter-action">
+            <i class="bi bi-sliders"></i> Filters
+          </button>
+          
+          <button class="btn-icon-square" title="Download" onclick="showToast('Downloading report...', 'Download')">
+            <i class="bi bi-download"></i>
+          </button>
+          
+          <button class="btn-icon-square" title="Print" onclick="window.print()">
+            <i class="bi bi-printer"></i>
+          </button>
+          
+          <button class="btn-bulk-btn" onclick="showToast('Bulk Actions menu opened', 'Bulk Actions')">
+            Bulk Actions
+          </button>
+        </div>
+
+        <!-- MAIN SELLERS TABLE CARD -->
+        <div class="sellers-table-card">
+          
+          <div class="table-responsive">
+            <table class="sellers-table">
+              <thead>
+                <tr>
+                  <th style="width: 100px;">SELLER ID</th>
+                  <th>NAME / BUSINESS</th>
+                  <th>CONTACT INFO</th>
+                  <th>LOCATION / AREAS</th>
+                  <th style="width: 110px;">STATUS</th>
+                  <th style="width: 100px;">PRODUCTS</th>
+                  <th style="width: 100px;">INQUIRIES</th>
+                  <th style="width: 130px;">BALANCE</th>
+                  <th class="text-end" style="width: 100px;">ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <!-- ROW 1 -->
+                <tr>
+                  <td><span class="seller-id-text">#SL-9021</span></td>
+                  <td>
+                    <div class="seller-name-bold">Evergreen Grocers</div>
+                    <div class="seller-biz-sub">Premium Organic Supplies</div>
+                  </td>
+                  <td>
+                    <div class="contact-email">contact@evergreen.com</div>
+                    <div class="contact-phone">+1 (555) 012-3456</div>
+                  </td>
+                  <td>
+                    <div class="location-city">Portland, OR</div>
+                    <div class="location-region">Pacific Northwest</div>
+                  </td>
+                  <td><span class="badge-verified-green">VERIFIED</span></td>
+                  <td><span class="circle-num-pill">12</span></td>
+                  <td><span class="inquiry-count-green">18</span></td>
+                  <td><span class="balance-pos">$12,450.00</span></td>
+                  <td class="text-end">
+                    <div class="d-flex align-items-center justify-content-end gap-1">
+                      <a href="seller-add.html" class="btn-edit-pencil" title="Edit Seller">
+                        <i class="bi bi-pencil"></i>
+                      </a>
+                      <div class="dropdown">
+                        <button class="btn-action-dots" data-bs-toggle="dropdown" title="More options">
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 mt-1">
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-profile.html"><i class="bi bi-person-bounding-box me-2 text-success"></i> View Seller Profile</a></li>
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-add.html"><i class="bi bi-pencil-square me-2 text-muted"></i> Edit Details</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item py-2 fw-medium text-danger" href="#" onclick="showToast('Seller suspended', 'Status'); return false;"><i class="bi bi-slash-circle me-2"></i> Suspend Seller</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 2 -->
+                <tr>
+                  <td><span class="seller-id-text">#SL-8842</span></td>
+                  <td>
+                    <div class="seller-name-bold">Northern Logistics</div>
+                    <div class="seller-biz-sub">Global Freight Partners</div>
+                  </td>
+                  <td>
+                    <div class="contact-email">admin@northern.log</div>
+                    <div class="contact-phone">+44 20 7946 0123</div>
+                  </td>
+                  <td>
+                    <div class="location-city">London, UK</div>
+                    <div class="location-region">European Corridor</div>
+                  </td>
+                  <td><span class="badge-pending-grey">PENDING</span></td>
+                  <td><span class="circle-num-pill">12</span></td>
+                  <td><span class="inquiry-count-green">03</span></td>
+                  <td><span class="balance-zero">$0.00</span></td>
+                  <td class="text-end">
+                    <div class="d-flex align-items-center justify-content-end gap-1">
+                      <a href="seller-add.html" class="btn-edit-pencil" title="Edit Seller">
+                        <i class="bi bi-pencil"></i>
+                      </a>
+                      <div class="dropdown">
+                        <button class="btn-action-dots" data-bs-toggle="dropdown" title="More options">
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 mt-1">
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-profile.html"><i class="bi bi-person-bounding-box me-2 text-success"></i> View Seller Profile</a></li>
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-add.html"><i class="bi bi-pencil-square me-2 text-muted"></i> Edit Details</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item py-2 fw-medium text-danger" href="#" onclick="showToast('Seller suspended', 'Status'); return false;"><i class="bi bi-slash-circle me-2"></i> Suspend Seller</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 3 -->
+                <tr>
+                  <td><span class="seller-id-text">#SL-7761</span></td>
+                  <td>
+                    <div class="seller-name-bold">Apex Tech Solutions</div>
+                    <div class="seller-biz-sub">Hardware Distribution</div>
+                  </td>
+                  <td>
+                    <div class="contact-email">billing@apextech.com</div>
+                    <div class="contact-phone">+65 6123 4567</div>
+                  </td>
+                  <td>
+                    <div class="location-city">Singapore</div>
+                    <div class="location-region">South East Asia</div>
+                  </td>
+                  <td><span class="badge-suspended-orange">SUSPENDED</span></td>
+                  <td><span class="circle-num-pill">12</span></td>
+                  <td><span class="inquiry-count-green">124</span></td>
+                  <td><span class="balance-neg">-$420.00</span></td>
+                  <td class="text-end">
+                    <div class="d-flex align-items-center justify-content-end gap-1">
+                      <a href="seller-add.html" class="btn-edit-pencil" title="Edit Seller">
+                        <i class="bi bi-pencil"></i>
+                      </a>
+                      <div class="dropdown">
+                        <button class="btn-action-dots" data-bs-toggle="dropdown" title="More options">
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 mt-1">
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-profile.html"><i class="bi bi-person-bounding-box me-2 text-success"></i> View Seller Profile</a></li>
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-add.html"><i class="bi bi-pencil-square me-2 text-muted"></i> Edit Details</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item py-2 fw-medium text-danger" href="#" onclick="showToast('Seller suspended', 'Status'); return false;"><i class="bi bi-slash-circle me-2"></i> Suspend Seller</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 4 -->
+                <tr>
+                  <td><span class="seller-id-text">#SL-9104</span></td>
+                  <td>
+                    <div class="seller-name-bold">Velvet Meadows</div>
+                    <div class="seller-biz-sub">Luxury Textiles</div>
+                  </td>
+                  <td>
+                    <div class="contact-email">hello@velvetmeadows.it</div>
+                    <div class="contact-phone">+39 02 1234 5678</div>
+                  </td>
+                  <td>
+                    <div class="location-city">Milan, IT</div>
+                    <div class="location-region">Mediterranean Hub</div>
+                  </td>
+                  <td><span class="badge-verified-green">VERIFIED</span></td>
+                  <td><span class="circle-num-pill">12</span></td>
+                  <td><span class="inquiry-count-green">42</span></td>
+                  <td><span class="balance-pos">$45,200.00</span></td>
+                  <td class="text-end">
+                    <div class="d-flex align-items-center justify-content-end gap-1">
+                      <a href="seller-add.html" class="btn-edit-pencil" title="Edit Seller">
+                        <i class="bi bi-pencil"></i>
+                      </a>
+                      <div class="dropdown">
+                        <button class="btn-action-dots" data-bs-toggle="dropdown" title="More options">
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 mt-1">
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-profile.html"><i class="bi bi-person-bounding-box me-2 text-success"></i> View Seller Profile</a></li>
+                          <li><a class="dropdown-item py-2 fw-medium" href="seller-add.html"><i class="bi bi-pencil-square me-2 text-muted"></i> Edit Details</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item py-2 fw-medium text-danger" href="#" onclick="showToast('Seller suspended', 'Status'); return false;"><i class="bi bi-slash-circle me-2"></i> Suspend Seller</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <!-- FOOTER PAGINATION ROW -->
+          <div class="sellers-footer-row">
+            <div class="text-muted small">Showing 1 to 4 of 1,284 entries</div>
+            <div class="d-flex align-items-center gap-1">
+              <button class="s-page-num"><i class="bi bi-chevron-left"></i></button>
+              <button class="s-page-num active">1</button>
+              <button class="s-page-num">2</button>
+              <button class="s-page-num">3</button>
+              <span class="px-2 text-muted">...</span>
+              <button class="s-page-num">128</button>
+              <button class="s-page-num"><i class="bi bi-chevron-right"></i></button>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

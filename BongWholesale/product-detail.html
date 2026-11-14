@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obsidian Beaker 14" Dual Percolator | Bong Wholesale Spec Sheet</title>
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Glass Nav -->
+  <nav class="navbar navbar-expand-lg navbar-glass fixed-top scrolled" data-force-scrolled="true">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <img src="images/logo.png" alt="BongWholesale Logo" />
+      </a>
+
+      <!-- Mobile Actions (Search, Login, Cart, Hamburger) - Always Visible on Mobile -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search Catalog">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#loginModal" title="Account Login">
+          <i class="bi bi-person"></i>
+        </button>
+        <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Wholesale Order">
+          <i class="bi bi-bag-fill"></i>
+          <span class="badge-counter badge-cart-count">1</span>
+        </button>
+        <button class="navbar-toggler border-0 text-dark p-1" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNavDrawer" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation Menu (Visible on Desktop >= 992px) -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="beakers.html">Beakers</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="bongs.html">Bongs</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="pipes.html">Hand Pipes</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="accessories.html">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search Catalog">
+            <i class="bi bi-search fs-5"></i>
+          </button>
+          <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#loginModal" title="Account Login">
+            <i class="bi bi-person fs-5"></i>
+          </button>
+          <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
+            title="Wholesale Order">
+            <i class="bi bi-bag-fill fs-5"></i>
+            <span class="badge-counter badge-cart-count">1</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Professional Mobile Navigation Drawer (< 992px) -->
+  <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="mobileNavDrawer" style="width: 300px; max-width: 85vw;">
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25 py-3">
+      <a class="navbar-brand navbar-brand-logo d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="BongWholesale Logo" style="height: 38px; width: auto;" />
+      </a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column p-3">
+      <div class="mb-3">
+        <a href="shop.html" class="btn btn-glow-orange w-100 py-2 d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-box-seam"></i>
+          <span>Wholesale Catalog</span>
+        </a>
+      </div>
+
+      <div class="mob-menu-group mb-4">
+        <div class="text-uppercase text-muted fw-bold mb-2 ps-2" style="font-size: 0.68rem; letter-spacing: 0.8px;">Navigation</div>
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-1">
+          <li>
+            <a href="index.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-house-door"></i></span>
+              <span class="mob-nav-text">Home</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="shop.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-grid"></i></span>
+              <span class="mob-nav-text">Full Catalog (150+ SKUs)</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="beakers.html" class="mob-nav-item active">
+              <span class="mob-nav-icon"><i class="bi bi-shield-check"></i></span>
+              <span class="mob-nav-text">Beaker Bongs</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="bongs.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-droplet-half"></i></span>
+              <span class="mob-nav-text">Straight Tube Bongs</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="pipes.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-fire"></i></span>
+              <span class="mob-nav-text">Hand Pipes & Chillums</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="accessories.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-gem"></i></span>
+              <span class="mob-nav-text">Glass Accessories</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-envelope"></i></span>
+              <span class="mob-nav-text">Contact / OEM Custom</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-auto border-top pt-3">
+        <button class="btn btn-outline-dark w-100 py-2 d-flex align-items-center justify-content-center gap-2 mb-2 rounded-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+          <i class="bi bi-person-circle text-warning"></i>
+          <span class="fw-bold small">B2B Partner Portal Login</span>
+        </button>
+        <div class="d-flex align-items-center justify-content-between text-muted small px-1 pt-1">
+          <span><i class="bi bi-telephone text-warning me-1"></i> (800) 420-BONG</span>
+          <span class="badge bg-success bg-opacity-10 text-success">Verified B2B</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER & DISCOUNT TICKER MARQUEE STRIP -->
+  <div class="offer-ticker-wrapper">
+    <div class="offer-ticker-track">
+      <span class="offer-ticker-item"><i class="bi bi-tag-fill ticker-icon"></i> Use Code <span class="ticker-code">SMOKE10</span> for 10% OFF on Orders Above $100</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-truck ticker-icon"></i> Free Shipping Over $35 — Factory Direct Wholesale Pricing</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-lightning-fill ticker-icon"></i> Use Code <span class="ticker-code">SMOKE20</span> for 20% OFF on Orders Above $500</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-gem ticker-icon"></i> Premium Borosilicate Glass — Lab-Grade Quality, Wholesale Prices</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-box-seam ticker-icon"></i> 24h Express Dispatch — Insured Air Freight Worldwide</span>
+      <span class="offer-ticker-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- FLIPKART STYLE PRODUCT DETAIL SHOWCASE -->
+  <section class="product-detail-section" style="padding-top: 160px; padding-bottom: 60px;">
+    <div class="container py-3 mt-2">
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a href="beakers.html" class="text-muted text-decoration-none">Catalog</a></li>
+          <li class="breadcrumb-item active text-dark fw-bold" id="crumbTitle" aria-current="page">Obsidian Beaker 14" Dual Percolator</li>
+        </ol>
+      </nav>
+
+      <div class="row g-5">
+        <!-- LEFT COLUMN: Sticky Gallery & Action Buttons (Flipkart Style) -->
+        <div class="col-lg-5">
+          <div class="sticky-top" style="top: 150px; z-index: 10;">
+            <!-- Gallery Wrapper -->
+            <div class="fk-gallery-wrapper mb-3">
+              <!-- Vertical Thumbnail Column -->
+              <div class="fk-thumb-column">
+                <img src="images/beaker_bong.png" class="fk-thumb-img active" onclick="switchMainImage(this.src)" alt="Thumb 1">
+                <img src="images/beaker_frosted.png" class="fk-thumb-img" onclick="switchMainImage(this.src)" alt="Thumb 2">
+                <img src="images/straight_bong.png" class="fk-thumb-img" onclick="switchMainImage(this.src)" alt="Thumb 3">
+                <img src="images/dab_rig.png" class="fk-thumb-img" onclick="switchMainImage(this.src)" alt="Thumb 4">
+              </div>
+
+              <!-- Main Large Image Frame -->
+              <div class="fk-main-img-box shadow-sm">
+                <span class="badge bg-danger text-white position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-bold fs-7">52% OFF</span>
+                <span class="badge-stock">In Stock</span>
+                <img id="fkMainImg" src="images/beaker_bong.png" alt="Main Product Preview">
+              </div>
+            </div>
+
+            <!-- Flipkart Action Buttons (ADD TO CART / BUY NOW) -->
+            <div class="fk-action-btns">
+              <button class="btn-fk-cart btn-add-cart">
+                <i class="bi bi-cart3 fs-5"></i> ADD TO CART
+              </button>
+              <button class="btn-fk-buy" onclick="window.location.href='checkout.html'">
+                <i class="bi bi-lightning-fill fs-5"></i> BUY NOW
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Details, Offers, Specs & Reviews -->
+        <div class="col-lg-7">
+          <span class="text-muted small text-uppercase fw-bold tracking-wider">BONG WHOLESALE B2B SUPPLY</span>
+          <h1 id="fkProductTitle" class="display-6 font-heading fw-bold text-dark mt-1 mb-2">Obsidian Beaker 14" Dual Percolator</h1>
+
+          <!-- Rating & Reviews Badge -->
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="fk-rating-badge">4.8 <i class="bi bi-star-fill small"></i></span>
+            <span class="text-muted small fw-semibold">1,240 Ratings & 186 Verified Wholesale Reviews</span>
+            <span class="badge bg-success bg-opacity-10 text-success fw-bold">Verified Direct Factory</span>
+          </div>
+
+          <!-- Price & Discounts Row -->
+          <div class="d-flex align-items-baseline gap-3 mb-3 bg-light p-3 rounded-3 border border-secondary border-opacity-10">
+            <span id="fkPriceUnit" class="display-5 font-heading fw-bold text-gradient-orange">$42.00</span>
+            <span id="fkPriceMsrp" class="text-muted text-decoration-line-through fs-5">$89.00</span>
+            <span id="fkDiscountTag" class="fk-offer-tag fs-5">52% off</span>
+            <span class="ms-auto moq-indicator">MOQ: 10 Units</span>
+          </div>
+
+          <!-- Available B2B Offers -->
+          <div class="mb-4">
+            <h6 class="font-heading fw-bold text-dark mb-3"><i class="bi bi-tag-fill text-warning me-2"></i> Available B2B Wholesale Offers</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+              <li class="d-flex align-items-start gap-2 text-muted small">
+                <i class="bi bi-patch-check-fill fk-offer-tag mt-1"></i>
+                <div><strong class="text-dark">Bank Offer:</strong> 5% Unlimited Cashback on Wire Transfer & ACH Payments.</div>
+              </li>
+              <li class="d-flex align-items-start gap-2 text-muted small">
+                <i class="bi bi-patch-check-fill fk-offer-tag mt-1"></i>
+                <div><strong class="text-dark">Volume Discount:</strong> Extra 15% Off when ordering full pallet packs (100+ units).</div>
+              </li>
+              <li class="d-flex align-items-start gap-2 text-muted small">
+                <i class="bi bi-patch-check-fill fk-offer-tag mt-1"></i>
+                <div><strong class="text-dark">Partner Perk:</strong> Free Custom OEM Laser Logo Printing on orders above 50 units.</div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Delivery & Pincode Checker -->
+          <div class="mb-4 pb-3 border-bottom border-secondary border-opacity-10">
+            <h6 class="font-heading fw-bold text-dark mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i> Freight & Delivery Estimation</h6>
+            <div class="fk-pincode-box mb-2">
+              <input type="text" id="pincodeInput" class="form-control form-control-sm border-secondary" placeholder="Enter Zip Code (e.g. 90210)">
+              <button class="btn btn-outline-dark btn-sm fw-bold px-3" onclick="checkDelivery()">Check</button>
+            </div>
+            <div id="deliveryMsg" class="small text-success fw-bold d-flex align-items-center gap-1">
+              <i class="bi bi-truck me-1"></i> Delivered by Tomorrow, 24h Express Freight Dispatch
+            </div>
+          </div>
+
+          <!-- Tier Quantity Selection Chips -->
+          <div class="mb-4">
+            <h6 class="font-heading fw-bold text-dark mb-2">Select Wholesale Quantity Tier</h6>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-warning btn-sm active fw-bold px-3 rounded-pill">10 Units Pack ($42/ea)</button>
+              <button class="btn btn-outline-secondary btn-sm fw-bold px-3 rounded-pill">25 Units Pack ($34/ea)</button>
+              <button class="btn btn-outline-secondary btn-sm fw-bold px-3 rounded-pill">100 Units Pallet ($25/ea)</button>
+            </div>
+          </div>
+
+          <!-- Product Highlights -->
+          <div class="mb-4">
+            <h6 class="font-heading fw-bold text-dark mb-3">Product Highlights</h6>
+            <div class="row g-2 text-muted small">
+              <div class="col-md-6"><i class="bi bi-check2-circle text-success me-2"></i> 7mm Heavy Wall Borosilicate Glass</div>
+              <div class="col-md-6"><i class="bi bi-check2-circle text-success me-2"></i> Double Annealed Stress Resistance</div>
+              <div class="col-md-6"><i class="bi bi-check2-circle text-success me-2"></i> 14mm Precision Ground Glass Joint</div>
+              <div class="col-md-6"><i class="bi bi-check2-circle text-success me-2"></i> 3-Prong Ice Catcher Pinch</div>
+            </div>
+          </div>
+
+          <!-- Flipkart Specification Table -->
+          <div class="mb-5">
+            <h6 class="font-heading fw-bold text-dark mb-3">Specifications</h6>
+            <table class="fk-spec-table border rounded-3 overflow-hidden">
+              <thead>
+                <tr>
+                  <th colspan="2">General & Structural Specs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fk-spec-key">Glass Type</td>
+                  <td class="fk-spec-val">Laboratory Grade Borosilicate 3.3</td>
+                </tr>
+                <tr>
+                  <td class="fk-spec-key">Wall Thickness</td>
+                  <td class="fk-spec-val">7.0 mm Heavy Wall</td>
+                </tr>
+                <tr>
+                  <td class="fk-spec-key">Joint Connection</td>
+                  <td class="fk-spec-val">14.4 mm Female Ground Joint</td>
+                </tr>
+                <tr>
+                  <td class="fk-spec-key">Percolation System</td>
+                  <td class="fk-spec-val">Slitted Removable Downstem + Ice Pinch Catcher</td>
+                </tr>
+                <tr>
+                  <td class="fk-spec-key">Country of Origin</td>
+                  <td class="fk-spec-val">Direct Factory Supply</td>
+                </tr>
+                <tr>
+                  <td class="fk-spec-key">Packaging Standard</td>
+                  <td class="fk-spec-val">Custom Cut High-Density Protective Foam Box</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Customer Ratings & Reviews Section -->
+          <div class="mb-4">
+            <h5 class="font-heading fw-bold text-dark mb-3">Ratings & Verified Partner Reviews</h5>
+            <div class="row align-items-center g-4 bg-light p-4 rounded-4 border border-secondary border-opacity-10 mb-4">
+              <div class="col-md-4 text-center border-end border-secondary border-opacity-25">
+                <div class="display-4 font-heading fw-bold text-dark">4.8 <i class="bi bi-star-fill text-warning fs-3"></i></div>
+                <div class="text-muted small">1,240 Ratings & 186 Reviews</div>
+              </div>
+              <div class="col-md-8">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="small text-muted w-40">5 ★</span>
+                  <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-success" style="width: 82%;"></div></div>
+                  <span class="small text-muted">82%</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="small text-muted w-40">4 ★</span>
+                  <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-success" style="width: 14%;"></div></div>
+                  <span class="small text-muted">14%</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="small text-muted w-40">3 ★</span>
+                  <div class="progress flex-grow-1" style="height: 6px;"><div class="progress-bar bg-warning" style="width: 4%;"></div></div>
+                  <span class="small text-muted">4%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Cards -->
+            <div class="d-flex flex-column gap-3">
+              <div class="p-3 bg-white rounded-3 border border-secondary border-opacity-10">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="fk-rating-badge fs-8">5 <i class="bi bi-star-fill"></i></span>
+                  <strong class="text-dark small">Apex Smoke Shop LLC — Verified Wholesale Partner</strong>
+                </div>
+                <p class="small text-muted mb-1">"Outstanding glass density and wall thickness. Sold through 25 units in 4 days. Unboxing was flawless with zero transit damage."</p>
+                <span class="text-muted" style="font-size: 0.75rem;">Reviewed 2 days ago</span>
+              </div>
+              <div class="p-3 bg-white rounded-3 border border-secondary border-opacity-10">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="fk-rating-badge fs-8">5 <i class="bi bi-star-fill"></i></span>
+                  <strong class="text-dark small">Pacific Dispensary Supply — Pallet Buyer</strong>
+                </div>
+                <p class="small text-muted mb-1">"Top quality factory direct pricing. Margin return per unit is insane compared to local distributors."</p>
+                <span class="text-muted" style="font-size: 0.75rem;">Reviewed 1 week ago</span>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <!-- RELATED PRODUCTS SECTION -->
+      <div class="mt-5 pt-5 border-top border-secondary border-opacity-10">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <div>
+            <span class="text-gradient-orange fw-bold text-uppercase small">Similar Recommendations</span>
+            <h3 class="font-heading fw-bold text-dark mt-1">Frequently Bought Together</h3>
+          </div>
+          <a href="shop.html" class="btn btn-outline-dark btn-sm rounded-pill fw-bold">View Full Catalog</a>
+        </div>
+
+        <div class="row g-4">
+          <!-- Related Product 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-wholesale-tier">Tier 2: Min 25x</span>
+                <span class="badge-stock">In Stock</span>
+                <img src="images/beaker_frosted.png" alt="Frosted Matrix Beaker">
+                <div class="product-quick-overlay">
+                  <button class="btn-quick-action" onclick="quickView('Frosted Matrix Beaker 16&quot;', '$48.50', 'images/beaker_frosted.png', '9mm Armor Glass', '18mm Heavy Joint', '106%')">
+                    <i class="bi bi-eye"></i> Quick Spec
+                  </button>
+                </div>
+              </div>
+              <div class="product-spec-row">
+                <span class="spec-badge">9mm Armor</span>
+                <span class="spec-badge">16" Height</span>
+                <span class="margin-badge"><i class="bi bi-arrow-up-right"></i> +106% Margin</span>
+              </div>
+              <h6 class="product-title">Frosted Ice Matrix Beaker 16" Heavy</h6>
+              <div class="product-price-wholesale">
+                <div>
+                  <span class="price-unit">$48.50</span>
+                  <span class="price-msrp ms-1">$99.99</span>
+                </div>
+                <span class="moq-indicator">MOQ: 25x</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <button class="btn btn-glow-orange flex-grow-1 btn-add-cart btn-sm">Add 25x</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Product 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-wholesale-tier">Tier 1: Min 10x</span>
+                <span class="badge-stock">In Stock</span>
+                <img src="images/straight_bong.png" alt="Straight Honeycomb Bong">
+                <div class="product-quick-overlay">
+                  <button class="btn-quick-action" onclick="quickView('Cobalt Honeycomb Straight Bong 16&quot;', '$45.00', 'images/straight_bong.png', '7mm Wall Glass', '18mm Ground Joint', '118%')">
+                    <i class="bi bi-eye"></i> Quick Spec
+                  </button>
+                </div>
+              </div>
+              <div class="product-spec-row">
+                <span class="spec-badge">7mm Wall</span>
+                <span class="spec-badge">16" Height</span>
+                <span class="margin-badge"><i class="bi bi-arrow-up-right"></i> +118% Margin</span>
+              </div>
+              <h6 class="product-title">Cobalt Honeycomb Straight Tube 16"</h6>
+              <div class="product-price-wholesale">
+                <div>
+                  <span class="price-unit">$45.00</span>
+                  <span class="price-msrp ms-1">$98.00</span>
+                </div>
+                <span class="moq-indicator">MOQ: 10x</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <button class="btn btn-glow-orange flex-grow-1 btn-add-cart btn-sm">Add 10x</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Product 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-wholesale-tier">Tier 1: Min 25x</span>
+                <span class="badge-stock">In Stock</span>
+                <img src="images/dichro_pipe.png" alt="Galaxy Dichro Spoon">
+                <div class="product-quick-overlay">
+                  <button class="btn-quick-action" onclick="quickView('Galaxy Dichroic Glass Spoon Pipe', '$12.50', 'images/dichro_pipe.png', 'Heavy Borosilicate', '4.5 inch Length', '150%')">
+                    <i class="bi bi-eye"></i> Quick Spec
+                  </button>
+                </div>
+              </div>
+              <div class="product-spec-row">
+                <span class="spec-badge">Hand-Blown</span>
+                <span class="spec-badge">4.5" Length</span>
+                <span class="margin-badge"><i class="bi bi-arrow-up-right"></i> +150% Margin</span>
+              </div>
+              <h6 class="product-title">Galaxy Dichroic Swirl Spoon Pipe 4.5"</h6>
+              <div class="product-price-wholesale">
+                <div>
+                  <span class="price-unit">$12.50</span>
+                  <span class="price-msrp ms-1">$31.25</span>
+                </div>
+                <span class="moq-indicator">MOQ: 25x</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <button class="btn btn-glow-orange flex-grow-1 btn-add-cart btn-sm">Add 25x</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Product 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="product-card">
+              <div class="product-img-wrapper">
+                <span class="badge-wholesale-tier">Tier 1: Min 25x</span>
+                <span class="badge-stock">In Stock</span>
+                <img src="images/accessories.png" alt="GE214 Quartz Banger">
+                <div class="product-quick-overlay">
+                  <button class="btn-quick-action" onclick="quickView('GE214 High-Purity Quartz Banger 14mm', '$6.50', 'images/accessories.png', '4mm Flat Top Quartz', '14mm Male 90 Degree', '160%')">
+                    <i class="bi bi-eye"></i> Quick Spec
+                  </button>
+                </div>
+              </div>
+              <div class="product-spec-row">
+                <span class="spec-badge">GE214 Quartz</span>
+                <span class="spec-badge">14mm Male</span>
+                <span class="margin-badge"><i class="bi bi-arrow-up-right"></i> +160% Margin</span>
+              </div>
+              <h6 class="product-title">GE214 Flat-Top Quartz Banger 14mm Male 90°</h6>
+              <div class="product-price-wholesale">
+                <div>
+                  <span class="price-unit">$6.50</span>
+                  <span class="price-msrp ms-1">$16.90</span>
+                </div>
+                <span class="moq-indicator">MOQ: 25x</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <button class="btn btn-glow-orange flex-grow-1 btn-add-cart btn-sm">Add 25x</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-glass">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <a class="navbar-brand navbar-brand-logo mb-3" href="index.html">
+            <img src="images/logo.png" alt="BongWholesale Logo" />
+          </a>
+          <p class="text-muted small">The premier B2B wholesale platform for high-end borosilicate glassware, beaker bongs, dab rigs, and smoking accessories.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="nav-icon-btn"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="nav-icon-btn"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="nav-icon-btn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-dark font-heading mb-3">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="shop.html" class="footer-link">Shop</a></li>
+            <li><a href="beakers.html" class="footer-link">Beaker Bongs</a></li>
+            <li><a href="pipes.html" class="footer-link">Hand Pipes</a></li>
+            <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Sales</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-dark font-heading mb-3">Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="refund.html" class="footer-link" style="color:#ef4444;font-weight:600;">Return &amp; Refund Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="text-dark font-heading mb-3">B2B Support Center</h6>
+          <p class="text-muted small"><i class="bi bi-geo-alt text-warning me-2"></i>790 Glassware Blvd, Suite 400, CA 90210</p>
+          <p class="text-muted small"><i class="bi bi-telephone text-warning me-2"></i>+1 (800) 555-BONG (2664)</p>
+          <p class="text-muted small"><i class="bi bi-envelope text-warning me-2"></i>wholesale@bong.ws</p>
+        </div>
+      </div>
+      <div class="border-top border-secondary border-opacity-25 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center text-muted small">
+        <div>&#169; 2026 BONG.WS Wholesale Inc. All Rights Reserved.</div>
+        <div class="d-flex gap-3 mt-3 mt-md-0">
+          <a href="privacy.html" class="text-muted text-decoration-none">Privacy Policy</a>
+          <a href="terms.html" class="text-muted text-decoration-none">Terms of Service</a>
+          <a href="refund.html" class="text-muted text-decoration-none">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Offcanvas Drawer -->
+  <div class="offcanvas offcanvas-end offcanvas-glass" tabindex="-1" id="cartOffcanvas" style="width: 400px; max-width: 90vw;">
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+      <h5 class="offcanvas-title font-heading text-dark d-flex align-items-center gap-2">
+        <i class="bi bi-bag-fill text-warning"></i> Wholesale Order Cart
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cartItemsList" class="flex-grow-1 overflow-auto">
+        <!-- Dynamically filled by main.js -->
+      </div>
+
+      <div class="border-top border-secondary border-opacity-25 pt-3 mt-3">
+        <div class="d-flex justify-content-between text-dark fw-bold mb-2">
+          <span>Subtotal (EXW):</span>
+          <span id="cartSubtotal" class="text-gradient-orange">$420.00</span>
+        </div>
+        <small class="text-muted d-block mb-3">Freight &amp; tax calculated at checkout.</small>
+        <a href="checkout.html" class="btn btn-glow-orange w-100 text-center">
+          <span>Proceed To B2B Checkout</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel p-3 bg-white">
+        <form onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if(q) { window.location.href='shop.html?search=' + encodeURIComponent(q); }">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-0 text-warning"><i class="bi bi-search fs-4"></i></span>
+            <input type="text" class="form-control bg-transparent border-0 text-dark fs-5"
+              placeholder="Search bongs, pipes, dab rigs..." autofocus>
+            <button type="submit" class="btn btn-outline-secondary border-0 text-dark" title="Search"><i class="bi bi-arrow-right"></i></button>
+            <button type="button" class="btn btn-outline-secondary border-0 text-dark" data-bs-dismiss="modal" aria-label="Close"><i
+                class="bi bi-x-lg"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel p-4 border-warning bg-white">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title font-heading text-dark">B2B Partner Portal Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-3">
+          <form onsubmit="event.preventDefault(); alert('Logged in to B2B Wholesale Portal!'); const m = bootstrap.Modal.getInstance(document.getElementById('loginModal')); if(m) m.hide();">
+            <div class="mb-3">
+              <label class="form-label text-muted small fw-semibold">Business Email</label>
+              <input type="email" class="form-control bg-light text-dark border-secondary"
+                placeholder="buyer@dispensary.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-muted small fw-semibold">Resale Password</label>
+              <input type="password" class="form-control bg-light text-dark border-secondary" placeholder="••••••••"
+                required>
+            </div>
+            <button type="submit" class="btn btn-glow-orange w-100 mt-2">Login To Wholesale Dashboard</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function switchMainImage(src) {
+      document.getElementById('fkMainImg').src = src;
+      document.querySelectorAll('.fk-thumb-img').forEach(img => {
+        img.classList.remove('active');
+        if (img.src === src) img.classList.add('active');
+      });
+    }
+
+    function checkDelivery() {
+      const pin = document.getElementById('pincodeInput').value;
+      const msg = document.getElementById('deliveryMsg');
+      if (pin && pin.trim().length >= 5) {
+        msg.innerHTML = '<i class="bi bi-check-circle-fill text-success me-1"></i> Delivery available to Zip Code ' + pin + '. Express 24h Freight Dispatch Ready.';
+      } else {
+        msg.innerHTML = '<span class="text-danger"><i class="bi bi-exclamation-circle me-1"></i> Please enter a valid 5-digit postal zip code.</span>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name');
+      const price = params.get('price');
+      const img = params.get('img');
+      const spec = params.get('spec');
+
+      if (name) {
+        document.title = name + ' | Wholesale Spec';
+        const titleEl = document.getElementById('fkProductTitle');
+        const crumbEl = document.getElementById('crumbTitle');
+        if (titleEl) titleEl.textContent = name;
+        if (crumbEl) crumbEl.textContent = name;
+      }
+      if (img) {
+        const fkMainImg = document.getElementById('fkMainImg');
+        if (fkMainImg) fkMainImg.src = img;
+        const thumbs = document.querySelectorAll('.fk-thumb-img');
+        if (thumbs.length > 0) thumbs[0].src = img;
+      }
+      if (price) {
+        const pUnit = document.getElementById('fkPriceUnit');
+        if (pUnit) pUnit.textContent = price;
+      }
+    });
+  </script>
+</body>
+</html>

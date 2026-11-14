@@ -1,0 +1,296 @@
+/* ==================================================
+   TIFFINWORLD — GLOBAL & UTILITY STYLES
+   ================================================== */
+
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--tw-text-grey);
+  background-color: var(--tw-off-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: var(--font-heading);
+  color: var(--tw-green);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Container & Fluid Padding */
+.tw-container {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .tw-container {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .tw-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .tw-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .tw-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Links */
+a {
+  color: var(--tw-green);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--tw-orange);
+}
+
+/* Heading Underline Utility */
+.tw-heading-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.tw-heading-underline::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--tw-orange);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Section Background & Vertical Spacing */
+.tw-section-bg {
+  background-color: var(--tw-section-bg);
+}
+
+.tw-section-white {
+  background-color: var(--tw-white);
+}
+
+.tw-section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .tw-section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+/* Buttons System */
+.btn-tw-green {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+  border: 1px solid var(--tw-green);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.btn-tw-green:hover {
+  background-color: var(--tw-green-hover);
+  border-color: var(--tw-green-hover);
+  color: var(--tw-white) !important;
+  transform: translateY(-1px);
+}
+
+.btn-tw-orange {
+  background-color: var(--tw-orange);
+  color: var(--tw-white) !important;
+  border: 1px solid var(--tw-orange);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.btn-tw-orange:hover {
+  background-color: var(--tw-orange-hover);
+  border-color: var(--tw-orange-hover);
+  color: var(--tw-white) !important;
+  transform: translateY(-1px);
+}
+
+.btn-tw-pale {
+  background-color: var(--tw-pale-green);
+  color: var(--tw-green) !important;
+  border: 1px solid var(--tw-pale-green);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.btn-tw-pale:hover {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+  border-color: var(--tw-green);
+}
+
+.btn-tw-outline-green {
+  background-color: transparent;
+  color: var(--tw-green) !important;
+  border: 1.5px solid var(--tw-green);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.btn-tw-outline-green:hover {
+  background-color: var(--tw-green);
+  color: var(--tw-white) !important;
+}
+
+/* Card System */
+.tw-card {
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  overflow: hidden;
+  height: 100%;
+}
+
+.tw-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Veg / Non-Veg Badges */
+.badge-veg {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border: 1.5px solid #2e7d32;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #2e7d32;
+  background-color: #f1f8e9;
+  letter-spacing: 0.5px;
+}
+
+.badge-veg::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2e7d32;
+}
+
+.badge-non-veg {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border: 1.5px solid #c62828;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #c62828;
+  background-color: #ffebee;
+  letter-spacing: 0.5px;
+}
+
+.badge-non-veg::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #c62828;
+}
+
+/* Form Inputs */
+.tw-input {
+  width: 100%;
+  height: 54px;
+  background-color: var(--tw-white);
+  border: 1px solid var(--tw-light-blue);
+  border-radius: var(--radius-pill);
+  padding: 0 24px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+
+.tw-input:focus {
+  border-color: var(--tw-orange);
+  box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.15);
+}
+
+.tw-input::placeholder {
+  color: var(--tw-grey);
+}

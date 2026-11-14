@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category Management — TiffinWorld Admin</title>
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom SaaS Dashboard CSS -->
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+
+  <style>
+    /* Button & Control Styles */
+    .btn-modern-import-export {
+      background-color: var(--tw-white);
+      color: var(--tw-heading-dark);
+      border: 1.5px solid var(--tw-card-border);
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 200ms ease;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .btn-modern-import-export i {
+      color: var(--tw-orange);
+      font-size: 16px;
+    }
+
+    .btn-modern-import-export:hover {
+      background-color: var(--tw-orange-soft);
+      border-color: var(--tw-orange);
+      color: var(--tw-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 127, 0, 0.15);
+    }
+
+    .btn-modern-add-cat {
+      background: linear-gradient(135deg, #FF7F00 0%, #E06F00 100%);
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 18px rgba(255, 127, 0, 0.28);
+      transition: all 200ms ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-modern-add-cat:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255, 127, 0, 0.38);
+    }
+
+    .btn-modern-apply {
+      background: linear-gradient(135deg, #FF7F00 0%, #E06F00 100%);
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 28px;
+      height: 44px;
+      box-shadow: 0 4px 14px rgba(255, 127, 0, 0.25);
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+
+    .cat-filter-card-modern {
+      background: var(--tw-white);
+      border: 1px solid var(--tw-light-blue-border);
+      border-radius: 20px;
+      padding: 18px 24px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 24px;
+    }
+
+    .cat-search-box-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    .cat-search-input-modern {
+      width: 100%;
+      height: 44px;
+      background-color: var(--tw-section-bg);
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0 20px 0 46px;
+      font-size: 14px;
+      color: var(--tw-heading-dark);
+      outline: none;
+      transition: all 200ms ease;
+    }
+
+    .cat-search-input-modern:focus {
+      background-color: var(--tw-white);
+      border-color: var(--tw-orange);
+      box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.15);
+    }
+
+    .cat-search-icon-orange {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--tw-orange);
+      font-size: 16px;
+    }
+
+    .btn-modern-filter {
+      background-color: var(--tw-white);
+      border: 1.5px solid var(--tw-card-border);
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--tw-heading-dark);
+      padding: 10px 20px;
+      height: 44px;
+    }
+
+    .btn-modern-cancel {
+      background-color: var(--tw-white);
+      color: var(--tw-text-grey);
+      border: 1.5px solid var(--tw-card-border);
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 24px;
+      height: 44px;
+    }
+
+    .modern-switcher-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background-color: var(--tw-section-bg);
+      border: 1px solid var(--tw-light-blue-border);
+      border-radius: 999px;
+      padding: 5px;
+    }
+
+    .modern-view-tab {
+      background: transparent;
+      border: none;
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--tw-text-grey);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+
+    .modern-view-tab.active {
+      background: linear-gradient(135deg, #FF7F00 0%, #E06F00 100%);
+      color: #FFFFFF !important;
+      box-shadow: var(--shadow-orange-btn);
+    }
+
+    /* List & Table View Shared Styles */
+    .saas-table-card-premium {
+      background: var(--tw-white);
+      border: 1px solid var(--tw-light-blue-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      margin-top: 18px;
+    }
+
+    .table-subfilter-bar {
+      padding: 18px 24px;
+      background-color: var(--tw-off-white);
+      border-bottom: 1px solid var(--tw-card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .saas-premium-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    .saas-premium-table th {
+      background-color: var(--tw-white);
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--tw-secondary-text);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--tw-card-border);
+    }
+
+    .saas-premium-table td {
+      padding: 18px 24px;
+      font-size: 14px;
+      color: var(--tw-heading-dark);
+      border-bottom: 1px solid var(--tw-section-bg);
+      vertical-align: middle;
+    }
+
+    .btn-action-edit {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background-color: var(--tw-section-bg);
+      border: 1px solid var(--tw-card-border);
+      color: var(--tw-heading-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .btn-action-delete {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background-color: #FEE2E2;
+      border: 1px solid #FCA5A5;
+      color: #DC2626;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .status-badge-active-pill {
+      background-color: #E8F3E5;
+      color: #2E6524;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .status-badge-inactive-pill {
+      background-color: #F3F4F6;
+      color: #6B7280;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    /* Analytics Section Styles */
+    #catViewAnalytics {
+      margin-top: 28px;
+    }
+
+    .analytics-stat-card-new {
+      background: var(--tw-white);
+      border: 1px solid var(--tw-light-blue-border);
+      border-radius: 20px;
+      padding: 24px 26px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .analytics-stat-card-new:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .analytics-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .analytics-icon-box-new {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .box-orange { background-color: #FFF4E6; color: #FF7F00; }
+    .box-blue { background-color: #EFF6FF; color: #2563EB; }
+    .box-green { background-color: #E8F3E5; color: #2E6524; }
+    .box-red { background-color: #FEE2E2; color: #DC2626; }
+
+    .analytics-pill-tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pill-tag-green { background-color: #E8F3E5; color: #2E6524; }
+    .pill-tag-blue { background-color: #EFF6FF; color: #1D4ED8; }
+    .pill-tag-red { background-color: #FEE2E2; color: #991B1B; }
+
+    .analytics-card-label {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--tw-secondary-text);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .analytics-card-val {
+      font-family: var(--font-heading);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--tw-heading-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .analytics-card-sub {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: #9CA3AF;
+      margin: 0;
+    }
+
+    .analytics-panel-box {
+      background: var(--tw-white);
+      border: 1px solid var(--tw-light-blue-border);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: var(--shadow-card);
+      height: 100%;
+    }
+
+    .health-bar-bg {
+      height: 8px;
+      border-radius: 999px;
+      background-color: #F3F4F6;
+      overflow: hidden;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+
+    .health-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #FF7F00, #E06F00);
+    }
+
+    /* --------------------------------------------------
+       EXACT SCREENSHOT ADD/EDIT CATEGORY MODAL STYLES
+       -------------------------------------------------- */
+    .cat-modal-dialog {
+      max-width: 680px;
+    }
+
+    .cat-modal-content {
+      border: 1px solid var(--tw-light-blue-border);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      background-color: #FFFFFF;
+    }
+
+    .cat-modal-header {
+      background-color: #EFF5FE;
+      padding: 28px 32px;
+      border-bottom: 1px solid #D6E4F9;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .cat-modal-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: #2D5822; /* Dark Green Heading */
+      margin: 0;
+    }
+
+    .cat-modal-subtitle {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      color: #6B7280;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .cat-modal-close-btn {
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      color: #4B5563;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+
+    .cat-modal-body {
+      padding: 32px;
+    }
+
+    .cat-modal-label {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 800;
+      color: #2D5822; /* Dark Green Label */
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .cat-modal-input, .cat-modal-select, .cat-modal-textarea {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1.5px solid #C7DCF8;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: #374151;
+      outline: none;
+      transition: all 180ms ease;
+    }
+
+    .cat-modal-input:focus, .cat-modal-select:focus, .cat-modal-textarea:focus {
+      border-color: #FF7F00;
+      box-shadow: 0 0 0 3px rgba(255, 127, 0, 0.15);
+    }
+
+    .cat-modal-slug-wrap {
+      position: relative;
+    }
+
+    .cat-modal-slug-icon {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6B7280;
+      font-size: 14px;
+    }
+
+    /* Modal Status Switch Row */
+    .cat-modal-status-row {
+      border-top: 1px solid #E5E7EB;
+      border-bottom: 1px solid #E5E7EB;
+      padding: 18px 0;
+      margin: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cat-modal-status-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+      margin: 0;
+    }
+
+    .cat-modal-status-sub {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .cat-modal-status-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-switch .form-check-input {
+      width: 46px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .form-switch .form-check-input:checked {
+      background-color: #2D5822;
+      border-color: #2D5822;
+    }
+
+    .cat-modal-last-modified {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: right;
+    }
+
+    .cat-modal-modified-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #9CA3AF;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .cat-modal-modified-val {
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .cat-modal-modified-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* Modal Footer Buttons */
+    .cat-modal-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .btn-cat-modal-close {
+      background: transparent;
+      border: none;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 13px;
+      color: #4B5563;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: color 150ms ease;
+    }
+
+    .btn-cat-modal-close:hover {
+      color: #111827;
+    }
+
+    .btn-cat-modal-save {
+      background-color: #2D5822; /* Dark Green */
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(45, 88, 34, 0.25);
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+
+    .btn-cat-modal-save:hover {
+      background-color: #1F4118;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(45, 88, 34, 0.35);
+    }
+
+    .cat-modal-info-footer {
+      background-color: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #64748B;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand-header">
+        <a href="index.html" class="sidebar-brand-link">
+          <img src="assets/images/logo.png" alt="TiffinWorld Logo" class="sidebar-brand-logo-img">
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-category">Main Menu</li>
+        
+        <li class="sidebar-menu-item">
+          <a href="dashboard.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-grid-1x2-fill sidebar-menu-icon"></i>
+              <span>Dashboard</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuAbout" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-info-circle-fill sidebar-menu-icon"></i>
+              <span>About Page</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuAbout">
+            <ul class="sidebar-submenu">
+              <li><a href="about-hero.html" class="sidebar-submenu-link">Hero Section</a></li>
+              <li><a href="about-values.html" class="sidebar-submenu-link">Our Value Section</a></li>
+              <li><a href="about-numbers.html" class="sidebar-submenu-link">About Number Section</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuOrders" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bag-check-fill sidebar-menu-icon"></i>
+              <span>Orders</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuOrders">
+            <ul class="sidebar-submenu">
+              <li><a href="orders-all.html" class="sidebar-submenu-link">All Orders</a></li>
+              <li><a href="orders-pending.html" class="sidebar-submenu-link">Pending Orders</a></li>
+              <li><a href="orders-completed.html" class="sidebar-submenu-link">Completed Orders</a></li>
+              <li><a href="orders-cancelled.html" class="sidebar-submenu-link">Cancelled Orders</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="seo.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-search-heart sidebar-menu-icon"></i>
+              <span>SEO</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="categories.html" class="sidebar-menu-link active">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-tags-fill sidebar-menu-icon"></i>
+              <span>Categorial Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="blogs.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+              <span>Blogs</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="media.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-images sidebar-menu-icon"></i>
+              <span>Meal Category Media</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="products.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shop sidebar-menu-icon"></i>
+              <span>Product Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="meal-options.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-card-checklist sidebar-menu-icon"></i>
+              <span>Meal Options</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">Finance & Intelligence</li>
+
+        <li class="sidebar-menu-item">
+          <a href="payments.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-credit-card-2-front-fill sidebar-menu-icon"></i>
+              <span>Payments</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="reports.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-bar-chart-line-fill sidebar-menu-icon"></i>
+              <span>Reports</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-category">User Operations</li>
+
+        <li class="sidebar-menu-item">
+          <a href="customers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-people-fill sidebar-menu-icon"></i>
+              <span>Customer Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="sellers.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-badge-fill sidebar-menu-icon"></i>
+              <span>Seller Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="inquiries.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-chat-left-dots-fill sidebar-menu-icon"></i>
+              <span>Inquiries Management</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="social-links.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-share-fill sidebar-menu-icon"></i>
+              <span>Social Media Links</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="contacts.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-envelope-open-fill sidebar-menu-icon"></i>
+              <span>Contact Submission</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a class="sidebar-menu-link" data-bs-toggle="collapse" href="#menuProfileFeature" role="button" aria-expanded="false">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-person-lines-fill sidebar-menu-icon"></i>
+              <span>Profile Feature</span>
+            </div>
+            <i class="bi bi-chevron-down sidebar-chevron"></i>
+          </a>
+          <div class="collapse" id="menuProfileFeature">
+            <ul class="sidebar-submenu">
+              <li><a href="profile-features.html" class="sidebar-submenu-link">Profile Feature List</a></li>
+              <li><a href="profile-create.html" class="sidebar-submenu-link">Create New Profile</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="sidebar-menu-category">Settings & Platform</li>
+
+        <li class="sidebar-menu-item">
+          <a href="plans.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-award-fill sidebar-menu-icon"></i>
+              <span>Plans</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="terms.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-file-earmark-text-fill sidebar-menu-icon"></i>
+              <span>Terms</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="support.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-headset sidebar-menu-icon"></i>
+              <span>Help & Support</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="promo-codes.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-ticket-perforated-fill sidebar-menu-icon"></i>
+              <span>Promotional Codes</span>
+            </div>
+          </a>
+        </li>
+
+        <li class="sidebar-menu-item">
+          <a href="admin-users.html" class="sidebar-menu-link">
+            <div class="sidebar-menu-left">
+              <i class="bi bi-shield-lock-fill sidebar-menu-icon"></i>
+              <span>Admin User</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="admin-main-wrapper">
+      
+      <!-- STICKY HEADER -->
+      <header class="admin-header">
+        <div class="header-left">
+          <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle Navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <div class="header-breadcrumb">
+              <span>Catalog</span> <i class="bi bi-chevron-right"></i> <span class="text-dark fw-semibold">Categories</span>
+            </div>
+            <h1 class="header-page-title">Category Management</h1>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site">
+            <i class="bi bi-globe"></i> Visit Website
+          </a>
+
+          <div class="dropdown">
+            <button class="profile-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Admin Avatar" class="profile-avatar">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 mt-2">
+              <li><a class="dropdown-item py-2 fw-medium" href="admin-users.html"><i class="bi bi-person me-2 text-muted"></i> Profile Settings</a></li>
+              <li><a class="dropdown-item py-2 fw-medium" href="support.html"><i class="bi bi-question-circle me-2 text-muted"></i> Help & Support</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 fw-medium text-danger" href="admin-login.html"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT CANVAS -->
+      <main class="admin-content">
+        
+        <!-- PAGE TITLE ROW WITH ADD CATEGORY MODAL TRIGGER -->
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div>
+            <h2 class="font-heading fw-extrabold text-dark m-0" style="font-size: 26px;">Category Management</h2>
+            <div class="text-muted small mt-1">Organize and manage your product taxonomy hierarchy.</div>
+          </div>
+          
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn-modern-import-export" onclick="showToast('Importing categories dataset...', 'Import')">
+              <i class="bi bi-box-arrow-in-down"></i> Import
+            </button>
+
+            <button class="btn-modern-import-export" onclick="showToast('Exporting categories dataset...', 'Export')">
+              <i class="bi bi-box-arrow-up"></i> Export
+            </button>
+
+            <!-- TRIGGER BUTTON TO OPEN THE EXACT ADD/EDIT CATEGORY MODAL -->
+            <button class="btn-modern-add-cat" data-bs-toggle="modal" data-bs-target="#addEditCategoryModal">
+              <i class="bi bi-plus-lg"></i> Add Category
+            </button>
+          </div>
+        </div>
+
+        <!-- FILTER BAR -->
+        <div class="cat-filter-card-modern">
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-6">
+              <div class="cat-search-box-wrap">
+                <i class="bi bi-search cat-search-icon-orange"></i>
+                <input type="text" class="cat-search-input-modern" id="tableSearchInput" placeholder="Search executive database...">
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center justify-content-lg-end gap-2">
+              <button class="btn-modern-filter"><i class="bi bi-sliders"></i> Filters</button>
+              <button class="btn-modern-apply" onclick="showToast('Filters applied successfully', 'Filter Applied')">Apply</button>
+              <button class="btn-modern-cancel" onclick="showToast('Filters reset', 'Filter Reset')">Cancle</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW SWITCHER BAR -->
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="modern-switcher-bar">
+            <button class="modern-view-tab" id="btnViewList" onclick="switchCatView('list')">
+              <i class="bi bi-list-ul"></i> LIST
+            </button>
+            <button class="modern-view-tab active" id="btnViewTable" onclick="switchCatView('table')">
+              <i class="bi bi-table"></i> TABLE
+            </button>
+            <button class="modern-view-tab" id="btnViewAnalytics" onclick="switchCatView('analytics')">
+              <i class="bi bi-bar-chart-line"></i> ANALYTICS
+            </button>
+          </div>
+          <span class="text-muted small fw-medium">Showing 1-10 of 124 categories</span>
+        </div>
+
+        <!-- VIEW 1: LIST VIEW -->
+        <div id="catViewList" style="display: none;">
+          <div class="saas-table-card-premium p-4">
+            <div class="d-flex align-items-center justify-content-between py-3 border-bottom">
+              <div>
+                <strong class="text-dark fs-6 font-heading">Executive Furniture</strong>
+                <span class="status-badge-active-pill ms-2"><i class="bi bi-check-circle-fill"></i> ACTIVE</span>
+              </div>
+              <button class="btn btn-sm btn-saas-outline py-1 px-3" data-bs-toggle="modal" data-bs-target="#addEditCategoryModal"><i class="bi bi-pencil me-1"></i> Edit</button>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between py-3 border-bottom">
+              <div>
+                <strong class="text-dark fs-6 font-heading">Office Chairs</strong>
+                <span class="status-badge-active-pill ms-2"><i class="bi bi-check-circle-fill"></i> ACTIVE</span>
+              </div>
+              <button class="btn btn-sm btn-saas-outline py-1 px-3" data-bs-toggle="modal" data-bs-target="#addEditCategoryModal"><i class="bi bi-pencil me-1"></i> Edit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: TABLE VIEW -->
+        <div id="catViewTable">
+          <div class="saas-table-card-premium">
+            <div class="table-subfilter-bar">
+              <div class="d-flex gap-3">
+                <select class="form-select rounded-3 border-secondary-subtle" style="width: 170px;">
+                  <option selected>All Parents</option>
+                  <option>Furniture</option>
+                  <option>Electronics</option>
+                </select>
+                <select class="form-select rounded-3 border-secondary-subtle" style="width: 160px;">
+                  <option selected>Status: All</option>
+                  <option>Active</option>
+                  <option>Inactive</option>
+                </select>
+              </div>
+              <button class="btn btn-sm btn-saas-outline" onclick="showToast('Exporting data...', 'Export')">
+                <i class="bi bi-download me-1"></i> Export Data
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="saas-premium-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>PARENT</th>
+                    <th>ORDER</th>
+                    <th>STATUS</th>
+                    <th class="text-end">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-muted fw-semibold small">#CAT-001</td>
+                    <td><span class="cat-name-highlight">Executive Furniture</span></td>
+                    <td class="text-muted">—</td>
+                    <td><strong class="text-dark">1</strong></td>
+                    <td><span class="status-badge-active-pill"><i class="bi bi-check-circle-fill"></i> ACTIVE</span></td>
+                    <td class="text-end">
+                      <button class="btn-action-edit me-1" title="Edit" data-bs-toggle="modal" data-bs-target="#addEditCategoryModal"><i class="bi bi-pencil"></i></button>
+                      <button class="btn-action-delete" title="Delete" onclick="showToast('Deleted #CAT-001', 'Delete')"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-muted fw-semibold small">#CAT-002</td>
+                    <td><span class="cat-name-highlight">Office Chairs</span></td>
+                    <td>Furniture</td>
+                    <td><strong class="text-dark">2</strong></td>
+                    <td><span class="status-badge-active-pill"><i class="bi bi-check-circle-fill"></i> ACTIVE</span></td>
+                    <td class="text-end">
+                      <button class="btn-action-edit me-1" title="Edit" data-bs-toggle="modal" data-bs-target="#addEditCategoryModal"><i class="bi bi-pencil"></i></button>
+                      <button class="btn-action-delete" title="Delete" onclick="showToast('Deleted #CAT-002', 'Delete')"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 3: ANALYTICS VIEW -->
+        <div id="catViewAnalytics" style="display: none;">
+          <div class="row g-4 mb-4">
+            <div class="col-xl-3 col-md-6">
+              <div class="analytics-stat-card-new">
+                <div class="analytics-card-top">
+                  <div class="analytics-icon-box-new box-orange"><i class="bi bi-tags-fill"></i></div>
+                  <span class="analytics-pill-tag pill-tag-green"><i class="bi bi-arrow-up-right"></i> +12.4%</span>
+                </div>
+                <div>
+                  <div class="analytics-card-label">TOTAL CATEGORIES</div>
+                  <div class="analytics-card-val animate-counter" data-target="124">124</div>
+                  <p class="analytics-card-sub">Active taxonomy categories</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="analytics-stat-card-new">
+                <div class="analytics-card-top">
+                  <div class="analytics-icon-box-new box-blue"><i class="bi bi-diagram-3-fill"></i></div>
+                  <span class="analytics-pill-tag pill-tag-green"><i class="bi bi-arrow-up-right"></i> +8.1%</span>
+                </div>
+                <div>
+                  <div class="analytics-card-label">TOTAL SUBCATEGORIES</div>
+                  <div class="analytics-card-val animate-counter" data-target="118">118</div>
+                  <p class="analytics-card-sub">Nested child categories</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==================================================
+       EXACT SCREENSHOT ADD/EDIT CATEGORY MODAL FORM
+       ================================================== -->
+  <div class="modal fade" id="addEditCategoryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered cat-modal-dialog">
+      <div class="modal-content cat-modal-content">
+        
+        <!-- MODAL HEADER WITH LIGHT BLUE BANNER -->
+        <div class="cat-modal-header">
+          <div>
+            <h3 class="cat-modal-title">Add/Edit Category</h3>
+            <div class="cat-modal-subtitle">MODIFY ENVIRONMENTAL HIERARCHY PARAMETERS</div>
+          </div>
+          <button type="button" class="cat-modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- MODAL FORM BODY -->
+        <div class="cat-modal-body">
+          <form id="addEditCategoryForm" onsubmit="event.preventDefault(); showToast('Category saved successfully!', 'Saved'); bootstrap.Modal.getInstance(document.getElementById('addEditCategoryModal')).hide();">
+            
+            <!-- ROW 1: NAME & SLUG -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="cat-modal-label" for="catNameInput">NAME</label>
+                <input type="text" class="cat-modal-input" id="catNameInput" value="Old Growth Douglas Fir" placeholder="Category name...">
+              </div>
+
+              <div class="col-md-6">
+                <label class="cat-modal-label" for="catSlugInput">SLUG</label>
+                <div class="cat-modal-slug-wrap">
+                  <input type="text" class="cat-modal-input" id="catSlugInput" value="douglas-fir-v2" placeholder="category-slug">
+                  <i class="bi bi-link-45deg cat-modal-slug-icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- ROW 2: PARENT CATEGORY & DISPLAY ORDER -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="cat-modal-label" for="catParentSelect">PARENT CATEGORY</label>
+                <select class="cat-modal-select" id="catParentSelect">
+                  <option selected>Coniferous Forests</option>
+                  <option>Executive Furniture</option>
+                  <option>Office Chairs</option>
+                  <option>Electronics</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="cat-modal-label" for="catOrderInput">DISPLAY ORDER</label>
+                <input type="number" class="cat-modal-input" id="catOrderInput" value="12" placeholder="1">
+              </div>
+            </div>
+
+            <!-- ROW 3: DESCRIPTION -->
+            <div class="mb-3">
+              <label class="cat-modal-label" for="catDescriptionInput">DESCRIPTION</label>
+              <textarea class="cat-modal-textarea" id="catDescriptionInput" rows="4" placeholder="Enter category description...">This category encompasses mature coniferous ecosystems dominated by Pseudotsuga menziesii. Priority for conservation and biodiversity auditing.</textarea>
+            </div>
+
+            <!-- ROW 4: STATUS TOGGLE & LAST MODIFIED -->
+            <div class="cat-modal-status-row">
+              <div>
+                <div class="cat-modal-status-title">Category Status</div>
+                <div class="cat-modal-status-sub">Set visibility on public dashboards</div>
+              </div>
+
+              <div class="cat-modal-status-toggle">
+                <div class="form-check form-switch m-0">
+                  <input class="form-check-input" type="checkbox" role="switch" id="catStatusSwitch" checked>
+                </div>
+                <span class="fw-bold fs-7 text-success">ACTIVE</span>
+              </div>
+
+              <div class="cat-modal-last-modified">
+                <div>
+                  <div class="cat-modal-modified-label">LAST MODIFIED</div>
+                  <div class="cat-modal-modified-val">Oct 24, 2023 · 14:22</div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" class="cat-modal-modified-avatar" alt="Admin Avatar">
+              </div>
+            </div>
+
+            <!-- ACTION BUTTONS: CLOSE & SAVE CHANGES -->
+            <div class="cat-modal-actions">
+              <button type="button" class="btn-cat-modal-close" data-bs-dismiss="modal">CLOSE</button>
+              <button type="submit" class="btn-cat-modal-save">
+                <i class="bi bi-floppy"></i> SAVE CHANGES
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- MODAL FOOTER INFO BANNER -->
+        <div class="cat-modal-info-footer">
+          <i class="bi bi-info-circle text-primary"></i>
+          <span>Changes to slugs may impact existing API integrations and deep links.</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+  <script>
+    function switchCatView(viewName) {
+      document.getElementById('catViewList').style.display = 'none';
+      document.getElementById('catViewTable').style.display = 'none';
+      document.getElementById('catViewAnalytics').style.display = 'none';
+
+      document.getElementById('btnViewList').classList.remove('active');
+      document.getElementById('btnViewTable').classList.remove('active');
+      document.getElementById('btnViewAnalytics').classList.remove('active');
+
+      if (viewName === 'list') {
+        document.getElementById('catViewList').style.display = 'block';
+        document.getElementById('btnViewList').classList.add('active');
+      } else if (viewName === 'table') {
+        document.getElementById('catViewTable').style.display = 'block';
+        document.getElementById('btnViewTable').classList.add('active');
+      } else if (viewName === 'analytics') {
+        document.getElementById('catViewAnalytics').style.display = 'block';
+        document.getElementById('btnViewAnalytics').classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

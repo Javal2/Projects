@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — TiffinWorld</title>
+  <meta name="description" content="TiffinWorld Customer Dashboard">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- FIXED WHITE SIDEBAR (280px, EXACT 5 MENU ITEMS) -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div>
+        <div class="sidebar-header justify-content-between">
+          <a href="index.html" class="d-flex align-items-center gap-3">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px;">
+                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.46 3.9 3.45 4.38l-.95 7.62h2.5l.95-7.62C10.54 12.9 12 11.12 12 9V2h-1v7zm8.5-7h-1.5c-1.66 0-3 1.34-3 3v5c0 1.66 1.34 3 3 3v8h2V2z" />
+              </svg>
+            </div>
+            <span class="brand-title">TiffinWorld</span>
+          </a>
+          <button class="btn-close d-lg-none" id="sidebarClose" aria-label="Close"></button>
+        </div>
+
+        <div class="sidebar-menu">
+          <!-- Item 1: Dashboard -->
+          <a href="index.html" class="sidebar-nav-item active">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+
+          <!-- Item 2: Inquiries Sent -->
+          <a href="enquiries.html" class="sidebar-nav-item">
+            <i class="bi bi-chat-quote-fill"></i>
+            <span>Inquiries Sent</span>
+          </a>
+
+          <!-- Item 3: Profile -->
+          <a href="profile.html" class="sidebar-nav-item">
+            <i class="bi bi-person-fill"></i>
+            <span>Profile</span>
+          </a>
+
+          <!-- Item 4: Help -->
+          <a href="help.html" class="sidebar-nav-item">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Item 5: Logout (Bottom) -->
+      <div class="sidebar-footer">
+        <a href="../website/customer-login.html" class="sidebar-nav-item mb-0 text-tw-danger">
+          <i class="bi bi-box-arrow-right text-tw-danger"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="app-main">
+
+      <!-- HEADER NAVBAR (80px) -->
+      <header class="app-header">
+        <div class="d-flex align-items-center gap-2">
+          <button class="sidebar-toggler" id="sidebarToggler" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+          <h1 class="header-page-title">Dashboard</h1>
+        </div>
+
+        <div class="header-search">
+          <i class="bi bi-search"></i>
+          <input type="text" class="form-control" placeholder="Search meals, vendors, inquiries...">
+        </div>
+
+        <div class="header-actions">
+          <a href="../website/menu.html" class="btn-visit-menu">
+            <i class="bi bi-shop"></i> Visit Menu
+          </a>
+
+          <!-- Notification Bell -->
+          <button class="btn position-relative d-flex align-items-center justify-content-center" style="width:44px; height:44px; border-radius:50%; background:#F9FAFF; border:1.5px solid #EEF2F7; transition:all 0.2s ease;" onmouseover="this.style.background='#FFF3E6'; this.style.borderColor='#FF7F00'" onmouseout="this.style.background='#F9FAFF'; this.style.borderColor='#EEF2F7'" title="Notifications">
+            <i class="bi bi-bell" style="font-size:1.1rem; color:#6B7280;"></i>
+            <span class="position-absolute" style="top:8px; right:9px; width:8px; height:8px; background:#FF7F00; border-radius:50%; border:2px solid #fff;"></span>
+          </button>
+
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle d-flex align-items-center gap-2" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Avatar" class="header-avatar-ring">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-card p-2" style="width: 200px;">
+              <li><a class="dropdown-item py-2 px-3 rounded-btn text-tw-dark font-heading fs-6" href="profile.html"><i class="bi bi-person me-2 text-tw-orange"></i> Profile</a></li>
+              <li><a class="dropdown-item py-2 px-3 rounded-btn text-tw-dark font-heading fs-6" href="enquiries.html"><i class="bi bi-chat-text me-2 text-tw-orange"></i> Inquiries</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2 px-3 rounded-btn text-tw-danger font-heading fs-6" href="../website/customer-login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT -->
+      <main class="app-content">
+
+        <!-- WELCOME CARD -->
+        <div class="card-tw mb-4">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <span class="badge bg-tw-orange-light text-tw-orange px-3 py-2 rounded-pill font-heading mb-3 d-inline-flex align-items-center gap-2">
+                <i class="bi bi-sun-fill"></i> Good Morning, Alex!
+              </span>
+              <h2 class="fs-2 mb-2 font-heading">Welcome to TiffinWorld Customer Panel</h2>
+              <p class="text-tw-grey mb-4 fs-6">Manage your daily gourmet meal plans, inquire directly with certified home chefs, and track your active subscriptions.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="enquiries.html" class="btn btn-tw-primary">
+                  <i class="bi bi-chat-plus me-1"></i> Send New Inquiry
+                </a>
+                <a href="profile.html" class="btn btn-tw-secondary">
+                  <i class="bi bi-person me-1"></i> View Profile
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block text-center text-lg-end">
+              <div class="position-relative d-inline-block">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="User Profile" class="rounded-circle shadow" style="width: 210px; height: 210px; object-fit: cover; border: 6px solid var(--tw-orange-light);">
+                <span class="position-absolute bottom-0 end-0 bg-tw-orange text-white rounded-circle shadow d-flex align-items-center justify-content-center" style="width: 46px; height: 46px; font-size: 1.25rem;" title="Gold Member" data-bs-toggle="tooltip">
+                  <i class="bi bi-patch-check-fill"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATISTICS CARDS (INQUIRIES METRICS) -->
+        <div class="row g-4 mb-4">
+          <!-- Stat 1: Inquiries Sent -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card-tw">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="stat-icon-tw">
+                  <i class="bi bi-chat-square-quote-fill"></i>
+                </div>
+                <span class="badge badge-status-orange">Total</span>
+              </div>
+              <div class="stat-num-tw">12</div>
+              <span class="text-tw-grey fs-6">Inquiries Sent</span>
+            </div>
+          </div>
+
+          <!-- Stat 2: Active -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card-tw">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="stat-icon-tw" style="background-color: #E6F0FF; color: #1E6091;">
+                  <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <span class="badge badge-status-blue">Active</span>
+              </div>
+              <div class="stat-num-tw">4</div>
+              <span class="text-tw-grey fs-6">Active Inquiries</span>
+            </div>
+          </div>
+
+          <!-- Stat 3: Pending -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card-tw">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="stat-icon-tw">
+                  <i class="bi bi-hourglass-split"></i>
+                </div>
+                <span class="badge badge-status-orange">Pending</span>
+              </div>
+              <div class="stat-num-tw">3</div>
+              <span class="text-tw-grey fs-6">Pending Responses</span>
+            </div>
+          </div>
+
+          <!-- Stat 4: Completed -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stat-card-tw">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="stat-icon-tw" style="background-color: var(--tw-success-bg); color: var(--tw-success-green);">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <span class="badge badge-status-green">Completed</span>
+              </div>
+              <div class="stat-num-tw">5</div>
+              <span class="text-tw-grey fs-6">Completed Inquiries</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECENT INQUIRIES TABLE & NEXT DELIVERY CARD -->
+        <div class="row g-4 mb-4">
+          <!-- Recent Inquiries Table -->
+          <div class="col-lg-8">
+            <div class="table-container-tw h-100">
+              <div class="p-4 bg-white border-bottom d-flex align-items-center justify-content-between">
+                <h5 class="font-heading mb-0 fs-5">Recent Inquiries Sent</h5>
+                <a href="enquiries.html" class="text-tw-orange font-heading fs-6">View All <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+              <table class="table table-tw align-middle">
+                <thead>
+                  <tr>
+                    <th>Ref ID</th>
+                    <th>Vendor</th>
+                    <th>Requested Service</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="cursor: pointer;" onclick="window.location.href='enquiry-details.html'" title="Click to view inquiry thread" data-bs-toggle="tooltip">
+                    <td><strong class="text-tw-orange">#ENQ-4029</strong></td>
+                    <td>Royal Kitchens</td>
+                    <td>Custom Corporate Lunch Box</td>
+                    <td>28 Jul 2026</td>
+                    <td><span class="badge badge-status-blue">Active</span></td>
+                  </tr>
+                  <tr style="cursor: pointer;" onclick="window.location.href='enquiry-details.html'" title="Click to view inquiry thread" data-bs-toggle="tooltip">
+                    <td><strong class="text-tw-orange">#ENQ-3982</strong></td>
+                    <td>Mom's Homemade Tiffin</td>
+                    <td>Weekend Family Buffet</td>
+                    <td>27 Jul 2026</td>
+                    <td><span class="badge badge-status-orange">Pending</span></td>
+                  </tr>
+                  <tr style="cursor: pointer;" onclick="window.location.href='enquiry-details.html'" title="Click to view inquiry thread" data-bs-toggle="tooltip">
+                    <td><strong class="text-tw-orange">#ENQ-3741</strong></td>
+                    <td>Green Leaf Organic</td>
+                    <td>Keto Meal Subscription</td>
+                    <td>20 Jul 2026</td>
+                    <td><span class="badge badge-status-green">Completed</span></td>
+                  </tr>
+                  <tr style="cursor: pointer;" onclick="window.location.href='enquiry-details.html'" title="Click to view inquiry thread" data-bs-toggle="tooltip">
+                    <td><strong class="text-tw-orange">#ENQ-3510</strong></td>
+                    <td>South Spice Express</td>
+                    <td>Traditional Breakfast Tiffin</td>
+                    <td>12 Jul 2026</td>
+                    <td><span class="badge badge-status-grey">Rejected</span></td>
+                  </tr>
+                  <tr style="cursor: pointer;" onclick="window.location.href='enquiry-details.html'" title="Click to view inquiry thread" data-bs-toggle="tooltip">
+                    <td><strong class="text-tw-orange">#ENQ-3420</strong></td>
+                    <td>Annapurna Home Tiffin</td>
+                    <td>Monthly Veg Lunch Plan</td>
+                    <td>05 Jul 2026</td>
+                    <td><span class="badge badge-status-green">Completed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Profile Completion Card — Redesigned -->
+          <div class="col-lg-4">
+            <div class="card-tw h-100 p-0 overflow-hidden">
+
+              <!-- Gradient Header Banner -->
+              <div class="px-4 pt-4 pb-3" style="background: linear-gradient(135deg, #FF7F00 0%, #FFA347 100%);">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <div>
+                    <h5 class="font-heading mb-0 text-white fs-5 fw-700">Profile Setup</h5>
+                    <span class="text-white d-block" style="font-size:0.8rem; opacity:0.88;">Complete your profile to unlock all features</span>
+                  </div>
+                  <div class="text-center">
+                    <span class="font-heading text-white fw-bold" style="font-size:1.6rem; line-height:1;">75<span style="font-size:0.9rem;">%</span></span>
+                    <span class="d-block text-white" style="font-size:0.7rem; opacity:0.85;">Complete</span>
+                  </div>
+                </div>
+                <!-- Segmented Progress Strip -->
+                <div class="d-flex gap-1 mt-2">
+                  <div style="height:5px; border-radius:4px; background:rgba(255,255,255,0.95); flex:3;"></div>
+                  <div style="height:5px; border-radius:4px; background:rgba(255,255,255,0.4); flex:1;"></div>
+                </div>
+              </div>
+
+              <!-- Steps Body -->
+              <div class="px-4 py-3">
+                <span class="form-label-uppercase d-block mb-3" style="letter-spacing:0.06em;">Setup Checklist</span>
+
+                <div class="d-flex flex-column gap-2 mb-4">
+
+                  <!-- Completed Step -->
+                  <div class="d-flex align-items-center gap-3 p-3 rounded-btn" style="border:1.5px solid #E6F4E1; background:#F4FCF1;">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width:36px; height:36px; background:#3B692A;">
+                      <i class="bi bi-check2 text-white" style="font-size:1rem;"></i>
+                    </div>
+                    <div class="flex-grow-1 min-width-0">
+                      <h6 class="font-heading mb-0 fs-6" style="color:#1F2937;">Profile Photo</h6>
+                      <span class="d-block" style="font-size:0.76rem; color:#3B692A;">Uploaded & verified</span>
+                    </div>
+                    <span class="badge badge-status-green flex-shrink-0">Done</span>
+                  </div>
+
+                  <!-- Completed Step -->
+                  <div class="d-flex align-items-center gap-3 p-3 rounded-btn" style="border:1.5px solid #E6F4E1; background:#F4FCF1;">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width:36px; height:36px; background:#3B692A;">
+                      <i class="bi bi-check2 text-white" style="font-size:1rem;"></i>
+                    </div>
+                    <div class="flex-grow-1 min-width-0">
+                      <h6 class="font-heading mb-0 fs-6" style="color:#1F2937;">Delivery Address</h6>
+                      <span class="d-block" style="font-size:0.76rem; color:#3B692A;">Address saved</span>
+                    </div>
+                    <span class="badge badge-status-green flex-shrink-0">Done</span>
+                  </div>
+
+                  <!-- Pending Step -->
+                  <div class="d-flex align-items-center gap-3 p-3 rounded-btn" style="border:1.5px solid #FFE5C8; background:#FFF8F0;">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width:36px; height:36px; background:#FFF3E6; border:2px dashed #FF7F00;">
+                      <span class="font-heading text-tw-orange fw-bold" style="font-size:0.85rem;">3</span>
+                    </div>
+                    <div class="flex-grow-1 min-width-0">
+                      <h6 class="font-heading mb-0 fs-6" style="color:#1F2937;">Dietary Preferences</h6>
+                      <span class="d-block" style="font-size:0.76rem; color:#6B7280;">Veg / Jain / Spice level</span>
+                    </div>
+                    <span class="badge bg-tw-orange text-white flex-shrink-0">Pending</span>
+                  </div>
+
+                  <!-- Pending Step -->
+                  <div class="d-flex align-items-center gap-3 p-3 rounded-btn" style="border:1.5px solid #FFE5C8; background:#FFF8F0;">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width:36px; height:36px; background:#FFF3E6; border:2px dashed #FF7F00;">
+                      <span class="font-heading text-tw-orange fw-bold" style="font-size:0.85rem;">4</span>
+                    </div>
+                    <div class="flex-grow-1 min-width-0">
+                      <h6 class="font-heading mb-0 fs-6" style="color:#1F2937;">Secondary Contact</h6>
+                      <span class="d-block" style="font-size:0.76rem; color:#6B7280;">Alternate mobile number</span>
+                    </div>
+                    <span class="badge bg-tw-orange text-white flex-shrink-0">Pending</span>
+                  </div>
+
+                </div>
+
+                <a href="profile.html" class="btn btn-tw-primary w-100">
+                  <i class="bi bi-arrow-right-circle me-1"></i> Complete My Profile
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- MODERN FOOTER (72px) -->
+      <footer class="app-footer">
+        <div>
+          <span>© 2026 <strong>TiffinWorld</strong>. All rights reserved.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="help.html">Support</a>
+        </div>
+        <div>
+          <span class="text-tw-grey">Version 2.4 • Bootstrap 5.3 • Responsive</span>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

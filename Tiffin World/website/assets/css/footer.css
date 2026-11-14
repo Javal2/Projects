@@ -1,0 +1,184 @@
+/* ==================================================
+   TIFFINWORLD — FOOTER STYLES (PIXEL-ACCURATE)
+   ================================================== */
+.tw-footer {
+  background-color: var(--tw-off-white);
+  border-top: 1px solid var(--tw-light-blue);
+  padding-top: 65px;
+}
+
+.tw-footer-main {
+  padding-bottom: 50px;
+}
+
+.tw-footer-col-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--tw-green);
+  margin-bottom: 24px;
+}
+
+.tw-footer-brand-text {
+  font-family: var(--font-body);
+  color: var(--tw-text-grey);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-top: 18px;
+  max-width: 320px;
+}
+
+/* Footer Social Media Buttons */
+.tw-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tw-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--tw-pale-green);
+  color: var(--tw-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.tw-social-btn:hover {
+  background-color: var(--tw-orange);
+  color: var(--tw-white);
+  transform: translateY(-2px);
+}
+
+.tw-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tw-footer-links li {
+  margin-bottom: 12px;
+}
+
+.tw-footer-links a {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--tw-text-grey);
+  transition: color var(--transition-base);
+}
+
+.tw-footer-links a:hover {
+  color: var(--tw-green);
+}
+
+.tw-footer-links a.active-link {
+  color: var(--tw-orange);
+  font-weight: 500;
+}
+
+/* Footer Subscribe Box */
+.tw-subscribe-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--tw-text-grey);
+  margin-bottom: 16px;
+}
+
+.tw-subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.tw-subscribe-form input {
+  height: 52px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--tw-light-blue);
+  background-color: var(--tw-white);
+  padding: 0 20px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.tw-subscribe-form input:focus {
+  border-color: var(--tw-orange);
+}
+
+.tw-subscribe-form button {
+  height: 52px;
+  background-color: var(--tw-green);
+  color: var(--tw-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+}
+
+.tw-subscribe-form button:hover {
+  background-color: var(--tw-green-hover);
+}
+
+/* Footer Dark Bottom Bar */
+.tw-footer-bottom {
+  background-color: var(--tw-dark-footer);
+  min-height: 135px;
+  display: flex;
+  align-items: center;
+  color: var(--tw-dark-footer-text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.tw-footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tw-footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tw-footer-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--tw-dark-footer-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.tw-footer-icon-btn:hover {
+  background-color: var(--tw-orange);
+  color: var(--tw-white);
+}
+
+@media (max-width: 767.98px) {
+  .tw-footer-bottom {
+    min-height: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .tw-footer-bottom-inner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TiffinWorld — Authentic Homemade Tiffins Delivered</title>
+  <meta name="description"
+    content="Savor the authentic taste of home with TiffinWorld's curated marketplace of local tiffin vendors. Healthy, fresh, home-cooked food delivered to your doorstep.">
+
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Custom TiffinWorld Design System CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+
+<body>
+
+  <!-- ==================================================
+       SECTION 01 — HEADER
+       ================================================== -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png"
+              alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link active">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="customer-login.html" class="tw-customer-login">Customer Login</a>
+            <a href="vendor-login.html" class="tw-vendor-btn">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav"
+            aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo"
+          style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================================================
+         SECTION 01 — HERO
+         ================================================== -->
+    <section class="tw-hero-section">
+      <!-- Glowing Background Blobs -->
+      <div class="tw-hero-bg-glow-green" aria-hidden="true"></div>
+      <div class="tw-hero-bg-glow-orange" aria-hidden="true"></div>
+
+      <!-- Subtle Decorative Orbit Circle -->
+      <div class="hero-orbit" aria-hidden="true"></div>
+
+
+      <!-- ================================================
+           TIFFIN-THEMED ANIMATED BACKGROUND ICON LAYER
+         SECTION 01 — HERO (TIFFINWORLD REFERENCE LAYOUT)
+         ================================================== -->
+      <section class="tw-hero-section-new">
+        <!-- Background Ambient Glow -->
+        <div class="tw-hero-ambient-glow" aria-hidden="true"></div>
+
+        <!-- Vegetable Background SVG Icons -->
+        <div class="tw-tiffin-bg-icons" aria-hidden="true">
+          <div class="tw-bg-icon tw-bg-icon-1"><svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="36" r="22" stroke="#3B692A" stroke-width="2.5" fill="none" />
+              <path d="M32 14c-2 4-6 6-10 4 2 4 6 4 10 4s8 0 10-4c-4 2-8 0-10-4z" fill="#3B692A" />
+              <path d="M32 14v-6" stroke="#3B692A" stroke-width="2.5" stroke-linecap="round" />
+            </svg></div>
+          <div class="tw-bg-icon tw-bg-icon-2"><svg viewBox="0 0 64 64" fill="none">
+              <path d="M48 16L18 52c-2 2-5 2-7 0s-2-5 0-7L41 9c2-2 5-2 7 0s2 5 0 7z" stroke="#FF7900" stroke-width="2.5"
+                fill="none" />
+              <path d="M44 12l8-6M48 16l8-2M42 8l4-6" stroke="#3B692A" stroke-width="2" stroke-linecap="round" />
+            </svg></div>
+          <div class="tw-bg-icon tw-bg-icon-3"><svg viewBox="0 0 64 64" fill="none">
+              <path d="M48 16C54 26 52 40 40 48S16 54 16 48c-6-10-4-24 8-32s24-8 24 0z" stroke="#FF7900"
+                stroke-width="2.5" fill="none" />
+              <path d="M16 48l-4 4M48 16l4-4" stroke="#3B692A" stroke-width="2" stroke-linecap="round" />
+            </svg></div>
+          <div class="tw-bg-icon tw-bg-icon-4"><svg viewBox="0 0 64 64" fill="none">
+              <path d="M52 12C32 12 12 32 12 52c20 0 40-20 40-40z" stroke="#3B692A" stroke-width="2.5" fill="none" />
+              <path d="M12 52L52 12M32 32l-10 6M42 22l-6 10" stroke="#3B692A" stroke-width="1.8"
+                stroke-linecap="round" />
+            </svg></div>
+          <div class="tw-bg-icon tw-bg-icon-5"><svg viewBox="0 0 64 64" fill="none">
+              <path d="M46 14c-8 0-22 10-26 22-4 12 0 20 6 20 8 0 22-18 24-34 0-4-2-8-4-8z" stroke="#FF7900"
+                stroke-width="2.5" fill="none" />
+              <path d="M46 14c2-4 6-6 10-6" stroke="#3B692A" stroke-width="2.5" stroke-linecap="round" />
+            </svg></div>
+          <div class="tw-bg-icon tw-bg-icon-6"><svg viewBox="0 0 64 64" fill="none">
+              <path d="M28 40v16h8V40" stroke="#3B692A" stroke-width="2.5" />
+              <circle cx="22" cy="28" r="12" stroke="#3B692A" stroke-width="2" fill="none" />
+              <circle cx="42" cy="28" r="12" stroke="#3B692A" stroke-width="2" fill="none" />
+              <circle cx="32" cy="20" r="14" stroke="#3B692A" stroke-width="2" fill="none" />
+            </svg></div>
+          <div class="tw-bg-icon tw-bg-icon-7"><svg viewBox="0 0 64 64" fill="none">
+              <path d="M18 24c-4 0-6 4-6 10 0 14 6 22 20 22s20-8 20-22c0-6-2-10-6-10-4 0-8 4-14 4s-10-4-14-4z"
+                stroke="#3B692A" stroke-width="2.5" fill="none" />
+              <path d="M32 24V14c0-2 2-4 4-4" stroke="#3B692A" stroke-width="2.5" stroke-linecap="round" />
+            </svg></div>
+          <div class="tw-bg-icon tw-bg-icon-8"><svg viewBox="0 0 64 64" fill="none">
+              <path d="M32 12c-4 8-16 14-16 28 0 10 7 16 16 16s16-6 16-16c0-14-12-20-16-28z" stroke="#3B692A"
+                stroke-width="2.5" fill="none" />
+              <path d="M32 12v40M22 24c4 8 4 18 0 24M42 24c-4 8-4 18 0 24" stroke="#3B692A" stroke-width="1.5" />
+              <path d="M32 12V6" stroke="#FF7900" stroke-width="2" stroke-linecap="round" />
+            </svg></div>
+        </div>
+
+        <div class="container-fluid tw-hero-container">
+          <div class="row align-items-center g-4 g-lg-5 tw-hero-main-row">
+
+            <!-- LEFT COLUMN: Content & Search -->
+            <div class="col-lg-5 col-xl-5 tw-hero-left-col">
+              <div class="tw-hero-left-content">
+
+                <!-- Eyebrow Pill -->
+                <div class="tw-hero-eyebrow-pill mb-3">
+                  <i class="bi bi-patch-check-fill text-success me-2"></i>
+                  <span>GOOD FOOD. JUST LIKE HOME.</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="tw-hero-heading-editorial mb-3">
+                  <span class="tw-word-green">Fresh Homemade</span><br>
+                  <span class="tw-word-orange">Tiffins,</span>
+                  <span class="tw-word-green">Delivered.</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="tw-hero-subdescription mb-4">
+                  Discover fresh homemade meals from trusted local tiffin kitchens, prepared with care and delivered
+                  right to your doorstep.
+                </p>
+
+                <!-- Search Bar Form -->
+                <form class="tw-hero-search-wrapper mb-3" action="menu.html" method="GET">
+                  <div class="tw-hero-search-bar">
+                    <i class="bi bi-search tw-search-icon-left"></i>
+                    <input type="text" class="tw-search-input" placeholder="Choose Your Tiffin" name="search"
+                      aria-label="Choose Your Tiffin">
+                    <button type="submit" class="tw-search-submit-btn" aria-label="Search">
+                      <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+                </form>
+
+                <!-- Trust Line -->
+                <div class="tw-hero-trust-line mb-4">
+                  <i class="bi bi-check-circle-fill text-success me-1.5"></i>
+                  <span>Fresh meals</span>
+                  <span class="tw-dot-separator">•</span>
+                  <span>Local kitchens</span>
+                  <span class="tw-dot-separator">•</span>
+                  <span>Made with care</span>
+                </div>
+
+                <!-- 3-Benefit Feature Strip (Below Left Content) -->
+                <div class="tw-hero-benefit-strip">
+                  <div class="tw-benefit-item">
+                    <div class="tw-benefit-icon-bg bg-green-light">
+                      <i class="bi bi-leaf-fill text-success"></i>
+                    </div>
+                    <div class="tw-benefit-text">
+                      <h4 class="tw-benefit-title">Fresh Meals</h4>
+                      <p class="tw-benefit-sub">Prepared Daily</p>
+                    </div>
+                  </div>
+                  <div class="tw-benefit-divider"></div>
+                  <div class="tw-benefit-item">
+                    <div class="tw-benefit-icon-bg bg-orange-light">
+                      <i class="bi bi-heart-fill text-orange"></i>
+                    </div>
+                    <div class="tw-benefit-text">
+                      <h4 class="tw-benefit-title">Homemade</h4>
+                      <p class="tw-benefit-sub">Made with Care</p>
+                    </div>
+                  </div>
+                  <div class="tw-benefit-divider"></div>
+                  <div class="tw-benefit-item">
+                    <div class="tw-benefit-icon-bg bg-green-light">
+                      <i class="bi bi-shield-check text-success"></i>
+                    </div>
+                    <div class="tw-benefit-text">
+                      <h4 class="tw-benefit-title">Trusted Kitchens</h4>
+                      <p class="tw-benefit-sub">Quality First</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- /.tw-hero-left-content -->
+            </div><!-- /.col-lg-5 -->
+
+            <!-- RIGHT COLUMN: Large Tiffin Visual Composition -->
+            <div class="col-lg-7 col-xl-7 tw-hero-right-col">
+              <div class="tw-hero-food-visual">
+
+                <!-- Floating On-Time Delivery Badge -->
+                <div class="tw-delivery-badge-floating">
+                  <div class="tw-badge-inner">
+                    <i class="bi bi-clock-history badge-icon"></i>
+                    <span class="badge-line-1">ON-TIME</span>
+                    <span class="badge-line-2">DELIVERY</span>
+                  </div>
+                </div>
+
+                <!-- Main Realistic Indian Tiffin Food Image -->
+                <img src="assets/images/tiffin_hero_meal.png" alt="Authentic Homemade Indian Tiffin Meal"
+                  class="tw-hero-food-img" loading="eager">
+
+              </div><!-- /.tw-hero-food-visual -->
+            </div><!-- /.col-lg-7 -->
+
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+
+        <!-- Bottom Hero Wave Transition -->
+        <div class="tw-hero-bottom-wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+            <path
+              d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,480,120,360,120C240,120,120,120,60,120L0,120Z"
+              fill="#F1F4F9"></path>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- ==================================================
+         SECTION 02 — POPULAR TIFFIN OPTIONS
+         ================================================== -->
+      <section class="tw-section-bg tw-section-padding">
+        <div class="tw-container">
+          <!-- Heading Row -->
+          <div class="d-flex align-items-end justify-content-between mb-5">
+            <div>
+              <h2 class="tw-heading-underline mb-0">Popular Tiffin Options</h2>
+            </div>
+            <div>
+              <a href="menu.html" class="fw-semibold text-success d-inline-flex align-items-center gap-1">
+                View All Menu <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3 Popular Cards -->
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="tw-card">
+                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=800&auto=format&fit=crop"
+                  alt="Heritage Gujarati Thali" class="tw-card-food-img">
+                <div class="tw-tiffin-card-body">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <h3 class="tw-card-title mb-0">Heritage Gujarati Thali</h3>
+                    <span class="badge-veg">VEG</span>
+                  </div>
+                  <p class="tw-card-desc">
+                    Authentic Kathiyawadi dal, 4 Phulka rotis, seasonal Subzi, Steamed Rice & sweet Dish cooked daily.
+                  </p>
+                  <div class="tw-card-footer-row">
+                    <div class="tw-price-tag">₹150 <span>per meal</span></div>
+                    <button class="btn-tw-green btn-sm px-4 tw-inquiry-btn" data-meal="Heritage Gujarati Thali"
+                      data-vendor="Anita's Kitchen"
+                      data-image="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=800&auto=format&fit=crop"
+                      data-location="Downtown Conservatory Hub, District 4">Inquiry Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="tw-card">
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800&auto=format&fit=crop"
+                  alt="Royal Punjabi Feast" class="tw-card-food-img">
+                <div class="tw-tiffin-card-body">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <h3 class="tw-card-title mb-0">Royal Punjabi Feast</h3>
+                    <span class="badge-non-veg">NON-VEG</span>
+                  </div>
+                  <p class="tw-card-desc">
+                    Rich Butter Chicken, Dal Makhani, 3 Butter Parathas & Jeera Rice made with pure home spices.
+                  </p>
+                  <div class="tw-card-footer-row">
+                    <div class="tw-price-tag">₹180 <span>per meal</span></div>
+                    <button class="btn-tw-green btn-sm px-4 tw-inquiry-btn" data-meal="Royal Punjabi Feast"
+                      data-vendor="Jay's Kitchen"
+                      data-image="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800&auto=format&fit=crop"
+                      data-location="Green Valley, North District">Inquiry Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="tw-card">
+                <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=800&auto=format&fit=crop"
+                  alt="Smoky Paneer Tikka" class="tw-card-food-img">
+                <div class="tw-tiffin-card-body">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <h3 class="tw-card-title mb-0">Smoky Paneer Tikka</h3>
+                    <span class="badge-veg">VEG</span>
+                  </div>
+                  <p class="tw-card-desc">
+                    Marinated cottage cheese cooked in clay oven served with Mint Chutney, Laccha Paratha & Pulao.
+                  </p>
+                  <div class="tw-card-footer-row">
+                    <div class="tw-price-tag">₹220 <span>per meal</span></div>
+                    <button class="btn-tw-green btn-sm px-4 tw-inquiry-btn" data-meal="Smoky Paneer Tikka"
+                      data-vendor="Royal Spices"
+                      data-image="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=800&auto=format&fit=crop"
+                      data-location="Central Hub, District 2">Inquiry Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+         SECTION 03 — THE JOURNEY TO YOUR DOORSTEP
+         ================================================== -->
+      <section class="tw-section-white tw-section-padding">
+        <div class="tw-container">
+          <div class="text-center mb-5">
+            <h2>The Journey To Your Doorstep</h2>
+          </div>
+
+          <div class="row g-4">
+            <!-- Step 1 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-step-card">
+                <div class="tw-step-icon-holder">
+                  <i class="bi bi-[#FF7F00] bi-cup-hot"></i>
+                </div>
+                <h3 class="tw-step-title">Browse Meals</h3>
+                <p class="tw-step-desc">Explore a diverse range of home-cooked cuisines.</p>
+                <div class="tw-step-arrow"><i class="bi bi-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-step-card">
+                <div class="tw-step-icon-holder">
+                  <i class="bi bi-funnel"></i>
+                </div>
+                <h3 class="tw-step-title">Filter & Find</h3>
+                <p class="tw-step-desc">Sort by location, diet, or specific vendor ratings.</p>
+                <div class="tw-step-arrow"><i class="bi bi-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-step-card">
+                <div class="tw-step-icon-holder">
+                  <i class="bi bi-chat-dots"></i>
+                </div>
+                <h3 class="tw-step-title">Place Inquiry</h3>
+                <p class="tw-step-desc">Connect directly with vendors for your meal plans.</p>
+                <div class="tw-step-arrow"><i class="bi bi-chevron-right"></i></div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-step-card">
+                <div class="tw-step-icon-holder">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+                <h3 class="tw-step-title">Get Connected</h3>
+                <p class="tw-step-desc">Receive your hot tiffin at your preferred time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+         SECTION 04 — TOP-RATED KITCHENS
+         ================================================== -->
+      <section class="tw-section-bg tw-section-padding">
+        <div class="tw-container">
+          <div class="text-center mb-5">
+            <h2>Top-Rated Kitchens</h2>
+            <p class="text-secondary mt-1">Authentic chefs curated for quality and hygiene</p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Vendor 1 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-card tw-vendor-card">
+                <div class="tw-avatar-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=400&auto=format&fit=crop"
+                    alt="Anita's Kitchen" class="tw-chef-avatar">
+                  <span class="tw-online-dot" title="Available Now"></span>
+                </div>
+                <h3 class="tw-vendor-name">Anita's Kitchen</h3>
+                <p class="tw-vendor-category">Home-Style Veg Specialist</p>
+                <div class="tw-rating-badge"><i class="bi bi-star-fill"></i> 4.9 (128 reviews)</div>
+                <a href="vendor-profile.html" class="btn-tw-pale">View Profile</a>
+              </div>
+            </div>
+
+            <!-- Vendor 2 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-card tw-vendor-card">
+                <div class="tw-avatar-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=400&auto=format&fit=crop"
+                    alt="Rajesh's Spice" class="tw-chef-avatar">
+                  <span class="tw-online-dot"></span>
+                </div>
+                <h3 class="tw-vendor-name">Rajesh's Spice</h3>
+                <p class="tw-vendor-category">Punjabi Thali Expert</p>
+                <div class="tw-rating-badge"><i class="bi bi-star-fill"></i> 4.8 (95 reviews)</div>
+                <a href="vendor-profile.html" class="btn-tw-pale">View Profile</a>
+              </div>
+            </div>
+
+            <!-- Vendor 3 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-card tw-vendor-card">
+                <div class="tw-avatar-wrapper">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
+                    alt="South Flavour" class="tw-chef-avatar">
+                  <span class="tw-online-dot"></span>
+                </div>
+                <h3 class="tw-vendor-name">South Flavour</h3>
+                <p class="tw-vendor-category">South Indian Cuisine</p>
+                <div class="tw-rating-badge"><i class="bi bi-star-fill"></i> 5.0 (210 reviews)</div>
+                <a href="vendor-profile.html" class="btn-tw-pale">View Profile</a>
+              </div>
+            </div>
+
+            <!-- Vendor 4 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="tw-card tw-vendor-card">
+                <div class="tw-avatar-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+                    alt="The Healthy Plate" class="tw-chef-avatar">
+                  <span class="tw-online-dot"></span>
+                </div>
+                <h3 class="tw-vendor-name">The Healthy Plate</h3>
+                <p class="tw-vendor-category">Diet & Keto Meals</p>
+                <div class="tw-rating-badge"><i class="bi bi-star-fill"></i> 4.7 (88 reviews)</div>
+                <a href="vendor-profile.html" class="btn-tw-pale">View Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+         SECTION 05 — TESTIMONIALS
+         ================================================== -->
+      <section class="tw-section-white tw-section-padding">
+        <div class="tw-container">
+          <div class="text-center mb-5">
+            <div class="tw-eyebrow">TESTIMONIALS</div>
+            <h2>What Our Customers Say</h2>
+            <p class="text-secondary max-w-600 mx-auto mt-2" style="max-width: 600px;">
+              Join thousands of happy customers who enjoy healthy, home-cooked meals every day through TiffinWorld.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="tw-card tw-testimonial-card">
+                <div class="tw-stars-row">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="tw-testimonial-quote">
+                  "TiffinWorld made living in Mumbai so much easier. The Gujarati thali from Anita's Kitchen feels
+                  exactly
+                  like the food my mom makes at home."
+                </p>
+                <div class="tw-testimonial-author">Priya Sharma</div>
+                <div class="tw-testimonial-role">Software Engineer · Mumbai</div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="tw-card tw-testimonial-card">
+                <div class="tw-stars-row">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="tw-testimonial-quote">
+                  "As a university student in Pune, ordering out daily was ruining my health. TiffinWorld connected me
+                  with affordable daily home meal providers!"
+                </p>
+                <div class="tw-testimonial-author">Rahul Kapoor</div>
+                <div class="tw-testimonial-role">Student · Pune</div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="tw-card tw-testimonial-card">
+                <div class="tw-stars-row">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="tw-testimonial-quote">
+                  "The hygiene standards and flexibility to pause daily subscriptions when traveling makes TiffinWorld
+                  the
+                  absolute best platform for daily meals."
+                </p>
+                <div class="tw-testimonial-author">Anjali Mehta</div>
+                <div class="tw-testimonial-role">Yoga Instructor · Bangalore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <!-- ==================================================
+       SECTION 07 — FOOTER (PIXEL-ACCURATE)
+       ================================================== -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <!-- Col 1: Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png"
+              alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+          <div class="tw-footer-socials">
+            <a href="#" class="tw-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="tw-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="tw-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html" class="active-link">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Account -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="vendor-login.html">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Subscribe -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required aria-label="Your email">
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark Bottom Bar -->
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn" aria-label="Share"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn" aria-label="Website"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================================================
+       TIFFINWORLD — REDESIGNED INQUIRY MODAL (HTML PREVIEW)
+       ================================================== -->
+  <div class="modal fade tw-inquiry-modal" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalTitle"
+    aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="row g-0">
+
+          <!-- LEFT VISUAL PANEL -->
+          <div class="col-lg-4 col-md-5 inquiry-image-panel d-none d-md-flex">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=800&auto=format&fit=crop"
+              alt="Premium Culinary Experience" class="inquiry-bg-img" id="inquiryModalBgImg">
+            <div class="inquiry-gradient-overlay"></div>
+            <div class="inquiry-left-content">
+              <div class="inquiry-left-eyebrow">PREMIUM CONSERVATORY</div>
+              <h4 class="inquiry-left-title">Elevating your<br>culinary journey.</h4>
+            </div>
+          </div>
+
+          <!-- RIGHT FORM PANEL -->
+          <div class="col-lg-8 col-md-7 inquiry-form-panel">
+
+            <!-- FORM HEADER -->
+            <div class="inquiry-form-header">
+              <h2 class="inquiry-form-title" id="inquiryModalTitle">Place Your Inquiry</h2>
+              <p class="inquiry-form-subtitle">Request a personalized booking for your selected plan</p>
+              <button type="button" class="inquiry-close-btn" data-bs-dismiss="modal" aria-label="Close inquiry form">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            <!-- SUCCESS STATE (Hidden by default) -->
+            <div id="inquirySuccessState" class="inquiry-success-box d-none">
+              <i class="bi bi-check-circle-fill inquiry-success-icon"></i>
+              <h3 class="inquiry-success-title">Inquiry Sent Successfully</h3>
+              <p class="inquiry-success-text">Your request has been delivered to the kitchen host. We will contact you
+                shortly with personalized plan details and scheduling.</p>
+              <button type="button" class="inquiry-btn-submit mx-auto" data-bs-dismiss="modal">Done</button>
+            </div>
+
+            <!-- MAIN INQUIRY FORM -->
+            <form id="inquiryForm" action="#" method="POST" novalidate>
+              <input type="hidden" name="product_id" id="inquiryProductId" value="">
+              <input type="hidden" name="vendor_id" id="inquiryVendorId" value="">
+              <input type="hidden" name="plan_id" id="inquiryPlanId" value="">
+              <input type="hidden" name="quantity" id="inquiryQuantityInput" value="2">
+
+              <!-- SELECTED PLAN SUMMARY CARD -->
+              <div class="inquiry-plan-card">
+                <div class="d-flex align-items-center gap-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=200&auto=format&fit=crop"
+                    alt="Selected Plan" class="inquiry-plan-thumb" id="inquiryModalThumb">
+                  <div>
+                    <span class="inquiry-card-tag">SELECTED PLAN</span>
+                    <h5 class="inquiry-plan-name" id="inquiryModalMealName">Artisan Taco</h5>
+                  </div>
+                </div>
+                <div class="text-md-end text-start">
+                  <span class="inquiry-card-tag">VENDOR</span>
+                  <h5 class="inquiry-vendor-name" id="inquiryModalVendorName">The Green Kitchen</h5>
+                </div>
+              </div>
+
+              <!-- SECTION 1 — PERSONAL DETAILS -->
+              <div class="inquiry-section-title">PERSONAL DETAILS</div>
+              <div class="row g-2 mb-1">
+                <div class="col-md-6">
+                  <label for="inquiryFullName" class="inquiry-label">Full Name</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-person inquiry-input-icon"></i>
+                    <input type="text" id="inquiryFullName" name="full_name" class="inquiry-control"
+                      placeholder="Johnathan Doe" value="Johnathan Doe" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="inquiryPhone" class="inquiry-label">Phone Number</label>
+                  <div class="inquiry-phone-group">
+                    <select name="country_code" class="inquiry-phone-prefix-select" aria-label="Country Code">
+                      <option value="+91" selected>🇮🇳 +91</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+1">🇨🇦 +1</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+65">🇸🇬 +65</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+974">🇶🇦 +974</option>
+                      <option value="+977">🇳🇵 +977</option>
+                    </select>
+                    <input type="tel" id="inquiryPhone" name="phone" class="inquiry-control inquiry-control-noicon"
+                      placeholder="000 000 0000" value="98765 43210" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="inquiryEmail" class="inquiry-label">Email Address</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-envelope inquiry-input-icon"></i>
+                    <input type="email" id="inquiryEmail" name="email" class="inquiry-control"
+                      placeholder="j.doe@conservatory.com" value="j.doe@conservatory.com" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION 2 — ORDER LOGISTICS -->
+              <div class="inquiry-section-title">ORDER LOGISTICS</div>
+              <div class="row g-2 mb-1">
+                <div class="col-md-4">
+                  <label class="inquiry-label">Quantity</label>
+                  <div class="inquiry-qty-stepper">
+                    <button type="button" class="inquiry-qty-btn" id="btnQtyMinus" aria-label="Decrease quantity">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                    <span class="inquiry-qty-val" id="inquiryQtyDisplay">02</span>
+                    <button type="button" class="inquiry-qty-btn" id="btnQtyPlus" aria-label="Increase quantity">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="inquiryDate" class="inquiry-label">Preferred Date</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-calendar3 inquiry-input-icon"></i>
+                    <input type="date" id="inquiryDate" name="preferred_date" class="inquiry-control" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="inquiryTime" class="inquiry-label">Time Window</label>
+                  <div class="inquiry-input-wrapper inquiry-select-wrapper">
+                    <i class="bi bi-clock inquiry-input-icon"></i>
+                    <select id="inquiryTime" name="time_window" class="inquiry-control inquiry-select" required>
+                      <option value="Morning" selected>Morning</option>
+                      <option value="Afternoon">Afternoon</option>
+                      <option value="Evening">Evening</option>
+                    </select>
+                    <i class="bi bi-chevron-down inquiry-select-chevron"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION 3 — LOCATION & DIRECTIONS -->
+              <div class="inquiry-section-title">LOCATION & DIRECTIONS</div>
+              <div class="inquiry-location-card mb-2">
+                <i class="bi bi-geo-alt-fill inquiry-location-icon"></i>
+                <div>
+                  <span class="inquiry-card-tag" style="font-size: 10px;">DELIVERY LOCATION</span>
+                  <h6 class="inquiry-location-val" id="inquiryModalLocation">Downtown Conservatory Hub, District 4</h6>
+                </div>
+              </div>
+
+              <div class="mb-2">
+                <label for="inquiryAddress" class="inquiry-label">Address & Landmarks</label>
+                <textarea id="inquiryAddress" name="address" class="inquiry-control inquiry-control-noicon"
+                  placeholder="Specific apartment number, building floor, or gate instructions..." required></textarea>
+              </div>
+
+              <!-- FOOTER DIVIDER & ACTIONS -->
+              <div class="inquiry-footer-divider"></div>
+              <div class="d-flex align-items-center justify-content-end inquiry-footer-actions gap-3">
+                <button type="button" class="inquiry-btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="inquiry-btn-submit" id="btnSubmitInquiry">
+                  Send Inquiry <i class="bi bi-send-fill ms-1"></i>
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3 JS Bundle & Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications — TiffinWorld Vendor</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Vendor SaaS Design System CSS -->
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="vendor-wrapper">
+  <!-- Sidebar -->
+  <aside class="vendor-sidebar">
+    <div>
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon-box">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">TiffinWorld</h1>
+          <span class="brand-subtitle">Vendor Panel</span>
+        </div>
+      </a>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html" class="menu-item-link">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="menu-item-link">
+            <i class="bi bi-journals"></i>
+            <span>Products</span>
+            <span class="menu-badge-normal">14</span>
+          </a>
+        </li>
+        <li>
+          <a href="add-product.html" class="menu-item-link">
+            <i class="bi bi-plus-circle-fill"></i>
+            <span>Add Product</span>
+          </a>
+        </li>
+        <li>
+          <a href="menu-planner.html" class="menu-item-link">
+            <i class="bi bi-calendar3-event"></i>
+            <span>Menu Planner</span>
+          </a>
+        </li>
+        <li>
+          <a href="inquiries.html" class="menu-item-link">
+            <i class="bi bi-chat-left-dots-fill"></i>
+            <span>Inquiries</span>
+            <span class="menu-badge-normal">5 New</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="menu-item-link">
+            <i class="bi bi-shop-window"></i>
+            <span>Vendor Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="notifications.html" class="menu-item-link active">
+            <span class="active-indicator"></span>
+            <i class="bi bi-bell-fill"></i>
+            <span>Notifications</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-logout-card">
+      <a href="../website/vendor-login.html" class="logout-btn-outline">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Log Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="vendor-main-content">
+    <!-- Header -->
+    <header class="vendor-header">
+      <div>
+        <h4 class="fw-bold mb-0">Notifications & Alerts</h4>
+        <span class="text-muted small">Real-time alerts for customer inquiries, order dispatches & payouts</span>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn-saas-outline" onclick="showToast('All notifications marked as read!')"><i class="bi bi-check-all me-1"></i> Mark All as Read</button>
+      </div>
+    </header>
+
+    <!-- Filter Tabs -->
+    <div class="saas-form-card py-3 mb-4">
+      <div class="d-flex gap-2">
+        <button class="btn btn-sm btn-outline-warning active rounded-pill px-3">All Notifications (8)</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Inquiries (5)</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Order Updates (2)</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Payouts (1)</button>
+      </div>
+    </div>
+
+    <!-- Notification Feed -->
+    <div class="d-flex flex-column gap-3">
+      <!-- Item 1 -->
+      <div class="saas-form-card mb-0 d-flex align-items-center justify-content-between border-start border-4 border-warning" style="background: #FFF9F3;">
+        <div class="d-flex align-items-center gap-3">
+          <div class="p-3 bg-warning-subtle text-warning rounded-circle fs-4">
+            <i class="bi bi-chat-left-dots-fill"></i>
+          </div>
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <h6 class="fw-bold mb-0 text-dark">New Inquiry from Priya Sharma</h6>
+              <span class="badge bg-warning text-white fw-bold rounded-pill">High Priority</span>
+              <span class="text-muted small">• 10 mins ago</span>
+            </div>
+            <p class="text-muted mb-0 small">Requested 26-day Gujarati Dinner Tiffin subscription for Navrangpura area.</p>
+          </div>
+        </div>
+        <a href="inquiry-detail.html" class="btn-saas-primary btn-sm">Reply Now</a>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="saas-form-card mb-0 d-flex align-items-center justify-content-between border-start border-4 border-success">
+        <div class="d-flex align-items-center gap-3">
+          <div class="p-3 bg-success-subtle text-success rounded-circle fs-4">
+            <i class="bi bi-cash-stack"></i>
+          </div>
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <h6 class="fw-bold mb-0 text-dark">Weekly Payout Deposited</h6>
+              <span class="text-muted small">• 2 hours ago</span>
+            </div>
+            <p class="text-muted mb-0 small">₹14,250 has been transferred to your HDFC Bank Account ending in 890.</p>
+          </div>
+        </div>
+        <button class="btn-saas-outline btn-sm" onclick="showToast('Downloading Receipt...')"><i class="bi bi-download me-1"></i> Receipt</button>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="saas-form-card mb-0 d-flex align-items-center justify-content-between border-start border-4 border-info">
+        <div class="d-flex align-items-center gap-3">
+          <div class="p-3 bg-info-subtle text-info rounded-circle fs-4">
+            <i class="bi bi-truck"></i>
+          </div>
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <h6 class="fw-bold mb-0 text-dark">Lunch Route Batch #4 Dispatched</h6>
+              <span class="text-muted small">• 4 hours ago</span>
+            </div>
+            <p class="text-muted mb-0 small">42 Tiffins successfully handed over to delivery partners.</p>
+          </div>
+        </div>
+        <a href="menu-planner.html" class="btn-saas-outline btn-sm">View Route</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- JS Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor-main.js"></script>
+</body>
+</html>

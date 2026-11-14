@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiries — Tiffinworld Vendor Panel</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Vendor SaaS Design System CSS -->
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="vendor-wrapper">
+    <!-- Sidebar -->
+    <aside class="vendor-sidebar">
+      <div>
+        <a href="index.html" class="sidebar-brand">
+          <div class="brand-icon-box">
+            <i class="bi bi-box-seam-fill"></i>
+          </div>
+          <div>
+            <h1 class="brand-title">TiffinWorld</h1>
+          </div>
+        </a>
+
+        <ul class="sidebar-menu">
+          <li>
+            <a href="index.html" class="menu-item-link">
+              <i class="bi bi-grid-1x2-fill"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="menu-item-link">
+              <i class="bi bi-archive-fill"></i>
+              <span>Products</span>
+            </a>
+          </li>
+          <li>
+            <a href="menu-planner.html" class="menu-item-link">
+              <i class="bi bi-calendar3"></i>
+              <span>Menu Planner</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="menu-item-link">
+              <i class="bi bi-person-fill"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="seller-website.html" class="menu-item-link">
+              <i class="bi bi-globe"></i>
+              <span>Seller Website</span>
+            </a>
+          </li>
+          <li>
+            <a href="help.html" class="menu-item-link">
+              <i class="bi bi-question-circle-fill"></i>
+              <span>Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="inquiries.html" class="menu-item-link active">
+              <i class="bi bi-chat-quote-fill"></i>
+              <span>Inquiries</span>
+              <i class="bi bi-chevron-down caret-icon"></i>
+            </a>
+          </li>
+          <li>
+            <a href="plans.html" class="menu-item-link">
+              <i class="bi bi-journal-bookmark-fill"></i>
+              <span>Plans</span>
+            </a>
+          </li>
+          <li>
+            <a href="delivery-setup.html" class="menu-item-link">
+              <i class="bi bi-truck"></i>
+              <span>Delivery Location Setup</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-logout-card">
+        <a href="../website/vendor-login.html" class="logout-btn-outline">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Log Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="vendor-main-content">
+      <!-- Header Component -->
+      <header class="vendor-header">
+        <div class="header-search-wrap">
+          <i class="bi bi-search header-search-icon"></i>
+          <input type="text" id="headerSearchInput" class="header-search-input"
+            placeholder="Search orders, products...">
+        </div>
+
+        <div class="header-actions">
+          <a href="../website/index.html" target="_blank" class="btn-visit-site-orange">
+            <i class="bi bi-box-arrow-up-right me-1"></i>
+            <span>Visit Website</span>
+          </a>
+
+          <div class="vendor-header-profile">
+            <div class="vendor-header-info">
+              <div class="vendor-header-name">The Green Kitchen</div>
+              <div class="vendor-header-tag">PREMIUM VENDOR</div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80"
+              alt="Chef Avatar" class="vendor-header-avatar">
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Body Content -->
+      <div class="page-body-container">
+        <!-- 3 Accent Stat Cards Row -->
+        <div class="row g-4 mb-2">
+          <div class="col-lg-4">
+            <div class="stat-card-accent-border green">
+              <div>
+                <div class="small fw-bold text-secondary text-uppercase mb-1"
+                  style="font-size: 11px; letter-spacing: 0.8px;">NEW INQUIRIES</div>
+                <div class="fs-2 fw-bold text-dark mb-0" style="font-family: var(--font-heading); line-height: 1;">12
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-center"
+                style="width: 48px; height: 48px; background: #DCFCE7; color: #15803D; border-radius: 14px; font-size: 22px;">
+                <i class="bi bi-clipboard-check-fill"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="stat-card-accent-border orange">
+              <div>
+                <div class="small fw-bold text-secondary text-uppercase mb-1"
+                  style="font-size: 11px; letter-spacing: 0.8px;">RESPONSE RATE</div>
+                <div class="fs-2 fw-bold mb-0"
+                  style="color: var(--primary-orange); font-family: var(--font-heading); line-height: 1;">98%</div>
+              </div>
+              <div class="d-flex align-items-center justify-content-center"
+                style="width: 48px; height: 48px; background: #FFF4E5; color: var(--primary-orange); border-radius: 14px; font-size: 22px;">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="stat-card-accent-border green">
+              <div>
+                <div class="small fw-bold text-secondary text-uppercase mb-1"
+                  style="font-size: 11px; letter-spacing: 0.8px;">MONTHLY VOLUME</div>
+                <div class="fs-2 fw-bold text-dark mb-0" style="font-family: var(--font-heading); line-height: 1;">142
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-center"
+                style="width: 48px; height: 48px; background: #DCFCE7; color: #15803D; border-radius: 14px; font-size: 22px;">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Inquiries Table Card -->
+        <div class="recent-inquiry-table-card p-0"
+          style="border-radius: 24px; border: 1.5px solid #D0E2FF; overflow: hidden; background: #FFFFFF;">
+          <!-- Card Header -->
+          <div class="p-4 d-flex justify-content-between align-items-center border-bottom" style="background: #FFFFFF;">
+            <h4 class="fw-bold mb-0 text-dark">Live Inquiries</h4>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fw-semibold small"
+                onclick="location.reload();">
+                <i class="bi bi-arrow-clockwise me-1"></i> Refresh
+              </button>
+              <button class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fw-semibold small"
+                onclick="if(typeof showToast==='function') showToast('Filter options updated!','info');">
+                <i class="bi bi-sliders me-1"></i> Filter
+              </button>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="table-responsive">
+            <table class="table exact-table align-middle mb-0">
+              <thead style="background: #EBF3FE;">
+                <tr>
+                  <th style="padding: 16px 20px;">ID</th>
+                  <th style="padding: 16px 20px;">PRODUCT</th>
+                  <th style="padding: 16px 20px;">CUSTOMER</th>
+                  <th style="padding: 16px 20px;">QTY</th>
+                  <th style="padding: 16px 20px;">PREFERRED DATE</th>
+                  <th style="padding: 16px 20px;">TIME</th>
+                  <th style="padding: 16px 20px;">LOCATION</th>
+                  <th style="padding: 16px 20px;">PLACED</th>
+                  <th style="padding: 16px 20px;" class="text-end">ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fw-bold" style="color: #15803D;">#INV-8821</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img
+                        src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=80&q=80"
+                        alt="Heritage Tiffin Box" class="inquiry-food-img">
+                      <span class="fw-bold" style="color: #15803D;">Heritage Tiffin Box</span>
+                    </div>
+                  </td>
+                  <td class="fw-medium text-dark">Eleanor Shellstrop</td>
+                  <td class="fw-bold" style="color: #15803D;">04</td>
+                  <td class="text-secondary">Oct 24, 2023</td>
+                  <td class="text-secondary">12:30 PM</td>
+                  <td class="text-secondary">Greenwich Village</td>
+                  <td>
+                    <span class="badge rounded-pill px-3 py-1 text-white fw-bold"
+                      style="background: #FF7F00; font-size: 11px;">2 MINS AGO</span>
+                  </td>
+                  <td class="text-end">
+                    <a href="inquiry-detail.html"
+                      class="btn btn-sm text-success fw-bold rounded-pill px-3 py-1.5 text-nowrap"
+                      style="background: #DCFCE7; border: 1.5px solid #86EFAC; font-size: 12px;">View Details <i
+                        class="bi bi-arrow-right ms-1"></i></a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="fw-bold" style="color: #15803D;">#INV-8815</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img
+                        src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=80&q=80"
+                        alt="Neapolitan Feast" class="inquiry-food-img">
+                      <span class="fw-bold" style="color: #15803D;">Neapolitan Feast</span>
+                    </div>
+                  </td>
+                  <td class="fw-medium text-dark">Tahani Al-Jamil</td>
+                  <td class="fw-bold" style="color: #15803D;">02</td>
+                  <td class="text-secondary">Oct 24, 2023</td>
+                  <td class="text-secondary">07:30 PM</td>
+                  <td class="text-secondary">Upper East Side</td>
+                  <td>
+                    <span class="badge rounded-pill px-3 py-1 fw-bold"
+                      style="background: #EFF6FF; border: 1px solid #BAE6FD; color: #2563EB; font-size: 11px;">3 HOURS
+                      AGO</span>
+                  </td>
+                  <td class="text-end">
+                    <a href="inquiry-detail.html"
+                      class="btn btn-sm text-success fw-bold rounded-pill px-3 py-1.5 text-nowrap"
+                      style="background: #DCFCE7; border: 1.5px solid #86EFAC; font-size: 12px;">View Details <i
+                        class="bi bi-arrow-right ms-1"></i></a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="fw-bold" style="color: #15803D;">#INV-8810</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img
+                        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=80&q=80"
+                        alt="Royal Thali Set" class="inquiry-food-img">
+                      <span class="fw-bold" style="color: #15803D;">Royal Thali Set</span>
+                    </div>
+                  </td>
+                  <td class="fw-medium text-dark">Jason Mendoza</td>
+                  <td class="fw-bold" style="color: #15803D;">08</td>
+                  <td class="text-secondary">Oct 26, 2023</td>
+                  <td class="text-secondary">12:00 PM</td>
+                  <td class="text-secondary">Long Island City</td>
+                  <td>
+                    <span class="badge rounded-pill px-3 py-1 fw-bold text-secondary"
+                      style="background: #EFF6FF; border: 1px solid #CBD5E1; font-size: 11px;">YESTERDAY</span>
+                  </td>
+                  <td class="text-end">
+                    <a href="inquiry-detail.html"
+                      class="btn btn-sm text-success fw-bold rounded-pill px-3 py-1.5 text-nowrap"
+                      style="background: #DCFCE7; border: 1.5px solid #86EFAC; font-size: 12px;">View Details <i
+                        class="bi bi-arrow-right ms-1"></i></a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="fw-bold" style="color: #15803D;">#INV-8819</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img
+                        src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=80&q=80"
+                        alt="Artisan Mezze Platter" class="inquiry-food-img">
+                      <span class="fw-bold" style="color: #15803D;">Artisan Mezze Platter</span>
+                    </div>
+                  </td>
+                  <td class="fw-medium text-dark">Chidi Anagonye</td>
+                  <td class="fw-bold" style="color: #15803D;">12</td>
+                  <td class="text-secondary">Oct 25, 2023</td>
+                  <td class="text-secondary">01:00 PM</td>
+                  <td class="text-secondary">Brooklyn Heights</td>
+                  <td>
+                    <span class="badge rounded-pill px-3 py-1 fw-bold"
+                      style="background: #FFF4E5; border: 1px solid #FFE0B2; color: #E67300; font-size: 11px;">1 HOUR
+                      AGO</span>
+                  </td>
+                  <td class="text-end">
+                    <a href="inquiry-detail.html"
+                      class="btn btn-sm text-success fw-bold rounded-pill px-3 py-1.5 text-nowrap"
+                      style="background: #DCFCE7; border: 1.5px solid #86EFAC; font-size: 12px;">View Details <i
+                        class="bi bi-arrow-right ms-1"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Footer Pagination -->
+          <div class="p-3 px-4 d-flex justify-content-between align-items-center border-top"
+            style="background: #EBF3FE;">
+            <div class="text-secondary small fw-medium">Showing 4 of 142 inquiries</div>
+            <div class="d-flex gap-1 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary rounded-2 px-2.5 py-1"
+                onclick="if(typeof showToast==='function') showToast('Previous page loaded');"><i
+                  class="bi bi-chevron-left"></i></button>
+              <button class="btn btn-sm text-white rounded-2 px-3 py-1 fw-bold" style="background: #FF7F00;">1</button>
+              <button class="btn btn-sm btn-outline-secondary rounded-2 px-3 py-1 fw-medium"
+                onclick="if(typeof showToast==='function') showToast('Page 2 loaded');">2</button>
+              <button class="btn btn-sm btn-outline-secondary rounded-2 px-3 py-1 fw-medium"
+                onclick="if(typeof showToast==='function') showToast('Page 3 loaded');">3</button>
+              <button class="btn btn-sm btn-outline-secondary rounded-2 px-2.5 py-1"
+                onclick="if(typeof showToast==='function') showToast('Next page loaded');"><i
+                  class="bi bi-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/vendor-main.js"></script>
+</body>
+
+</html>

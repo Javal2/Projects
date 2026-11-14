@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Organic Products | Vise Organic Agriculture & Biotechnology Catalog</title>
+  <meta name="description" content="Explore Vise Organic's science-backed biofertilizers, biopesticides, plant growth regulators, and organo-silicone adjuvants for sustainable high-yield farming.">
+  <meta name="keywords" content="organic farming products, biofertilizers, biopesticides, plant growth regulators, PSB Multiplier, Azotobacter, Rhizobium, KMB, Vise Organic catalog">
+
+  <!-- OpenGraph SEO Tags -->
+  <meta property="og:title" content="Vise Organic | Product Catalog">
+  <meta property="og:description" content="Browse NPOP certified organic bio-formulations engineered for maximum crop yields and soil carbon rejuvenation.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Vise Organic Custom Stylesheet -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav">
+
+  <!-- ==========================================
+       NAVIGATION BAR
+       ========================================== -->
+  <nav class="navbar navbar-expand-lg navbar-vo sticky-top py-3" id="main-nav">
+    <div class="container">
+      <!-- Brand Logo Image -->
+      <a class="navbar-brand py-0" href="index.html">
+        <img src="images/logo.png" alt="Vise Organic Logo" class="header-logo">
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links & CTA -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-menu navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rd.html">R&D</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Primary CTA Button -->
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-vo-accent text-dark rounded-pill px-4 py-2.5 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">
+            <i class="bi bi-chat-text-fill me-2"></i> Get Expert Advice
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       PAGE HEADER & TOP SEARCH / QUICK FILTERS
+       ========================================== -->
+  <section class="bg-white border-bottom pt-4 pb-4">
+    <div class="container">
+      
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-vo-muted text-decoration-none"><i class="bi bi-house-door-fill me-1"></i>Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html" class="text-vo-muted text-decoration-none">Products</a></li>
+          <li class="breadcrumb-item active text-vo-primary fw-semibold" aria-current="page">All Organic Products</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center g-4">
+        <!-- Title & Subtitle -->
+        <div class="col-lg-5">
+          <h1 class="h2 font-poppins fw-bold text-vo-primary mb-1">Our Organic Products</h1>
+          <p class="text-vo-muted small mb-0">
+            Science-backed bio-formulations certified for organic agriculture & soil Carbon recovery.
+          </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="col-lg-7">
+          <div class="input-group search-input-group bg-white">
+            <input type="text" id="catalogSearchInput" class="form-control font-inter" placeholder="Search products, categories, or crop solutions (e.g. PSB, Cotton, Biofertilizer)...">
+            <button class="btn btn-vo-primary px-4" type="button" aria-label="Search button">
+              <i class="bi bi-search me-1"></i> Search
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Filter Chips -->
+      <div class="mt-4 pt-2">
+        <div class="filter-chip-wrapper" id="quickFilterChips">
+          <button class="filter-chip active" data-filter="all">All Products</button>
+          <button class="filter-chip" data-filter="Biofertilizers">Biofertilizers</button>
+          <button class="filter-chip" data-filter="Biopesticides">Biopesticides</button>
+          <button class="filter-chip" data-filter="Plant Growth Regulators">Plant Growth Regulators</button>
+          <button class="filter-chip" data-filter="Adjuvants">Adjuvants</button>
+          <button class="filter-chip" data-filter="Biotech Kit">Biotech Kits</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MAIN CATALOG CONTENT (2-COLUMN FLIPKART LAYOUT)
+       ========================================== -->
+  <section class="section-padding bg-vo-light">
+    <div class="container">
+      
+      <!-- Sorting & Live Count Bar (Flipkart Style) -->
+      <div class="sort-bar d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+        <div class="small text-vo-muted font-inter">
+          Showing <span id="visibleProductCount" class="fw-bold text-vo-primary">12</span> of <span id="totalProductCount" class="fw-bold">12</span> products
+        </div>
+
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <span class="small fw-bold text-vo-primary me-2"><i class="bi bi-sort-down me-1"></i> Sort By:</span>
+          <span class="sort-option active" data-sort="popularity">Popularity</span>
+          <span class="sort-option" data-sort="bestseller">Best Selling</span>
+          <span class="sort-option" data-sort="newest">Newest First</span>
+          <span class="sort-option" data-sort="price-low">Price: Low to High</span>
+          <span class="sort-option" data-sort="price-high">Price: High to Low</span>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- LEFT COLUMN: Desktop Sticky Filter Sidebar -->
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="filter-sidebar sticky-top" style="top: 100px;">
+            <div class="d-flex align-items-center justify-content-between pb-3 border-bottom mb-3">
+              <h2 class="h5 font-poppins fw-bold text-vo-primary mb-0"><i class="bi bi-funnel-fill me-2 text-vo-accent"></i>Filters</h2>
+              <button id="clearFiltersBtn" class="btn btn-link btn-sm text-vo-primary p-0 text-decoration-none font-inter fw-semibold">
+                Clear All
+              </button>
+            </div>
+
+            <!-- Accordion Filter Sections -->
+            <div class="accordion accordion-vo" id="accordionFilters">
+              
+              <!-- Filter Group 1: Product Categories -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingCategories">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategories" aria-expanded="true" aria-controls="collapseCategories">
+                    Product Categories
+                  </button>
+                </h3>
+                <div id="collapseCategories" class="accordion-collapse collapse show" aria-labelledby="headingCategories">
+                  <div class="accordion-body">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Biofertilizers" id="cat-biofert">
+                      <label class="form-check-label small text-vo-muted" for="cat-biofert">Biofertilizers</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Biopesticides" id="cat-biopest">
+                      <label class="form-check-label small text-vo-muted" for="cat-biopest">Biopesticides</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Plant Growth Regulators" id="cat-pgr">
+                      <label class="form-check-label small text-vo-muted" for="cat-pgr">Plant Growth Regulators</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Adjuvants" id="cat-adj">
+                      <label class="form-check-label small text-vo-muted" for="cat-adj">Adjuvants</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Biotech Kit" id="cat-kit">
+                      <label class="form-check-label small text-vo-muted" for="cat-kit">Biotech Multiplication Kits</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Filter Group 2: Crop Type -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingCrop">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCrop" aria-expanded="false" aria-controls="collapseCrop">
+                    Target Crop Type
+                  </button>
+                </h3>
+                <div id="collapseCrop" class="accordion-collapse collapse" aria-labelledby="headingCrop">
+                  <div class="accordion-body">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-crop" type="checkbox" value="Cotton" id="crop-cotton">
+                      <label class="form-check-label small text-vo-muted" for="crop-cotton">Cotton & Cash Crops</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-crop" type="checkbox" value="Paddy" id="crop-paddy">
+                      <label class="form-check-label small text-vo-muted" for="crop-paddy">Paddy & Cereals</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-crop" type="checkbox" value="Fruits" id="crop-fruits">
+                      <label class="form-check-label small text-vo-muted" for="crop-fruits">Fruits & Vegetables</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-checkbox filter-cb-crop" type="checkbox" value="Pulses" id="crop-pulses">
+                      <label class="form-check-label small text-vo-muted" for="crop-pulses">Pulses & Oilseeds</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Filter Group 3: Product Type -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingType">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseType" aria-expanded="false" aria-controls="collapseType">
+                    Formulation Type
+                  </button>
+                </h3>
+                <div id="collapseType" class="accordion-collapse collapse" aria-labelledby="headingType">
+                  <div class="accordion-body">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-type" type="checkbox" value="Liquid" id="type-liquid">
+                      <label class="form-check-label small text-vo-muted" for="type-liquid">Liquid Inoculant</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-type" type="checkbox" value="Powder" id="type-powder">
+                      <label class="form-check-label small text-vo-muted" for="type-powder">Bio-Powder</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-checkbox filter-cb-type" type="checkbox" value="Granular" id="type-granular">
+                      <label class="form-check-label small text-vo-muted" for="type-granular">Granular Formulation</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Filter Group 4: Certifications -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingCert">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCert" aria-expanded="false" aria-controls="collapseCert">
+                    Certifications
+                  </button>
+                </h3>
+                <div id="collapseCert" class="accordion-collapse collapse" aria-labelledby="headingCert">
+                  <div class="accordion-body">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-cert" type="checkbox" value="NPOP" id="cert-npop">
+                      <label class="form-check-label small text-vo-muted" for="cert-npop">NPOP Organic Certified</label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input filter-checkbox filter-cb-cert" type="checkbox" value="DSIR" id="cert-dsir">
+                      <label class="form-check-label small text-vo-muted" for="cert-dsir">DSIR Approved Lab</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-checkbox filter-cb-cert" type="checkbox" value="ISO" id="cert-iso">
+                      <label class="form-check-label small text-vo-muted" for="cert-iso">ISO 9001:2015</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: 4-Column Product Grid -->
+        <div class="col-lg-9 col-12">
+          
+          <div class="row g-4" id="productGridContainer">
+            
+            <!-- Product 1: PSB Multiplier -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="PSB Multiplier" 
+                 data-category="Biofertilizers" 
+                 data-crop="Cotton" 
+                 data-type="Powder" 
+                 data-cert="NPOP" 
+                 data-price="450" 
+                 data-popularity="98" 
+                 data-date="20260101">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_biofertilizers.png" alt="PSB Multiplier" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=psb-multiplier" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                  <span class="pcv2-badge pcv2-badge-seller">Best Seller</span>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Biofertilizer</div>
+                  <h3 class="pcv2-name">PSB Multiplier</h3>
+                  <p class="pcv2-desc">Phosphate solubilizing bio-agent releasing locked soil phosphorus for maximum root development.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Soil Carbon</span>
+                    <span class="pcv2-tag">NPOP Certified</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2: Rhizobium Multiplier -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Rhizobium Multiplier" 
+                 data-category="Biofertilizers" 
+                 data-crop="Pulses" 
+                 data-type="Powder" 
+                 data-cert="NPOP" 
+                 data-price="420" 
+                 data-popularity="85" 
+                 data-date="20260215">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_biofertilizers.png" alt="Rhizobium Multiplier" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=rhizobium-multiplier" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                  <span class="pcv2-badge pcv2-badge-popular">Popular</span>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Biofertilizer</div>
+                  <h3 class="pcv2-name">Rhizobium Multiplier</h3>
+                  <p class="pcv2-desc">Symbiotic nitrogen-fixing bacterial culture designed for pulses, groundnut, and soybean crops.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">N-Fixation</span>
+                    <span class="pcv2-tag">Seed Inoculants</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3: KMB Multiplier -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="KMB Multiplier" 
+                 data-category="Biofertilizers" 
+                 data-crop="Fruits" 
+                 data-type="Powder" 
+                 data-cert="DSIR" 
+                 data-price="480" 
+                 data-popularity="90" 
+                 data-date="20260301">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_biofertilizers.png" alt="KMB Multiplier" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=kmb-multiplier" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Biofertilizer</div>
+                  <h3 class="pcv2-name">KMB Multiplier</h3>
+                  <p class="pcv2-desc">Potash mobilizing biofertilizer strain unlocking soil potassium for improved fruit sizing &amp; disease resistance.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Potash Boost</span>
+                    <span class="pcv2-tag">Fruit Quality</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4: Azotobacter Liquid Based -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Azotobacter Liquid Based" 
+                 data-category="Biofertilizers" 
+                 data-crop="Paddy" 
+                 data-type="Liquid" 
+                 data-cert="NPOP" 
+                 data-price="550" 
+                 data-popularity="96" 
+                 data-date="20260310">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_growth_regulator.png" alt="Azotobacter Liquid Based" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=azotobacter-liquid" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                  <span class="pcv2-badge pcv2-badge-rated">Top Rated</span>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Liquid Bio</div>
+                  <h3 class="pcv2-name">Azotobacter Liquid Based</h3>
+                  <p class="pcv2-desc">Free-living liquid nitrogen fixer providing continuous vegetative nitrogen to non-legume crops.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Yield Boost</span>
+                    <span class="pcv2-tag">Drip Compatible</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5: MyLab Bacteria Multiplication Kit -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="MyLab Bacteria Multiplication Kit" 
+                 data-category="Biotech Kit" 
+                 data-crop="Cotton" 
+                 data-type="Liquid" 
+                 data-cert="DSIR" 
+                 data-price="1200" 
+                 data-popularity="92" 
+                 data-date="20260315">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/rd_lab_research.png" alt="MyLab Bacteria Kit" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=mylab-kit" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                  <span class="pcv2-badge pcv2-badge-new">New</span>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Biotech Kit</div>
+                  <h3 class="pcv2-name">MyLab Bacteria Kit</h3>
+                  <p class="pcv2-desc">On-farm bacterial culture multiplier kit allowing farmers to produce high-count bio-inputs.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Cost Saver</span>
+                    <span class="pcv2-tag">Soil Immunity</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 6: Poshan -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Poshan Organic Bio-Nutrition" 
+                 data-category="Plant Growth Regulators" 
+                 data-crop="Fruits" 
+                 data-type="Liquid" 
+                 data-cert="NPOP" 
+                 data-price="680" 
+                 data-popularity="88" 
+                 data-date="20260201">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_adjuvants.png" alt="Poshan Organic Bio-Nutrition" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=poshan" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Plant Nutrition</div>
+                  <h3 class="pcv2-name">Poshan Nutrition</h3>
+                  <p class="pcv2-desc">Organic amino acid &amp; micronutrient chelate complex boosting canopy photosynthesizing power.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Chlorophyll Boost</span>
+                    <span class="pcv2-tag">Stress Relief</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 7: Vise Bio-Pesticide Shield -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Vise Bio-Pesticide Shield" 
+                 data-category="Biopesticides" 
+                 data-crop="Cotton" 
+                 data-type="Liquid" 
+                 data-cert="NPOP" 
+                 data-price="750" 
+                 data-popularity="94" 
+                 data-date="20260120">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_biopesticides.png" alt="Vise Bio-Pesticide Shield" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=biopesticide-shield" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                  <span class="pcv2-badge pcv2-badge-cert">NPOP Certified</span>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Biopesticide</div>
+                  <h3 class="pcv2-name">Vise Bio-Pesticide Shield</h3>
+                  <p class="pcv2-desc">Targeted botanical extract controlling bollworms, aphids, and sucking pests without toxic chemical residue.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Zero Residue</span>
+                    <span class="pcv2-tag">IPM Safe</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 8: Vise Growth Regulator Plus -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Vise Growth Regulator Plus" 
+                 data-category="Plant Growth Regulators" 
+                 data-crop="Fruits" 
+                 data-type="Liquid" 
+                 data-cert="ISO" 
+                 data-price="620" 
+                 data-popularity="87" 
+                 data-date="20260228">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_growth_regulator.png" alt="Vise Growth Regulator Plus" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=growth-regulator" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">PGR</div>
+                  <h3 class="pcv2-name">Growth Regulator Plus</h3>
+                  <p class="pcv2-desc">Phyto-hormone formulation preventing flower drop and improving fruit setting in horticultural crops.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Flowering Boost</span>
+                    <span class="pcv2-tag">Yield Boost</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 9: Organo-Silicone Super Spreader -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Organo-Silicone Super Spreader" 
+                 data-category="Adjuvants" 
+                 data-crop="Cotton" 
+                 data-type="Liquid" 
+                 data-cert="ISO" 
+                 data-price="390" 
+                 data-popularity="91" 
+                 data-date="20260305">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_adjuvants.png" alt="Organo-Silicone Super Spreader" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=super-spreader" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Adjuvant</div>
+                  <h3 class="pcv2-name">Organo-Silicone Spreader</h3>
+                  <p class="pcv2-desc">Super-spreading surfactant increasing spray coverage, stomatal penetration, and rainfastness.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Rainfastness</span>
+                    <span class="pcv2-tag">Spray Booster</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 10: Vise Mycorrhizal VAM Granules -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Vise Mycorrhizal VAM Granules" 
+                 data-category="Biofertilizers" 
+                 data-crop="Paddy" 
+                 data-type="Granular" 
+                 data-cert="NPOP" 
+                 data-price="580" 
+                 data-popularity="89" 
+                 data-date="20260210">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_biofertilizers.png" alt="Vise Mycorrhizal VAM Granules" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=mycorrhizal-vam" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Mycorrhiza</div>
+                  <h3 class="pcv2-name">VAM Mycorrhizal Granules</h3>
+                  <p class="pcv2-desc">Endo-mycorrhizal fungal inoculant extending crop root surface area for water &amp; nutrient absorption.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Root Expander</span>
+                    <span class="pcv2-tag">Drought Relief</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 11: Trichoderma Viride Bio-Fungicide -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Trichoderma Viride Bio-Fungicide" 
+                 data-category="Biopesticides" 
+                 data-crop="Pulses" 
+                 data-type="Powder" 
+                 data-cert="NPOP" 
+                 data-price="490" 
+                 data-popularity="93" 
+                 data-date="20260115">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_biopesticides.png" alt="Trichoderma Viride" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=trichoderma-fungicide" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Bio-Fungicide</div>
+                  <h3 class="pcv2-name">Trichoderma Bio-Fungicide</h3>
+                  <p class="pcv2-desc">Antagonistic bio-fungal strain suppressing soil-borne root rot, wilt, and damping-off pathogens.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Disease Shield</span>
+                    <span class="pcv2-tag">Soil Health</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 12: Vise Organic Soil Carbon Reviver -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 product-card-item" 
+                 data-name="Vise Organic Soil Carbon Reviver" 
+                 data-category="Biofertilizers" 
+                 data-crop="Cotton" 
+                 data-type="Granular" 
+                 data-cert="NPOP" 
+                 data-price="890" 
+                 data-popularity="97" 
+                 data-date="20260312">
+              <div class="product-card-v2">
+                <div class="pcv2-img-zone">
+                  <img src="images/product_biofertilizers.png" alt="Vise Organic Soil Carbon Reviver" class="pcv2-img">
+                  <div class="pcv2-overlay">
+                    <a href="product-detail.html?id=soil-carbon-reviver" class="pcv2-overlay-btn">View Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                  <span class="pcv2-badge pcv2-badge-premium">Premium</span>
+                </div>
+                <div class="pcv2-body">
+                  <div class="pcv2-category">Soil Rejuvenator</div>
+                  <h3 class="pcv2-name">Soil Carbon Reviver</h3>
+                  <p class="pcv2-desc">Bio-active humic &amp; fulvic complex restoring degraded chemical soils to rich organic fertility.</p>
+                  <div class="pcv2-tags">
+                    <span class="pcv2-tag">Carbon Revival</span>
+                    <span class="pcv2-tag">Earthworm Friendly</span>
+                  </div>
+                  <div class="pcv2-divider"></div>
+                  <button class="pcv2-cta" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">Request Price</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Empty State when no filters match -->
+          <div id="noProductsFound" class="text-center py-5 bg-white rounded-4 shadow-sm border d-none">
+            <i class="bi bi-search text-vo-muted display-4 mb-3"></i>
+            <h3 class="h5 font-poppins fw-bold text-vo-primary mb-2">No Matching Products Found</h3>
+            <p class="text-vo-muted small mb-4">Try clearing some filters or searching for another crop category.</p>
+            <button id="clearFiltersMobileBtn" class="btn btn-vo-primary">
+              Clear All Filters
+            </button>
+          </div>
+
+          <!-- Clean Strip Pagination -->
+          <div class="vo-pagination-strip mt-5">
+            <div class="vo-page-info">
+              <i class="bi bi-layers-fill me-2"></i>
+              Showing all <strong id="visibleProductCount2">12</strong> products
+            </div>
+            <nav class="vo-page-nav" aria-label="Product catalog pagination">
+              <button class="vo-page-btn" id="pagePrevBtn" disabled aria-label="Previous page">
+                <i class="bi bi-arrow-left"></i>
+                <span>Previous</span>
+              </button>
+              <div class="vo-page-divider" aria-hidden="true"></div>
+              <button class="vo-page-btn" id="pageNextBtn" aria-label="Next page">
+                <span>Next</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </nav>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       MOBILE STICKY FILTER BAR & OFFCANVAS
+       ========================================== -->
+  <div class="mobile-filter-bar d-lg-none py-2 px-3">
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="btn btn-outline-success w-100 py-2 font-poppins fw-bold btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilterOffcanvas" aria-controls="mobileFilterOffcanvas">
+          <i class="bi bi-funnel-fill me-1"></i> Filter
+        </button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-vo-primary w-100 py-2 font-poppins fw-bold btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">
+          <i class="bi bi-chat-text-fill me-1"></i> Get Advice
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Offcanvas Filter Panel -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilterOffcanvas" aria-labelledby="mobileFilterOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title font-poppins fw-bold text-vo-primary" id="mobileFilterOffcanvasLabel">
+        <i class="bi bi-funnel-fill text-vo-accent me-2"></i> Filter Products
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="small text-vo-muted mb-3">Refine Vise Organic products by crop type, category, or certification.</p>
+      
+      <!-- Copy of Accordion Filters for Mobile Offcanvas -->
+      <div class="accordion accordion-vo" id="accordionMobileFilters">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingMobileCategories">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMobileCategories" aria-expanded="true">
+              Product Categories
+            </button>
+          </h3>
+          <div id="collapseMobileCategories" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Biofertilizers" id="m-cat-biofert">
+                <label class="form-check-label small text-vo-muted" for="m-cat-biofert">Biofertilizers</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Biopesticides" id="m-cat-biopest">
+                <label class="form-check-label small text-vo-muted" for="m-cat-biopest">Biopesticides</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Plant Growth Regulators" id="m-cat-pgr">
+                <label class="form-check-label small text-vo-muted" for="m-cat-pgr">Plant Growth Regulators</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Adjuvants" id="m-cat-adj">
+                <label class="form-check-label small text-vo-muted" for="m-cat-adj">Adjuvants</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input filter-checkbox filter-cb-category" type="checkbox" value="Biotech Kit" id="m-cat-kit">
+                <label class="form-check-label small text-vo-muted" for="m-cat-kit">Biotech Kits</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-3 border-top">
+        <button class="btn btn-vo-primary w-100 py-2" data-bs-dismiss="offcanvas">
+          Apply Filters
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer id="contact" class="bg-dark text-white pt-5 pb-4 border-top border-4 border-success">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-logo-box mb-4" href="index.html">
+            <img src="images/logo.png" alt="Vise Organic Logo" class="footer-logo">
+          </a>
+          <p class="small text-white-50 mb-4">
+            Vise Organic is an Indian organic agriculture and biotechnology company dedicated to science-backed biofertilizers, biopesticides, and sustainable plant nutrition.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Quick Links</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none hover-white">Home</a></li>
+            <li class="mb-2"><a href="index.html#why-choose" class="text-white-50 text-decoration-none hover-white">About Us</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Product Range</a></li>
+            <li class="mb-2"><a href="rd.html" class="text-white-50 text-decoration-none hover-white">R&D Laboratory</a></li>
+            <li class="mb-2"><a href="index.html#blogs" class="text-white-50 text-decoration-none hover-white">Agronomy Blogs</a></li>
+            <li class="mb-2"><a href="#contact" class="text-white-50 text-decoration-none hover-white">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Solutions -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Solutions</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Biofertilizers & Mycorrhiza</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Botanical Biopesticides</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Plant Growth Regulators</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Organo-Silicone Adjuvants</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Soil Carbon Rejuvenators</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get In Touch -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Get In Touch</h3>
+          <ul class="list-unstyled small text-white-50 mb-0">
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-geo-alt-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>Vise Organic Biotech Pvt Ltd, A10 Prime Industry Estate, Manjusar, Gujarat - 391775, India</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-telephone-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>+91 1800-123-ORGANIC (Toll Free)</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-envelope-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>support@viseorganic.com</span>
+            </li>
+            <li class="d-flex gap-2">
+              <i class="bi bi-clock-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>Mon - Sat: 9:00 AM - 6:30 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary border-opacity-25">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50 py-2">
+        <div>© 2026 Vise Organic Agriculture & Biotechnology. All rights reserved.</div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none">Terms of Service</a>
+          <a href="#" class="text-white-50 text-decoration-none">NPOP Organic Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       FLOATING WHATSAPP BUTTON
+       ========================================== -->
+  <a href="https://wa.me/919876543210?text=Hello%20Vise%20Organic,%20I%20want%20to%20know%20more%20about%20your%20organic%20solutions." class="whatsapp-float" target="_blank" aria-label="Contact Vise Organic on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       MODAL 1: Get Expert Advice Consultation
+       ========================================== -->
+  <div class="modal fade" id="expertAdviceModal" tabindex="-1" aria-labelledby="expertAdviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-vo p-4">
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <span class="badge-vo-accent mb-1 d-inline-block">Free Agronomy Advisory</span>
+            <h3 class="h4 modal-title text-vo-primary font-poppins" id="expertAdviceModalLabel">Request Product Price & Advice</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-vo-muted mb-4">Fill in your details and our agronomy team will call you with commercial pricing and application dosage.</p>
+          
+          <form id="expertConsultationForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="adv-name" class="form-label small fw-bold">Full Name *</label>
+              <input type="text" class="form-control rounded-3" id="adv-name" placeholder="e.g. Rajesh Kumar" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label for="adv-phone" class="form-label small fw-bold">Phone Number *</label>
+                <input type="tel" class="form-control rounded-3" id="adv-phone" placeholder="10-digit Mobile" pattern="[0-9]{10}" required>
+              </div>
+              <div class="col-6">
+                <label for="adv-state" class="form-label small fw-bold">State *</label>
+                <select class="form-select rounded-3" id="adv-state" required>
+                  <option value="" selected disabled>Select State</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Other">Other State</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="adv-crop" class="form-label small fw-bold">Main Crop Grown</label>
+              <input type="text" class="form-control rounded-3" id="adv-crop" placeholder="e.g. Cotton, Wheat, Sugarcane">
+            </div>
+            <button type="submit" class="btn btn-vo-accent w-100 py-3 text-dark fw-bold">
+              Submit Inquiry <i class="bi bi-send-fill ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: Product Quick View Details
+       ========================================== -->
+  <div class="modal fade" id="productQuickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-content-vo p-4">
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <span id="modalProdCategory" class="badge-vo mb-1 d-inline-block">Biofertilizer</span>
+            <h3 id="modalProdTitle" class="h3 modal-title text-vo-primary font-poppins">Product Details</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalProdDesc" class="text-vo-muted mb-4 fs-6">Description...</p>
+          <h4 class="h6 font-poppins text-vo-primary mb-3">Key Technical Benefits:</h4>
+          <ul id="modalProdBenefits" class="list-unstyled mb-4">
+            <!-- Dynamically injected by JS -->
+          </ul>
+          <div class="d-flex justify-content-end gap-3">
+            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-vo-accent text-dark" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">
+              Request Price / Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Main JS & Products JS -->
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

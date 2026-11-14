@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storefront Customization — Tiffinworld Vendor Panel</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Vendor SaaS Design System CSS -->
+  <link href="assets/css/vendor-style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="vendor-wrapper">
+  <!-- Sidebar -->
+  <aside class="vendor-sidebar">
+    <div>
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon-box">
+          <i class="bi bi-box-seam-fill"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">TiffinWorld</h1>
+        </div>
+      </a>
+
+      <ul class="sidebar-menu">
+        <li>
+          <a href="index.html" class="menu-item-link">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="products.html" class="menu-item-link">
+            <i class="bi bi-archive-fill"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="menu-planner.html" class="menu-item-link">
+            <i class="bi bi-calendar3"></i>
+            <span>Menu Planner</span>
+          </a>
+        </li>
+        <li>
+          <a href="profile.html" class="menu-item-link">
+            <i class="bi bi-person-fill"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="seller-website.html" class="menu-item-link active">
+            <i class="bi bi-globe"></i>
+            <span>Seller Website</span>
+            <i class="bi bi-chevron-down caret-icon"></i>
+          </a>
+        </li>
+        <li>
+          <a href="help.html" class="menu-item-link">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help</span>
+          </a>
+        </li>
+        <li>
+          <a href="inquiries.html" class="menu-item-link">
+            <i class="bi bi-chat-quote-fill"></i>
+            <span>Inquiries</span>
+          </a>
+        </li>
+        <li>
+          <a href="plans.html" class="menu-item-link">
+            <i class="bi bi-journal-bookmark-fill"></i>
+            <span>Plans</span>
+          </a>
+        </li>
+        <li>
+          <a href="delivery-setup.html" class="menu-item-link">
+            <i class="bi bi-truck"></i>
+            <span>Delivery Location Setup</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-logout-card">
+      <a href="../website/vendor-login.html" class="logout-btn-outline">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Log Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="vendor-main-content">
+    <!-- Header Component -->
+    <header class="vendor-header">
+      <div class="header-search-wrap">
+        <i class="bi bi-search header-search-icon"></i>
+        <input type="text" id="headerSearchInput" class="header-search-input" placeholder="Search orders, products...">
+      </div>
+
+      <div class="header-actions">
+        <a href="../website/index.html" target="_blank" class="btn-visit-site-orange">
+          <i class="bi bi-box-arrow-up-right me-1"></i>
+          <span>Visit Website</span>
+        </a>
+
+        <div class="vendor-header-profile">
+          <div class="vendor-header-info">
+            <div class="vendor-header-name">The Green Kitchen</div>
+            <div class="vendor-header-tag">PREMIUM VENDOR</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=120&q=80" alt="Chef Avatar" class="vendor-header-avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Body Content -->
+    <div class="page-body-container">
+      <!-- Title & Subtitle Row -->
+      <div class="mb-4">
+        <h4 class="fw-bold mb-1" style="color: #15803D;">Storefront Customization</h4>
+        <p class="text-secondary mb-0" style="font-size: 15px;">Refine your public identity. Your profile is the first impression customers have of your culinary journey.</p>
+      </div>
+
+      <!-- Main Two Column Layout -->
+      <div class="row g-4">
+        <!-- Left Column: Cover Photo & Profile Details -->
+        <div class="col-lg-6">
+          <!-- Cover Image Section -->
+          <div class="mb-4">
+            <h5 class="fw-bold mb-3 text-dark">Cover Image</h5>
+            <div class="cover-photo-box" onclick="document.getElementById('coverFileInput').click();">
+              <i class="bi bi-camera-fill fs-2 mb-2"></i>
+              <div class="fw-bold fs-6">Replace Cover Photo</div>
+              <div class="small opacity-75">Recommended: 1200 × 480px</div>
+              <input type="file" id="coverFileInput" style="display:none;" onchange="if(typeof showToast==='function') showToast('Cover photo replaced!');">
+            </div>
+          </div>
+
+          <!-- Profile Details Section -->
+          <div>
+            <div class="border-bottom pb-2 mb-3">
+              <h6 class="fw-bold mb-0" style="color: var(--primary-orange);">Profile Details</h6>
+            </div>
+
+            <div class="mb-3.5">
+              <label class="form-label fw-bold" style="color: #15803D; font-size: 14px;">Display Name</label>
+              <input type="text" class="form-control" value="The Heritage Kitchen" style="background: #EFF6FF; border: 1.5px solid #DBEAFE; border-radius: 14px; padding: 12px 18px; font-size: 14.5px;">
+            </div>
+
+            <div class="mb-3.5">
+              <label class="form-label fw-bold" style="color: #15803D; font-size: 14px;">Tagline</label>
+              <input type="text" class="form-control" placeholder="e.g. Traditional recipes with a modern twist" style="background: #EFF6FF; border: 1.5px solid #DBEAFE; border-radius: 14px; padding: 12px 18px; font-size: 14.5px;">
+            </div>
+
+            <div class="mb-3.5">
+              <label class="form-label fw-bold" style="color: #15803D; font-size: 14px;">About Your Business</label>
+              <textarea class="form-control" rows="5" style="background: #EFF6FF; border: 1.5px solid #DBEAFE; border-radius: 14px; padding: 14px 18px; font-size: 14.5px; line-height: 1.5;">Founded on the principles of sustainability and family traditions, The Heritage Kitchen brings artisanal tiffins to your doorstep. Every dish tells a story of spices sourced directly from our farm partners.</textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold" style="color: #15803D; font-size: 14px;">Public URL Slug</label>
+              <div class="input-group">
+                <span class="input-group-text fw-medium" style="background: #EFF6FF; border: 1.5px solid #DBEAFE; border-right: none; border-radius: 14px 0 0 14px; color: #475569; font-size: 14px;">tiffinworld.com/store/</span>
+                <input type="text" class="form-control" value="heritage-kitchen" style="background: #EFF6FF; border: 1.5px solid #DBEAFE; border-left: none; border-radius: 0 14px 14px 0; color: #0F172A; font-weight: 500; font-size: 14.5px;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Photo Gallery & Action Buttons -->
+        <div class="col-lg-6">
+          <!-- Photo Gallery Section -->
+          <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="fw-bold mb-0 text-dark">Photo Gallery</h5>
+              <a href="#" onclick="document.getElementById('galleryFileInput').click(); return false;" class="fw-bold text-decoration-none" style="color: var(--primary-orange); font-size: 14px;"><i class="bi bi-plus-circle me-1"></i> Add Photos</a>
+            </div>
+
+            <span class="badge rounded-pill px-3 py-1 mb-3" style="background: #FEE2E2; color: #DC2626; font-size: 11px;">3 / 4 Slots Used</span>
+
+            <!-- Dashed Upload Drop Zone -->
+            <div class="dashed-upload-box mb-3" onclick="document.getElementById('galleryFileInput').click();">
+              <i class="bi bi-cloud-arrow-up fs-1 mb-2" style="color: #60A5FA;"></i>
+              <div class="fw-bold text-dark fs-6">Drop more photos here or <span class="text-success text-decoration-underline">browse</span></div>
+              <div class="text-secondary extra-small mt-1" style="font-size: 11.5px;">MAX 10MB PER IMAGE • JPG, PNG, WEBP</div>
+              <input type="file" id="galleryFileInput" style="display:none;" onchange="if(typeof showToast==='function') showToast('Photo uploaded to gallery!');">
+            </div>
+
+            <!-- 2x2 Photo Grid -->
+            <div class="row g-3">
+              <div class="col-6">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=300&q=80" alt="Gallery Photo 1" class="store-gallery-img">
+              </div>
+              <div class="col-6">
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=300&q=80" alt="Gallery Photo 2" class="store-gallery-img">
+              </div>
+              <div class="col-6">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=80" alt="Gallery Photo 3" class="store-gallery-img">
+              </div>
+              <div class="col-6">
+                <div class="dashed-slot-btn" onclick="document.getElementById('galleryFileInput').click();">
+                  <i class="bi bi-plus-lg fs-3 mb-1"></i>
+                  <span class="small fw-semibold">Upload</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons Card -->
+          <div class="detail-blue-card">
+            <button class="btn text-white w-100 py-3 rounded-4 fw-bold fs-6 shadow-sm mb-3" style="background: #2D4030;" onclick="if(typeof showToast==='function') showToast('Storefront changes published successfully!');">
+              Publish Changes
+            </button>
+
+            <button class="btn w-100 py-3 rounded-4 fw-bold fs-6" style="border: 2px solid var(--primary-orange); color: var(--primary-orange) !important; background: #FFFFFF;" onclick="window.open('seller-website.html', '_blank');">
+              <i class="bi bi-eye me-2"></i> LIVE PREVIEW
+            </button>
+
+            <div class="small fw-bold text-secondary text-uppercase text-center mt-3" style="font-size: 10.5px; letter-spacing: 0.8px;">
+              • CHANGES WILL BE VISIBLE IMMEDIATELY ON YOUR PUBLIC PAGE.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor-main.js"></script>
+</body>
+</html>

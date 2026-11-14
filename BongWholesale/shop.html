@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHOLESALE CATALOG | Bong Wholesale Glassware</title>
+  <meta name="description" content="Browse our complete B2B wholesale catalog of borosilicate beaker bongs, hand pipes, dab rigs, and glass accessories. Direct factory volume discounts.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .shop-page-body{background:#f1f3f6;font-family:'Inter',sans-serif;padding-top:135px}
+    .shop-layout{display:grid;grid-template-columns:240px 1fr;gap:12px;align-items:start;padding:12px 0}
+    .fk-sidebar{background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.08);overflow:hidden;position:sticky;top:145px}
+    .fk-sidebar-header{background:#E87F24;color:#fff;padding:14px 16px;font-size:.95rem;font-weight:700;display:flex;align-items:center;gap:8px}
+    .fk-filter-section{padding:14px 16px;border-bottom:1px solid #f0f0f0}
+    .fk-filter-section:last-child{border-bottom:none}
+    .fk-filter-title{font-size:.78rem;font-weight:700;color:#212121;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px}
+    .fk-check{display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer}
+    .fk-check input{width:16px;height:16px;accent-color:#E87F24;cursor:pointer}
+    .fk-check label{font-size:.83rem;color:#333;cursor:pointer;display:flex;align-items:center;justify-content:space-between;width:100%}
+    .fk-check label span.count{font-size:.75rem;color:#878787}
+    .fk-price-range{display:flex;gap:8px;align-items:center}
+    .fk-price-range input{width:80px;padding:5px 8px;border:1px solid #d0d0d0;border-radius:3px;font-size:.8rem;color:#333}
+    .fk-rating-row{display:flex;align-items:center;gap:6px;margin-bottom:8px;cursor:pointer;font-size:.83rem;color:#333}
+    .fk-stars{display:flex;gap:1px}
+    .fk-stars i{color:#E87F24;font-size:.75rem}
+    .fk-main{display:flex;flex-direction:column;gap:10px}
+    .fk-sort-bar{background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.08);padding:12px 20px;display:flex;align-items:center;gap:0}
+    .sort-label{font-size:.8rem;color:#878787;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-right:20px;white-space:nowrap}
+    .sort-options{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+    .sort-options::-webkit-scrollbar{display:none}
+    .sort-opt{padding:4px 16px;font-size:.85rem;font-weight:500;color:#333;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+    .sort-opt:hover{color:#E87F24}
+    .sort-opt.active{color:#E87F24;border-bottom-color:#E87F24;font-weight:700}
+    .fk-results-count{font-size:.82rem;color:#878787;margin-left:auto;white-space:nowrap}
+    .fk-product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;border-radius:4px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+    .fk-card{background:#fff;padding:16px 12px 14px;cursor:pointer;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;position:relative;height:100%}
+    .fk-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.14);z-index:2;transform:translateY(-2px)}
+    .fk-card-img-wrap{position:relative;text-align:center;margin-bottom:12px;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .fk-card-img-wrap img{max-height:150px;max-width:100%;object-fit:contain;transition:transform .3s}
+    .fk-card:hover .fk-card-img-wrap img{transform:scale(1.06)}
+    .fk-card-wish{position:absolute;top:6px;right:6px;width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid #e0e0e0;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:.9rem;cursor:pointer;transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,.1);z-index:3}
+    .fk-card-wish:hover{color:#E87F24;border-color:#E87F24}
+    .fk-card-badge{position:absolute;top:6px;left:0;background:linear-gradient(135deg,#E87F24,#f5a623);color:#fff;font-size:.65rem;font-weight:700;padding:3px 8px 3px 6px;border-radius:0 12px 12px 0;letter-spacing:.3px;text-transform:uppercase;z-index:3}
+    .fk-card-badge.bulk{background:linear-gradient(135deg,#388e3c,#4caf50)}
+    .fk-card-badge.hot{background:linear-gradient(135deg,#e53935,#ef5350)}
+    .fk-card-name{font-size:.86rem;font-weight:600;color:#212121;margin-bottom:4px;line-height:1.35;height:38px;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .fk-card-desc{font-size:.74rem;color:#878787;margin-bottom:8px;line-height:1.35;height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .fk-card-rating{display:inline-flex;align-items:center;gap:4px;background:#388e3c;color:#fff;font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:8px;align-self:flex-start;width:fit-content;height:20px}
+    .fk-card-rating.low{background:#f9a825}
+    .fk-card-price-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;height:24px}
+    .fk-price-ws{font-size:1.05rem;font-weight:800;color:#212121}
+    .fk-price-mrp{font-size:.78rem;color:#878787;text-decoration:line-through}
+    .fk-price-disc{font-size:.78rem;font-weight:700;color:#388e3c}
+    .fk-card-tier{font-size:.72rem;color:#E87F24;font-weight:600;margin-bottom:10px;height:18px;display:flex;align-items:center}
+    .fk-card-btns{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto;height:34px}
+    .fk-card-btn{background:#E87F24;color:#fff;border:none;border-radius:3px;font-size:.8rem;font-weight:700;width:100%;height:34px;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center}
+    .fk-card-btn:hover{background:#d06e14}
+    .fk-card-btn-outline{background:#fff;color:#E87F24;border:1.5px solid #E87F24;border-radius:3px;font-size:.8rem;font-weight:700;width:100%;height:34px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;text-decoration:none}
+    .fk-card-btn-outline:hover{background:#fff8f2;color:#E87F24}
+    .fk-pagination{background:#fff;border-radius:4px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+    .fk-page-info{font-size:.85rem;color:#878787}
+    .fk-page-btns{display:flex;gap:6px}
+    .fk-page-btn{padding:6px 14px;border:1px solid #d0d0d0;background:#fff;border-radius:3px;font-size:.83rem;font-weight:500;color:#333;cursor:pointer;transition:all .2s}
+    .fk-page-btn:hover,.fk-page-btn.active{border-color:#E87F24;color:#E87F24;background:#fff8f2}
+    .fk-page-btn.prev-next{color:#E87F24;font-weight:700;border-color:#E87F24}
+
+    /* Mobile Filter Bar & Quick Chips (Default: hidden on desktop) */
+    .mobile-filter-bar{display:none}
+
+    /* Strict Mobile & Tablet Rules (< 992px) */
+    @media(max-width:991.98px){
+      .shop-page-body{padding-top:105px}
+      .shop-layout{display:block;padding:4px 0}
+      .fk-sidebar.desktop-sidebar{display:none !important}
+      .mobile-filter-bar{display:flex !important;flex-direction:column;gap:8px;margin-bottom:10px}
+      .mobile-filter-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+      .mobile-filter-btn{background:#fff;border:1px solid #d0d0d0;border-radius:20px;padding:6px 14px;font-size:.8rem;font-weight:700;color:#212121;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 3px rgba(0,0,0,.06);cursor:pointer}
+      .mobile-cat-chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 0 4px}
+      .mobile-cat-chip{background:#fff;border:1px solid #dcdcdc;border-radius:16px;padding:4px 12px;font-size:.74rem;font-weight:600;color:#4b5563;white-space:nowrap;cursor:pointer;transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease}
+      .mobile-cat-chip.active{background:#E87F24 !important;color:#fff !important;border-color:#E87F24 !important;box-shadow:0 2px 6px rgba(232,127,36,0.35)}
+
+      /* Compact High-Density Product Grid on Mobile: 4 cards visible in one screen frame */
+      .fk-product-grid{grid-template-columns:repeat(2,1fr) !important;gap:6px !important;background:transparent !important;box-shadow:none !important}
+      .fk-card{padding:6px 6px 8px !important;border-radius:8px !important;border:1px solid #e2e8f0 !important;box-shadow:0 1px 4px rgba(0,0,0,.04) !important;min-height:unset !important}
+      .fk-card-img-wrap{height:85px !important;margin-bottom:4px !important}
+      .fk-card-img-wrap img{max-height:75px !important}
+      .fk-card-wish{width:22px !important;height:22px !important;font-size:.7rem !important;top:4px !important;right:4px !important}
+      .fk-card-badge{font-size:.55rem !important;padding:1px 5px !important;top:4px !important;border-radius:0 6px 6px 0 !important}
+      .fk-card-name{font-size:.72rem !important;height:26px !important;line-height:1.2 !important;margin-bottom:2px !important;font-weight:600 !important;-webkit-line-clamp:2 !important;line-clamp:2 !important}
+      .fk-card-desc{display:none !important}
+      .fk-card-rating{font-size:.6rem !important;height:15px !important;padding:0 4px !important;margin-bottom:2px !important;gap:2px !important}
+      .fk-card-price-row{height:16px !important;margin-bottom:2px !important;gap:3px !important}
+      .fk-price-ws{font-size:.82rem !important;font-weight:800 !important}
+      .fk-price-mrp{font-size:.62rem !important}
+      .fk-price-disc{font-size:.62rem !important}
+      .fk-card-tier{font-size:.6rem !important;height:14px !important;margin-bottom:4px !important}
+      .fk-card-btns{height:24px !important;gap:3px !important;margin-top:auto !important}
+      .fk-card-btn,.fk-card-btn-outline{height:24px !important;font-size:.65rem !important;font-weight:600 !important;padding:0 2px !important;border-radius:3px !important}
+      .fk-sort-bar{padding:6px 10px !important;border-radius:6px !important;margin-bottom:8px !important}
+      .sort-label{display:none !important}
+      .sort-opt{padding:2px 8px !important;font-size:.72rem !important}
+      .fk-results-count{font-size:.7rem !important}
+      .fk-pagination{padding:10px 14px !important;border-radius:6px !important}
+      .fk-page-btn{padding:4px 8px !important;font-size:.75rem !important}
+    }
+  </style>
+</head>
+<body class="shop-page-body">
+  <div class="cursor-dot"></div>
+  <div class="cursor-follower"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-glass scrolled" data-force-scrolled="true">
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <img src="images/logo.png" alt="BongWholesale Logo" />
+      </a>
+
+      <!-- Mobile Actions (Search, Login, Cart, Hamburger) - Always Visible on Mobile -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search Catalog">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#loginModal" title="Account Login">
+          <i class="bi bi-person"></i>
+        </button>
+        <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Wholesale Order">
+          <i class="bi bi-bag-fill"></i>
+          <span class="badge-counter badge-cart-count">1</span>
+        </button>
+        <button class="navbar-toggler border-0 text-dark p-1" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNavDrawer" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation Menu (Visible on Desktop >= 992px) -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="beakers.html">Beakers</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="bongs.html">Bongs</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="pipes.html">Hand Pipes</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="accessories.html">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#searchModal" title="Search Catalog"><i class="bi bi-search fs-5"></i></button>
+          <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#loginModal" title="Account Login"><i class="bi bi-person fs-5"></i></button>
+          <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" title="Wholesale Order"><i class="bi bi-bag-fill fs-5"></i><span class="badge-counter badge-cart-count">1</span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Professional Mobile Navigation Drawer (< 992px) -->
+  <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="mobileNavDrawer" style="width: 300px; max-width: 85vw;">
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25 py-3">
+      <a class="navbar-brand navbar-brand-logo d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="BongWholesale Logo" style="height: 38px; width: auto;" />
+      </a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column p-3">
+      <div class="mb-3">
+        <a href="shop.html" class="btn btn-glow-orange w-100 py-2 d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-box-seam"></i>
+          <span>Wholesale Catalog</span>
+        </a>
+      </div>
+
+      <div class="mob-menu-group mb-4">
+        <div class="text-uppercase text-muted fw-bold mb-2 ps-2" style="font-size: 0.68rem; letter-spacing: 0.8px;">Navigation</div>
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-1">
+          <li>
+            <a href="index.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-house-door"></i></span>
+              <span class="mob-nav-text">Home</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="shop.html" class="mob-nav-item active">
+              <span class="mob-nav-icon"><i class="bi bi-grid"></i></span>
+              <span class="mob-nav-text">Full Catalog (150+ SKUs)</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="beakers.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-shield-check"></i></span>
+              <span class="mob-nav-text">Beaker Bongs</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="bongs.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-droplet-half"></i></span>
+              <span class="mob-nav-text">Straight Tube Bongs</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="pipes.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-fire"></i></span>
+              <span class="mob-nav-text">Hand Pipes & Chillums</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="accessories.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-gem"></i></span>
+              <span class="mob-nav-text">Glass Accessories</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="mob-nav-item">
+              <span class="mob-nav-icon"><i class="bi bi-envelope"></i></span>
+              <span class="mob-nav-text">Contact / OEM Custom</span>
+              <i class="bi bi-chevron-right mob-nav-arrow"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-auto border-top pt-3">
+        <button class="btn btn-outline-dark w-100 py-2 d-flex align-items-center justify-content-center gap-2 mb-2 rounded-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+          <i class="bi bi-person-circle text-warning"></i>
+          <span class="fw-bold small">B2B Partner Portal Login</span>
+        </button>
+        <div class="d-flex align-items-center justify-content-between text-muted small px-1 pt-1">
+          <span><i class="bi bi-telephone text-warning me-1"></i> (800) 420-BONG</span>
+          <span class="badge bg-success bg-opacity-10 text-success">Verified B2B</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER & DISCOUNT TICKER MARQUEE STRIP -->
+  <div class="offer-ticker-wrapper">
+    <div class="offer-ticker-track">
+      <span class="offer-ticker-item"><i class="bi bi-tag-fill ticker-icon"></i> Use Code <span class="ticker-code">SMOKE10</span> for 10% OFF on Orders Above $100</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-truck ticker-icon"></i> Free Shipping Over $35 — Factory Direct Wholesale Pricing</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-lightning-fill ticker-icon"></i> Use Code <span class="ticker-code">SMOKE20</span> for 20% OFF on Orders Above $500</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-gem ticker-icon"></i> Premium Borosilicate Glass — Lab-Grade Quality, Wholesale Prices</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-box-seam ticker-icon"></i> 24h Express Dispatch — Insured Air Freight Worldwide</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-tag-fill ticker-icon"></i> Use Code <span class="ticker-code">SMOKE10</span> for 10% OFF on Orders Above $100</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-truck ticker-icon"></i> Free Shipping Over $35 — Factory Direct Wholesale Pricing</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-lightning-fill ticker-icon"></i> Use Code <span class="ticker-code">SMOKE20</span> for 20% OFF on Orders Above $500</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-gem ticker-icon"></i> Premium Borosilicate Glass — Lab-Grade Quality, Wholesale Prices</span>
+      <span class="offer-ticker-sep">✦</span>
+      <span class="offer-ticker-item"><i class="bi bi-box-seam ticker-icon"></i> 24h Express Dispatch — Insured Air Freight Worldwide</span>
+      <span class="offer-ticker-sep">✦</span>
+    </div>
+  </div>
+
+  <div class="container-fluid px-lg-5 py-3">
+    <div class="shop-layout">
+      <!-- Desktop Left Sidebar (Hidden on Mobile) -->
+      <aside class="fk-sidebar desktop-sidebar" id="filterSidebar">
+        <div class="fk-sidebar-header"><i class="bi bi-funnel-fill"></i> FILTERS <button onclick="clearFilters()" style="background:none;border:none;color:#fff;font-weight:600;margin-left:auto;cursor:pointer">Clear All</button></div>
+        <div class="fk-filter-section">
+          <div class="fk-filter-title">Category</div>
+          <label class="fk-check"><input type="checkbox" checked id="fc-beakers"><label for="fc-beakers">Beaker Bongs <span class="count">24</span></label></label>
+          <label class="fk-check"><input type="checkbox" checked id="fc-bongs"><label for="fc-bongs">Straight Bongs <span class="count">18</span></label></label>
+          <label class="fk-check"><input type="checkbox" checked id="fc-pipes"><label for="fc-pipes">Hand Pipes <span class="count">42</span></label></label>
+          <label class="fk-check"><input type="checkbox" id="fc-dab"><label for="fc-dab">Dab Rigs <span class="count">16</span></label></label>
+          <label class="fk-check"><input type="checkbox" id="fc-acc"><label for="fc-acc">Accessories <span class="count">49</span></label></label>
+        </div>
+        <div class="fk-filter-section">
+          <div class="fk-filter-title">Retailer Rating</div>
+          <label class="fk-rating-row"><input type="checkbox" style="accent-color:#E87F24;width:16px;height:16px"><div class="fk-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><span style="font-size:.75rem;color:#878787">(81)</span></label>
+          <label class="fk-rating-row"><input type="checkbox" style="accent-color:#E87F24;width:16px;height:16px"><div class="fk-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div><span style="font-size:.75rem;color:#878787">(44)</span></label>
+          <label class="fk-rating-row"><input type="checkbox" style="accent-color:#E87F24;width:16px;height:16px"><div class="fk-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></div><span style="font-size:.75rem;color:#878787">(24)</span></label>
+        </div>
+        <div class="fk-filter-section">
+          <div class="fk-filter-title">Unit Price (Wholesale)</div>
+          <div class="fk-price-range"><input type="number" placeholder="Min $" value="4"><span style="color:#ccc">-</span><input type="number" placeholder="Max $" value="200"></div>
+          <button style="margin-top:8px;background:#E87F24;color:#fff;border:none;padding:5px 14px;border-radius:3px;font-size:.78rem;cursor:pointer;font-weight:600">Apply</button>
+        </div>
+        <div class="fk-filter-section">
+          <div class="fk-filter-title">Glass Thickness</div>
+          <label class="fk-check"><input type="radio" name="thick" checked><label>All Thicknesses</label></label>
+          <label class="fk-check"><input type="radio" name="thick"><label>5mm Standard</label></label>
+          <label class="fk-check"><input type="radio" name="thick"><label>7mm Heavy Wall</label></label>
+          <label class="fk-check"><input type="radio" name="thick"><label>9mm Armor Glass</label></label>
+        </div>
+        <div class="fk-filter-section">
+          <div class="fk-filter-title">Min. Order Qty</div>
+          <label class="fk-check"><input type="radio" name="moq" checked><label>Any MOQ</label></label>
+          <label class="fk-check"><input type="radio" name="moq"><label>Min 5 units</label></label>
+          <label class="fk-check"><input type="radio" name="moq"><label>Min 10 units</label></label>
+          <label class="fk-check"><input type="radio" name="moq"><label>Min 25 units</label></label>
+          <label class="fk-check"><input type="radio" name="moq"><label>50+ Bulk Pack</label></label>
+        </div>
+        <div class="fk-filter-section">
+          <div class="fk-filter-title">Availability</div>
+          <label class="fk-check"><input type="checkbox" checked><label>In Stock</label></label>
+          <label class="fk-check"><input type="checkbox"><label>Pre-order</label></label>
+        </div>
+      </aside>
+
+      <div class="fk-main">
+        <!-- Mobile Compact Filter & Category Bar (< 992px) -->
+        <div class="mobile-filter-bar">
+          <div class="mobile-filter-top">
+            <button class="mobile-filter-btn" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas">
+              <i class="bi bi-funnel-fill text-warning"></i>
+              <span>Filter & Refine</span>
+              <span class="badge bg-warning text-dark ms-1" style="font-size: 0.65rem;">Active</span>
+            </button>
+            <span class="text-muted small"><strong>8</strong> items</span>
+          </div>
+          <div class="mobile-cat-chips">
+            <button class="mobile-cat-chip active" onclick="filterCategory('all', this)">All Glass</button>
+            <button class="mobile-cat-chip" onclick="filterCategory('beaker', this)">Beakers</button>
+            <button class="mobile-cat-chip" onclick="filterCategory('bong', this)">Bongs</button>
+            <button class="mobile-cat-chip" onclick="filterCategory('pipe', this)">Hand Pipes</button>
+            <button class="mobile-cat-chip" onclick="filterCategory('dab', this)">Dab Rigs</button>
+            <button class="mobile-cat-chip" onclick="filterCategory('accessories', this)">Accessories</button>
+          </div>
+        </div>
+
+        <div class="fk-sort-bar">
+          <span class="sort-label">Sort By</span>
+          <div class="sort-options">
+            <div class="sort-opt active" onclick="setSort(this)">Relevance</div>
+            <div class="sort-opt" onclick="setSort(this)">Top Rated</div>
+            <div class="sort-opt" onclick="setSort(this)">Price - Low to High</div>
+            <div class="sort-opt" onclick="setSort(this)">Price - High to Low</div>
+            <div class="sort-opt" onclick="setSort(this)">Highest Margin</div>
+            <div class="sort-opt" onclick="setSort(this)">Newest First</div>
+          </div>
+          <span class="fk-results-count">Showing <strong>8</strong> of <strong>149</strong> items</span>
+        </div>
+
+        <div class="fk-product-grid" id="productGrid">
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="beaker">
+            <div class="fk-card-img-wrap"><span class="fk-card-badge">Bestseller</span><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/beaker_bong.png" alt="Obsidian Beaker Bong"></div>
+            <div class="fk-card-name">Obsidian Beaker 14" Dual Percolator Bong</div>
+            <div class="fk-card-desc">7mm thick borosilicate - Ice catcher - 14mm joint</div>
+            <div class="fk-card-rating mid"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.7 <span style="opacity:.75;font-weight:400">(281)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$42.00</span><span class="fk-price-mrp">$89.00</span><span class="fk-price-disc">53% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Tier 1 - Min 10 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="pipe">
+            <div class="fk-card-img-wrap"><span class="fk-card-badge hot">Hot</span><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/hand_pipe.png" alt="Color Changing Pipe"></div>
+            <div class="fk-card-name">Artisan Color-Changing Fumed Spoon Pipe</div>
+            <div class="fk-card-desc">Pure silver fuming - Deep bowl - Dichroic accents</div>
+            <div class="fk-card-rating mid"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.5 <span style="opacity:.75;font-weight:400">(194)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$12.50</span><span class="fk-price-mrp">$32.00</span><span class="fk-price-disc">61% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Tier 2 - Min 25 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="dab">
+            <div class="fk-card-img-wrap"><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/dab_rig.png" alt="Recycler Dab Rig"></div>
+            <div class="fk-card-name">Precision Recycler Dab Rig 10" with Quartz Banger</div>
+            <div class="fk-card-desc">Continuous water loop - 14mm female joint - 5mm glass</div>
+            <div class="fk-card-rating mid"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.8 <span style="opacity:.75;font-weight:400">(139)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$58.00</span><span class="fk-price-mrp">$120.00</span><span class="fk-price-disc">52% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Tier 1 - Min 5 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="accessories">
+            <div class="fk-card-img-wrap"><span class="fk-card-badge bulk">Bulk</span><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/accessories.png" alt="Quartz Bangers"></div>
+            <div class="fk-card-name">Quartz Banger 90deg Pack - 14mm Male (50 pcs)</div>
+            <div class="fk-card-desc">High purity quartz - Bevel top rim - Thermal retention</div>
+            <div class="fk-card-rating mid"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.6 <span style="opacity:.75;font-weight:400">(412)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$4.80</span><span class="fk-price-mrp">$15.00</span><span class="fk-price-disc">68% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Bulk Pack - 50 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="frosted">
+            <div class="fk-card-img-wrap"><span class="fk-card-badge">Premium</span><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/beaker_frosted.png" alt="Frosted Beaker"></div>
+            <div class="fk-card-name">Arctic Frosted Beaker Bong 12" Sandblasted Finish</div>
+            <div class="fk-card-desc">Full frosted exterior - 7mm glass - Custom etch available</div>
+            <div class="fk-card-rating low"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.3 <span style="opacity:.75;font-weight:400">(88)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$38.00</span><span class="fk-price-mrp">$79.00</span><span class="fk-price-disc">52% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Tier 1 - Min 10 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="dichro">
+            <div class="fk-card-img-wrap"><span class="fk-card-badge hot">Limited</span><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/dichro_pipe.png" alt="Dichroic Pipe"></div>
+            <div class="fk-card-name">Dichroic Galaxy Spoon Pipe - Color Shift Glass</div>
+            <div class="fk-card-desc">Dichroic coating - UV reactive - Collectors edition</div>
+            <div class="fk-card-rating mid"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.9 <span style="opacity:.75;font-weight:400">(67)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$22.00</span><span class="fk-price-mrp">$55.00</span><span class="fk-price-disc">60% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Min 15 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="bong">
+            <div class="fk-card-img-wrap"><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/straight_bong.png" alt="Straight Tube Bong"></div>
+            <div class="fk-card-name">Straight Tube 18" Inline Perc Scientific Bong</div>
+            <div class="fk-card-desc">Inline percolator - 9mm armor glass - 18mm joint</div>
+            <div class="fk-card-rating mid"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.6 <span style="opacity:.75;font-weight:400">(153)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$65.00</span><span class="fk-price-mrp">$135.00</span><span class="fk-price-disc">52% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Tier 1 - Min 5 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+          <div class="fk-card" onclick="if(!event.target.closest('button') && !event.target.closest('a')) window.location.href='product-detail.html'" style="cursor: pointer;" data-cat="accessories">
+            <div class="fk-card-img-wrap"><span class="fk-card-badge bulk">Bulk</span><button class="fk-card-wish" onclick="toggleWish(this)"><i class="bi bi-heart"></i></button><img src="images/accessories.png" alt="Accessories Pack"></div>
+            <div class="fk-card-name">6-Arm Tree Perc Downstem Wholesale Pack (30 pcs)</div>
+            <div class="fk-card-desc">6-arm percolator - 18mm to 14mm - Diffused slits</div>
+            <div class="fk-card-rating low"><i class="bi bi-star-fill" style="font-size:.65rem"></i> 4.2 <span style="opacity:.75;font-weight:400">(219)</span></div>
+            <div class="fk-card-price-row"><span class="fk-price-ws">$6.20</span><span class="fk-price-mrp">$18.00</span><span class="fk-price-disc">66% off</span></div>
+            <div class="fk-card-tier"><i class="bi bi-box-seam me-1"></i>Bulk Pack - 30 units</div>
+            <div class="fk-card-btns"><button class="fk-card-btn" onclick="addOrder(this)">Add to Order</button><a href="product-detail.html" class="fk-card-btn-outline">Details</a></div>
+          </div>
+        </div>
+
+        <div class="fk-pagination">
+          <div class="fk-page-info">Page <strong>1</strong> of <strong>19</strong></div>
+          <div class="fk-page-btns">
+            <button class="fk-page-btn prev-next">&#8249; Prev</button>
+            <button class="fk-page-btn active" onclick="setPage(this)">1</button>
+            <button class="fk-page-btn" onclick="setPage(this)">2</button>
+            <button class="fk-page-btn" onclick="setPage(this)">3</button>
+            <button class="fk-page-btn" onclick="setPage(this)">4</button>
+            <button class="fk-page-btn" onclick="setPage(this)">5</button>
+            <button class="fk-page-btn prev-next">Next &#8250;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-glass">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <a class="navbar-brand navbar-brand-logo mb-3" href="index.html"><img src="images/logo.png" alt="BongWholesale Logo"></a>
+          <p class="text-muted small">The premier B2B wholesale platform for high-end borosilicate glassware, beaker bongs, dab rigs, and smoking accessories.</p>
+          <div class="d-flex gap-3"><a href="#" class="nav-icon-btn"><i class="bi bi-instagram"></i></a><a href="#" class="nav-icon-btn"><i class="bi bi-facebook"></i></a><a href="#" class="nav-icon-btn"><i class="bi bi-linkedin"></i></a></div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-dark font-heading mb-3">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="shop.html" class="footer-link">Shop</a></li>
+            <li><a href="beakers.html" class="footer-link">Beaker Bongs</a></li>
+            <li><a href="pipes.html" class="footer-link">Hand Pipes</a></li>
+            <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Sales</a></li>
+          </ul>
+        </div>
+                <div class="col-6 col-lg-2">
+          <h6 class="text-dark font-heading mb-3">Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="refund.html" class="footer-link" style="color:#ef4444;font-weight:600;">Return &amp; Refund Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="text-dark font-heading mb-3">B2B Support Center</h6>
+          <p class="text-muted small"><i class="bi bi-geo-alt text-warning me-2"></i>790 Glassware Blvd, Suite 400, CA 90210</p>
+          <p class="text-muted small"><i class="bi bi-telephone text-warning me-2"></i>+1 (800) 555-BONG (2664)</p>
+          <p class="text-muted small"><i class="bi bi-envelope text-warning me-2"></i>wholesale@bong.ws</p>
+        </div>
+      </div>
+      <div class="border-top border-secondary border-opacity-25 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center text-muted small">
+        <div>&#169; 2026 BONG.WS Wholesale Inc. All Rights Reserved.</div>
+        <div class="d-flex gap-3 mt-3 mt-md-0">
+          <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Filter Offcanvas Drawer (< 992px) -->
+  <div class="offcanvas offcanvas-start offcanvas-glass" tabindex="-1" id="filterOffcanvas" style="width: 320px; max-width: 85vw;">
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25 py-3">
+      <h5 class="offcanvas-title font-heading text-dark d-flex align-items-center gap-2 mb-0">
+        <i class="bi bi-funnel-fill text-warning"></i> Filter Catalog
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0 d-flex flex-column">
+      <div class="p-3 flex-grow-1 overflow-auto">
+        <!-- Categories -->
+        <div class="mb-3 pb-3 border-bottom">
+          <div class="fk-filter-title mb-2">Category</div>
+          <label class="fk-check mb-2"><input type="checkbox" checked onchange="applyMobileFilters()"><label>Beaker Bongs (24)</label></label>
+          <label class="fk-check mb-2"><input type="checkbox" checked onchange="applyMobileFilters()"><label>Straight Bongs (18)</label></label>
+          <label class="fk-check mb-2"><input type="checkbox" checked onchange="applyMobileFilters()"><label>Hand Pipes (42)</label></label>
+          <label class="fk-check mb-2"><input type="checkbox" checked onchange="applyMobileFilters()"><label>Dab Rigs (16)</label></label>
+          <label class="fk-check mb-2"><input type="checkbox" checked onchange="applyMobileFilters()"><label>Accessories (49)</label></label>
+        </div>
+
+        <!-- Rating -->
+        <div class="mb-3 pb-3 border-bottom">
+          <div class="fk-filter-title mb-2">Retailer Rating</div>
+          <label class="fk-rating-row mb-2"><input type="checkbox" style="accent-color:#E87F24;width:16px;height:16px"><div class="fk-stars"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i></div><span class="small text-muted ms-1">(81)</span></label>
+          <label class="fk-rating-row mb-2"><input type="checkbox" style="accent-color:#E87F24;width:16px;height:16px"><div class="fk-stars"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-muted"></i></div><span class="small text-muted ms-1">(44)</span></label>
+        </div>
+
+        <!-- Price Range -->
+        <div class="mb-3 pb-3 border-bottom">
+          <div class="fk-filter-title mb-2">Unit Price (Wholesale)</div>
+          <div class="fk-price-range"><input type="number" placeholder="Min $" value="4"><span class="text-muted">-</span><input type="number" placeholder="Max $" value="200"></div>
+        </div>
+
+        <!-- Glass Thickness -->
+        <div class="mb-3 pb-3 border-bottom">
+          <div class="fk-filter-title mb-2">Glass Thickness</div>
+          <label class="fk-check mb-2"><input type="radio" name="mob_thick" checked><label>All Thicknesses</label></label>
+          <label class="fk-check mb-2"><input type="radio" name="mob_thick"><label>5mm Standard</label></label>
+          <label class="fk-check mb-2"><input type="radio" name="mob_thick"><label>7mm Heavy Wall</label></label>
+          <label class="fk-check mb-2"><input type="radio" name="mob_thick"><label>9mm Armor Glass</label></label>
+        </div>
+
+        <!-- MOQ -->
+        <div class="mb-3">
+          <div class="fk-filter-title mb-2">Min. Order Qty</div>
+          <label class="fk-check mb-2"><input type="radio" name="mob_moq" checked><label>Any MOQ</label></label>
+          <label class="fk-check mb-2"><input type="radio" name="mob_moq"><label>Min 5 units</label></label>
+          <label class="fk-check mb-2"><input type="radio" name="mob_moq"><label>Min 10 units</label></label>
+          <label class="fk-check mb-2"><input type="radio" name="mob_moq"><label>50+ Bulk Pack</label></label>
+        </div>
+      </div>
+
+      <div class="p-3 border-top bg-light d-flex gap-2">
+        <button type="button" class="btn btn-outline-secondary flex-grow-1" onclick="clearFilters(); const f = bootstrap.Offcanvas.getInstance(document.getElementById('filterOffcanvas')); if(f) f.hide();">Reset</button>
+        <button type="button" class="btn btn-glow-orange flex-grow-1" data-bs-dismiss="offcanvas">Apply Filters</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Offcanvas Drawer -->
+  <div class="offcanvas offcanvas-end offcanvas-glass" tabindex="-1" id="cartOffcanvas" style="width: 400px; max-width: 90vw;">
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+      <h5 class="offcanvas-title font-heading text-dark d-flex align-items-center gap-2">
+        <i class="bi bi-bag-fill text-warning"></i> Wholesale Order Cart
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cartItemsList" class="flex-grow-1 overflow-auto">
+        <!-- Dynamically filled by main.js -->
+      </div>
+
+      <div class="border-top border-secondary border-opacity-25 pt-3 mt-3">
+        <div class="d-flex justify-content-between text-dark fw-bold mb-2">
+          <span>Subtotal (EXW):</span>
+          <span id="cartSubtotal" class="text-gradient-orange">$420.00</span>
+        </div>
+        <small class="text-muted d-block mb-3">Freight &amp; tax calculated at checkout.</small>
+        <a href="checkout.html" class="btn btn-glow-orange w-100 text-center">
+          <span>Proceed To B2B Checkout</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel p-3 bg-white">
+        <form onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if(q) { filterBySearch(q); const m = bootstrap.Modal.getInstance(document.getElementById('searchModal')); if(m) m.hide(); }">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-0 text-warning"><i class="bi bi-search fs-4"></i></span>
+            <input type="text" class="form-control bg-transparent border-0 text-dark fs-5"
+              placeholder="Search bongs, pipes, dab rigs..." autofocus>
+            <button type="submit" class="btn btn-outline-secondary border-0 text-dark" title="Search"><i class="bi bi-arrow-right"></i></button>
+            <button type="button" class="btn btn-outline-secondary border-0 text-dark" data-bs-dismiss="modal" aria-label="Close"><i
+                class="bi bi-x-lg"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel p-4 border-warning bg-white">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title font-heading text-dark">B2B Partner Portal Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-3">
+          <form onsubmit="event.preventDefault(); alert('Logged in to B2B Wholesale Portal!'); const m = bootstrap.Modal.getInstance(document.getElementById('loginModal')); if(m) m.hide();">
+            <div class="mb-3">
+              <label class="form-label text-muted small fw-semibold">Business Email</label>
+              <input type="email" class="form-control bg-light text-dark border-secondary"
+                placeholder="buyer@dispensary.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-muted small fw-semibold">Resale Password</label>
+              <input type="password" class="form-control bg-light text-dark border-secondary" placeholder="••••••••"
+                required>
+            </div>
+            <button type="submit" class="btn btn-glow-orange w-100 mt-2">Login To Wholesale Dashboard</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function setSort(el){document.querySelectorAll('.sort-opt').forEach(o=>o.classList.remove('active'));el.classList.add('active')}
+    function setPage(el){document.querySelectorAll('.fk-page-btn:not(.prev-next)').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+    function toggleWish(btn){const i=btn.querySelector('i'),f=i.classList.toggle('bi-heart-fill');i.classList.toggle('bi-heart',!f);btn.style.color=f?'#E87F24':'#ccc';btn.style.borderColor=f?'#E87F24':'#e0e0e0'}
+    function clearFilters(){document.querySelectorAll('#filterSidebar input[type=checkbox], #filterOffcanvas input[type=checkbox]').forEach(i=>i.checked=false)}
+    function filterCategory(cat,el){
+      document.querySelectorAll('.mobile-cat-chip, .cat-chip').forEach(c=>c.classList.remove('active'));
+      if(el) el.classList.add('active');
+      document.querySelectorAll('.fk-card').forEach(card=>{
+        card.style.display = (cat==='all'||card.dataset.cat===cat)?'flex':'none';
+      });
+    }
+    function addOrder(btn){
+      const card = btn.closest('.fk-card');
+      let title = 'Obsidian Beaker 14" Dual Percolator Bong';
+      let price = 42.00;
+      let qty = 10;
+      let img = 'images/beaker_bong.png';
+
+      if (card) {
+        const titleEl = card.querySelector('.fk-card-name');
+        if (titleEl) title = titleEl.innerText.trim();
+
+        const priceEl = card.querySelector('.fk-price-ws');
+        if (priceEl) {
+          const match = priceEl.innerText.match(/[\d.]+/);
+          if (match) price = parseFloat(match[0]);
+        }
+
+        const imgEl = card.querySelector('.fk-card-img-wrap img');
+        if (imgEl) img = imgEl.src;
+
+        const tierEl = card.querySelector('.fk-card-tier');
+        if (tierEl) {
+          const match = tierEl.innerText.match(/\d+/);
+          if (match) qty = parseInt(match[0], 10);
+        }
+      }
+
+      if (typeof window.addToCart === 'function') {
+        window.addToCart(title, price, qty, img);
+      }
+      if (typeof window.showToast === 'function') {
+        window.showToast(`Added ${qty}x ${title} to Wholesale Order Cart!`);
+      }
+
+      const o = btn.textContent;
+      btn.textContent = 'Added!';
+      btn.style.background = '#388e3c';
+      setTimeout(() => {
+        btn.textContent = o;
+        btn.style.background = '';
+      }, 1500);
+    }
+
+    function filterBySearch(q) {
+      const term = q.toLowerCase();
+      let matchCount = 0;
+      document.querySelectorAll('.fk-card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const matches = text.includes(term);
+        card.style.display = matches ? 'flex' : 'none';
+        if (matches) matchCount++;
+      });
+      const countEl = document.querySelector('.fk-results-count');
+      if (countEl) {
+        countEl.innerHTML = `Showing <strong>${matchCount}</strong> search results for "<em>${q}</em>"`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const search = params.get('search');
+      if (search) {
+        filterBySearch(search);
+      }
+    });
+  </script>
+</body>
+</html>

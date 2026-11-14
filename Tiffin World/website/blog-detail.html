@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Royal Flavors of Jaipur: A Journey through Veg Jaipuri — TiffinWorld Blog</title>
+  <meta name="description" content="Jaipur, the Pink City of India, is not just known for its majestic palaces and vibrant culture, but also for its rich culinary heritage.">
+  
+  <!-- Google Fonts: Epilogue & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  
+  <!-- Custom TiffinWorld Design System CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- ==================================================
+       SECTION 01 — HEADER (SHARED COMPONENT)
+       ================================================== -->
+  <header class="tw-header">
+    <div class="tw-container">
+      <div class="tw-header-inner">
+        <!-- Left: Logo -->
+        <div class="tw-header-left">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 48px; width: auto; max-width: 240px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="tw-header-center">
+          <ul class="tw-desktop-nav">
+            <li><a href="index.html" class="tw-nav-link">Home</a></li>
+            <li><a href="menu.html" class="tw-nav-link">Menu</a></li>
+            <li><a href="categories.html" class="tw-nav-link">Categories</a></li>
+            <li><a href="our-story.html" class="tw-nav-link">Our Story</a></li>
+            <li><a href="contact.html" class="tw-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Actions + Mobile Toggle -->
+        <div class="tw-header-right">
+          <div class="tw-header-actions">
+            <a href="customer-login.html" class="tw-customer-login">Customer Login</a>
+            <a href="vendor-login.html" class="tw-vendor-btn">Vendor Login</a>
+          </div>
+          <button class="tw-mobile-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#twMobileNav" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end tw-offcanvas" tabindex="-1" id="twMobileNav">
+    <div class="offcanvas-header">
+      <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 44px; width: auto; max-width: 200px; object-fit: contain;"></a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="tw-mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+      <hr style="border-color: var(--tw-light-blue); margin: 20px 0;">
+      <div class="tw-mobile-actions">
+        <a href="customer-login.html" class="tw-customer-login text-center display-block py-2">Customer Login</a>
+        <a href="vendor-login.html" class="btn-tw-green w-100 text-center">Vendor Login</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================================================
+         SECTION 02 — FULL-WIDTH ARTICLE HERO IMAGE
+         ================================================== -->
+    <section class="tw-blog-detail-hero">
+      <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=1600&auto=format&fit=crop" 
+           alt="The Royal Flavors of Jaipur" class="tw-detail-hero-img">
+      
+      <div class="tw-detail-hero-overlay">
+        <div class="tw-container">
+          <span class="tw-detail-badge">REGIONAL CLASSICS</span>
+          <h1 class="tw-detail-h1">
+            The Royal Flavors of Jaipur: A Journey through Veg Jaipuri
+          </h1>
+          <div class="tw-detail-meta-text d-flex align-items-center gap-3">
+            <span><i class="bi bi-calendar3 text-warning me-1"></i> OCTOBER 24, 2024</span>
+            <span>•</span>
+            <span><i class="bi bi-person me-1"></i> By Chef Aarav Mehta</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+         SECTION 03 — ARTICLE CONTENT & STICKY SIDEBAR
+         ================================================== -->
+    <section class="tw-section-padding bg-white">
+      <div class="tw-container">
+        <div class="row g-4">
+          <!-- Left Sticky Sidebar (25%) -->
+          <div class="col-lg-3">
+            <div class="tw-detail-sidebar">
+              <!-- Sidebar Card 1: On This Page (TOC) -->
+              <div class="tw-toc-card">
+                <h4 class="tw-toc-title">On This Page</h4>
+                <ul class="tw-toc-list">
+                  <li><a href="#origin" class="tw-toc-link active">01. The Origin Story</a></li>
+                  <li><a href="#spices" class="tw-toc-link">02. Essential Spices</a></li>
+                  <li><a href="#technique" class="tw-toc-link">03. The Secret Technique</a></li>
+                  <li><a href="#pairing" class="tw-toc-link">04. The Perfect Pairing</a></li>
+                  <li><a href="#savor" class="tw-toc-link">05. Savor it Tonight</a></li>
+                </ul>
+              </div>
+
+              <!-- Sidebar Card 2: Quote -->
+              <div class="tw-quote-sidebar-card">
+                <p class="tw-sidebar-quote-text">
+                  “The taste of Rajasthan is the taste of resilience.”
+                </p>
+                <div class="tw-sidebar-quote-author">— CHEF ARUN RATHORE</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Main Article Body (75%) -->
+          <div class="col-lg-9">
+            <div class="tw-article-card">
+              <div class="tw-article-body">
+                <p id="origin" class="lead mb-4" style="font-size: 1.15rem; color: #2D3748; line-height: 1.8;">
+                  Jaipur, the Pink City of India, is not just known for its majestic palaces and vibrant culture, but also for its rich culinary heritage. Among its many culinary treasures, <strong>Veg Jaipuri</strong> stands out as a dish that perfectly encapsulates the regal essence of Rajasthani cuisine.
+                </p>
+                
+                <p class="mb-4">
+                  Rooted in the royal kitchens of Rajputana rulers, Veg Jaipuri is a rich, aromatic, and colorful curry that combines seasonal garden vegetables with a velvety cashew and tomato gravy. What makes this dish truly extraordinary is the careful layering of roasted spices and the crunch of roasted papad woven into the finished curry.
+                </p>
+
+                <!-- Embedded Featured Dish Card -->
+                <div class="tw-embedded-dish-card">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-md-5">
+                      <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=800&auto=format&fit=crop" 
+                           alt="Veg Jaipuri Royale" class="tw-embedded-dish-img">
+                    </div>
+                    <div class="col-md-7 p-4">
+                      <span class="text-orange font-heading fw-semibold small text-uppercase letter-spacing-1 d-block mb-1">SIGNATURE SELECTION</span>
+                      <h3 class="h4 font-heading fw-bold text-success mb-2">Veg Jaipuri Royale</h3>
+                      <p class="font-body small text-muted mb-3">Fresh mixed vegetables cooked in a royal Rajasthani cashew gravy, topped with crispy papad shards.</p>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <span class="fs-4 font-heading fw-bold text-success">₹180.00</span>
+                        <button class="btn-tw-green tw-inquiry-btn px-4 py-2" data-meal="Veg Jaipuri Royale" data-vendor="Royal Jaipur Kitchen" data-image="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=400&auto=format&fit=crop" data-location="Pink City Hub, District 1">Inquiry Now</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 id="spices" class="h3 font-heading fw-bold text-success mt-4 mb-3">The Architecture of Spice</h3>
+                <p class="mb-4">
+                  In traditional Rajasthani cooking, spices serve dual purposes: enhancing flavor and preserving food in the desert climate. The foundation of Veg Jaipuri relies on a freshly ground blend of dry red Mathania chilies, coriander seeds, cumin, and green cardamom simmered slowly in pure ghee.
+                </p>
+
+                <!-- Article Quote Callout -->
+                <div class="tw-article-quote">
+                  “Culinary art in Jaipur is about finding balance between the arid landscape and the vibrant palette of its people.”
+                </div>
+
+                <p id="technique" class="mb-4">
+                  The secret technique lies in flame-roasting the spices before grinding them, releasing volatile oils that impart a signature smoky finish to the curry.
+                </p>
+              </div>
+            </div>
+
+            <!-- ==================================================
+                 SECTION 04 — RELATED DISHES SECTION
+                 ================================================== -->
+            <div class="mt-5">
+              <div class="d-flex align-items-end justify-content-between mb-4">
+                <div>
+                  <span class="text-orange font-heading fw-semibold small text-uppercase letter-spacing-1 d-block mb-1">CURATED PAIRINGS</span>
+                  <h2 class="h2 font-heading fw-bold text-success mb-0">Explore More Dishes</h2>
+                </div>
+                <a href="menu.html" class="text-orange font-heading fw-semibold text-decoration-none fs-6">View Full Menu ↗</a>
+              </div>
+
+              <!-- 4 Column Related Dishes Grid -->
+              <div class="row g-3">
+                <!-- Related 1 -->
+                <div class="col-xl-3 col-md-6">
+                  <div class="bg-white p-3 rounded-3 border border-light-blue h-100 d-flex flex-column">
+                    <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=500&auto=format&fit=crop" 
+                         alt="Paneer Butter Masala" class="w-100 rounded-2 mb-3" style="height: 140px; object-fit: cover;">
+                    <h4 class="h6 font-heading fw-bold text-success mb-1">Paneer Butter Masala</h4>
+                    <p class="font-body small text-muted mb-3" style="font-size: 0.8rem;">Cottage cheese in rich tomato gravy.</p>
+                    <a href="tiffin-detail.html" class="btn-tw-outline-green btn-sm w-100 text-center mt-auto">View Details</a>
+                  </div>
+                </div>
+
+                <!-- Related 2 -->
+                <div class="col-xl-3 col-md-6">
+                  <div class="bg-white p-3 rounded-3 border border-light-blue h-100 d-flex flex-column">
+                    <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=500&auto=format&fit=crop" 
+                         alt="Garlic Kulcha" class="w-100 rounded-2 mb-3" style="height: 140px; object-fit: cover;">
+                    <h4 class="h6 font-heading fw-bold text-success mb-1">Garlic Kulcha</h4>
+                    <p class="font-body small text-muted mb-3" style="font-size: 0.8rem;">Oven-baked flatbread with garlic butter.</p>
+                    <a href="tiffin-detail.html" class="btn-tw-outline-green btn-sm w-100 text-center mt-auto">View Details</a>
+                  </div>
+                </div>
+
+                <!-- Related 3 -->
+                <div class="col-xl-3 col-md-6">
+                  <div class="bg-white p-3 rounded-3 border border-light-blue h-100 d-flex flex-column">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=500&auto=format&fit=crop" 
+                         alt="Panchmel Dal" class="w-100 rounded-2 mb-3" style="height: 140px; object-fit: cover;">
+                    <h4 class="h6 font-heading fw-bold text-success mb-1">Panchmel Dal</h4>
+                    <p class="font-body small text-muted mb-3" style="font-size: 0.8rem;">Traditional 5-lentil Rajasthani dal.</p>
+                    <a href="tiffin-detail.html" class="btn-tw-outline-green btn-sm w-100 text-center mt-auto">View Details</a>
+                  </div>
+                </div>
+
+                <!-- Related 4 -->
+                <div class="col-xl-3 col-md-6">
+                  <div class="bg-white p-3 rounded-3 border border-light-blue h-100 d-flex flex-column">
+                    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=500&auto=format&fit=crop" 
+                         alt="Zaffrani Pulao" class="w-100 rounded-2 mb-3" style="height: 140px; object-fit: cover;">
+                    <h4 class="h6 font-heading fw-bold text-success mb-1">Zaffrani Pulao</h4>
+                    <p class="font-body small text-muted mb-3" style="font-size: 0.8rem;">Fragrant saffron basmati rice with nuts.</p>
+                    <a href="tiffin-detail.html" class="btn-tw-outline-green btn-sm w-100 text-center mt-auto">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================
+       SECTION 05 — FOOTER (SHARED COMPONENT)
+       ================================================== -->
+  <footer class="tw-footer">
+    <div class="tw-container tw-footer-main">
+      <div class="row g-4">
+        <!-- Col 1: Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="tw-brand-logo"><img src="assets/images/logo.png" alt="TiffinWorld Logo" style="height: 46px; width: auto; max-width: 220px; object-fit: contain;"></a>
+          <p class="tw-footer-brand-text">
+            The Curated Harvest. High-end editorial food delivery service for the discerning palate.
+          </p>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="tw-footer-col-title">Company</h4>
+          <ul class="tw-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html" class="active-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Account -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Account</h4>
+          <ul class="tw-footer-links">
+            <li><a href="customer-login.html">Customer Login</a></li>
+            <li><a href="vendor-login.html">Vendor Login</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="policies.html">Our Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Subscribe -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="tw-footer-col-title">Subscribe</h4>
+          <p class="tw-subscribe-text">Get latest updates directly.</p>
+          <form class="tw-subscribe-form">
+            <input type="email" placeholder="Your email" required aria-label="Your email">
+            <button type="submit">Join Us</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark Bottom Bar -->
+    <div class="tw-footer-bottom">
+      <div class="tw-container">
+        <div class="tw-footer-bottom-inner">
+          <div>© 2026 TiffinWorld.com - All rights reserved.</div>
+          <div class="tw-footer-icons">
+            <a href="#" class="tw-footer-icon-btn" aria-label="Share"><i class="bi bi-share-fill"></i></a>
+            <a href="#" class="tw-footer-icon-btn" aria-label="Website"><i class="bi bi-globe"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================================================
+       TIFFINWORLD — REDESIGNED INQUIRY MODAL (HTML PREVIEW)
+       ================================================== -->
+  <div class="modal fade tw-inquiry-modal" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalTitle" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="row g-0">
+          
+          <!-- LEFT VISUAL PANEL -->
+          <div class="col-lg-4 col-md-5 inquiry-image-panel d-none d-md-flex">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=800&auto=format&fit=crop" 
+                 alt="Premium Culinary Experience" class="inquiry-bg-img" id="inquiryModalBgImg">
+            <div class="inquiry-gradient-overlay"></div>
+            <div class="inquiry-left-content">
+              <div class="inquiry-left-eyebrow">PREMIUM CONSERVATORY</div>
+              <h4 class="inquiry-left-title">Elevating your<br>culinary journey.</h4>
+            </div>
+          </div>
+
+          <!-- RIGHT FORM PANEL -->
+          <div class="col-lg-8 col-md-7 inquiry-form-panel">
+            
+            <!-- FORM HEADER -->
+            <div class="inquiry-form-header">
+              <h2 class="inquiry-form-title" id="inquiryModalTitle">Place Your Inquiry</h2>
+              <p class="inquiry-form-subtitle">Request a personalized booking for your selected plan</p>
+              <button type="button" class="inquiry-close-btn" data-bs-dismiss="modal" aria-label="Close inquiry form">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            <!-- SUCCESS STATE (Hidden by default) -->
+            <div id="inquirySuccessState" class="inquiry-success-box d-none">
+              <i class="bi bi-check-circle-fill inquiry-success-icon"></i>
+              <h3 class="inquiry-success-title">Inquiry Sent Successfully</h3>
+              <p class="inquiry-success-text">Your request has been delivered to the kitchen host. We will contact you shortly with personalized plan details and scheduling.</p>
+              <button type="button" class="inquiry-btn-submit mx-auto" data-bs-dismiss="modal">Done</button>
+            </div>
+
+            <!-- MAIN INQUIRY FORM -->
+            <form id="inquiryForm" action="#" method="POST" novalidate>
+              <input type="hidden" name="product_id" id="inquiryProductId" value="">
+              <input type="hidden" name="vendor_id" id="inquiryVendorId" value="">
+              <input type="hidden" name="plan_id" id="inquiryPlanId" value="">
+              <input type="hidden" name="quantity" id="inquiryQuantityInput" value="2">
+
+              <!-- SELECTED PLAN SUMMARY CARD -->
+              <div class="inquiry-plan-card">
+                <div class="d-flex align-items-center gap-3">
+                  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=200&auto=format&fit=crop" 
+                       alt="Selected Plan" class="inquiry-plan-thumb" id="inquiryModalThumb">
+                  <div>
+                    <span class="inquiry-card-tag">SELECTED PLAN</span>
+                    <h5 class="inquiry-plan-name" id="inquiryModalMealName">Artisan Taco</h5>
+                  </div>
+                </div>
+                <div class="text-md-end text-start">
+                  <span class="inquiry-card-tag">VENDOR</span>
+                  <h5 class="inquiry-vendor-name" id="inquiryModalVendorName">The Green Kitchen</h5>
+                </div>
+              </div>
+
+              <!-- SECTION 1 — PERSONAL DETAILS -->
+              <div class="inquiry-section-title">PERSONAL DETAILS</div>
+              <div class="row g-3 mb-2">
+                <div class="col-md-6">
+                  <label for="inquiryFullName" class="inquiry-label">Full Name</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-person inquiry-input-icon"></i>
+                    <input type="text" id="inquiryFullName" name="full_name" class="inquiry-control" 
+                           placeholder="Johnathan Doe" value="Johnathan Doe" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="inquiryPhone" class="inquiry-label">Phone Number</label>
+                  <div class="inquiry-phone-group">
+                    <select name="country_code" class="inquiry-phone-prefix-select" aria-label="Country Code">
+                      <option value="+91" selected>🇮🇳 +91</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+1">🇨🇦 +1</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+65">🇸🇬 +65</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+974">🇶🇦 +974</option>
+                      <option value="+977">🇳🇵 +977</option>
+                    </select>
+                    <input type="tel" id="inquiryPhone" name="phone" class="inquiry-control inquiry-control-noicon" 
+                           placeholder="000 000 0000" value="98765 43210" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="inquiryEmail" class="inquiry-label">Email Address</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-envelope inquiry-input-icon"></i>
+                    <input type="email" id="inquiryEmail" name="email" class="inquiry-control" 
+                           placeholder="j.doe@conservatory.com" value="j.doe@conservatory.com" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION 2 — ORDER LOGISTICS -->
+              <div class="inquiry-section-title">ORDER LOGISTICS</div>
+              <div class="row g-3 mb-2">
+                <div class="col-md-4">
+                  <label class="inquiry-label">Quantity</label>
+                  <div class="inquiry-qty-stepper">
+                    <button type="button" class="inquiry-qty-btn" id="btnQtyMinus" aria-label="Decrease quantity">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                    <span class="inquiry-qty-val" id="inquiryQtyDisplay">02</span>
+                    <button type="button" class="inquiry-qty-btn" id="btnQtyPlus" aria-label="Increase quantity">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="inquiryDate" class="inquiry-label">Preferred Date</label>
+                  <div class="inquiry-input-wrapper">
+                    <i class="bi bi-calendar3 inquiry-input-icon"></i>
+                    <input type="date" id="inquiryDate" name="preferred_date" class="inquiry-control" required>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="inquiryTime" class="inquiry-label">Time Window</label>
+                  <div class="inquiry-input-wrapper inquiry-select-wrapper">
+                    <i class="bi bi-clock inquiry-input-icon"></i>
+                    <select id="inquiryTime" name="time_window" class="inquiry-control inquiry-select" required>
+                      <option value="Morning" selected>Morning</option>
+                      <option value="Afternoon">Afternoon</option>
+                      <option value="Evening">Evening</option>
+                    </select>
+                    <i class="bi bi-chevron-down inquiry-select-chevron"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION 3 — LOCATION & DIRECTIONS -->
+              <div class="inquiry-section-title">LOCATION & DIRECTIONS</div>
+              <div class="inquiry-location-card mb-3">
+                <i class="bi bi-geo-alt-fill inquiry-location-icon"></i>
+                <div>
+                  <span class="inquiry-card-tag" style="font-size: 11px;">DELIVERY LOCATION</span>
+                  <h6 class="inquiry-location-val" id="inquiryModalLocation">Downtown Conservatory Hub, District 4</h6>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="inquiryAddress" class="inquiry-label">Address & Landmarks</label>
+                <textarea id="inquiryAddress" name="address" class="inquiry-control inquiry-control-noicon" 
+                          placeholder="Specific apartment number, building floor, or gate instructions..." required></textarea>
+              </div>
+
+              <!-- FOOTER DIVIDER & ACTIONS -->
+              <div class="inquiry-footer-divider"></div>
+              <div class="d-flex align-items-center justify-content-end inquiry-footer-actions gap-3">
+                <button type="button" class="inquiry-btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="inquiry-btn-submit" id="btnSubmitInquiry">
+                  Send Inquiry <i class="bi bi-send-fill ms-1"></i>
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3 JS Bundle & Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

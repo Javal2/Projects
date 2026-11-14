@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Cultivating Knowledge | Vise Organic Biotechnology</title>
+  <meta name="description" content="Explore research-backed bio-fertilizer insights, sustainable agriculture articles, and modern bio-science farming techniques from Vise Organic.">
+  <meta name="keywords" content="organic farming blog, biofertilizers, NPK consortia, soil health, biopesticides, sustainable agriculture, Vise Organic">
+  
+  <!-- OpenGraph SEO Tags -->
+  <meta property="og:title" content="Cultivating Knowledge - Vise Organic Blog">
+  <meta property="og:description" content="Discover actionable research, bio-fertilizer innovations, and soil health management strategies for higher crop yields.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Vise Organic Custom Stylesheet -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-vo-light">
+
+  <!-- ==========================================
+       NAVIGATION BAR (Sticky Bootstrap Navbar)
+       ========================================== -->
+  <nav class="navbar navbar-expand-lg navbar-vo sticky-top py-3" id="main-nav">
+    <div class="container">
+      <!-- Brand Logo Image -->
+      <a class="navbar-brand py-0" href="index.html">
+        <img src="images/logo.png" alt="Vise Organic Logo" class="header-logo">
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links & CTA -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-menu navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rd.html">R&D</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Primary CTA Button -->
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-vo-accent text-dark rounded-pill px-4 py-2.5 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#expertAdviceModal">
+            <i class="bi bi-chat-text-fill me-2"></i> Get Expert Advice
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       HEADER SECTION: CULTIVATING KNOWLEDGE
+       ========================================== -->
+  <header class="pt-5 pb-4">
+    <div class="container">
+      <div class="row align-items-end g-4">
+        <!-- Left Title & Subtext -->
+        <div class="col-lg-7">
+          <span class="badge-tag text-uppercase fw-bold text-vo-secondary bg-success bg-opacity-10 px-3 py-1.5 rounded-pill mb-3 d-inline-block font-poppins" style="letter-spacing: 1px; font-size: 0.78rem;">
+            <i class="bi bi-journal-text me-1 text-vo-accent"></i> THE INSIGHT JOURNAL
+          </span>
+          <h1 class="display-h1 text-vo-primary fw-extrabold mb-3">Cultivating Knowledge</h1>
+          <p class="lead text-vo-muted mb-0 fs-5">
+            Discover research-backed agronomy insights, liquid bio-fertilizer breakthroughs, and soil health management techniques designed for modern organic farming.
+          </p>
+        </div>
+
+        <!-- Right Filter Tags -->
+        <div class="col-lg-5 d-flex justify-content-lg-end align-items-center">
+          <div class="filter-pill-group" id="blogFilterGroup">
+            <button class="filter-pill active" data-filter="all">All</button>
+            <button class="filter-pill" data-filter="organic">Organic</button>
+            <button class="filter-pill" data-filter="fertilizer">Fertilizer</button>
+            <button class="filter-pill" data-filter="sustainable">Sustainable</button>
+            <button class="filter-pill" data-filter="bioscience">Bio-Science</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO FEATURED BLOG SECTION (Split Layout)
+       ========================================== -->
+  <section class="py-4">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Featured Blog Card (Left - Heavy Layout) -->
+        <div class="col-lg-8 blog-item" data-category="organic fertilizer">
+          <article class="blog-card d-flex flex-column h-100">
+            <div class="blog-card-img-wrapper">
+              <img src="images/blog_hero_soil.png" alt="Unlocking Soil Potential with Bio-Fertilizers" class="blog-hero-img">
+              <span class="badge bg-vo-primary text-white position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill font-poppins fw-semibold">
+                <i class="bi bi-star-fill text-warning me-1"></i> Featured Article
+              </span>
+            </div>
+            <div class="p-4 p-md-5 d-flex flex-column flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3 text-vo-muted small font-poppins">
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 font-poppins fw-semibold">Organic Farming</span>
+                <span><i class="bi bi-calendar3 me-1"></i> March 15, 2026</span>
+                <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+              </div>
+              <h2 class="h2 font-poppins fw-bold text-vo-primary mb-3">
+                <a href="blog-detail.html" class="text-decoration-none text-vo-primary hover-opacity">
+                  Unlocking Soil Potential: How Bio-Fertilizers Replace Synthetic NPK
+                </a>
+              </h2>
+              <p class="text-vo-muted fs-6 mb-4 flex-grow-1">
+                Explore how specialized microbial inoculants like Azotobacter, PSB, and KMB restore natural soil microbial balances, enhance root nutrient assimilation, and deliver high crop yields sustainably without chemical degradation.
+              </p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-light-subtle mt-auto">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="bg-vo-primary text-white rounded-circle d-flex align-items-center justify-content-center font-poppins fw-bold" style="width: 38px; height: 38px; font-size: 0.85rem;">
+                    RS
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fs-6 fw-bold font-poppins text-vo-primary">Dr. R. Sharma</h6>
+                    <small class="text-vo-muted" style="font-size: 0.75rem;">Chief Agronomist</small>
+                  </div>
+                </div>
+                <a href="blog-detail.html" class="btn btn-vo-primary rounded-pill px-4 py-2.5 font-poppins fw-bold shadow-sm">
+                  Read Full Article <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Side Featured Card (Right Column - Image Fills Top Frame & Balanced Content) -->
+        <div class="col-lg-4 blog-item" data-category="sustainable organic">
+          <article class="blog-card d-flex flex-column h-100 border border-light-subtle rounded-4 bg-white shadow-sm overflow-hidden">
+            <!-- Full Width Top Image Frame -->
+            <div class="blog-card-img-wrapper">
+              <img src="images/blog_regenerative_farm.png" alt="Regenerative Agriculture Farm" class="blog-side-img w-100 object-fit-cover" style="height: 240px;">
+              <span class="badge bg-vo-accent text-dark position-absolute top-0 end-0 m-3 px-3 py-1.5 rounded-pill font-poppins fw-bold">
+                Sustainable
+              </span>
+            </div>
+
+            <!-- Card Body Content -->
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <div class="d-flex align-items-center gap-2 mb-2 text-vo-muted small font-poppins">
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2.5 py-1">Sustainable</span>
+                <span>• March 04, 2026</span>
+              </div>
+
+              <h3 class="h4 font-poppins fw-bold text-vo-primary mb-2" style="line-height: 1.35;">
+                <a href="blog-detail.html" class="text-decoration-none text-vo-primary hover-opacity">
+                  5 Ways Regenerative Agriculture Boosts Farmer Profits
+                </a>
+              </h3>
+
+              <p class="small text-vo-muted mb-3" style="line-height: 1.6;">
+                Regenerative agriculture restores organic carbon pools and subterranean mycorrhizal networks. Key farmer benefits:
+              </p>
+
+              <ul class="list-unstyled small text-vo-muted mb-4 flex-grow-1">
+                <li class="mb-2 d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-vo-secondary me-2 mt-1"></i>
+                  <span><strong>Reduced Input Costs:</strong> Save up to ₹4,000/acre on synthetic inputs.</span>
+                </li>
+                <li class="mb-2 d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-vo-secondary me-2 mt-1"></i>
+                  <span><strong>Drought Protection:</strong> Soil retains 30% more moisture.</span>
+                </li>
+                <li class="mb-2 d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-vo-secondary me-2 mt-1"></i>
+                  <span><strong>Premium Price:</strong> Command 15-20% higher price for NPOP crops.</span>
+                </li>
+              </ul>
+
+              <div class="mt-auto pt-3 border-top border-light-subtle d-flex align-items-center justify-content-between">
+                <span class="small text-vo-muted"><i class="bi bi-clock me-1"></i> 4 min read</span>
+                <a href="blog-detail.html" class="text-vo-primary font-poppins fw-extrabold text-uppercase text-decoration-none d-inline-flex align-items-center" style="letter-spacing: 0.6px; font-size: 0.85rem;">
+                  CONTINUE READING <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BLOG GRID SECTION (2-Column Cards + Newsletter)
+       ========================================== -->
+  <section class="py-4">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="h3 font-poppins fw-bold text-vo-primary mb-0">Latest Research & Articles</h2>
+        <span class="text-vo-muted small font-poppins">Showing 4 of 12 Insights</span>
+      </div>
+
+      <!-- Row 1: Single Horizontal Full-Width Card (Image Fills Frame with Overlapping Text) -->
+      <div class="row g-4 mb-4">
+        <div class="col-12 blog-item" data-category="fertilizer bioscience">
+          <article class="blog-card position-relative overflow-hidden rounded-4 border-0 shadow-md text-white" style="min-height: 420px;">
+            <!-- Background Image Filling Entire Frame -->
+            <img src="images/blog_spraying_crops.png" alt="Liquid NPK Consortia Applications" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover blog-hero-img">
+            
+            <!-- Dark Green Gradient Overlay for Text Readability -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(27, 94, 32, 0.45) 0%, rgba(10, 40, 12, 0.85) 60%, rgba(5, 25, 7, 0.95) 100%);"></div>
+
+            <!-- Overlapping Content -->
+            <div class="position-relative z-2 p-4 p-md-5 d-flex flex-column justify-content-end h-100" style="min-height: 420px;">
+              <div class="d-flex flex-wrap align-items-center gap-3 mb-3 text-white-50 small font-poppins">
+                <span class="badge bg-vo-accent text-dark rounded-pill px-3 py-1 font-poppins fw-bold">Nutrient Management</span>
+                <span><i class="bi bi-calendar3 me-1 text-vo-accent"></i> March 08, 2026</span>
+                <span><i class="bi bi-clock me-1 text-vo-accent"></i> 5 min read</span>
+                <span class="ms-auto d-none d-md-inline"><i class="bi bi-shield-check text-vo-accent me-1"></i> NPOP Certified Formulation</span>
+              </div>
+
+              <h2 class="display-6 font-poppins fw-extrabold text-white mb-3 col-lg-9" style="line-height: 1.25;">
+                <a href="blog-detail.html" class="text-decoration-none text-white hover-opacity">
+                  Modern Bio-Science: Liquid NPK Consortia Applications
+                </a>
+              </h2>
+
+              <p class="text-white-50 fs-6 mb-4 col-lg-8" style="line-height: 1.6;">
+                Liquid bio-fertilizer consortia provide uniform root zone coverage, rapid cell colonization, and up to 40% reduction in chemical NPK fertilizer expenses for commercial farmers.
+              </p>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-white border-opacity-25 mt-2">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="bg-vo-accent text-dark rounded-circle d-flex align-items-center justify-content-center font-poppins fw-bold" style="width: 38px; height: 38px; font-size: 0.85rem;">
+                    VO
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fs-6 fw-bold font-poppins text-white">Vise Agronomy Team</h6>
+                    <small class="text-white-50" style="font-size: 0.75rem;">Research Insight</small>
+                  </div>
+                </div>
+
+                <a href="blog-detail.html" class="btn btn-vo-accent text-dark rounded-pill px-4 py-2.5 font-poppins fw-bold shadow-sm">
+                  Read Full Article <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Row 2: Image Card + Newsletter Card -->
+      <div class="row g-4">
+        <!-- Card 3: Soil in Hands Image Card -->
+        <div class="col-lg-6 blog-item" data-category="organic fertilizer">
+          <article class="blog-card d-flex flex-column h-100">
+            <div class="blog-card-img-wrapper">
+              <img src="images/blog_hero_soil.png" alt="Restoring Organic Carbon" class="blog-card-img">
+            </div>
+            <div class="p-4 d-flex flex-column flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-2 text-vo-muted small font-poppins">
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1">Soil Health</span>
+                <span><i class="bi bi-calendar3 me-1"></i> Feb 28, 2026</span>
+              </div>
+              <h3 class="h4 font-poppins fw-bold text-vo-primary mb-2">
+                <a href="blog-detail.html" class="text-decoration-none text-vo-primary">
+                  Restoring Organic Carbon: The Missing Key to High Yields
+                </a>
+              </h3>
+              <p class="small text-vo-muted mb-4 flex-grow-1">
+                Indian soils are facing organic carbon depletion below 0.5%. Learn how humic biostimulants and mycorrhizal fungi rebuild topsoil carbon pools and restore biological vigor.
+              </p>
+              <div class="mt-auto d-flex align-items-center justify-content-between pt-3 border-top border-light-subtle">
+                <span class="small text-vo-muted"><i class="bi bi-clock me-1"></i> 7 min read</span>
+                <a href="blog-detail.html" class="btn btn-outline-success rounded-pill px-4 py-2 font-poppins fw-semibold">
+                  Read Article <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 4: Dark Green Newsletter Block -->
+        <div class="col-lg-6">
+          <div class="newsletter-card-dark d-flex flex-column justify-content-center h-100">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="bg-vo-accent text-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="bi bi-envelope-open-heart-fill"></i>
+              </div>
+              <div>
+                <h3 class="h4 font-poppins fw-bold text-white mb-0">Join 15,000+ Progressive Farmers</h3>
+              </div>
+            </div>
+            <p class="text-white-50 small mb-4">
+              Get research-backed bio-fertilizer schedules, crop defense alerts, and seasonal agronomy guides delivered directly to your inbox.
+            </p>
+
+            <form id="listingNewsletterForm" class="mb-2">
+              <div class="input-group">
+                <input type="email" class="form-control px-4" placeholder="Enter your email address..." required id="newsletterEmailInput">
+                <button type="submit" class="btn btn-join">
+                  JOIN <i class="bi bi-send-fill ms-1"></i>
+                </button>
+              </div>
+            </form>
+            <small class="text-white-50" style="font-size: 0.75rem;">
+              <i class="bi bi-shield-check text-vo-accent me-1"></i> No spam. Unsubscribe at any time with 1-click.
+            </small>
+            <div id="newsletterSuccess" class="alert alert-success mt-3 mb-0 py-2 px-3 small d-none" role="alert">
+              <i class="bi bi-check-circle-fill me-1"></i> Thank you! You have successfully subscribed.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PAGINATION SECTION (Centered Circular Buttons)
+       ========================================== -->
+  <section class="py-4">
+    <div class="container">
+      <nav aria-label="Blog pagination" class="d-flex justify-content-center">
+        <ul class="pagination pagination-vo mb-0">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Previous">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <i class="bi bi-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer id="contact" class="bg-dark text-white pt-5 pb-4 border-top border-4 border-success">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-logo-box mb-4 d-inline-block" href="index.html">
+            <img src="images/logo.png" alt="Vise Organic Logo" class="footer-logo bg-white p-1 rounded">
+          </a>
+          <p class="small text-white-50 mb-4">
+            Vise Organic is an Indian organic agriculture and biotechnology company dedicated to science-backed biofertilizers, biopesticides, and sustainable plant nutrition.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Quick Links</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none hover-white">Home</a></li>
+            <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none hover-white">About Us</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Product Range</a></li>
+            <li class="mb-2"><a href="rd.html" class="text-white-50 text-decoration-none hover-white">R&D Laboratory</a></li>
+            <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none hover-white fw-bold">Agronomy Blogs</a></li>
+            <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none hover-white">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Solutions -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Solutions</h3>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Biofertilizers & Mycorrhiza</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Botanical Biopesticides</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Plant Growth Regulators</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Organo-Silicone Adjuvants</a></li>
+            <li class="mb-2"><a href="products.html" class="text-white-50 text-decoration-none hover-white">Soil Carbon Rejuvenators</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get In Touch -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="h6 text-white font-poppins mb-3 text-uppercase tracking-wider">Get In Touch</h3>
+          <ul class="list-unstyled small text-white-50 mb-0">
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-geo-alt-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>Vise Organic Biotech Pvt Ltd, A10 Prime Industry Estate, Manjusar, Gujarat - 391775, India</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-telephone-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>+91 1800-123-ORGANIC (Toll Free)</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="bi bi-envelope-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>support@viseorganic.com</span>
+            </li>
+            <li class="d-flex gap-2">
+              <i class="bi bi-clock-fill text-vo-accent fs-5 flex-shrink-0"></i>
+              <span>Mon - Sat: 9:00 AM - 6:30 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary border-opacity-25">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50 py-2">
+        <div>© 2026 Vise Organic Agriculture & Biotechnology. All rights reserved.</div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-white-50 text-decoration-none">Terms of Service</a>
+          <a href="#" class="text-white-50 text-decoration-none">NPOP Organic Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919876543210?text=Hello%20Vise%20Organic,%20I%20want%20to%20know%20more%20about%20your%20organic%20solutions." class="whatsapp-float" target="_blank" aria-label="Contact Vise Organic on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- MODAL: Get Expert Advice -->
+  <div class="modal fade" id="expertAdviceModal" tabindex="-1" aria-labelledby="expertAdviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-vo p-4">
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <span class="badge-vo-accent mb-1 d-inline-block">Free Agronomy Advisory</span>
+            <h3 class="h4 modal-title text-vo-primary font-poppins" id="expertAdviceModalLabel">Request Expert Consultation</h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-vo-muted mb-4">Fill in your details and our agronomy research team will contact you with customized bio-fertilizer dosage and recommendations.</p>
+          
+          <form id="expertConsultationForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="adv-name" class="form-label small fw-bold">Full Name *</label>
+              <input type="text" class="form-control rounded-3" id="adv-name" placeholder="e.g. Rajesh Kumar" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label for="adv-phone" class="form-label small fw-bold">Phone Number *</label>
+                <input type="tel" class="form-control rounded-3" id="adv-phone" placeholder="10-digit Mobile" pattern="[0-9]{10}" required>
+              </div>
+              <div class="col-6">
+                <label for="adv-state" class="form-label small fw-bold">State *</label>
+                <select class="form-select rounded-3" id="adv-state" required>
+                  <option value="" selected disabled>Select State</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Other">Other State</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="adv-crop" class="form-label small fw-bold">Main Crop Grown</label>
+              <input type="text" class="form-control rounded-3" id="adv-crop" placeholder="e.g. Cotton, Wheat, Sugarcane">
+            </div>
+            <button type="submit" class="btn btn-vo-accent w-100 py-3 text-dark fw-bold font-poppins">
+              Submit Inquiry <i class="bi bi-send-fill ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Filter & Newsletter Interactive JS Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Category Filter Handling
+      const filterPills = document.querySelectorAll('#blogFilterGroup .filter-pill');
+      const blogItems = document.querySelectorAll('.blog-item');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          filterPills.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+
+          const filterValue = this.getAttribute('data-filter');
+
+          blogItems.forEach(item => {
+            const categories = item.getAttribute('data-category');
+            if (filterValue === 'all' || (categories && categories.includes(filterValue))) {
+              item.style.display = 'block';
+              item.classList.add('animate-fade-in');
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Listing Newsletter Submission
+      const newsletterForm = document.getElementById('listingNewsletterForm');
+      const newsletterSuccess = document.getElementById('newsletterSuccess');
+
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('newsletterEmailInput').value;
+          if (email) {
+            newsletterSuccess.classList.remove('d-none');
+            newsletterForm.reset();
+            setTimeout(() => {
+              newsletterSuccess.classList.add('d-none');
+            }, 5000);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
