@@ -37,7 +37,7 @@ The resume links point to `https://github.com/Javal2/Projects/raw/refs/heads/mai
 
 ## Contact form
 
-The Framer production website has the verified email submission destination. This static package does not include Framer's backend. On Contact, the “Open contact form” button goes to `https://gentle-grapefruit-887176.framer.app/contact`. After changing your Framer domain, update the link in `app.js`.
+The Framer production website has the verified email submission destination. This static package does not include Framer's backend. On Contact, the “Open contact form” button goes to `https://javal-patel.framer.website/contact`. The link in `app.js` points to the current published Framer domain. Update it if that domain changes.
 
 To run an **independent** contact form on this standalone version, connect your own backend or supported form service first; verify it before accepting public enquiries.
 
@@ -52,3 +52,17 @@ To run an **independent** contact form on this standalone version, connect your 
 If you want to preserve Framer's exact design, CMS, animations and verified inquiry form, connect your purchased domain directly to Framer: Site Settings → Hosting → Domains → Connect a domain you own. Use DNS instructions Framer displays. This does **not** require migrating the site to GitHub.
 
 If you want to host this **separate** static adaptation on GitHub Pages under your domain, add it in GitHub Pages settings and follow GitHub's DNS instructions. Don't point the same hostname to both Framer and GitHub Pages.
+
+## Deploy this folder to Vercel
+
+1. Sign in at https://vercel.com with GitHub and authorize access to `Javal2/Projects`.
+2. Choose **Add New → Project**, then import the `Javal2/Projects` repository.
+3. In project configuration, set **Root Directory** to **`portfolio-source`** (not the repository root).
+4. Choose **Framework Preset: Other**. Do not set a build command or install command; this is plain static HTML/CSS/JavaScript.
+5. Set **Output Directory** to `.` (the current root directory), if Vercel requires a value; otherwise leave the automatic static default.
+6. Click **Deploy**. Vercel supplies a `*.vercel.app` URL after the build succeeds.
+7. Open the deployed site and check the eight project pages and the link to the verified Framer enquiry form.
+
+**Important:** This adaptation is independent of Framer and does not replicate the Framer-native rider/tunnel animations, CMS or form backend. The original fully featured portfolio remains https://javal-patel.framer.website.
+
+**Domain consideration:** Do not attach the exact same custom hostname simultaneously to Framer and Vercel. Keep the Framer URL as the primary portfolio and treat Vercel as a parallel code-hosted demo, or explicitly transfer the domain only after validating the standalone version.
