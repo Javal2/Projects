@@ -26,7 +26,7 @@ ROUTES = [
     ("/work/vise-organic", "work/vise-organic.html"),
     ("/404", "404.html"),
 ]
-ASSETS = ["/favicon.png", "/favicon.ico", "/apple-touch-icon.png", "/robots.txt", "/sitemap.xml"]
+ASSETS = ["/favicon.png", "/robots.txt", "/sitemap.xml"]
 
 
 def download(path: str) -> bytes:
