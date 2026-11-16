@@ -1,0 +1,9 @@
+{
+  "name": "javal-patel-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Deployable published HTML snapshot of the Javal Patel portfolio",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}
