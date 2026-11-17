@@ -1,18 +1,27 @@
-# Shrihari Tiffin Services — Website UI/UX
+# Shree Hari Tiffin — Website UI/UX
 
-A responsive frontend website design for a homestyle meal and tiffin subscription service.
+Responsive multi-page website frontend for the Shrihari Tiffin Services design.
 
-## Project overview
+[Live website (supplied URL)](https://www.shriharitiffin.com/) · [Portfolio case study](https://javal-patel.framer.website/work/shree-hari-tiffin)
 
-The supplied source archive contains HTML, CSS, JavaScript and original image assets for a multi-page tiffin website. The main customer journeys include menu discovery, plan comparison, services, trial booking and contact.
+## Features
 
-- **Category:** UI/UX · Food service website
-- **Technology:** HTML, CSS, JavaScript
-- **Pages:** Home, About, Menu, Plans, Services, Blog, Blog Details and Contact
-- **Live URL supplied for this project:** [shriharitiffin.com](https://www.shriharitiffin.com/)
+- Responsive home, about, menu, subscription plans, catering services, nutrition blog, and contact pages
+- Daily meal discovery and plan comparison
+- Trial booking and enquiry interface
+- Reusable header and footer, HTML, CSS, JavaScript, and local image assets
 
-The current live website is branded Shreeji Tiffin and serves the GTA; the supplied design archive uses Shrihari branding and Ahmedabad-specific content. They should not be treated as identical deployments. This folder currently contains the case-study documentation; the source archive still needs to be uploaded.
+## Run locally
 
-## Local preview (after source upload)
+From this directory, start a local static HTTP server:
 
-Serve the extracted website folder over HTTP and open `index.html`. The archive is frontend source, so independent backend operation and inquiry delivery are not verified.
+```bash
+python -m http.server 8000
+```
+
+Open http://localhost:8000/ in a browser.
+
+## Source and deployment note
+
+The 23 original files from the supplied project archive have been preserved without changes. The archive uses Shrihari Tiffin branding and Ahmedabad-related content; the supplied live website currently presents Shreeji Tiffin in the Greater Toronto Area. It is linked as the supplied live reference, not represented as an exact deployment of this archive. Backend delivery, business metrics, and live form submission were not verified.
+

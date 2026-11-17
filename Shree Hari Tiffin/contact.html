@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; Trial Booking | Shrihari Tiffin Services</title>
+  <meta name="description" content="Contact Shrihari Tiffin Services for daily homestyle meal inquiries, trial thali bookings, or corporate catering quotes in Ahmedabad. Call +91 98765 43210.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Brand Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Reusable Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- PAGE HERO BANNER -->
+    <section class="page-hero">
+      <div class="container text-center">
+        <nav aria-label="breadcrumb" class="d-inline-block mb-3">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+          </ol>
+        </nav>
+        <h1 class="display-5 fw-bold mb-3 animate__animated animate__fadeInDown">Get In Touch With Our Kitchen Team</h1>
+        <p class="body-text max-w-700 mx-auto animate__animated animate__fadeInUp animate__delay-1s">
+          Have questions about our daily menu, pricing, or delivery routes? We're here to help — 7 days a week!
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT INFO CARDS -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4 mb-5">
+
+          <!-- Card 1: Phone -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-shrihari text-center p-4 h-100">
+              <div class="text-orange mb-3 fs-1">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <h4 class="fw-bold mb-1">Call Us</h4>
+              <p class="text-neutral text-small mb-2">Customer Care &amp; Support</p>
+              <a href="tel:+919876543210" class="fw-bold text-dark text-decoration-none hover-orange d-block">+91 98765 43210</a>
+            </div>
+          </div>
+
+          <!-- Card 2: WhatsApp -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-shrihari text-center p-4 h-100">
+              <div class="text-green mb-3 fs-1">
+                <i class="bi bi-whatsapp"></i>
+              </div>
+              <h4 class="fw-bold mb-1">WhatsApp Line</h4>
+              <p class="text-neutral text-small mb-2">Instant Order &amp; Pause</p>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="fw-bold text-green text-decoration-none">Chat On WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Kitchen Address -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-shrihari text-center p-4 h-100">
+              <div class="text-orange mb-3 fs-1">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <h4 class="fw-bold mb-1">Kitchen Address</h4>
+              <p class="text-neutral text-small mb-2">Centralized Facility</p>
+              <span class="text-dark text-small fw-semibold d-block">Commerce College Road, Navrangpura, Ahmedabad</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Operating Hours -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-shrihari text-center p-4 h-100">
+              <div class="text-orange mb-3 fs-1">
+                <i class="bi bi-clock-fill"></i>
+              </div>
+              <h4 class="fw-bold mb-1">Working Hours</h4>
+              <p class="text-neutral text-small mb-2">Mon - Sun Delivery</p>
+              <span class="text-dark text-small fw-semibold d-block">7:00 AM – 9:30 PM Daily</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FORM & MAP ROW -->
+        <div class="row g-5">
+
+          <!-- Contact / Trial Request Form -->
+          <div class="col-lg-7">
+            <div class="card-shrihari bg-white p-4 p-md-5">
+              <span class="badge-orange-light mb-3 d-inline-flex">
+                <i class="bi bi-envelope-fill me-1"></i> Send A Message
+              </span>
+              <h2 class="section-heading mb-2">Book A Trial Thali Or Subscription</h2>
+              <p class="body-text mb-4">Fill in your contact info and our team will confirm your daily delivery slot within minutes.</p>
+
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label fw-bold">Full Name <span class="text-orange">*</span></label>
+                    <input
+                      type="text"
+                      id="contactName"
+                      name="name"
+                      class="form-control form-control-lg fs-6"
+                      placeholder="Your full name"
+                      required
+                      autocomplete="name"
+                    >
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactPhone" class="form-label fw-bold">Mobile / WhatsApp <span class="text-orange">*</span></label>
+                    <input
+                      type="tel"
+                      id="contactPhone"
+                      name="phone"
+                      class="form-control form-control-lg fs-6"
+                      placeholder="+91 98765 43210"
+                      required
+                      pattern="[0-9+\s\-]{10,15}"
+                      autocomplete="tel"
+                    >
+                    <div class="invalid-feedback">Please enter a valid mobile number.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactArea" class="form-label fw-bold">Delivery Area / Pincode <span class="text-orange">*</span></label>
+                    <input
+                      type="text"
+                      id="contactArea"
+                      name="area"
+                      class="form-control form-control-lg fs-6"
+                      placeholder="e.g. Satellite, 380015"
+                      required
+                    >
+                    <div class="invalid-feedback">Please enter your delivery area.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactPlan" class="form-label fw-bold">Interested Plan</label>
+                    <select id="contactPlan" name="plan" class="form-select form-select-lg fs-6">
+                      <option value="">Select Plan Option...</option>
+                      <option value="trial">Single Trial Thali (1 Day)</option>
+                      <option value="weekly">Weekly Trial Plan (6 Days)</option>
+                      <option value="monthly-standard">Monthly Standard Plan (26 Days)</option>
+                      <option value="monthly-executive">Monthly Executive Deluxe Plan</option>
+                      <option value="corporate">Corporate Bulk Inquiry</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contactNotes" class="form-label fw-bold">Special Dietary Notes / Instructions</label>
+                    <textarea
+                      id="contactNotes"
+                      name="notes"
+                      class="form-control fs-6"
+                      rows="7"
+                      placeholder="Mention spice level preference, Jain food requirement, low salt, or exact delivery timing window..."
+                    ></textarea>
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <button type="submit" id="contactSubmitBtn" class="btn btn-orange btn-lg w-100 fw-bold btn-pulse">
+                      <i class="bi bi-send-fill me-2"></i> Submit Inquiry &amp; Get Callback
+                    </button>
+                    <!-- Success message (hidden by default) -->
+                    <div id="formSuccessMsg" class="alert alert-success mt-3 d-none" role="alert">
+                      <i class="bi bi-check-circle-fill me-2"></i>
+                      <strong>Thank you!</strong> We'll call you back within 15 minutes to confirm your tiffin slot.
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Interactive Map & WhatsApp Quick Order Box -->
+          <div class="col-lg-5 d-flex flex-column gap-4">
+
+            <!-- WhatsApp Direct Order Card -->
+            <div class="card-shrihari bg-fresh-green-light p-4" style="border: 1.5px solid rgba(2,162,19,0.20); height: auto;">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="bi bi-whatsapp display-4 text-green flex-shrink-0"></i>
+                <div>
+                  <h4 class="fw-bold mb-0 text-dark">Instant WhatsApp Booking</h4>
+                  <small class="text-green fw-bold">Average Response: Under 3 Minutes</small>
+                </div>
+              </div>
+              <p class="body-text text-small mb-3 text-dark">
+                Prefer chatting on WhatsApp? Click below to message our kitchen manager directly with your address and meal preference!
+              </p>
+              <a
+                href="https://wa.me/919876543210?text=Hi%20Shrihari%20Tiffin%2C%20I%20want%20to%20order%20a%20tiffin%20in%20Ahmedabad."
+                target="_blank"
+                rel="noopener"
+                class="btn btn-success w-100 fw-bold py-3"
+                id="whatsappBookingBtn"
+              >
+                <i class="bi bi-whatsapp me-2"></i> Chat On WhatsApp Now
+              </a>
+            </div>
+
+            <!-- Map Card -->
+            <div class="card-shrihari p-0 overflow-hidden flex-grow-1" style="border-radius: var(--radius-md); min-height: 280px;">
+              <div class="bg-charcoal text-white px-3 py-3 d-flex align-items-center gap-2">
+                <i class="bi bi-pin-map-fill text-orange fs-5"></i>
+                <h5 class="fw-bold mb-0">Shrihari Central Kitchen Hub</h5>
+              </div>
+              <!-- OpenStreetMap embed — no API key required, always works -->
+              <iframe
+                title="Shrihari Tiffin Kitchen Location — Navrangpura, Ahmedabad"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=72.5481%2C23.0245%2C72.5731%2C23.0420&layer=mapnik&marker=23.0333%2C72.5606"
+                style="display:block; width:100%; height:260px; border:0;"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+              <div class="p-3 text-center bg-white border-top">
+                <p class="text-neutral text-small mb-2 fw-semibold">
+                  <i class="bi bi-geo-alt-fill text-orange me-1"></i>
+                  Commerce College Rd, Navrangpura, Ahmedabad 380009
+                </p>
+                <a
+                  href="https://maps.google.com/?q=Commerce+College+Road+Navrangpura+Ahmedabad+380009"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline-orange btn-sm fw-bold"
+                  id="openMapsBtn"
+                >
+                  <i class="bi bi-box-arrow-up-right me-1"></i> Open In Google Maps
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Contact form validation script -->
+  <script>
+    (function () {
+      'use strict';
+      const form = document.getElementById('contactForm');
+      const successMsg = document.getElementById('formSuccessMsg');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (form.checkValidity()) {
+          // Show success message
+          successMsg.classList.remove('d-none');
+          form.reset();
+          form.classList.remove('was-validated');
+          // Scroll to success message
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          form.classList.add('was-validated');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

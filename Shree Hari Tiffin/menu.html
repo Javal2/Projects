@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Menu & Specialties | Shrihari Tiffin Services</title>
+  <meta name="description" content="Explore Shrihari Tiffin's rotating homestyle menu. Categorized breakfast, lunch, dinner thalis, Jain options, and dietary highlights with full nutritional info.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Reusable Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- PAGE HERO BANNER -->
+    <section class="page-hero">
+      <div class="container text-center">
+        <nav aria-label="breadcrumb" class="d-inline-block mb-3">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Daily Menu</li>
+          </ol>
+        </nav>
+        <h1 class="display-5 fw-bold mb-3">Daily Homestyle Menu & Specialties</h1>
+        <p class="body-text max-w-700 mx-auto">Explore our nutritious, low-oil meal options prepared fresh morning & evening.</p>
+      </div>
+    </section>
+
+    <!-- MENU TABS & DIETARY FILTERS SECTION -->
+    <section class="py-5">
+      <div class="container">
+        
+        <!-- SEAMLESS UNIFIED FILTER CONTROL BAR -->
+        <div class="filter-console-bar p-2 p-md-3 mb-5 d-flex flex-wrap align-items-center justify-content-between gap-3">
+          
+          <!-- Category Tabs (Primary Filter) -->
+          <div class="d-flex flex-wrap align-items-center gap-2 category-filter-group">
+            <button class="btn filter-tab-btn active" data-menu-category="all">
+              <i class="bi bi-grid-fill me-1"></i> All Meals
+            </button>
+            <button class="btn filter-tab-btn" data-menu-category="breakfast">
+              <i class="bi bi-cup-hot-fill me-1"></i> Breakfast
+            </button>
+            <button class="btn filter-tab-btn" data-menu-category="lunch">
+              <i class="bi bi-sun-fill me-1"></i> Lunch Thalis
+            </button>
+            <button class="btn filter-tab-btn" data-menu-category="dinner">
+              <i class="bi bi-moon-stars-fill me-1"></i> Dinner Specialties
+            </button>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="filter-v-divider d-none d-xl-block" aria-hidden="true"></div>
+
+          <!-- Dietary Preferences (Secondary Filter) -->
+          <div class="d-flex align-items-center gap-2 flex-wrap dietary-filter-group">
+            <span class="diet-filter-label text-neutral text-small fw-bold me-1">
+              <i class="bi bi-funnel-fill text-orange"></i> Diet:
+            </span>
+            
+            <button class="btn diet-pill-btn active" data-dietary-filter="all">
+              All
+            </button>
+            
+            <button class="btn diet-pill-btn diet-jain" data-dietary-filter="jain">
+              <i class="bi bi-circle-fill me-1 text-success fs-xs"></i> 100% Jain
+            </button>
+            
+            <button class="btn diet-pill-btn diet-protein" data-dietary-filter="protein">
+              <i class="bi bi-lightning-charge-fill me-1 text-primary"></i> High Protein
+            </button>
+            
+            <button class="btn diet-pill-btn diet-lowcal" data-dietary-filter="lowcal">
+              <i class="bi bi-heart-pulse-fill me-1 text-danger"></i> Low Calorie
+            </button>
+          </div>
+
+        </div>
+
+        <!-- MENU CARDS GRID -->
+        <div class="row g-4" id="menu-items-grid">
+          
+          <!-- ITEM 1: Executive Gujarati Thali (Lunch, Jain/Regular) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-shrihari menu-item-card p-0 h-100 d-flex flex-column" data-category="lunch" data-diet="jain">
+              <div class="card-img-zoom flex-shrink-0" style="height: 220px;">
+                <img src="assets/images/thali-deluxe.png" alt="Executive Gujarati Thali" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-orange-light">Lunch Thali</span>
+                  <span class="text-success fw-bold text-small">Jain Available</span>
+                </div>
+                <h4 class="fw-bold mb-2">Executive Gujarati Thali</h4>
+                <p class="text-neutral text-small mb-3 flex-grow-1">5 Butter Phulkas, Sev Tamatar / Paneer Sabzi, Kathol (Sprouted Moong), Gujarati Kadhi, Steamed Rice, Gulab Jamun & Chaas.</p>
+                
+                <!-- Macro Specs (No Background, Aligned) -->
+                <div class="menu-macro-specs d-flex align-items-center justify-content-between mb-3 text-small text-neutral mt-auto">
+                  <span><strong>Calories:</strong> 620 kcal</span>
+                  <span><strong>Protein:</strong> 22g</span>
+                  <span><strong>Oil:</strong> Low Ghee</span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-auto">
+                  <span class="fw-bold text-dark fs-5">₹130 <small class="text-neutral fs-6 fw-normal">/ thali</small></span>
+                  <a href="contact.html?item=executive-gujarati" class="btn btn-orange btn-sm"><i class="bi bi-plus-lg me-1"></i> Add To Plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 2: North Indian Deluxe Thali (Lunch/Dinner, High Protein) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-shrihari menu-item-card p-0 h-100 d-flex flex-column" data-category="dinner" data-diet="protein">
+              <div class="card-img-zoom flex-shrink-0" style="height: 220px;">
+                <img src="assets/images/executive-thali.png" alt="North Indian Deluxe Thali" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-orange-light">Dinner Special</span>
+                  <span class="text-primary fw-bold text-small">High Protein</span>
+                </div>
+                <h4 class="fw-bold mb-2">North Indian Shahi Deluxe</h4>
+                <p class="text-neutral text-small mb-3 flex-grow-1">Paneer Butter Masala, Yellow Dal Tadka, Aloo Bhindi, 5 Ghee Phulkas or 3 Parathas, Veg Pulao, & Cucumber Raita.</p>
+                
+                <!-- Macro Specs (No Background, Aligned) -->
+                <div class="menu-macro-specs d-flex align-items-center justify-content-between mb-3 text-small text-neutral mt-auto">
+                  <span><strong>Calories:</strong> 680 kcal</span>
+                  <span><strong>Protein:</strong> 28g</span>
+                  <span><strong>Oil:</strong> Moderate</span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-auto">
+                  <span class="fw-bold text-dark fs-5">₹140 <small class="text-neutral fs-6 fw-normal">/ thali</small></span>
+                  <a href="contact.html?item=shahi-deluxe" class="btn btn-orange btn-sm"><i class="bi bi-plus-lg me-1"></i> Add To Plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 3: Indori Poha & Dhokla Combo (Breakfast, Low Cal) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-shrihari menu-item-card p-0 h-100 d-flex flex-column" data-category="breakfast" data-diet="lowcal">
+              <div class="card-img-zoom flex-shrink-0" style="height: 220px;">
+                <img src="assets/images/breakfast-combo.png" alt="Poha Dhokla Breakfast" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge bg-warning-subtle text-dark px-3 py-1 rounded-pill fw-bold">Breakfast</span>
+                  <span class="text-warning-emphasis fw-bold text-small">Low Calorie</span>
+                </div>
+                <h4 class="fw-bold mb-2">Indori Poha & Nylon Dhokla</h4>
+                <p class="text-neutral text-small mb-3 flex-grow-1">Flattened rice tempered with mustard seeds, roasted peanuts, pomegranate, steamed fermented dhokla, and mint chutney.</p>
+                
+                <!-- Macro Specs (No Background, Aligned) -->
+                <div class="menu-macro-specs d-flex align-items-center justify-content-between mb-3 text-small text-neutral mt-auto">
+                  <span><strong>Calories:</strong> 340 kcal</span>
+                  <span><strong>Protein:</strong> 12g</span>
+                  <span><strong>Oil:</strong> Minimal</span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-auto">
+                  <span class="fw-bold text-dark fs-5">₹70 <small class="text-neutral fs-6 fw-normal">/ plate</small></span>
+                  <a href="contact.html?item=breakfast-poha" class="btn btn-orange btn-sm"><i class="bi bi-plus-lg me-1"></i> Add To Plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 4: Standard Light Homestyle Thali (Lunch, Low Cal) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-shrihari menu-item-card p-0 h-100 d-flex flex-column" data-category="lunch" data-diet="lowcal">
+              <div class="card-img-zoom flex-shrink-0" style="height: 220px;">
+                <img src="assets/images/hero-tiffin.png" alt="Standard Light Homestyle Thali" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-orange-light">Standard Lunch</span>
+                  <span class="text-warning-emphasis fw-bold text-small">Light Everyday</span>
+                </div>
+                <h4 class="fw-bold mb-2">Standard Homestyle Thali</h4>
+                <p class="text-neutral text-small mb-3 flex-grow-1">4 Soft Wheat Rotis (No Oil), Seasonal Lauki/Tori Sabzi, Yellow Moong Dal, Steamed Rice, & Green Salad.</p>
+                
+                <!-- Macro Specs (No Background, Aligned) -->
+                <div class="menu-macro-specs d-flex align-items-center justify-content-between mb-3 text-small text-neutral mt-auto">
+                  <span><strong>Calories:</strong> 480 kcal</span>
+                  <span><strong>Protein:</strong> 18g</span>
+                  <span><strong>Oil:</strong> Low Oil</span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-auto">
+                  <span class="fw-bold text-dark fs-5">₹90 <small class="text-neutral fs-6 fw-normal">/ thali</small></span>
+                  <a href="contact.html?item=standard-thali" class="btn btn-orange btn-sm"><i class="bi bi-plus-lg me-1"></i> Add To Plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 5: Mini Fitness Light Tiffin (Dinner, High Protein) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-shrihari menu-item-card p-0 h-100 d-flex flex-column" data-category="dinner" data-diet="protein">
+              <div class="card-img-zoom flex-shrink-0" style="height: 220px;">
+                <img src="assets/images/blog-nutrition.png" alt="Fitness Light Tiffin" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge-green-light">Light Dinner</span>
+                  <span class="text-primary fw-bold text-small">High Protein</span>
+                </div>
+                <h4 class="fw-bold mb-2">Mini Sprouts & Paneer Khichdi</h4>
+                <p class="text-neutral text-small mb-3 flex-grow-1">High protein Moong Sprouts Sabzi, Paneer cubes, 3 Multigrain Phulkas, & Masala Buttermilk.</p>
+                
+                <!-- Macro Specs (No Background, Aligned) -->
+                <div class="menu-macro-specs d-flex align-items-center justify-content-between mb-3 text-small text-neutral mt-auto">
+                  <span><strong>Calories:</strong> 420 kcal</span>
+                  <span><strong>Protein:</strong> 25g</span>
+                  <span><strong>Oil:</strong> Zero Ghee Option</span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-auto">
+                  <span class="fw-bold text-dark fs-5">₹110 <small class="text-neutral fs-6 fw-normal">/ thali</small></span>
+                  <a href="contact.html?item=mini-fitness" class="btn btn-orange btn-sm"><i class="bi bi-plus-lg me-1"></i> Add To Plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 6: Methi Thepla & Aloo Sabzi (Breakfast, Jain Available) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-shrihari menu-item-card p-0 h-100 d-flex flex-column" data-category="breakfast" data-diet="jain">
+              <div class="card-img-zoom flex-shrink-0" style="height: 220px;">
+                <img src="assets/images/kitchen-hygiene.png" alt="Methi Thepla Breakfast" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge bg-warning-subtle text-dark px-3 py-1 rounded-pill fw-bold">Breakfast</span>
+                  <span class="text-success fw-bold text-small">Jain Option</span>
+                </div>
+                <h4 class="fw-bold mb-2">Gujarati Methi Thepla (4 Pcs)</h4>
+                <p class="text-neutral text-small mb-3 flex-grow-1">Soft spiced fenugreek wheat flatbreads served with Sukhi Aloo Sabzi or Chhundo pickle & curd.</p>
+                
+                <!-- Macro Specs (No Background, Aligned) -->
+                <div class="menu-macro-specs d-flex align-items-center justify-content-between mb-3 text-small text-neutral mt-auto">
+                  <span><strong>Calories:</strong> 390 kcal</span>
+                  <span><strong>Protein:</strong> 11g</span>
+                  <span><strong>Oil:</strong> Gentle Ghee</span>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top mt-auto">
+                  <span class="fw-bold text-dark fs-5">₹80 <small class="text-neutral fs-6 fw-normal">/ combo</small></span>
+                  <a href="contact.html?item=methi-thepla" class="btn btn-orange btn-sm"><i class="bi bi-plus-lg me-1"></i> Add To Plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NUTRITIONAL HIGHLIGHTS NOTE BANNER -->
+    <section class="py-5 bg-cream-yellow border-top border-bottom">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h3 class="fw-bold mb-2 text-dark"><i class="bi bi-heart-pulse-fill text-orange me-2"></i> Custom Dietary & Spice Level Request</h3>
+            <p class="body-text mb-0">Have specific health goals? We can customize spice levels, eliminate ghee/oil for heart health, or prepare 100% Jain food upon request for your monthly subscription.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="https://wa.me/919876543210?text=I%20want%20to%20customize%20my%20daily%20tiffin%20diet" target="_blank" class="btn btn-orange fw-bold">
+              <i class="bi bi-whatsapp me-1"></i> Chat With Chef On WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
