@@ -17,6 +17,7 @@ My focus is on designing clear, responsive digital experiences and building prac
 | Project | Explore the case study | Source |
 | --- | --- | --- |
 | Finchbyte | [Portfolio case study](https://javal-patel.vercel.app/work/finchbyte) | [Finchbyte](./Finchbyte) |
+| Shree Hari Tiffin | [Live website](https://www.shriharitiffin.com/) | [Project documentation](./Shree%20Hari%20Tiffin) (source upload pending) |
 | Tiffin World | [Portfolio case study](https://javal-patel.vercel.app/work/tiffin-world) | [Tiffin World](./Tiffin%20World) |
 | BulkPharmaChem | [Portfolio case study](https://javal-patel.vercel.app/work/bulkpharmachem) | [BulkPharmaChem](./BulkPharmaChem) |
 | Flemming Pharma | [Portfolio case study](https://javal-patel.vercel.app/work/flemming-pharma) | [Flemming pharma](./Flemming%20pharma) |
